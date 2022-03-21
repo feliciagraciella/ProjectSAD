@@ -18,13 +18,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
-    return view('home');
-});
 
-Route::get('/lihat_data', function () {
-    return view('lihatdata');
-});
-
-Route::get('/lihat_data', [LihatDataController::class, 'view_data']);
 
