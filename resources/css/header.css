@@ -1,0 +1,14 @@
+body {
+    height: 100%;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+.rectangle {
+    position: absolute;
+    width: 401px;
+    height: 1117px;
+    left: -4px;
+    top: -1px;
+    background: #f7f7f7;
+}
