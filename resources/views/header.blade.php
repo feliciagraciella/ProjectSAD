@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 
 <head>
     <meta charset="UTF-8" />
@@ -14,15 +15,14 @@
 </head>
 
 
-<body style="background-color:white;">
+<body>
     <button id="btnScrollTop" onclick="scrollToTop()">
         <i class="material-icons">keyboard_double_arrow_up</i>
     </button>
 
-    <div class="sidemenu">
-        <img class="logo" src="images/logo/logo.png" style="height: 50%" alt="Logo" />
-
-    </div>
+    <div class="sidemenu-container">
+        <img class="logo" src="images/logo/logo.png" style="height: 150px" alt="Logo" />
+        <a> Products List </a>
     </div>
 
 </body>
