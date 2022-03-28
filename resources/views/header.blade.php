@@ -19,11 +19,10 @@
         <i class="material-icons">keyboard_double_arrow_up</i>
     </button>
 
-    <div class="rectangle">
-        <div class="sidemenu">
-            <img class="logo" src="images/logo/logo.png" style="height: 50%" alt="Logo" />
+    <div class="sidemenu">
+        <img class="logo" src="images/logo/logo.png" style="height: 50%" alt="Logo" />
 
-        </div>
+    </div>
     </div>
 
 </body>
