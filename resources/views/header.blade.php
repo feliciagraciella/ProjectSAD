@@ -22,7 +22,7 @@
 
     <div class="sidemenu-container">
         <img class="logo" src="images/logo/logo.png" style="height: 150px" alt="Logo" />
-        <a> Products List halo</a>
+        <a> Products List </a>
     </div>
 
 </body>
