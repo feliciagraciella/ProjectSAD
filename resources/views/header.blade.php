@@ -8,19 +8,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <link rel="stylesheet" href={{ asset('css/header.css') }} type="text/css"/>
-    <script type="text/javascript" src= {{ asset('js/header.js') }}></script>
+    <link rel="stylesheet" href={{ asset('css/header.css') }} type="text/css" />
+    <script type="text/javascript" src={{ asset('js/header.js') }}></script>
 </head>
 
 
 <body>
     <button id="btnScrollTop" onclick="scrollToTop()">
         <i class="material-icons">keyboard_double_arrow_up</i>
+        {{-- <span class="material-icons-outlined">
+            keyboard_arrow_up
+        </span> --}}
     </button>
 
-    <div class="sidemenu-container">
+    {{-- <div class="sidemenu-container">
         <img class="logo" src="images/logo/logo.png" style="height: 150px" alt="Logo" />
         <a> Products List </a>
     </div>
@@ -28,17 +31,17 @@
     </div> --}}
 
     <!-- Side navigation -->
-<div class="sidenav">
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Clients</a>
-    <a href="#">Contact</a>
-  </div>
+    <div class="sidenav">
+        <img class="logo" src="public/images/logo/logo.png" style="height: 150px" alt="Logo" />
+        <a href="#">Products List</a>
+        <a href="#">Transaction List</a>
+        <a href="#">Reports</a>
+    </div>
 
-  <!-- Page content -->
-  <div class="main">
-    ...
-  </div>
+    <!-- Page content -->
+    <div class="topnav">
+        <p id="date"></p>
+    </div>
 </body>
 
 </html>
