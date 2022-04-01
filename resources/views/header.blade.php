@@ -44,7 +44,7 @@
 
     <!-- Side navigation -->
     <div class="sidenav">
-        <img class="logo" src="public/logo.png" style="height: 150px" alt="Logo" />
+        <img class="logo" src={{ asset('images/logo.png') }} style="height: 150px" alt="Logo" />
         <a href="#">Products List</a>
         <a href="#">Transaction List</a>
         <a href="#">Reports</a>
