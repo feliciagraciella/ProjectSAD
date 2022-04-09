@@ -1,0 +1,19 @@
+body {
+    background-color: #e5e5e5;
+}
+
+.right {
+    width: 310px;
+    height: 350px;
+    margin-left: 700px;
+    background: #dee1e6;
+    border-radius: 0px 12px 12px 0px;
+}
+.left {
+    width: 700px;
+    height: 350px;
+    margin-left: 300px;
+    margin-top: 175px;
+    background: black;
+    border-radius: 12px;
+}
