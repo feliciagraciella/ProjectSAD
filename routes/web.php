@@ -23,3 +23,9 @@ Route::get('/header', function () {
         // "title" => "About Us"
     ]);
 });
+
+Route::get('/login', function () {
+    return view('login', [
+        // "title" => "About Us"
+    ]);
+});
