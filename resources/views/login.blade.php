@@ -27,14 +27,40 @@
 </head>
 
 
-<body>
+<body style="background-color: #e5e5e5">
     <div class="rectangle">
-        <div class="left">
-            <div class="right" style="float: right">
-                <img class="login" src={{ asset('images/login.png') }}>
-            </div>
+        <div class="text-signin">
+            <h3>Welcome Back!</h3>
+            <p>Please enter yout details</p>
         </div>
-        {{-- <div class="right" style="float: right"></div> --}}
+        <div class="form-signin">
+            <form action="/home" method="post">
+                @csrf
+                <div class="container">
+                    <div class="containercontroller">
+                        <div class="email">
+                            <h2 style="font-size: small;">E-mail :</h2>
+                            <input type="admin" name="admin" class="@error('email') is-invalid @enderror" autofocus
+                                required value="{{ old('email') }}" placeholder="Admin ID" />
+                            @error('email')
+                                <div class="invalid-feedback" style="padding-bottom : 10px">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="password" style="margin-top: 10px">
+                            <h2 style="font-size: small;">Password :</h2>
+                            <input type="password" name="password" placeholder="********" required />
+                        </div>
+                    </div>
+                </div>
+                <div class="container2">
+                    <div class="buttonmasuk">
+                        <button>Sign In</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 
 </body>
