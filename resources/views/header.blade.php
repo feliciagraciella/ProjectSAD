@@ -44,24 +44,22 @@
 
     <!-- Side navigation -->
     <div class="sidenav">
-        <img class="logo" src={{ asset('images/logo.png') }} style="height: 150px" alt="Logo" />
-        <a href="/product">Products List</a>
-        <a href="/transaction">Transaction List</a>
-        <a href="/report">Reports</a>
+        <div class="sidenav-content">
+            <img class="logo" src={{ asset('images/logo.png') }} style="height: 150px" alt="Logo" />
+            <a href="/product">Products List</a>
+            <a href="/transaction">Transaction List</a>
+            <a href="/report">Reports</a>
 
-        <div class="socials">
-            {{-- <i class="fab fa-instagram me-3"></i>
-            <img class="icons" src={{ asset('images/shopee.png') }}>
-            <img class="icons" src={{ asset('images/tokped.png') }}>
-            <br /> --}}
-            <p class="copyright">© 2022 Copyright | Best Auto Care Solution</p>
-            {{-- <i class="fas fa-envelope me-3"></i>
-            <i class="fab fa-whatsapp me-3"></i> --}}
+            <div class="socials">
+                {{-- <i class="fab fa-instagram me-3"></i>
+                <img class="icons" src={{ asset('images/shopee.png') }}>
+                <img class="icons" src={{ asset('images/tokped.png') }}>
+                <br /> --}}
+                <p class="copyright">© 2022 Copyright | Best Auto Care Solution</p>
+                {{-- <i class="fas fa-envelope me-3"></i>
+                <i class="fab fa-whatsapp me-3"></i> --}}
+            </div>
         </div>
-
-        <div>
-        </div>
-
     </div>
 
     {{-- <div class="topnav">
