@@ -44,21 +44,20 @@
 
     <!-- Side navigation -->
     <div class="sidenav">
-        <div class="sidenav-content">
-            <img class="logo" src={{ asset('images/logo.png') }} style="height: 150px" alt="Logo" />
+        <img class="logo" src={{ asset('images/logo.png') }} style="height: 130px;" alt="Logo" />
+        <div class="sidenav-menu">
             <a href="/product">Products List</a>
             <a href="/transaction">Transaction List</a>
             <a href="/report">Reports</a>
-
-            <div class="socials">
-                {{-- <i class="fab fa-instagram me-3"></i>
-                <img class="icons" src={{ asset('images/shopee.png') }}>
-                <img class="icons" src={{ asset('images/tokped.png') }}>
-                <br /> --}}
-                <p class="copyright">© 2022 Copyright | Best Auto Care Solution</p>
-                {{-- <i class="fas fa-envelope me-3"></i>
-                <i class="fab fa-whatsapp me-3"></i> --}}
-            </div>
+        </div>
+        <div class="socials">
+            {{-- <i class="fab fa-instagram me-3"></i>
+            <img class="icons" src={{ asset('images/shopee.png') }}>
+            <img class="icons" src={{ asset('images/tokped.png') }}>
+            <br /> --}}
+            <p class="copyright">© 2022 Copyright | Best Auto Care Solution</p>
+            {{-- <i class="fas fa-envelope me-3"></i>
+            <i class="fab fa-whatsapp me-3"></i> --}}
         </div>
     </div>
 
@@ -87,23 +86,23 @@
                 date = new Date().toLocaleDateString();
                 document.write(date);
             </script>
-
-            <a style="padding-right: 18%; float: right; margin-top: 5px"
-                class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuLink"
-                role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-                <i class="fas fa-user" style="color: black">
-                    <p style="font-family: Poppins; margin-left: 5px; float: right;"> A001 </p>
-                </i>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                <li>
-                    <a style="text-align: left; color: black;" class="dropdown-item" href="/login">Log Out</a>
-                </li>
-            </ul>
         </div>
+        <div class="profile-id">
+            <a style="padding-right: 18%; float: right; margin-top: 5px"
+            class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuLink"
+            role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-user" style="color: black">
+                <p style="font-family: Poppins; margin-left: 5px; float: right;"> A001 </p>
+            </i>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+            <li>
+                <a style="text-align: left; color: black;" class="dropdown-item" href="/login">Log Out</a>
+            </li>
+        </ul>
+        </div>
+        <hr class="topbar-hr">
     </div>
-    <hr>
-
 
 </body>
 

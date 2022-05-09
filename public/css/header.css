@@ -33,8 +33,9 @@ body {
 }
 
 .logo {
-    margin-left: 45px;
+    margin-left: 56px;
     align-self: center;
+    margin-top: -25px;
 }
 
 .socials {
@@ -51,11 +52,22 @@ body {
 }
 
 /* top bar */
-.topbar{
+.date{
     position: fixed;
-    top: 60px;
+    right: 40%;
+    top: -9px;
+    font-size: medium;
 }
-
+.profile-id{
+    position: fixed;
+    right: 10%;
+    top: 10px;
+}
+.topbar-hr{
+    top: 40px;
+    position: fixed;
+    width: 100%;
+}
 /* The sidebar menu */
 .sidenav {
     height: 1000px;
@@ -74,15 +86,15 @@ body {
     left: 20px;
     bottom: 20px;
 }
-/* .sidenav-content{
-    position: fixed;
+/* .sidenav-menu{
+
 } */
 
 /* The navigation menu links */
 .sidenav a {
-    padding: 10px 8px 6px 50px;
+    padding: 10px 8px 6px 69px;
     text-decoration: none;
-    font-size: large;
+    font-size:medium;
     color: #818181;
     display: block;
     font-family: "Poppins";
