@@ -31,7 +31,7 @@
     <div class="rectangle">
         <div class="text-signin">
             <h3>Welcome Back!</h3>
-            <p>Please enter yout details</p>
+            <p>Please enter your details</p>
         </div>
         <div class="form-signin">
             <form action="/header" method="post">
