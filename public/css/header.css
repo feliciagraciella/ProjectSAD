@@ -52,18 +52,18 @@ body {
 }
 
 /* top bar */
-.date{
+.date {
     position: fixed;
     right: 40%;
     top: -9px;
     font-size: medium;
 }
-.profile-id{
+.profile-id {
     position: fixed;
     right: 12%;
     top: 30px;
 }
-.topbar-hr{
+.topbar-hr {
     top: 40px;
     position: fixed;
     width: 100%;
@@ -94,7 +94,7 @@ body {
 .sidenav a {
     padding: 10px 8px 6px 69px;
     text-decoration: none;
-    font-size:medium;
+    font-size: medium;
     color: #818181;
     display: block;
     font-family: "Poppins";

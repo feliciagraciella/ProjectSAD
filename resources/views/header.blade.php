@@ -89,17 +89,19 @@
         </div>
         <div class="profile-id">
             <a style="padding-right: 18%; float: right; margin-top: 5px"
-            class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuLink"
-            role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-            <i class="fas fa-user" style="color: black; position: fixed;">
-                <p style="font-family: Poppins; margin-left: 5px; float: right;"> A001 </p>
-            </i>
-        </a>
-        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink" style="position: fixed;">
-            <li>
-                <a style="text-align: left; color: black; position: fixed; right: -150px;" class="dropdown-item" href="/login">Log Out</a>
-            </li>
-        </ul>
+                class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuLink"
+                role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-user" style="color: black; position: fixed;">
+                    <p style="font-family: Poppins; margin-left: 5px; float: right;"> A001 </p>
+                </i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink"
+                style="position: fixed;">
+                <li>
+                    <a style="text-align: left; color: black; position: fixed; right: -150px;" class="dropdown-item"
+                        href="/login">Log Out</a>
+                </li>
+            </ul>
         </div>
         <hr class="topbar-hr">
     </div>
