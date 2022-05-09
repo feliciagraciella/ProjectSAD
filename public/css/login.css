@@ -88,3 +88,12 @@ input {
     /* color: gray; */
     color: white;
 }
+
+.login {
+    float: right;
+
+    width: 428px;
+    height: 436px;
+    left: 925px;
+    top: 350px;
+}

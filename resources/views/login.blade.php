@@ -34,7 +34,7 @@
             <p>Please enter yout details</p>
         </div>
         <div class="form-signin">
-            <form action="/home" method="post">
+            <form action="/header" method="post">
                 @csrf
                 <div class="container">
                     <div class="containercontroller">
@@ -60,6 +60,10 @@
                     </div>
                 </div>
             </form>
+        </div>
+
+        <div class="login">
+            <img class="login" src={{ asset('images/login.png') }}>
         </div>
     </div>
 

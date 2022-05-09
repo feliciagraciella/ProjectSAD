@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 halo
 
-<a href="/header">click</a>
+<a href="/login">click</a>
 halo shalom
 
 halo shalom
