@@ -50,15 +50,16 @@
             <a href="/transaction">Transaction List</a>
             <a href="/report">Reports</a>
         </div>
-        <div class="socials">
+        <p class="copyright">© 2022 Copyright | Best Auto Care Solution</p>
+        {{-- <div class="socials"> --}}
             {{-- <i class="fab fa-instagram me-3"></i>
             <img class="icons" src={{ asset('images/shopee.png') }}>
             <img class="icons" src={{ asset('images/tokped.png') }}>
             <br /> --}}
-            <p class="copyright">© 2022 Copyright | Best Auto Care Solution</p>
+
             {{-- <i class="fas fa-envelope me-3"></i>
             <i class="fab fa-whatsapp me-3"></i> --}}
-        </div>
+        {{-- </div> --}}
     </div>
 
     {{-- <div class="topnav">
