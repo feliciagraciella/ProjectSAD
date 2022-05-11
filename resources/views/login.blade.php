@@ -29,44 +29,49 @@
 
 <body style="background-color: #e5e5e5">
     <div class="rectangle">
-        <div class="text-signin">
-            <h3>Welcome Back!</h3>
-            <p>Please enter your details</p>
-        </div>
-        <div class="form-signin">
-            <form action="/header" method="post">
-                @csrf
-                <div class="container">
-                    <div class="containercontroller">
-                        <div class="email">
-                            <h2 style="font-size: small;">E-mail :</h2>
-                            <input type="admin" name="admin" class="@error('email') is-invalid @enderror" autofocus
-                                required value="{{ old('email') }}" placeholder="Admin ID" />
-                            @error('email')
-                                <div class="invalid-feedback" style="padding-bottom : 10px">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-                        <div class="password" style="margin-top: 10px">
-                            <h2 style="font-size: small;">Password :</h2>
-                            <input type="password" name="password" placeholder="********" required />
+        <div class="column">
+            <div class="text-signin">
+                <h3>Welcome Back!</h3>
+                <p>Please enter your details</p>
+            </div>
+            <div class="form-signin">
+                <form action="/home" method="post">
+                    @csrf
+                    <div class="container">
+                        <div class="containercontroller">
+                            <div class="email">
+                                <h2 style="font-size: small;">Admin ID :</h2>
+                                <input type="text" name="admin" class="@error('lastname') is-invalid @enderror" required
+                                    placeholder="Admin ID" />
+                                @error('email')
+                                    <div class="invalid-feedback" style="padding-bottom : 10px">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="password" style="margin-top: 10px">
+                                <h2 style="font-size: small;">Password :</h2>
+                                <input type="password" name="password" placeholder="********" required />
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="container2">
-                    <div class="buttonmasuk">
-                        <button>Sign In</button>
+                    <div class="container2">
+                        <div class="buttonmasuk">
+                            <button>Sign In</button>
+                        </div>
                     </div>
-                </div>
-            </form>
-
-
+                </form>
+            </div>
         </div>
 
-        <div class="login">
-            <img class="login" src={{ asset('images/icon/login.png') }}>
+        <div class="column">
+            <div class="login">
+                <img class="login" src={{ asset('images/icon/login.png') }}>
+            </div>
         </div>
+
+
+
     </div>
 
 </body>

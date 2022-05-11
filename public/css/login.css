@@ -12,6 +12,21 @@ body {
     font-family: "Poppins";
 }
 
+/* .row {
+    display: flex;
+}
+
+.column {
+    flex: 50%;
+    padding: 5px;
+} */
+
+.column {
+    float: left;
+    width: 50%;
+    padding: 5px;
+}
+
 .rectangle h3 {
     font-weight: bold;
     font-size: x-large;
@@ -25,13 +40,13 @@ body {
 
 .text-signin {
     text-align: center;
-    padding-right: 400px;
+    /* padding-right: 400px; */
     padding-top: 35px;
 }
 
-.form-signin {
+/* .form-signin {
     padding-right: 400px;
-}
+} */
 
 /* form */
 .container {
@@ -90,8 +105,10 @@ input {
 }
 
 .login {
-    float: right;
-    width: 65%;
+    /* float: right; */
+    width: 90%;
+    padding-top: 40px;
+    padding-left: 35px;
     /* height: 90%;
     left: 100%; */
     /* top: 350px; */
