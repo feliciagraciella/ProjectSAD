@@ -30,6 +30,12 @@ Route::get('/login', function () {
     ]);
 });
 
+Route::get('/home', function () {
+    return view('home', [
+        // "title" => "About Us"
+    ]);
+});
+
 Route::get('/report', function () {
     return view('report', [
         // "title" => "About Us"

@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <link rel="stylesheet" href={{ asset('css/header.css') }} type="text/css" />
+    <link rel="stylesheet" href={{ asset('css/home.css') }} type="text/css" />
     <script type="text/javascript" src={{ asset('js/header.js') }}></script>
 
     <link rel="stylesheet" href="css/bootstrap.min.css" />
@@ -30,19 +31,8 @@
 <body>
     <button id="btnScrollTop" onclick="scrollToTop()">
         <i class="material-icons">keyboard_double_arrow_up</i>
-        {{-- <span class="material-icons-outlined">
-            keyboard_arrow_up
-        </span> --}}
     </button>
 
-    {{-- <div class="sidemenu-container">
-        <img class="logo" src="images/logo/logo.png" style="height: 150px" alt="Logo" />
-        <a> Products List </a>
-    </div>
-
-    </div> --}}
-
-    <!-- Side navigation -->
     <div class="sidenav">
         <a href="/home">
             <img class="logo" src={{ asset('images/logo.png') }} style="height: 130px;" alt="Logo" />
@@ -53,35 +43,7 @@
             <a href="/report">Reports</a>
         </div>
         <p class="copyright">© 2022 Copyright | Best Auto Care Solution</p>
-        {{-- <div class="socials"> --}}
-        {{-- <i class="fab fa-instagram me-3"></i>
-            <img class="icons" src={{ asset('images/shopee.png') }}>
-            <img class="icons" src={{ asset('images/tokped.png') }}>
-            <br /> --}}
-
-        {{-- <i class="fas fa-envelope me-3"></i>
-            <i class="fab fa-whatsapp me-3"></i> --}}
-        {{-- </div> --}}
     </div>
-
-    {{-- <div class="topnav">
-        <nav class="navbar navbar-custom navbar-expand-md bg-transparent justify-content-center">
-            <p id="date" style="text-align: center"></p>
-            <a href="/" class="navbar-brand d-flex w-50 mr-auto"></a>
-
-            <i class="fas fa-user" style="color: #e5e5e5;"></i>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                <li>
-                    <a style="text-align: left; color: black;" class="dropdown-item" href="/sign-in">Sign In</a>
-                </li>
-                <li>
-                    <a style="text-align: left; color: black;" class="dropdown-item" href="/sign-up">Sign Up</a>
-                </li>
-            </ul>
-
-        </nav>
-    </div> --}}
 
     <div class="topbar">
         <div class="date" style="text-align: center">
@@ -108,6 +70,14 @@
         </div>
         <hr class="topbar-hr">
     </div>
+
+    <div class="report">
+        <h2>Monthly Report</h2>
+        <div class="rect-tokped">
+            
+        </div>
+    </div>
+
 
 </body>
 

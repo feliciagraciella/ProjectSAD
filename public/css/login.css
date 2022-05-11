@@ -91,9 +91,8 @@ input {
 
 .login {
     float: right;
-
-    width: 428px;
-    height: 436px;
-    left: 925px;
-    top: 350px;
+    width: 65%;
+    /* height: 90%;
+    left: 100%; */
+    /* top: 350px; */
 }

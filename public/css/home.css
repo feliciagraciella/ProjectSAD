@@ -1,0 +1,16 @@
+.report h2 {
+    font-weight: bold;
+    font-size: x-large;
+    font-family: "Poppins";
+    color: black;
+    padding-top: 100%;
+}
+
+.rect-tokped {
+    background: #f8f7f2;
+    width: 800px;
+    height: 400px;
+    margin-left: 100px;
+    margin-top: 300px;
+    border-radius: 12px;
+}

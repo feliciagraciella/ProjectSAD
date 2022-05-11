@@ -60,10 +60,12 @@
                     </div>
                 </div>
             </form>
+
+
         </div>
 
         <div class="login">
-            <img class="login" src={{ asset('images/login.png') }}>
+            <img class="login" src={{ asset('images/icon/login.png') }}>
         </div>
     </div>
 
