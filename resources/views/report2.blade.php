@@ -52,59 +52,47 @@
     <table class="table table-hover" style="width: 70%; position: absolute; left: 320px; top: 464px;">
         <thead>
           <tr>
-            <th scope="col" style="font-weight: 600; text-align:center;">Photo</th>
-            <th scope="col" style="font-weight: 600; text-align:center;">SKU</th>
-            <th scope="col" style="font-weight: 600; text-align:center;">Name</th>
-            <th scope="col" style="font-weight: 600; text-align:center;">Total Sale</th>
-            <th scope="col" style="font-weight: 600; text-align:center;">Size</th>
-            <th scope="col" style="font-weight: 600; text-align:center;">Price</th>
-            <th scope="col" style="font-weight: 600; text-align:center;">Income</th>
+            <th scope="col" style="font-weight: 600; text-align:center;">Transaction ID</th>
+            <th scope="col" style="font-weight: 600; text-align:center;">Date</th>
+            <th scope="col" style="font-weight: 600; text-align:center;">Platform</th>
+            <th scope="col" style="font-weight: 600; text-align:center;">Total Qty</th>
+            <th scope="col" style="font-weight: 600; text-align:center;">Total Price</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th scope="row" style="text-align:center;">1</th>
-            <td style="text-align:center;">20220315</td>
-            <td style="text-align:left;">Cleaner Bagus</td>
+            <th scope="row" style="text-align:center;">T20220315</th>
+            <td style="text-align:center;">2022-03-15</td>
+            <td style="text-align:center;">Tokopedia</td>
             <td style="text-align:center;">5</td>
-            <td style="text-align:center;">200 ml</td>
-            <td style="text-align:center;">Rp100.000</td>
             <td style="text-align:center;">Rp500.000</td>
           </tr>
           <tr>
-            <th scope="row" style="text-align:center;">1</th>
-            <td style="text-align:center;">20220315</td>
-            <td style="text-align:left;">Cleaner Bagus</td>
+            <th scope="row" style="text-align:center;">T20220315</th>
+            <td style="text-align:center;">2022-03-15</td>
+            <td style="text-align:center;">Tokopedia</td>
             <td style="text-align:center;">5</td>
-            <td style="text-align:center;">200 ml</td>
-            <td style="text-align:center;">Rp100.000</td>
             <td style="text-align:center;">Rp500.000</td>
           </tr>
           <tr>
-            <th scope="row" style="text-align:center;">1</th>
-            <td style="text-align:center;">20220315</td>
-            <td style="text-align:left;">Cleaner Bagus</td>
+            <th scope="row" style="text-align:center;">T20220315</th>
+            <td style="text-align:center;">2022-03-15</td>
+            <td style="text-align:center;">Tokopedia</td>
             <td style="text-align:center;">5</td>
-            <td style="text-align:center;">200 ml</td>
-            <td style="text-align:center;">Rp100.000</td>
             <td style="text-align:center;">Rp500.000</td>
           </tr>
           <tr>
-            <th scope="row" style="text-align:center;">1</th>
-            <td style="text-align:center;">20220315</td>
-            <td style="text-align:left;">Cleaner Bagus</td>
+            <th scope="row" style="text-align:center;">T20220315</th>
+            <td style="text-align:center;">2022-03-15</td>
+            <td style="text-align:center;">Tokopedia</td>
             <td style="text-align:center;">5</td>
-            <td style="text-align:center;">200 ml</td>
-            <td style="text-align:center;">Rp100.000</td>
             <td style="text-align:center;">Rp500.000</td>
           </tr>
           <tr>
-            <th scope="row" style="text-align:center;">1</th>
-            <td style="text-align:center;">20220315</td>
-            <td style="text-align:left;">Cleaner Bagus</td>
+            <th scope="row" style="text-align:center;">T20220315</th>
+            <td style="text-align:center;">2022-03-15</td>
+            <td style="text-align:center;">Tokopedia</td>
             <td style="text-align:center;">5</td>
-            <td style="text-align:center;">200 ml</td>
-            <td style="text-align:center;">Rp100.000</td>
             <td style="text-align:center;">Rp500.000</td>
           </tr>
         </tbody>

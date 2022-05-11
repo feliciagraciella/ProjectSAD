@@ -83,6 +83,9 @@
         </nav>
     </div> --}}
 
+    <div class="topbar-bg">
+
+    </div>
     <div class="topbar">
         <div class="date" style="text-align: center">
             <script>

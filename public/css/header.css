@@ -28,14 +28,14 @@ body {
     margin-top: 25px;
     margin-left: 350px;
     font-family: "Poppins";
-    font-size: large;
+    font-size:small;
     color: black;
 }
 
 .logo {
     /* margin-left: 56px; */
     align-self: center;
-    margin-top: -25px;
+    margin-top: -41px;
 }
 
 .socials {
@@ -56,19 +56,23 @@ body {
 }
 
 /* top bar */
+.topbar{
+    color: black;
+}
 .date {
     position: fixed;
     right: 40%;
     top: -9px;
-    font-size: medium;
+    font-size: small;
 }
 .profile-id {
     position: fixed;
     right: 12%;
     top: 30px;
+    font-size: small;
 }
 .topbar-hr {
-    top: 40px;
+    top: 36px;
     position: fixed;
     width: 100%;
 }
@@ -92,7 +96,7 @@ body {
 .sidenav a {
     padding: 10px 8px 6px 69px;
     text-decoration: none;
-    font-size: medium;
+    font-size:medium;
     color: #818181;
     display: block;
     font-family: "Poppins";
