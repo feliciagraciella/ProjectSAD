@@ -12,37 +12,29 @@
 </head>
 
 <body>
-    <h5 class=title>Transaction List</h5>
-    <div class="button">
-        <button type="button" class="btn btn-outline-secondary btn-sm" style="text-transform: unset !important; ">Insert Transaction  <span class="iconify" data-icon="akar-icons:circle-plus-fill"></span></button>
-    </div>
+    <h5 class=title>Transaction Detail</h5>
 
 
     <div class=table>
-        <table class="table table-hover" style="width: 70%; position: absolute; left: 320px; top: 140px;">
+        <table class="table" style="width: 70%; position: absolute; left: 320px; top: 140px;">
             <thead>
               <tr>
                 <th scope="col" style="font-weight: 700; text-align:left;">Transaction ID</th>
                 <th scope="col" style="font-weight: 700; text-align:left;">Date</th>
                 <th scope="col" style="font-weight: 700; text-align:left;">Platform</th>
+                <th scope="col" style="font-weight: 700; text-align:left;">Product</th>
                 <th scope="col" style="font-weight: 700; text-align:left;">Quantity</th>
-                <th scope="col" style="font-weight: 700; text-align:left;">Total/day</th>
+                <th scope="col" style="font-weight: 700; text-align:left;">Total</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="font-weight: 600; text-align:left;">S20220315</td>
-                <td style="font-weight: 600; text-align:left;">20220315</td>
-                <td style="font-weight: 600; text-align:left;">Shopee</td>
-                <td style="font-weight: 600; text-align:left;">20</td>
-                <td style="font-weight: 600; text-align:left;">Rp500.000</td>
-              </tr>
-              <tr>
-                <td style="font-weight: 600; text-align:left;">S20220315</td>
-                <td style="font-weight: 600; text-align:left;">20220315</td>
-                <td style="font-weight: 600; text-align:left;">Shopee</td>
-                <td style="font-weight: 600; text-align:left;">20</td>
-                <td style="font-weight: 600; text-align:left;">Rp500.000</td>
+                <td style="font-weight: 600; text-align:left;">T20220315</td>
+                <td style="font-weight: 600;text-align:left;">20220315</td>
+                <td style="font-weight: 600;text-align:left;">Tokopedia</td>
+                <td style="font-weight: 600;text-align:left;">Cleaner Bagus</td>
+                <td style="font-weight: 600;text-align:left;">2</td>
+                <td style="font-weight: 600;text-align:left;">Rp500.000</td>
               </tr>
             </tbody>
         </table>

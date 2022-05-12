@@ -59,3 +59,9 @@ Route::get('/transactionlist', function () {
         // "title" => "About Us"
     ]);
 });
+
+Route::get('/transactiondetail', function () {
+    return view('transactiondetail', [
+        // "title" => "About Us"
+    ]);
+});
