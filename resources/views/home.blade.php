@@ -83,7 +83,30 @@
 
             </div>
         </div>
+    </div>
 
+    <div class="popular-products">
+        <h3>Most Popular Products</h3>
+        <div class="column-popular">
+            <div class="rect1">
+
+            </div>
+        </div>
+        <div class="column-popular">
+            <div class="rect2">
+
+            </div>
+        </div>
+        <div class="column-popular">
+            <div class="rect3">
+
+            </div>
+        </div>
+        <div class="column-popular">
+            <div class="rect4">
+
+            </div>
+        </div>
     </div>
 
 
