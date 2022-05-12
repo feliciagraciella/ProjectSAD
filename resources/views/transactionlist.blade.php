@@ -11,7 +11,15 @@
 </head>
 
 <body>
-    <h5 class=title>Transaction List</h5>
+    <div class="row">
+        <div class="column">
+            <h5 class=title>Transaction List</h5>
+        </div>
+        <div class="column">
+            <button class="button" type="button">Insert Transaction</button>
+
+        </div>
+    </div>
     <div class=table>
         <table class="table table-hover" style="width: 70%; position: absolute; left: 320px; top: 140px;">
             <thead>
