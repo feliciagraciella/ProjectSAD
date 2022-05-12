@@ -113,7 +113,7 @@
     <div class="all-products">
         <h3>All Products</h3>
     </div>
-    <table class="table table-hover" style="width: 55%; position: absolute; left: 300px; top: 520px;">
+    <table class="table table-hover" style="width: 52%; position: absolute; left: 300px; top: 535px;">
         <thead>
             <tr>
                 <th scope="col" style="font-weight: 600; text-align:center;">Photo</th>
