@@ -1,0 +1,21 @@
+body{
+    font-family: Poppins;
+    margin-left: 1000px;
+    margin-top: 200px;
+}
+
+.title{
+    position: absolute;
+    left: 318px;
+    top: 96px;
+    color: black;
+    font-weight: 700;
+}
+.calendar{
+    position: absolute;
+    top: 95px;
+    right: 9%;
+    width: 10%;
+}
+
+/* DATE TIME PICKER */

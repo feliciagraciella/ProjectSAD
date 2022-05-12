@@ -65,3 +65,9 @@ Route::get('/transactiondetail', function () {
         // "title" => "About Us"
     ]);
 });
+
+Route::get('/inserttransaction', function () {
+    return view('inserttransaction', [
+        // "title" => "About Us"
+    ]);
+});
