@@ -53,3 +53,9 @@ Route::get('/product', function () {
         // "title" => "About Us"
     ]);
 });
+
+Route::get('/transactionlist', function () {
+    return view('transactionlist', [
+        // "title" => "About Us"
+    ]);
+});
