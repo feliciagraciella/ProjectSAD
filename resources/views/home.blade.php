@@ -72,10 +72,18 @@
     </div>
 
     <div class="report">
-        <h2>Monthly Report</h2>
-        <div class="rect-tokped">
+        <h3>Monthly Report</h3>
+        <div class="column-report">
+            <div class="rect-tokped">
 
+            </div>
         </div>
+        <div class="column-report">
+            <div class="rect-shopee">
+
+            </div>
+        </div>
+
     </div>
 
 
