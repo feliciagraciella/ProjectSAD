@@ -179,13 +179,27 @@
             <p class="finance1">
                 <span class="iconify" data-icon="dashicons:money-alt" style="color: black; "></span>
             </p>
-            <p class="netprofit-text">
-                Net Profit
-            </p>
-
+            <h5 class="netprofit-text">Net&nbspProfit</h5>
+            <h5 class="netprofit-amt">Rp7.500.000</h5>
         </div>
+        <div class="plat-fee" style="left: 1000px; position: absolute; top: 180px;">
+            <p class="finance1">
+                <span class="iconify" data-icon="dashicons:money-alt" style="color: black; "></span>
+            </p>
+            <h5 class="fee-text">Platform&nbspFee</h5>
+            <h5 class="fee-amt">Rp1.500.000</h5>
+        </div>
+    </div>
 
-
+    <div class="restock">
+        <h3>Restock Soon</h3>
+        <div class="restock1" style="left: 1000px; position: absolute; top: 300px;">
+            <p class="warning1">
+                <span class="iconify" data-icon="ep:warning-filled" style="color: black;"></span>
+            </p>
+            <h5 class="stock-text">Product&nbspName</h5>
+            <h5 class="stock-qty">Stock:&nbsp3</h5>
+        </div>
 
 
     </div>
