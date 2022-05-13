@@ -11,11 +11,107 @@ body{
     color: black;
     font-weight: 700;
 }
+
+/* DATE TIME PICKER */
 .calendar{
     position: absolute;
-    top: 95px;
-    right: 9%;
+    left: 15%;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #FFFFFF;
+    padding:5px;
+    width: 150px;
+}
+
+.datetitle{
+    font-family: Poppins;
+    font-size:smaller;
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
     width: 10%;
 }
 
-/* DATE TIME PICKER */
+.platformtitle{
+    font-family: Poppins;
+    font-size: smaller;
+    position: absolute;
+    left: 45%;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10%;
+}
+
+.dropdown-show2{
+    position: absolute;
+    left: 60%;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 150px;
+    background-color: #FFFFFF;
+}
+
+.dropdown-show3{
+    position: absolute;
+    left: 15%;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 150px;
+    background-color: #FFFFFF;
+}
+
+.baris1 {
+    background-color: #f7f7f7;
+
+    height: 50px;
+    position: absolute;
+    top: 150px;
+    padding: 30px;
+    width: 1075px;
+    left: 70%;
+    transform: translateX(-70%);
+}
+
+.baris2 {
+    height: 50px;
+    position: absolute;
+    top: 220px;
+    padding: 30px;
+    width: 1075px;
+    left: 70%;
+    transform: translateX(-70%);
+}
+
+.baris3 {
+    height: 50px;
+    position: absolute;
+    top: 290px;
+    padding: 30px;
+    width: 1075px;
+    left: 70%;
+    transform: translateX(-70%);
+}
+
+.numericupdown {
+    position: absolute;
+    left: 60%;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #FFFFFF;
+}
+
+.buttonadd {
+    position: absolute;
+    right: 0;
+    margin-right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #FFFFFF;
+
+}
