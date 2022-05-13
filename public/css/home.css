@@ -20,7 +20,7 @@
     margin-top: 90px;
 }
 
-.report h5 {
+.report a {
     font-weight: bold;
     font-size: smaller;
     font-family: "Poppins";
@@ -30,7 +30,7 @@
     position: absolute;
 }
 
-.report h5:hover {
+.report a:hover {
     opacity: 0.7;
 }
 
@@ -116,7 +116,7 @@
     margin-top: 185px;
 }
 
-.all-products h5 {
+.all-products a {
     font-weight: bold;
     font-size: smaller;
     font-family: "Poppins";
@@ -126,7 +126,7 @@
     position: absolute;
 }
 
-.all-products h5:hover {
+.all-products a:hover {
     opacity: 0.7;
 }
 
@@ -135,7 +135,7 @@
     font-size: larger;
     font-family: "Poppins";
     color: black;
-    left: 1000px;
+    left: 1020px;
     top: 90px;
     position: absolute;
 }
@@ -189,7 +189,7 @@
     font-size: larger;
     font-family: "Poppins";
     color: black;
-    left: 1000px;
+    left: 1020px;
     top: 270px;
     position: absolute;
 }

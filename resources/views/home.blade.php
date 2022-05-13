@@ -41,8 +41,18 @@
         </a>
         <div class="sidenav-menu">
             <a href="/product">Products List</a>
+            <div class="product" style="position: absolute; left: 45px; top: 130px;">
+                <span class="iconify" data-icon="ant-design:unordered-list-outlined"
+                    style="color: #818181; "></span>
+            </div>
             <a href="/transaction">Transaction List</a>
+            <div class="transaction" style="position: absolute; left: 45px; top: 175px;">
+                <span class="iconify" data-icon="fa6-solid:money-bill-transfer" style="color: #818181;"></span>
+            </div>
             <a href="/report">Reports</a>
+            <div class="reports" style="position: absolute; left: 45px; top: 220px; ">
+                <span class=" iconify" data-icon="iconoir:reports" style="color: #818181;"></span>
+            </div>
         </div>
         <p class="copyright">© 2022 Copyright | Best Auto Care Solution</p>
     </div>
@@ -76,7 +86,7 @@
 
     <div class="report">
         <h3>Monthly Report</h3>
-        <h5>View All</h5>
+        <a href="/report">View All</a>
         <div class="column-report">
             <div class="rect-tokped">
 
@@ -115,7 +125,7 @@
 
     <div class="all-products">
         <h3>All Products</h3>
-        <h5>View All</h5>
+        <a href="/product">View All</a>
         <table class="table table-hover" style="width: 52%; position: absolute; left: 300px; top: 535px;">
             <thead>
                 <tr>
@@ -175,14 +185,14 @@
 
     <div class="finance">
         <h3>Finance</h3>
-        <div class="netprofit" style="left: 1000px; position: absolute; top: 125px;">
+        <div class="netprofit" style="left: 1020px; position: absolute; top: 125px;">
             <p class="finance1">
                 <span class="iconify" data-icon="dashicons:money-alt" style="color: black; "></span>
             </p>
             <h5 class="netprofit-text">Net&nbspProfit</h5>
             <h5 class="netprofit-amt">Rp7.500.000</h5>
         </div>
-        <div class="plat-fee" style="left: 1000px; position: absolute; top: 180px;">
+        <div class="plat-fee" style="left: 1020px; position: absolute; top: 180px;">
             <p class="finance1">
                 <span class="iconify" data-icon="dashicons:money-alt" style="color: black; "></span>
             </p>
@@ -193,7 +203,7 @@
 
     <div class="restock">
         <h3>Restock Soon</h3>
-        <div class="restock1" style="left: 1000px; position: absolute; top: 300px;">
+        <div class="restock1" style="left: 1020px; position: absolute; top: 300px;">
             <p class="warning1">
                 <span class="iconify" data-icon="ep:warning-filled" style="color: black;"></span>
             </p>
