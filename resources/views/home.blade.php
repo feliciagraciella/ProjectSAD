@@ -14,6 +14,7 @@
     <link rel="stylesheet" href={{ asset('css/home.css') }} type="text/css" />
     <link rel="stylesheet" href={{ asset('css/report.css') }} type="text/css" />
     <script type="text/javascript" src={{ asset('js/header.js') }}></script>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/bootstrap.css" />
@@ -72,8 +73,10 @@
         <hr class="topbar-hr">
     </div>
 
+
     <div class="report">
         <h3>Monthly Report</h3>
+        <h5>View All</h5>
         <div class="column-report">
             <div class="rect-tokped">
 
@@ -112,6 +115,7 @@
 
     <div class="all-products">
         <h3>All Products</h3>
+        <h5>View All</h5>
         <table class="table table-hover" style="width: 52%; position: absolute; left: 300px; top: 535px;">
             <thead>
                 <tr>
@@ -168,10 +172,28 @@
         </table>
     </div>
 
+
     <div class="finance">
         <h3>Finance</h3>
+        <div class="netprofit" style="left: 1000px; position: absolute; top: 125px;">
+            <p class="finance1">
+                <span class="iconify" data-icon="dashicons:money-alt" style="color: black; "></span>
+            </p>
+            <p class="netprofit-text">
+                Net Profit
+            </p>
+
+        </div>
+
+
+
 
     </div>
+
+
+
+
+
 
 </body>
 
