@@ -31,13 +31,6 @@
 }
 
 .report h5:hover {
-    font-weight: bold;
-    font-size: smaller;
-    font-family: "Poppins";
-    color: black;
-    margin-left: 880px;
-    top: 95px;
-    position: absolute;
     opacity: 0.7;
 }
 
@@ -48,7 +41,7 @@
 
 .rect-tokped {
     background: #f8f7f2;
-    width: 310px;
+    width: 318px;
     height: 150px;
     margin-left: 300px;
     border-radius: 12px;
@@ -56,7 +49,7 @@
 
 .rect-shopee {
     background: #f8f7f2;
-    width: 310px;
+    width: 318px;
     height: 150px;
     border-radius: 12px;
 }
@@ -129,18 +122,11 @@
     font-family: "Poppins";
     color: black;
     margin-left: 880px;
-    top: 95px;
+    top: 510px;
     position: absolute;
 }
 
-.report h5:hover {
-    font-weight: bold;
-    font-size: smaller;
-    font-family: "Poppins";
-    color: black;
-    margin-left: 880px;
-    top: 95px;
-    position: absolute;
+.all-products h5:hover {
     opacity: 0.7;
 }
 
@@ -151,5 +137,19 @@
     color: black;
     left: 1000px;
     top: 90px;
+    position: absolute;
+}
+
+.finance1 {
+    font-size: 25px;
+}
+
+.netprofit-text {
+    font-weight: bold;
+    font-size: smaller;
+    font-family: "Poppins";
+    color: black;
+    left: 50px;
+    top: 0;
     position: absolute;
 }

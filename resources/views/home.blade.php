@@ -115,6 +115,7 @@
 
     <div class="all-products">
         <h3>All Products</h3>
+        <h5>View All</h5>
         <table class="table table-hover" style="width: 52%; position: absolute; left: 300px; top: 535px;">
             <thead>
                 <tr>
@@ -174,8 +175,17 @@
 
     <div class="finance">
         <h3>Finance</h3>
-        <h5>View All</h5>
-        <span class="iconify" data-icon="dashicons:money-alt" style="color: black;"></span>
+        <div class="netprofit" style="left: 1000px; position: absolute; top: 125px;">
+            <p class="finance1">
+                <span class="iconify" data-icon="dashicons:money-alt" style="color: black; "></span>
+            </p>
+            <p class="netprofit-text">
+                Net Profit
+            </p>
+
+        </div>
+
+
 
 
     </div>
