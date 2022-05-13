@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class LihatDataModel extends Model
 {
-    function get_cust(){
-        return DB::table('CUSTOMER')->get();
+    function get_product(){
+        return DB::table('PRODUCT')->get();
     }
 
     function get_item(){
