@@ -175,14 +175,14 @@
 
     <div class="finance">
         <h3>Finance</h3>
-        <div class="netprofit" style="left: 1000px; position: absolute; top: 125px;">
+        <div class="netprofit" style="left: 1020px; position: absolute; top: 125px;">
             <p class="finance1">
                 <span class="iconify" data-icon="dashicons:money-alt" style="color: black; "></span>
             </p>
             <h5 class="netprofit-text">Net&nbspProfit</h5>
             <h5 class="netprofit-amt">Rp7.500.000</h5>
         </div>
-        <div class="plat-fee" style="left: 1000px; position: absolute; top: 180px;">
+        <div class="plat-fee" style="left: 1020px; position: absolute; top: 180px;">
             <p class="finance1">
                 <span class="iconify" data-icon="dashicons:money-alt" style="color: black; "></span>
             </p>
@@ -193,7 +193,7 @@
 
     <div class="restock">
         <h3>Restock Soon</h3>
-        <div class="restock1" style="left: 1000px; position: absolute; top: 300px;">
+        <div class="restock1" style="left: 1020px; position: absolute; top: 300px;">
             <p class="warning1">
                 <span class="iconify" data-icon="ep:warning-filled" style="color: black;"></span>
             </p>
