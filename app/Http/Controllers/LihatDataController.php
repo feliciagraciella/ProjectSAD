@@ -14,7 +14,7 @@ class LihatDataController extends Controller
     }
 
     public function report(){
-        $data = DB::table('PRODUCT')
+        $data = DB::table('PRODUCT');
     }
 
     public function view_data(Request $request){
