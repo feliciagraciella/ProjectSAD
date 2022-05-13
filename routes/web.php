@@ -71,3 +71,5 @@ Route::get('/inserttransaction', function () {
         // "title" => "About Us"
     ]);
 });
+
+Route::get('chart', 'ChartController@index');

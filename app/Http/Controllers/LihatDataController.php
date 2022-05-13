@@ -13,6 +13,10 @@ class LihatDataController extends Controller
         $this->LihatDataModel = new LihatDataModel();
     }
 
+    public function report(){
+        $data = DB::table('PRODUCT')
+    }
+
     public function view_data(Request $request){
         $nm = $request->nmtable;
 

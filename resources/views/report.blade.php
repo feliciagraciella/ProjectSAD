@@ -37,8 +37,13 @@
           <a class="dropdown-item" href="#">Shopee</a>
         </div>
     </div>
-
-         {{-- <!-- Chart's container -->
+    {{-- <div style="width: 80%;margin: 0 auto;">
+        {!! $chart->container() !!}
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js" charset="utf-8"></script>
+    {!! $chart->script() !!} --}}
+{{--
+         <!-- Chart's container -->
          <div id="chart" style="height: 300px;"></div>
          <!-- Charting library -->
          <script src="https://unpkg.com/echarts/dist/echarts.min.js"></script>
@@ -48,7 +53,7 @@
          <script>
            const chart = new Chartisan({
              el: '#chart',
-             url: "@chart('sample_chart')",
+             url: "{{ route('SampleChart') }}",
            });
          </script> --}}
 
