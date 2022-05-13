@@ -112,61 +112,66 @@
 
     <div class="all-products">
         <h3>All Products</h3>
+        <table class="table table-hover" style="width: 52%; position: absolute; left: 300px; top: 535px;">
+            <thead>
+                <tr>
+                    <th scope="col" style="font-weight: 600; text-align:center;">Photo</th>
+                    <th scope="col" style="font-weight: 600; text-align:center;">SKU</th>
+                    <th scope="col" style="font-weight: 600; text-align:center;">Name</th>
+                    <th scope="col" style="font-weight: 600; text-align:center;">Total Sale</th>
+                    <th scope="col" style="font-weight: 600; text-align:center;">Size</th>
+                    <th scope="col" style="font-weight: 600; text-align:center;">Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row" style="text-align:center;">1</th>
+                    <td style="text-align:center;">20220315</td>
+                    <td style="text-align:left;">Cleaner Bagus</td>
+                    <td style="text-align:center;">5</td>
+                    <td style="text-align:center;">200 ml</td>
+                    <td style="text-align:center;">Rp100.000</td>
+                </tr>
+                <tr>
+                    <th scope="row" style="text-align:center;">1</th>
+                    <td style="text-align:center;">20220315</td>
+                    <td style="text-align:left;">Cleaner Bagus</td>
+                    <td style="text-align:center;">5</td>
+                    <td style="text-align:center;">200 ml</td>
+                    <td style="text-align:center;">Rp100.000</td>
+                </tr>
+                <tr>
+                    <th scope="row" style="text-align:center;">1</th>
+                    <td style="text-align:center;">20220315</td>
+                    <td style="text-align:left;">Cleaner Bagus</td>
+                    <td style="text-align:center;">5</td>
+                    <td style="text-align:center;">200 ml</td>
+                    <td style="text-align:center;">Rp100.000</td>
+                </tr>
+                <tr>
+                    <th scope="row" style="text-align:center;">1</th>
+                    <td style="text-align:center;">20220315</td>
+                    <td style="text-align:left;">Cleaner Bagus</td>
+                    <td style="text-align:center;">5</td>
+                    <td style="text-align:center;">200 ml</td>
+                    <td style="text-align:center;">Rp100.000</td>
+                </tr>
+                <tr>
+                    <th scope="row" style="text-align:center;">1</th>
+                    <td style="text-align:center;">20220315</td>
+                    <td style="text-align:left;">Cleaner Bagus</td>
+                    <td style="text-align:center;">5</td>
+                    <td style="text-align:center;">200 ml</td>
+                    <td style="text-align:center;">Rp100.000</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-    <table class="table table-hover" style="width: 52%; position: absolute; left: 300px; top: 535px;">
-        <thead>
-            <tr>
-                <th scope="col" style="font-weight: 600; text-align:center;">Photo</th>
-                <th scope="col" style="font-weight: 600; text-align:center;">SKU</th>
-                <th scope="col" style="font-weight: 600; text-align:center;">Name</th>
-                <th scope="col" style="font-weight: 600; text-align:center;">Total Sale</th>
-                <th scope="col" style="font-weight: 600; text-align:center;">Size</th>
-                <th scope="col" style="font-weight: 600; text-align:center;">Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row" style="text-align:center;">1</th>
-                <td style="text-align:center;">20220315</td>
-                <td style="text-align:left;">Cleaner Bagus</td>
-                <td style="text-align:center;">5</td>
-                <td style="text-align:center;">200 ml</td>
-                <td style="text-align:center;">Rp100.000</td>
-            </tr>
-            <tr>
-                <th scope="row" style="text-align:center;">1</th>
-                <td style="text-align:center;">20220315</td>
-                <td style="text-align:left;">Cleaner Bagus</td>
-                <td style="text-align:center;">5</td>
-                <td style="text-align:center;">200 ml</td>
-                <td style="text-align:center;">Rp100.000</td>
-            </tr>
-            <tr>
-                <th scope="row" style="text-align:center;">1</th>
-                <td style="text-align:center;">20220315</td>
-                <td style="text-align:left;">Cleaner Bagus</td>
-                <td style="text-align:center;">5</td>
-                <td style="text-align:center;">200 ml</td>
-                <td style="text-align:center;">Rp100.000</td>
-            </tr>
-            <tr>
-                <th scope="row" style="text-align:center;">1</th>
-                <td style="text-align:center;">20220315</td>
-                <td style="text-align:left;">Cleaner Bagus</td>
-                <td style="text-align:center;">5</td>
-                <td style="text-align:center;">200 ml</td>
-                <td style="text-align:center;">Rp100.000</td>
-            </tr>
-            <tr>
-                <th scope="row" style="text-align:center;">1</th>
-                <td style="text-align:center;">20220315</td>
-                <td style="text-align:left;">Cleaner Bagus</td>
-                <td style="text-align:center;">5</td>
-                <td style="text-align:center;">200 ml</td>
-                <td style="text-align:center;">Rp100.000</td>
-            </tr>
-        </tbody>
-    </table>
+
+    <div class="finance">
+        <h3>Finance</h3>
+
+    </div>
 
 </body>
 
