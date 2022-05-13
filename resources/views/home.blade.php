@@ -86,7 +86,7 @@
 
     <div class="report">
         <h3>Monthly Report</h3>
-        <h5>View All</h5>
+        <a href="/report">View All</a>
         <div class="column-report">
             <div class="rect-tokped">
 
@@ -125,7 +125,7 @@
 
     <div class="all-products">
         <h3>All Products</h3>
-        <h5>View All</h5>
+        <a href="/product">View All</a>
         <table class="table table-hover" style="width: 52%; position: absolute; left: 300px; top: 535px;">
             <thead>
                 <tr>
