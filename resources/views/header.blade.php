@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" href={{ asset('css/header.css') }} type="text/css" />
     <script type="text/javascript" src={{ asset('js/header.js') }}></script>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/bootstrap.css" />
@@ -49,8 +50,18 @@
         </a>
         <div class="sidenav-menu">
             <a href="/product">Products List</a>
+            <div class="product" style="position: absolute; left: 45px; top: 130px;">
+                <span class="iconify" data-icon="ant-design:unordered-list-outlined"
+                    style="color: #818181; "></span>
+            </div>
             <a href="/transaction">Transaction List</a>
+            <div class="transaction" style="position: absolute; left: 45px; top: 175px;">
+                <span class="iconify" data-icon="fa6-solid:money-bill-transfer" style="color: #818181;"></span>
+            </div>
             <a href="/report">Reports</a>
+            <div class="reports" style="position: absolute; left: 45px; top: 220px; ">
+                <span class=" iconify" data-icon="iconoir:reports" style="color: #818181;"></span>
+            </div>
         </div>
         <p class="copyright">© 2022 Copyright | Best Auto Care Solution</p>
         {{-- <div class="socials"> --}}
