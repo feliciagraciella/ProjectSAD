@@ -1,108 +1,102 @@
+@include('header')
 <!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href={{ asset('css/product.css') }} type="text/css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 
-    <link rel="stylesheet" href={{ asset('css/header.css') }} type="text/css" />
-    <script type="text/javascript" src={{ asset('js/header.js') }}></script>
 
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/bootstrap.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
-
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-    </script>
 </head>
 
-
 <body>
-    <button id="btnScrollTop" onclick="scrollToTop()">
-        <i class="material-icons">keyboard_double_arrow_up</i>
-        {{-- <span class="material-icons-outlined">
-            keyboard_arrow_up
-        </span> --}}
-    </button>
+    <h5 class=title>Insert Transaction</h5>
+    <div class="baris1">
 
-    {{-- <div class="sidemenu-container">
-        <img class="logo" src="images/logo/logo.png" style="height: 150px" alt="Logo" />
-        <a> Products List </a>
-    </div>
-
-    </div> --}}
-
-    <!-- Side navigation -->
-    <div class="sidenav">
-        <img class="logo" src={{ asset('images/logo.png') }} style="height: 150px" alt="Logo" />
-        <a href="#">Products List</a>
-        <a href="#">Transaction List</a>
-        <a href="#">Reports</a>
-
-        <div class="socials">
-            <i class="fab fa-instagram me-3"></i>
-            <img class="icons" src={{ asset('images/shopee.png') }}>
-            <img class="icons" src={{ asset('images/tokped.png') }}>
-            {{-- <i class="fas fa-envelope me-3"></i>
-            <i class="fab fa-whatsapp me-3"></i> --}}
-        </div>
-
-        <p class="copyright">© 2022 Copyright | Best Auto Care Solution</p>
-    </div>
-
-    {{-- <div class="topnav">
-        <nav class="navbar navbar-custom navbar-expand-md bg-transparent justify-content-center">
-            <p id="date" style="text-align: center"></p>
-            <a href="/" class="navbar-brand d-flex w-50 mr-auto"></a>
-
-            <i class="fas fa-user" style="color: #e5e5e5;"></i>
+        <div class="dropdown-show2">
+            <a class="btn btn-sm dropdown-toggle dropdown-toggle-split" href="#" style="text-transform:unset !important; width: 150px; " role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Sort By
             </a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                <li>
-                    <a style="text-align: left; color: black;" class="dropdown-item" href="/sign-in">Sign In</a>
-                </li>
-                <li>
-                    <a style="text-align: left; color: black;" class="dropdown-item" href="/sign-up">Sign Up</a>
-                </li>
-            </ul>
 
-        </nav>
-    </div> --}}
-
-    <div class="topbar">
-        <div class="date" style="text-align: center">
-            <script>
-                date = new Date().toLocaleDateString();
-                document.write(date);
-            </script>
-
-            <a style="padding-right: 18%; float: right; margin-top: 5px"
-                class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuLink"
-                role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-                <i class="fas fa-user" style="color: black">
-                    <p style="font-family: Poppins; margin-left: 5px; float: right;"> A001 </p>
-                </i>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                <li>
-                    <a style="text-align: left; color: black;" class="dropdown-item" href="/login">Log Out</a>
-                </li>
-            </ul>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" style="font-size: smaller;" href="#">Price</a>
+              <a class="dropdown-item" style="font-size: smaller;" href="#">Qty</a>
+              <a class="dropdown-item" style="font-size: smaller;" href="#">Size</a>
+            </div>
         </div>
+        <a class="viewcat" href="#">View Category</a>
     </div>
-    <hr>
 
+    <div class=table>
+        <table class="table" style="width: 70%; position: absolute; left: 320px; top: 250px;">
+            <thead>
+              <tr>
+                <th scope="col" style="font-weight: 700; text-align:left;">Transaction ID</th>
+                <th scope="col" style="font-weight: 700; text-align:left;">Date</th>
+                <th scope="col" style="font-weight: 700; text-align:left;">Platform</th>
+                <th scope="col" style="font-weight: 700; text-align:left;">Product</th>
+                <th scope="col" style="font-weight: 700; text-align:left;">Quantity</th>
+                <th scope="col" style="font-weight: 700; text-align:left;"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight: 600; text-align:left;">T20220315</td>
+                <td style="font-weight: 600; text-align:left;">20220315</td>
+                <td style="font-weight: 600; text-align:left;">Shopee</td>
+                <td style="font-weight: 600; text-align:left;">Cleaner 1</td>
+                <td style="font-weight: 600; text-align:left;">2</td>
+                <td style="font-weight: 600; text-align:left; width: 10%;"><span style="text-align:center;" class="close">&#10005;</span></td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; text-align:left;">T20220315</td>
+                <td style="font-weight: 600; text-align:left;">20220315</td>
+                <td style="font-weight: 600; text-align:left;">Shopee</td>
+                <td style="font-weight: 600; text-align:left;">Cleaner 2</td>
+                <td style="font-weight: 600; text-align:left;">2</td>
+                <td style="font-weight: 600; text-align:left; width: 10%;"><span style="text-align:center;" class="close">&#10005;</span></td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; text-align:left;">T20220315</td>
+                <td style="font-weight: 600; text-align:left;">20220315</td>
+                <td style="font-weight: 600; text-align:left;">Shopee</td>
+                <td style="font-weight: 600; text-align:left;">Cleaner 2</td>
+                <td style="font-weight: 600; text-align:left;">2</td>
+                <td style="font-weight: 600; text-align:left; width: 10%;"><span style="text-align:center;" class="close">&#10005;</span></td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; text-align:left;">T20220315</td>
+                <td style="font-weight: 600; text-align:left;">20220315</td>
+                <td style="font-weight: 600; text-align:left;">Shopee</td>
+                <td style="font-weight: 600; text-align:left;">Cleaner 2</td>
+                <td style="font-weight: 600; text-align:left;">2</td>
+                <td style="font-weight: 600; text-align:left; width: 10%;"><span style="text-align:center;" class="close">&#10005;</span></td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; text-align:left;">T20220315</td>
+                <td style="font-weight: 600; text-align:left;">20220315</td>
+                <td style="font-weight: 600; text-align:left;">Shopee</td>
+                <td style="font-weight: 600; text-align:left;">Cleaner 2</td>
+                <td style="font-weight: 600; text-align:left;">2</td>
+                <td style="font-weight: 600; text-align:left; width: 10%;"><span style="text-align:center;" class="close">&#10005;</span></td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; text-align:left;">T20220315</td>
+                <td style="font-weight: 600; text-align:left;">20220315</td>
+                <td style="font-weight: 600; text-align:left;">Shopee</td>
+                <td style="font-weight: 600; text-align:left;">Cleaner 2</td>
+                <td style="font-weight: 600; text-align:left;">2</td>
+                <td style="font-weight: 600; text-align:left; width: 10%;"><span style="text-align:center;" class="close">&#10005;</span></td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
 
+    {{-- <div>class="plus" --}}
 </body>
 
 </html>
