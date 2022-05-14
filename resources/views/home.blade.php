@@ -57,7 +57,7 @@
         <p class="copyright">© 2022 Copyright | Best Auto Care Solution</p>
     </div>
 
-    <div class="topbar">
+    <div class="topbar" style="background-color: grey;">
         <div class="date" style="text-align: center">
             <script>
                 date = new Date().toLocaleDateString();
