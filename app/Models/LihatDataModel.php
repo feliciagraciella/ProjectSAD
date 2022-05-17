@@ -7,19 +7,23 @@ use Illuminate\Database\Eloquent\Model;
 
 class LihatDataModel extends Model
 {
+    function get_admin(){
+        return DB::table('ADMIN')->get();
+    }
+
+    function get_category(){
+        return DB::table('CATEGORY')->get();
+    }
+
+    function get_detail(){
+        return DB::table('DETAIL_TRANSACTION')->get();
+    }
+
+    function get_transaction(){
+        return DB::table('TRANSACTION')->get();
+    }
+
     function get_product(){
         return DB::table('PRODUCT')->get();
-    }
-
-    function get_item(){
-        return DB::table('ITEM')->get();
-    }
-
-    function get_transdet(){
-        return DB::table('TRANS_DETAIL')->get();
-    }
-
-    function get_transhead(){
-        return DB::table('TRANS_HEADER')->get();
     }
 }

@@ -86,7 +86,19 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+            @foreach ($data as $i)
+                <tr>
+                    <th scope="row" style="text-align:center;">1</th>
+                    <td style="text-align:center;">{{$i->SKU}}</td>
+                    <td style="text-align:left;">{{$i->SKU}}</td>
+                    <td style="text-align:center;">{{$i->SKU}}</td>
+                    <td style="text-align:center;">{{$i->SKU}}</td>
+                    <td style="text-align:center;">Rp100.000</td>
+                    <td style="text-align:center;">Rp500.000</td>
+                </tr>
+            @endforeach
+
+          {{-- <tr>
             <th scope="row" style="text-align:center;">1</th>
             <td style="text-align:center;">20220315</td>
             <td style="text-align:left;">Cleaner Bagus</td>
@@ -121,16 +133,7 @@
             <td style="text-align:center;">200 ml</td>
             <td style="text-align:center;">Rp100.000</td>
             <td style="text-align:center;">Rp500.000</td>
-          </tr>
-          <tr>
-            <th scope="row" style="text-align:center;">1</th>
-            <td style="text-align:center;">20220315</td>
-            <td style="text-align:left;">Cleaner Bagus</td>
-            <td style="text-align:center;">5</td>
-            <td style="text-align:center;">200 ml</td>
-            <td style="text-align:center;">Rp100.000</td>
-            <td style="text-align:center;">Rp500.000</td>
-          </tr>
+          </tr> --}}
         </tbody>
       </table>
 </body>

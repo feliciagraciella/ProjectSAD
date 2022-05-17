@@ -37,11 +37,11 @@ Route::get('/home', function () {
     ]);
 });
 
-Route::get('/report', function () {
-    return view('report', [
-        // "title" => "About Us"
-    ]);
-});
+Route::get("/report", [LihatDataController::class, "report"]);
+// Route::get('/report', function () {
+//     return view('report', [
+//     ]);
+// });
 
 Route::get('/report2', function () {
     return view('report2', [
