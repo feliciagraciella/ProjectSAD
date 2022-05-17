@@ -29,61 +29,9 @@
     </script>
 </head>
 
+@include('header')
 
 <body>
-    <button id="btnScrollTop" onclick="scrollToTop()">
-        <i class="material-icons">keyboard_double_arrow_up</i>
-    </button>
-
-    <div class="sidenav">
-        <a href="/home">
-            <img class="logo" src={{ asset('images/logo.png') }} style="height: 130px;" alt="Logo" />
-        </a>
-        <div class="sidenav-menu">
-            <a href="/product">Products List</a>
-            <div class="product" style="position: absolute; left: 45px; top: 133px;">
-                <span class="iconify" data-icon="ant-design:unordered-list-outlined"
-                    style="color: #818181; "></span>
-            </div>
-            <a href="/transaction">Transactions List</a>
-            <div class="transaction" style="position: absolute; left: 45px; top: 175px;">
-                <span class="iconify" data-icon="fa6-solid:money-bill-transfer" style="color: #818181;"></span>
-            </div>
-            <a href="/report">Reports</a>
-            <div class="reports" style="position: absolute; left: 45px; top: 215px; ">
-                <span class=" iconify" data-icon="iconoir:reports" style="color: #818181;"></span>
-            </div>
-        </div>
-        <p class="copyright">© 2022 Copyright | Best Auto Care Solution</p>
-    </div>
-
-    <div class="topbar" style="background-color: grey;">
-        <div class="date" style="text-align: center">
-            <script>
-                date = new Date().toLocaleDateString();
-                document.write(date);
-            </script>
-        </div>
-        <div class="profile-id">
-            <a style="padding-right: 18%; float: right; margin-top: 5px"
-                class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuLink"
-                role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-                <i class="fas fa-user" style="color: black; position: fixed;">
-                    <p style="font-family: Poppins; margin-left: 5px; float: right;"> A001 </p>
-                </i>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink"
-                style="position: fixed;">
-                <li>
-                    <a style="text-align: left; color: black; position: fixed; right: -150px;" class="dropdown-item"
-                        href="/login">Log Out</a>
-                </li>
-            </ul>
-        </div>
-        <hr class="topbar-hr">
-    </div>
-
-
     <div class="report">
         <h3>Monthly Report</h3>
         <a href="/report">View All</a>
