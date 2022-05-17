@@ -27,24 +27,19 @@ body{
     height: 50px;
     position: absolute;
     top: 150px;
-    padding: 30px;
+    padding: 13px 0px 0px 30px;
     width: 1075px;
     left: 70%;
     transform: translateX(-70%);
-    z-index: 10;
 }
 
-.viewcat{
+.baris2 {
+    /* background-color: #f7f7f7; */
+    /* height: 50px; */
     position: absolute;
-    left: 87%;
-    top: 27%;
-    color: black;
-}
-
-.viewcat:hover{
-    position: absolute;
-    left: 87%;
-    top: 27%;
-    color: black;
-    text-decoration: underline;
+    top: 210px;
+    padding: 13px 0px 0px 30px;
+    /* width: 1075px; */
+    left: 24%;
+    transform: translateX(-70%);
 }
