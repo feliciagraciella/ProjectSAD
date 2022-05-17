@@ -115,3 +115,9 @@ body{
     background-color: #FFFFFF;
 
 }
+
+.totaltransaction {
+    position: absolute;
+    right: 0;
+    top: 70%;
+}

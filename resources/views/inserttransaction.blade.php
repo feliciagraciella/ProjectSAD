@@ -21,11 +21,11 @@
 
         <h4 class="platformtitle">Platform</h4>
         <div class="dropdown-show2">
-            <a class="btn btn-sm dropdown-toggle dropdown-toggle-split" href="#" style="text-transform:unset !important; width: 150px; " role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="btn btn-sm dropdown-toggle dropdown-toggle-split" href="#" style="text-transform:unset !important; width: 150px;" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Select Platform
             </a>
 
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <div class="dropdown-menu" style="z-index: 98" aria-labelledby="dropdownMenuLink">
               <a class="dropdown-item" style="font-size: smaller;" href="#">All</a>
               <a class="dropdown-item" style="font-size: smaller;" href="#">Tokopedia</a>
               <a class="dropdown-item" style="font-size: smaller;" href="#">Shopee</a>
@@ -51,13 +51,11 @@
         <div class="numericupdown">
             <input class="form-control btn btn-sm d-inline text-center me-3 txtJumlah" name="inputQuantity" min=0 type="number" value="0" style="width: 150px;">
         </div>
-
-
     </div>
 
     <div class="baris3">
         <div class="buttonadd">
-            <button type="button" class="btn btn-secondary btn-sm" style="text-transform: unset !important; width: 150px;">Add</button>
+            <button type="button" class="btn btn-secondary btn-sm" style="text-transform: unset !important; width: 150px; ">Add</button>
         </div>
     </div>
 
@@ -106,25 +104,15 @@
                 <td style="font-weight: 600; text-align:left;">2</td>
                 <td style="font-weight: 600; text-align:left; width: 10%;"><span style="text-align:center;" class="close">&#10005;</span></td>
               </tr>
-              <tr>
-                <td style="font-weight: 600; text-align:left;">T20220315</td>
-                <td style="font-weight: 600; text-align:left;">20220315</td>
-                <td style="font-weight: 600; text-align:left;">Shopee</td>
-                <td style="font-weight: 600; text-align:left;">Cleaner 2</td>
-                <td style="font-weight: 600; text-align:left;">2</td>
-                <td style="font-weight: 600; text-align:left; width: 10%;"><span style="text-align:center;" class="close">&#10005;</span></td>
-              </tr>
-              <tr>
-                <td style="font-weight: 600; text-align:left;">T20220315</td>
-                <td style="font-weight: 600; text-align:left;">20220315</td>
-                <td style="font-weight: 600; text-align:left;">Shopee</td>
-                <td style="font-weight: 600; text-align:left;">Cleaner 2</td>
-                <td style="font-weight: 600; text-align:left;">2</td>
-                <td style="font-weight: 600; text-align:left; width: 10%;"><span style="text-align:center;" class="close">&#10005;</span></td>
-              </tr>
             </tbody>
         </table>
     </div>
+
+    <div class="totaltransaction">
+        <h4 class="totaltrans">Total Transaction</h4>
+        <input type="text" class="form-control" style="text-transform:unset !important; width: 150px; " placeholder="First name">
+    </div>
+
 </body>
 
 </html>
