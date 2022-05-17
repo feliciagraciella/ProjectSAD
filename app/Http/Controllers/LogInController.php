@@ -33,7 +33,8 @@ class LogInController extends Controller
                 $request->session()->put('admin', $obj['ID_ADMIN']);
 
                 // //titip buat id pembeli
-                // $idPembeli = $obj['ID_PEMBELI'];
+                $idAdmin = $obj['ID_ADMIN'];
+                $request->session()->put('idAdmin', $obj['ID_ADMIN']);
                 // $request->session()->put('idPembeli', $obj['ID_PEMBELI']);
 
                 // if (!is_null($orders)) {

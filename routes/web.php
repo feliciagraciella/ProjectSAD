@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LihatDataController;
+use App\Http\Controllers\LogInController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -73,3 +74,7 @@ Route::get('/inserttransaction', function () {
 });
 
 Route::get('chart', 'ChartController@index');
+
+// Route::get('/login', [LogInController::class, 'index']);
+Route::post('/login', [LogInController::class, 'authenticate']);
+Route::post('/home', [LogInController::class, 'authenticate']);
