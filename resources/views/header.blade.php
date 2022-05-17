@@ -94,7 +94,7 @@
         </nav>
     </div> --}}
 
-    <div class="topbar" style="background-color: white; overflow: hidden; width: 100%; height: 50px; position:fixed; z-index:99; top: 0; left:250px; ">
+    <div class="topbar" style="background-color: white; overflow: hidden; width: 100%; height: 52px; position:fixed; z-index:99; top: 0; left:250px; ">
         <div class="date" style="text-align: center">
             <script>
                 date = new Date().toLocaleDateString();
