@@ -50,7 +50,7 @@
         </a>
         <div class="sidenav-menu">
             <a href="/product">Products List</a>
-            <div class="product" style="position: absolute; left: 45px; top: 130px;">
+            <div class="product" style="position: absolute; left: 45px; top: 133px;">
                 <span class="iconify" data-icon="ant-design:unordered-list-outlined"
                     style="color: #818181; "></span>
             </div>
@@ -59,7 +59,7 @@
                 <span class="iconify" data-icon="fa6-solid:money-bill-transfer" style="color: #818181;"></span>
             </div>
             <a href="/report">Reports</a>
-            <div class="reports" style="position: absolute; left: 45px; top: 220px; ">
+            <div class="reports" style="position: absolute; left: 45px; top: 215px; ">
                 <span class=" iconify" data-icon="iconoir:reports" style="color: #818181;"></span>
             </div>
         </div>
