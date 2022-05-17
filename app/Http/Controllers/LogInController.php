@@ -19,12 +19,12 @@ class LogInController extends Controller
     public function authenticate(Request $request)
     {
         $request->validate([
-            'email' => ['required', 'email:dns'],
+            'admin' => ['required'],
             'password' => ['required'],
         ]);
-        $email = $request->email;
+        $admin = $request->admin;
         $password = $request->password;
-        $userdata = DB::table('ADMIN')->where('ID_ADMIN', $email)->first();
+        $userdata = DB::table('ADMIN')->where('ID_ADMIN', $admin)->first();
         if (is_null($userdata)) {
             return back()->with('LoginError', 'Log In Failed');
         } else {
@@ -55,7 +55,7 @@ class LogInController extends Controller
                 //     );
                 // }
             } else {
-                return back()->with('LoginError', 'Sign In Failed');
+                return back()->with('LoginError', 'Log In Failed');
             }
         }
     }

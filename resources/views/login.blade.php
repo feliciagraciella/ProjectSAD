@@ -39,11 +39,11 @@
                     @csrf
                     <div class="container">
                         <div class="containercontroller">
-                            <div class="email">
+                            <div class="admin">
                                 <h2 style="font-size: small;">Admin ID :</h2>
-                                <input type="text" name="admin" class="@error('lastname') is-invalid @enderror" required
-                                    placeholder="Admin ID" />
-                                @error('email')
+                                <input type="text" name="admin" class="@error('admin') is-invalid @enderror" autofocus
+                                    required placeholder="Admin ID" />
+                                @error('admin')
                                     <div class="invalid-feedback" style="padding-bottom : 10px">
                                         {{ $message }}
                                     </div>
@@ -57,7 +57,7 @@
                     </div>
                     <div class="container2">
                         <div class="buttonmasuk">
-                            <button>Sign In</button>
+                            <button>Log In</button>
                         </div>
                     </div>
                 </form>
