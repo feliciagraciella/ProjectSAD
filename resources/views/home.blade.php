@@ -45,7 +45,7 @@
                 <span class="iconify" data-icon="ant-design:unordered-list-outlined"
                     style="color: #818181; "></span>
             </div>
-            <a href="/transaction">Transaction List</a>
+            <a href="/transaction">Transactions List</a>
             <div class="transaction" style="position: absolute; left: 45px; top: 175px;">
                 <span class="iconify" data-icon="fa6-solid:money-bill-transfer" style="color: #818181;"></span>
             </div>
