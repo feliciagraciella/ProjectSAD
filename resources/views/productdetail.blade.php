@@ -23,11 +23,19 @@
 
 <body>
     <h5 class=title>Product Detail</h5>
-    <div class="baris1">SKU
-        
-    </div>
+    <div class="baris1">SKU</div>
 
     <div class="baris2">Name</div>
+
+    <div class="baris3">Category</div>
+
+    <div class="baris4-1">Price</div>
+
+    <div class="baris4-2">Qty</div>
+
+    <div class="baris5">Size</div>
+
+    <div class="baris6">Description</div>
 </body>
 
 </html>

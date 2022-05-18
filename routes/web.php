@@ -61,6 +61,12 @@ Route::get('/productdetail', function () {
     ]);
 });
 
+Route::get('/insertproduct', function () {
+    return view('insertproduct', [
+        // "title" => "About Us"
+    ]);
+});
+
 Route::get('/transactionlist', function () {
     return view('transactionlist', [
         // "title" => "About Us"

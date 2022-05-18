@@ -1,0 +1,59 @@
+body{
+    font-family: Poppins;
+    margin-left: 1000px;
+    margin-top: 200px;
+}
+
+.title{
+    position: absolute;
+    left: 318px;
+    top: 96px;
+    color: black;
+    font-weight: 700;
+}
+
+.dropdown-show2{
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 150px;
+    background-color: #FFFFFF;
+    letter-spacing: 1px;
+}
+
+.form-insert{
+    position: absolute;
+    left: 318px;
+    top: 150px;
+}
+
+input{
+    position:sticky;
+    left: 32%;
+    width: 60%;
+    border: none;
+    border-radius: 8px;
+    height: 35px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 5px 15px;
+}
+
+.barisganjil{
+    background-color: #f7f7f7;
+    width: 500px;
+    height:55px;
+    padding: 8px 0px 0px 30px;
+}
+
+.barisgenap{
+    height: 50px;
+    padding: 8px 0px 0px 30px;
+}
+
+.button{
+    margin-top: 8%;
+    border-radius: 8px;
+    width: 40%;
+    margin-left: 5%;
+    border: 1px solid #DEE1E6;
+}
