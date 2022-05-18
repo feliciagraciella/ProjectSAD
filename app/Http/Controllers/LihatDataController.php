@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 // use App\Models\LihatDataModel;
 // use App\Models\Report;
-use App\Models\ReportModel;
+use app\Models\ReportModel;
 use DB;
 
 class LihatDataController extends Controller
@@ -18,8 +18,8 @@ class LihatDataController extends Controller
 
     public function report(){
         $dreport = "select * from most_popular_all";
-        // $data = Report::select($dreport);
-        $data = Report::query();
+        $data = Report::select($dreport);
+        // $data = Report::query($dreport);
 
         return view("report", [
             "data" => $data
