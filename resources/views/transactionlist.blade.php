@@ -29,17 +29,19 @@
                 <th scope="col" style="font-weight: 700; text-align:left;">Total/day</th>
               </tr>
             </thead>
-            @foreach ($trans as $t)
+
             <tbody>
-              <tr>
-                <td style="font-weight: 600; text-align:left;">{{ $t -> ID_TRANSACTION }}</td>
-                <td style="font-weight: 600; text-align:left;">{{ $t -> ID_TRANSACTION }}</td>
-                <td style="font-weight: 600; text-align:left;">{{ $t -> ID_TRANSACTION }}</td>
-                <td style="font-weight: 600; text-align:left;">{{ $t -> ID_TRANSACTION }}</td>
-                <td style="font-weight: 600; text-align:left;">{{ $t -> ID_TRANSACTION }}</td>
-              </tr>
+                @foreach ($trans as $t)
+                <tr>
+                    <td style="font-weight: 600; text-align:left;">{{ $t -> ID_TRANSACTION }}</td>
+                    <td style="font-weight: 600; text-align:left;">{{ $t -> ID_TRANSACTION }}</td>
+                    <td style="font-weight: 600; text-align:left;">{{ $t -> ID_TRANSACTION }}</td>
+                    <td style="font-weight: 600; text-align:left;">{{ $t -> ID_TRANSACTION }}</td>
+                    <td style="font-weight: 600; text-align:left;">{{ $t -> ID_TRANSACTION }}</td>
+                </tr>
+                @endforeach
             </tbody>
-            @endforeach
+
         </table>
     </div>
 
