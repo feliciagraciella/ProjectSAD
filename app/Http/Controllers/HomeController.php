@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $adminID = session('idAdmin')
+        // $adminID = session('idAdmin')
         // $admin = DB::table('ADMIN')
         //     ->where('ID_PEMBELI', session('idAdmin'));
     }
