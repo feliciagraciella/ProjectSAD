@@ -54,8 +54,9 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach($product as $p)
                 <tr>
-                    <td style="font-weight: 600; text-align:left;">T20220315</td>
+                    <td style="font-weight: 600; text-align:left;">{{$p->SKU}}</td>
                     <td style="font-weight: 600; text-align:left;">20220315</td>
                     <td style="font-weight: 600; text-align:left;">Shopee</td>
                     <td style="font-weight: 600; text-align:left;">Cleaner 1</td>
@@ -63,6 +64,7 @@
                     <td style="font-weight: 600; text-align:left; width: 10%;"><span style="text-align:center;"
                             class="close">&#10005;</span></td>
                 </tr>
+                @endforeach
                 <tr>
                     <td style="font-weight: 600; text-align:left;">T20220315</td>
                     <td style="font-weight: 600; text-align:left;">20220315</td>

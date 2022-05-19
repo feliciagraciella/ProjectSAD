@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\LihatDataController;
 use App\Http\Controllers\LogInController;
+use App\Http\Controllers\ProductListController;
+use App\Models\ProductListModel;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -49,11 +51,13 @@ Route::get('/report2', function () {
     ]);
 });
 
-Route::get('/product', function () {
-    return view('product', [
-        // "title" => "About Us"
-    ]);
-});
+// Route::get('/product', function () {
+//     return view('product', [
+//         // "title" => "About Us"
+//     ]);
+// });
+
+Route::get("/product", [ProductListController::class, "productlist"]);
 
 Route::get('/productdetail', function () {
     return view('productdetail', [
