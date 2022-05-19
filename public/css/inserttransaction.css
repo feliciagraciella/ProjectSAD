@@ -113,11 +113,66 @@ body{
     top: 50%;
     transform: translateY(-50%);
     background-color: #FFFFFF;
-
 }
 
 .totaltransaction {
+    height: 50px;
+    position: absolute;
+    top: 700px;
+    padding: 30px;
+    width: 1075px;
+    left: 70%;
+    transform: translateX(-70%);
+}
+
+.totaltrans {
+    position: absolute;
+    right: 25%;
+    width: 100px;
+    font-family: Poppins;
+    font-size: smaller;
+    font-weight: 700;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.inputtotaltrans {
     position: absolute;
     right: 0;
-    top: 70%;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 30px;
+}
+
+.totalplatfee {
+    height: 50px;
+    position: absolute;
+    top: 750px;
+    padding: 30px;
+    width: 1075px;
+    left: 70%;
+    transform: translateX(-70%);
+}
+
+.totalfee {
+    position: absolute;
+    right: 25%;
+    width: 100px;
+    font-family: Poppins;
+    font-size: smaller;
+    font-weight: 700;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.inputtotalfee {
+    position: absolute;
+    right: 0;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 30px;
 }

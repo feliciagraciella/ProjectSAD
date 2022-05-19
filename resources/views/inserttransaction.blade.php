@@ -78,7 +78,7 @@
                 <td style="font-weight: 600; text-align:left;">Shopee</td>
                 <td style="font-weight: 600; text-align:left;">Cleaner 1</td>
                 <td style="font-weight: 600; text-align:left;">2</td>
-                <td style="font-weight: 600; text-align:left; width: 10%;"><span style="text-align:center;" class="close">&#10005;</span></td>
+                <td style="font-weight: 600; text-align:left; width: 10%;"><span style="text-align:center; margin-right:30px;" class="close">&#10005;</span></td>
               </tr>
               <tr>
                 <td style="font-weight: 600; text-align:left;">T20220315</td>
@@ -86,7 +86,7 @@
                 <td style="font-weight: 600; text-align:left;">Shopee</td>
                 <td style="font-weight: 600; text-align:left;">Cleaner 2</td>
                 <td style="font-weight: 600; text-align:left;">2</td>
-                <td style="font-weight: 600; text-align:left; width: 10%;"><span style="text-align:center;" class="close">&#10005;</span></td>
+                <td style="font-weight: 600; text-align:left; width: 10%;"><span style="text-align:center; margin-right:30px;" class="close">&#10005;</span></td>
               </tr>
               <tr>
                 <td style="font-weight: 600; text-align:left;">T20220315</td>
@@ -94,7 +94,7 @@
                 <td style="font-weight: 600; text-align:left;">Shopee</td>
                 <td style="font-weight: 600; text-align:left;">Cleaner 2</td>
                 <td style="font-weight: 600; text-align:left;">2</td>
-                <td style="font-weight: 600; text-align:left; width: 10%;"><span style="text-align:center;" class="close">&#10005;</span></td>
+                <td style="font-weight: 600; text-align:left; width: 10%;"><span style="text-align:center; margin-right:30px;" class="close">&#10005;</span></td>
               </tr>
               <tr>
                 <td style="font-weight: 600; text-align:left;">T20220315</td>
@@ -102,15 +102,33 @@
                 <td style="font-weight: 600; text-align:left;">Shopee</td>
                 <td style="font-weight: 600; text-align:left;">Cleaner 2</td>
                 <td style="font-weight: 600; text-align:left;">2</td>
-                <td style="font-weight: 600; text-align:left; width: 10%;"><span style="text-align:center;" class="close">&#10005;</span></td>
+                <td style="font-weight: 600; text-align:left; width: 10%;"><span style="text-align:center; margin-right:30px;" class="close">&#10005;</span></td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; text-align:left;">T20220315</td>
+                <td style="font-weight: 600; text-align:left;">20220315</td>
+                <td style="font-weight: 600; text-align:left;">Shopee</td>
+                <td style="font-weight: 600; text-align:left;">Cleaner 2</td>
+                <td style="font-weight: 600; text-align:left;">2</td>
+                <td style="font-weight: 600; text-align:left; width: 10%;"><span style="text-align:center; margin-right:30px;" class="close">&#10005;</span></td>
               </tr>
             </tbody>
         </table>
     </div>
 
     <div class="totaltransaction">
-        <h4 class="totaltrans">Total Transaction</h4>
-        <input type="text" class="form-control" style="text-transform:unset !important; width: 150px; " placeholder="First name">
+        <h4 class="totaltrans" style="width: 150px;">Total Transaction</h4>
+        <div class="inputtotaltrans">
+            <input type="text" class="form-control btn btn-sm" style="text-transform:unset !important; width: 200px; text-align: right;" placeholder="Enter value">
+        </div>
+    </div>
+
+    <div class="totalplatfee">
+        <h4 class="totalfee" style="width: 150px;">Total Platform Fee</h4>
+        <div class="inputtotalfee">
+            <input type="text" class="form-control btn btn-sm" style="text-transform:unset !important; width: 200px; text-align: right;
+            text-align:right;" placeholder="Enter value">
+        </div>
     </div>
 
 </body>
