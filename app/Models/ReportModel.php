@@ -10,7 +10,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
 // class Report extends Authenticatable
-class Report extends Model
+class ReportModel extends Model
 {
     use HasFactory;
 

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LihatDataController;
 use App\Http\Controllers\LogInController;
+use App\Http\Controllers\TransactionListController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -67,11 +68,13 @@ Route::get('/insertproduct', function () {
     ]);
 });
 
-Route::get('/transactionlist', function () {
-    return view('transactionlist', [
-        // "title" => "About Us"
-    ]);
-});
+// Route::get('/transactionlist', function () {
+//     return view('transactionlist', [
+//         // "title" => "About Us"
+//     ]);
+// });
+
+Route::get('/transactionlist', [TransactionListController::class, 'translist']);
 
 Route::get('/transactiondetail', function () {
     return view('transactiondetail', [
