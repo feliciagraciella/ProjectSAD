@@ -32,103 +32,110 @@
 @include('header')
 
 <body>
-    <div class="report">
-        <h3>Monthly Report</h3>
-        <a href="/report">View All</a>
-        <div class="column-report">
-            <div class="rect-tokped">
+    <div class="all" style="margin-left: 3%">
+        <div class="report">
+            <h3>Monthly Report</h3>
+            <a href="/report">View All</a>
+            <div class="column-report">
+                <div class="rect-tokped">
 
+                </div>
+            </div>
+            <div class="column-report">
+                <div class="rect-shopee">
+
+                </div>
             </div>
         </div>
-        <div class="column-report">
-            <div class="rect-shopee">
 
+        <div class="popular-products">
+            <h3>Most Popular Products</h3>
+            <div class="column-popular">
+                <div class="rect1">
+                    {{-- <img src="{{ asset('images/best/' . $sales->SUM(QTY_PRODUCT)) }}"> --}}
+                </div>
+            </div>
+            <div class="column-popular">
+                <div class="rect2">
+
+                </div>
+            </div>
+            <div class="column-popular">
+                <div class="rect3">
+
+                </div>
+            </div>
+            <div class="column-popular">
+                <div class="rect4">
+
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="popular-products">
-        <h3>Most Popular Products</h3>
-        <div class="column-popular">
-            <div class="rect1">
-
-            </div>
-        </div>
-        <div class="column-popular">
-            <div class="rect2">
-
-            </div>
-        </div>
-        <div class="column-popular">
-            <div class="rect3">
-
-            </div>
-        </div>
-        <div class="column-popular">
-            <div class="rect4">
-
-            </div>
-        </div>
-    </div>
-
-    <div class="all-products">
-        <h3>All Products</h3>
-        <a href="/product">View All</a>
-        <table class="table table-hover" style="width: 52%; position: absolute; left: 300px; top: 535px;">
-            <thead>
-                <tr>
-                    <th scope="col" style="font-weight: 600; text-align:center;">Photo</th>
-                    <th scope="col" style="font-weight: 600; text-align:center;">SKU</th>
-                    <th scope="col" style="font-weight: 600; text-align:center;">Name</th>
-                    <th scope="col" style="font-weight: 600; text-align:center;">Total Sale</th>
-                    <th scope="col" style="font-weight: 600; text-align:center;">Size</th>
-                    <th scope="col" style="font-weight: 600; text-align:center;">Price</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($product as $p)
+        <div class="all-products">
+            <h3>All Products</h3>
+            <a href="/product">View All</a>
+            <table class="table table-hover" style="width: 52%; position: absolute; left: 23%; top: 578px;">
+                <thead>
                     <tr>
-                        <th scope="row" style="text-align:center;">1</th>
-                        <td style="text-align:center;">{{ $p->SKU }}</td>
-                        <td style="text-align:left;">{{ $p->P_NAME }}</td>
-                        <td style="text-align:center;">5</td>
-                        <td style="text-align:center;">{{ $p->SIZE }}</td>
-                        <td style="text-align:center;">{{ $p->PRICE }}</td>
+                        <th scope="col" style="font-weight: 600; text-align:center;">Photo</th>
+                        <th scope="col" style="font-weight: 600; text-align:center;">SKU</th>
+                        <th scope="col" style="font-weight: 600; text-align:center;">Name</th>
+                        <th scope="col" style="font-weight: 600; text-align:center;">Total Sale</th>
+                        <th scope="col" style="font-weight: 600; text-align:center;">Size</th>
+                        <th scope="col" style="font-weight: 600; text-align:center;">Price</th>
                     </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
-
-
-    <div class="finance">
-        <h3>Finance</h3>
-        <div class="netprofit" style="left: 1020px; position: absolute; top: 125px;">
-            <p class="finance1">
-                <span class="iconify" data-icon="dashicons:money-alt" style="color: black; "></span>
-            </p>
-            <h5 class="netprofit-text">Net&nbspProfit</h5>
-            <h5 class="netprofit-amt">Rp7.500.000</h5>
-        </div>
-        <div class="plat-fee" style="left: 1020px; position: absolute; top: 180px;">
-            <p class="finance1">
-                <span class="iconify" data-icon="dashicons:money-alt" style="color: black; "></span>
-            </p>
-            <h5 class="fee-text">Platform&nbspFee</h5>
-            <h5 class="fee-amt">Rp1.500.000</h5>
-        </div>
-    </div>
-
-    <div class="restock">
-        <h3>Restock Soon</h3>
-        <div class="restock1" style="left: 1020px; position: absolute; top: 300px;">
-            <p class="warning1">
-                <span class="iconify" data-icon="ep:warning-filled" style="color: black;"></span>
-            </p>
-            <h5 class="stock-text">Product&nbspName</h5>
-            <h5 class="stock-qty">Stock:&nbsp3</h5>
+                </thead>
+                <tbody>
+                    @foreach ($product as $p)
+                        <tr>
+                            <th scope="row" style="text-align:center;">
+                                <img src="{{ asset('images/best/' . $p->IMAGE) }}" alt="" height=100 width=100>
+                                {{-- <img src="{{ asset('images/best/{{ $p->IMAGE }}') }}"alt="" height=50 width=50> --}}
+                            </th>
+                            <td style="text-align:center;">{{ $p->SKU }}</td>
+                            <td style="text-align:left;">{{ $p->P_NAME }}</td>
+                            {{-- <td style="text-align:center;">{{ $p->sum(DETAIL_TRANSACTION . QTY_PRODUCT) }}</td> --}}
+                            <td style="text-align:center;">5</td>
+                            <td style="text-align:center;">{{ $p->SIZE }}</td>
+                            <td style="text-align:center;">{{ $p->PRICE }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
 
+
+        <div class="finance">
+            <h3>Finance</h3>
+            <div class="netprofit" style="left: 80%; position: absolute; top: 125px;">
+                <p class="finance1">
+                    <span class="iconify" data-icon="dashicons:money-alt" style="color: black; "></span>
+                </p>
+                <h5 class="netprofit-text">Net&nbspProfit</h5>
+                <h5 class="netprofit-amt">Rp7.500.000</h5>
+            </div>
+            <div class="plat-fee" style="left: 80%; position: absolute; top: 180px;">
+                <p class="finance1">
+                    <span class="iconify" data-icon="dashicons:money-alt" style="color: black; "></span>
+                </p>
+                <h5 class="fee-text">Platform&nbspFee</h5>
+                <h5 class="fee-amt">Rp1.500.000</h5>
+            </div>
+        </div>
+
+        <div class="restock">
+            <h3>Restock Soon</h3>
+            <div class="restock1" style="left: 80%; position: absolute; top: 300px;">
+                <p class="warning1">
+                    <span class="iconify" data-icon="ep:warning-filled" style="color: black;"></span>
+                </p>
+                <h5 class="stock-text">Product&nbspName</h5>
+                <h5 class="stock-qty">Stock:&nbsp3</h5>
+            </div>
+
+
+        </div>
 
     </div>
 
