@@ -25,7 +25,6 @@
                 <th scope="col" style="font-weight: 700; text-align:left;">Platform</th>
                 <th scope="col" style="font-weight: 700; text-align:left;">Product</th>
                 <th scope="col" style="font-weight: 700; text-align:left;">Quantity</th>
-                <th scope="col" style="font-weight: 700; text-align:left;">Total</th>
               </tr>
             </thead>
             <tbody>
@@ -35,7 +34,6 @@
                 <td style="font-weight: 600;text-align:left;">Tokopedia</td>
                 <td style="font-weight: 600;text-align:left;">Cleaner Bagus</td>
                 <td style="font-weight: 600;text-align:left;">2</td>
-                <td style="font-weight: 600;text-align:left;">Rp500.000</td>
               </tr>
             </tbody>
         </table>

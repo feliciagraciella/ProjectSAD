@@ -34,10 +34,10 @@
                 @foreach ($trans as $t)
                 <tr>
                     <td style="font-weight: 600; text-align:left;">{{ $t -> ID_TRANSACTION }}</td>
-                    <td style="font-weight: 600; text-align:left;">{{ $t -> ID_TRANSACTION }}</td>
-                    <td style="font-weight: 600; text-align:left;">{{ $t -> ID_TRANSACTION }}</td>
-                    <td style="font-weight: 600; text-align:left;">{{ $t -> ID_TRANSACTION }}</td>
-                    <td style="font-weight: 600; text-align:left;">{{ $t -> ID_TRANSACTION }}</td>
+                    <td style="font-weight: 600; text-align:left;">{{ $t -> DATE_TRANSACTION }}</td>
+                    <td style="font-weight: 600; text-align:left;">{{ $t -> PLATFORM }}</td>
+                    <td style="font-weight: 600; text-align:left;">{{ $t -> TOTAL_QTY }}</td>
+                    <td style="font-weight: 600; text-align:left;">{{ $t -> TOTAL_PRICE }}</td>
                 </tr>
                 @endforeach
             </tbody>

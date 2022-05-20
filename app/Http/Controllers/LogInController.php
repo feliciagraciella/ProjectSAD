@@ -32,6 +32,13 @@ class LogInController extends Controller
             if ($password == $obj['PASSWORD_ADMIN']) {
                 $request->session()->put('admin', $obj['ID_ADMIN']);
 
+
+                $admin = session('idAdmin');
+
+                return view('header', [
+                    'admin' => $admin
+                ]);
+
                 // //titip buat id pembeli
                 // $idAdmin = $obj['ID_ADMIN'];
                 // $request->session()->put('idAdmin', $obj['ID_ADMIN']);

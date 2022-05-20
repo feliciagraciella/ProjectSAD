@@ -117,7 +117,7 @@
     </div>
 
     <div class="totaltransaction">
-        <h4 class="totaltrans" style="width: 150px;">Total Transaction</h4>
+        <h4 class="totalfee" style="width: 150px;">Total Transaction</h4>
         <div class="inputtotaltrans">
             <input type="text" class="form-control btn btn-sm" style="text-transform:unset !important; width: 200px; text-align: right;" placeholder="Enter value">
         </div>
@@ -131,6 +131,21 @@
         </div>
     </div>
 
+    <hr class="hrhasil">
+
+    <div class="totalakhir">
+        <h4 class="totalfee" style="width: 150px;">Total</h4>
+        <h4 class="totalakhirr" style="width: 150px;">Rp. 500.000</h4>
+    </div>
+
+    <div class="buttonbutton">
+        <div class="buttondelete">
+            <button type="button" class="btn btn-outline-secondary btn-sm" style="text-transform: unset !important; width: 120px; ">Delete All</button>
+        </div>
+        <div class="buttoninsert">
+            <button type="button" class="btn btn-secondary btn-sm" style="text-transform: unset !important; width: 120px; ">Insert</button>
+        </div>
+    </div>
 </body>
 
 </html>
