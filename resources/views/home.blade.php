@@ -86,46 +86,16 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row" style="text-align:center;">1</th>
-                    <td style="text-align:center;">20220315</td>
-                    <td style="text-align:left;">Cleaner Bagus</td>
-                    <td style="text-align:center;">5</td>
-                    <td style="text-align:center;">200 ml</td>
-                    <td style="text-align:center;">Rp100.000</td>
-                </tr>
-                <tr>
-                    <th scope="row" style="text-align:center;">1</th>
-                    <td style="text-align:center;">20220315</td>
-                    <td style="text-align:left;">Cleaner Bagus</td>
-                    <td style="text-align:center;">5</td>
-                    <td style="text-align:center;">200 ml</td>
-                    <td style="text-align:center;">Rp100.000</td>
-                </tr>
-                <tr>
-                    <th scope="row" style="text-align:center;">1</th>
-                    <td style="text-align:center;">20220315</td>
-                    <td style="text-align:left;">Cleaner Bagus</td>
-                    <td style="text-align:center;">5</td>
-                    <td style="text-align:center;">200 ml</td>
-                    <td style="text-align:center;">Rp100.000</td>
-                </tr>
-                <tr>
-                    <th scope="row" style="text-align:center;">1</th>
-                    <td style="text-align:center;">20220315</td>
-                    <td style="text-align:left;">Cleaner Bagus</td>
-                    <td style="text-align:center;">5</td>
-                    <td style="text-align:center;">200 ml</td>
-                    <td style="text-align:center;">Rp100.000</td>
-                </tr>
-                <tr>
-                    <th scope="row" style="text-align:center;">1</th>
-                    <td style="text-align:center;">20220315</td>
-                    <td style="text-align:left;">Cleaner Bagus</td>
-                    <td style="text-align:center;">5</td>
-                    <td style="text-align:center;">200 ml</td>
-                    <td style="text-align:center;">Rp100.000</td>
-                </tr>
+                @foreach ($product as $p)
+                    <tr>
+                        <th scope="row" style="text-align:center;">1</th>
+                        <td style="text-align:center;">{{ $p->SKU }}</td>
+                        <td style="text-align:left;">{{ $p->P_NAME }}</td>
+                        <td style="text-align:center;">5</td>
+                        <td style="text-align:center;">{{ $p->SIZE }}</td>
+                        <td style="text-align:center;">{{ $p->PRICE }}</td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

@@ -59,6 +59,9 @@ Route::get('/report2', function () {
 // });
 
 Route::get("/product", [ProductListController::class, "productlist"]);
+Route::get("/home", [ProductListController::class, "productlisthome"]);
+Route::get("/header", [LogInController::class, "authenticate"]);
+
 
 Route::get('/productdetail', function () {
     return view('productdetail', [
@@ -95,5 +98,5 @@ Route::get('/inserttransaction', function () {
 Route::get('chart', 'ChartController@index');
 
 // Route::get('/login', [LogInController::class, 'index']);
-Route::post('/login', [LogInController::class, 'authenticate']);
-Route::post('/home', [LogInController::class, 'authenticate']);
+// Route::post('/login', [LogInController::class, 'authenticate']);
+// Route::post('/home', [LogInController::class, 'authenticate']);
