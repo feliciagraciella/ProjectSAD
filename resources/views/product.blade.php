@@ -45,71 +45,30 @@
         <table class="table" style="width: 70%; position: absolute; left: 320px; top: 250px;">
             <thead>
                 <tr>
-                    <th scope="col" style="font-weight: 700; text-align:left;">Transaction ID</th>
-                    <th scope="col" style="font-weight: 700; text-align:left;">Date</th>
-                    <th scope="col" style="font-weight: 700; text-align:left;">Platform</th>
-                    <th scope="col" style="font-weight: 700; text-align:left;">Product</th>
-                    <th scope="col" style="font-weight: 700; text-align:left;">Quantity</th>
+                    <th scope="col" style="font-weight: 700; text-align:left;">Photo</th>
+                    <th scope="col" style="font-weight: 700; text-align:left;">SKU Product</th>
+                    <th scope="col" style="font-weight: 700; text-align:left;">Category</th>
+                    <th scope="col" style="font-weight: 700; text-align:left;">Product Name</th>
+                    <th scope="col" style="font-weight: 700; text-align:left;">Qty</th>
+                    <th scope="col" style="font-weight: 700; text-align:left;">Size</th>
+                    <th scope="col" style="font-weight: 700; text-align:left;">Price</th>
                     <th scope="col" style="font-weight: 700; text-align:left;"></th>
                 </tr>
             </thead>
             <tbody>
                 @foreach($product as $p)
                 <tr>
+                    <td style="font-weight: 600; text-align:left;">""</td>
                     <td style="font-weight: 600; text-align:left;">{{$p->SKU}}</td>
-                    <td style="font-weight: 600; text-align:left;">20220315</td>
-                    <td style="font-weight: 600; text-align:left;">Shopee</td>
-                    <td style="font-weight: 600; text-align:left;">Cleaner 1</td>
-                    <td style="font-weight: 600; text-align:left;">2</td>
+                    <td style="font-weight: 600; text-align:left;">{{$p->ID_CATEGORY}}</td>
+                    <td style="font-weight: 600; text-align:left;">{{$p->P_NAME}}</td>
+                    <td style="font-weight: 600; text-align:left;">{{$p->STOCK}}</td>
+                    <td style="font-weight: 600; text-align:left;">{{$p->SIZE}}</td>
+                    <td style="font-weight: 600; text-align:left;">{{$p->PRICE}}</td>
                     <td style="font-weight: 600; text-align:left; width: 10%;"><span style="text-align:center;"
                             class="close">&#10005;</span></td>
                 </tr>
                 @endforeach
-                <tr>
-                    <td style="font-weight: 600; text-align:left;">T20220315</td>
-                    <td style="font-weight: 600; text-align:left;">20220315</td>
-                    <td style="font-weight: 600; text-align:left;">Shopee</td>
-                    <td style="font-weight: 600; text-align:left;">Cleaner 2</td>
-                    <td style="font-weight: 600; text-align:left;">2</td>
-                    <td style="font-weight: 600; text-align:left; width: 10%;"><span style="text-align:center;"
-                            class="close">&#10005;</span></td>
-                </tr>
-                <tr>
-                    <td style="font-weight: 600; text-align:left;">T20220315</td>
-                    <td style="font-weight: 600; text-align:left;">20220315</td>
-                    <td style="font-weight: 600; text-align:left;">Shopee</td>
-                    <td style="font-weight: 600; text-align:left;">Cleaner 2</td>
-                    <td style="font-weight: 600; text-align:left;">2</td>
-                    <td style="font-weight: 600; text-align:left; width: 10%;"><span style="text-align:center;"
-                            class="close">&#10005;</span></td>
-                </tr>
-                <tr>
-                    <td style="font-weight: 600; text-align:left;">T20220315</td>
-                    <td style="font-weight: 600; text-align:left;">20220315</td>
-                    <td style="font-weight: 600; text-align:left;">Shopee</td>
-                    <td style="font-weight: 600; text-align:left;">Cleaner 2</td>
-                    <td style="font-weight: 600; text-align:left;">2</td>
-                    <td style="font-weight: 600; text-align:left; width: 10%;"><span style="text-align:center;"
-                            class="close">&#10005;</span></td>
-                </tr>
-                <tr>
-                    <td style="font-weight: 600; text-align:left;">T20220315</td>
-                    <td style="font-weight: 600; text-align:left;">20220315</td>
-                    <td style="font-weight: 600; text-align:left;">Shopee</td>
-                    <td style="font-weight: 600; text-align:left;">Cleaner 2</td>
-                    <td style="font-weight: 600; text-align:left;">2</td>
-                    <td style="font-weight: 600; text-align:left; width: 10%;"><span style="text-align:center;"
-                            class="close">&#10005;</span></td>
-                </tr>
-                <tr>
-                    <td style="font-weight: 600; text-align:left;">T20220315</td>
-                    <td style="font-weight: 600; text-align:left;">20220315</td>
-                    <td style="font-weight: 600; text-align:left;">Shopee</td>
-                    <td style="font-weight: 600; text-align:left;">Cleaner 2</td>
-                    <td style="font-weight: 600; text-align:left;">2</td>
-                    <td style="font-weight: 600; text-align:left; width: 10%;"><span style="text-align:center;"
-                            class="close">&#10005;</span></td>
-                </tr>
             </tbody>
         </table>
     </div>
