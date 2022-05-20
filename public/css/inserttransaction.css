@@ -72,8 +72,9 @@ body{
     position: absolute;
     top: 150px;
     padding: 30px;
-    width: 1075px;
-    left: 70%;
+    width: 70%;
+    left:305px;
+    margin-left: 50%;
     transform: translateX(-70%);
 }
 
@@ -82,8 +83,9 @@ body{
     position: absolute;
     top: 220px;
     padding: 30px;
-    width: 1075px;
-    left: 70%;
+    width: 70%;
+    left: 305px;
+    margin-left: 50%;
     transform: translateX(-70%);
 }
 
@@ -92,8 +94,9 @@ body{
     position: absolute;
     top: 290px;
     padding: 30px;
-    width: 1075px;
-    left: 70%;
+    width: 70%;
+    left:305px;
+    margin-left: 50%;
     transform: translateX(-70%);
 }
 
@@ -120,21 +123,10 @@ body{
     position: absolute;
     top: 700px;
     padding: 30px;
-    width: 1075px;
-    left: 70%;
+    width: 70%;
+    left: 305px;
+    margin-left: 50%;
     transform: translateX(-70%);
-}
-
-.totaltrans {
-    position: absolute;
-    right: 25%;
-    width: 100px;
-    font-family: Poppins;
-    font-size: smaller;
-    font-weight: 700;
-    margin: 0;
-    top: 50%;
-    transform: translateY(-50%);
 }
 
 .inputtotaltrans {
@@ -151,8 +143,9 @@ body{
     position: absolute;
     top: 750px;
     padding: 30px;
-    width: 1075px;
-    left: 70%;
+    width: 70%;
+    left: 305px;
+    margin-left: 50%;
     transform: translateX(-70%);
 }
 
@@ -175,4 +168,67 @@ body{
     top: 50%;
     transform: translateY(-50%);
     margin-right: 30px;
+}
+
+.hrhasil {
+    width: 26%;
+    color:black;
+    left: 200px;
+    margin-left: 50%;
+    top: 790px;
+    position:absolute;
+}
+
+.totalakhir {
+    height: 50px;
+    position: absolute;
+    top: 810px;
+    padding: 30px;
+    width: 70%;
+    left: 305px;
+    margin-left: 50%;
+    transform: translateX(-70%);
+}
+
+.totalakhirr {
+    position: absolute;
+    right: 0;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 30px;
+    font-family: Poppins;
+    font-size:small;
+    text-align: right;
+    font-weight: 700;
+}
+
+.buttonbutton {
+    height: 50px;
+    position: absolute;
+    top: 850px;
+    padding: 30px;
+    width: 70%;
+    left: 305px;
+    margin-left: 50%;
+    transform: translateX(-70%);
+    /* padding-bottom: 110px; */
+}
+
+.buttondelete {
+    position: absolute;
+    right: 15%;
+    margin-right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #FFFFFF;
+}
+
+.buttoninsert {
+    position: absolute;
+    right: 0;
+    margin-right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #FFFFFF;
 }
