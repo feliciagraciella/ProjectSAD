@@ -14,7 +14,7 @@
 <body>
     <h5 class=title>Transaction List</h5>
     <div class="button">
-        <button type="button" class="btn btn-outline-secondary btn-sm" style="text-transform: unset !important; ">Insert Transaction  <span class="iconify" data-icon="akar-icons:circle-plus-fill"></span></button>
+        <a href="/inserttransaction"><button type="button" class="btn btn-outline-secondary btn-sm" style="text-transform: unset !important; ">Insert Transaction <span class="iconify" data-icon="akar-icons:circle-plus-fill"></span></button></a>
     </div>
 
 

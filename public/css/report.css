@@ -22,6 +22,11 @@ body{
     left: 472px;
     top: 129px;
 }
+.dropdown-item{
+    position: absolute;
+    left: 472px;
+    top: 129px;
+}
 
 /* styling income */
 .income{
