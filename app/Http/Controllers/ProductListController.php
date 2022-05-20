@@ -17,4 +17,13 @@ class ProductListController extends Controller
             "product" => $product
         ]);
     }
+
+    public function productlisthome()
+    {
+        $product = ProductListModel::all();
+
+        return view("home", [
+            "product" => $product
+        ]);
+    }
 }
