@@ -24,16 +24,42 @@
 <body>
     <h5 class=title>Product Detail</h5>
     <div class="baris1">SKU</div>
+    <div class="boxsku">
+        <input type="text" class="form-control btn btn-sm" style="text-transform:unset !important; width: 310px; text-align: center;" placeholder="SKU">
+    </div>
 
     <div class="baris2">Name</div>
+    <div class="boxname">
+        <input type="text" class="form-control btn btn-sm" style="text-transform:unset !important; width: 310px; text-align: center;" placeholder="Name">
+    </div>
 
     <div class="baris3">Category</div>
+    <div class="boxcat">
+        <a class="btn btn-sm dropdown-toggle dropdown-toggle-split" href="#" style="text-transform:unset !important; width: 310px; " role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Select Category
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" style="font-size: smaller;" href="#">1</a>
+          <a class="dropdown-item" style="font-size: smaller;" href="#">2</a>
+          <a class="dropdown-item" style="font-size: smaller;" href="#">3</a>
+        </div>
+    </div>
 
     <div class="baris4-1">Price</div>
+    <div class="boxprice">
+        <input type="text" class="form-control btn btn-sm" style="text-transform:unset !important; width: 150px; text-align: center;" placeholder="Price">
+    </div>
 
     <div class="baris4-2">Qty</div>
+    <div class="boxqty">
+        <input type="text" class="form-control btn btn-sm" style="text-transform:unset !important; width: 70px; text-align: center;" placeholder="Qty">
+    </div>
 
     <div class="baris5">Size</div>
+    <div class="boxsize">
+        <input type="text" class="form-control btn btn-sm" style="text-transform:unset !important; width: 300px; text-align: center;" placeholder="Size">
+    </div>
 
     <div class="baris6">Description</div>
 </body>

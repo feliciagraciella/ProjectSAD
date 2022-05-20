@@ -28,16 +28,67 @@ body{
     position: absolute;
     top: 150px;
     padding: 13px 0px 0px 27px;
-    width: 600px;
-    left: 48.3%;
+    width: 35%;
+    left:305px;
+    margin-left: 25%;
     transform: translateX(-70%);
+}
+
+.boxsku {
+    position: absolute;
+    right: 0;
+    margin: 0;
+    top: 160px;
+    left:305px;
+    margin-left: 10%;
+    z-index: 10;
+}
+
+.boxname {
+    position: absolute;
+    right: 0;
+    margin: 0;
+    top: 220px;
+    left:305px;
+    margin-left: 10%;
+    z-index: 10;
+}
+
+.boxprice {
+    position: absolute;
+    right: 0;
+    margin: 0;
+    top: 340px;
+    left:305px;
+    margin-left: 10%;
+    z-index: 10;
+}
+
+.boxqty {
+    position: absolute;
+    right: 0;
+    margin: 0;
+    top: 340px;
+    left:305px;
+    margin-left: 27.4%;
+    z-index: 10;
+}
+
+.boxcat{
+    position: absolute;
+    margin: 0;
+    top: 280px;
+    left:305px;
+    margin-left: 10%;
+    background-color: #FFFFFF;
 }
 
 .baris2 {
     position: absolute;
     top: 210px;
     padding: 13px 0px 0px 30px;
-    left: 24%;
+    left:305px;
+    margin-left: 4%;
     transform: translateX(-70%);
 }
 
@@ -47,8 +98,9 @@ body{
     position: absolute;
     top: 270px;
     padding: 13px 0px 0px 30px;
-    width: 600px;
-    left: 48.3%;
+    width: 35%;
+    left:305px;
+    margin-left: 25%;
     transform: translateX(-70%);
 }
 
@@ -56,7 +108,8 @@ body{
     position: absolute;
     top: 330px;
     padding: 13px 0px 0px 22px;
-    left: 24%;
+    left:305px;
+    margin-left: 4%;
     transform: translateX(-70%);
 }
 
@@ -64,7 +117,8 @@ body{
     position: absolute;
     top: 330px;
     padding: 13px 0px 0px 22px;
-    left: 43%;
+    left:305px;
+    margin-left: 24%;
     transform: translateX(-70%);
 }
 
@@ -74,8 +128,9 @@ body{
     position: absolute;
     top: 390px;
     padding: 13px 0px 0px 30px;
-    width: 600px;
-    left: 48.3%;
+    width: 35%;
+    left:305px;
+    margin-left: 25%;
     transform: translateX(-70%);
 }
 
@@ -83,6 +138,7 @@ body{
     position: absolute;
     top: 450px;
     padding: 13px 0px 0px 125px;
-    left: 24%;
+    left:305px;
+    margin-left: 4%;
     transform: translateX(-70%);
 }
