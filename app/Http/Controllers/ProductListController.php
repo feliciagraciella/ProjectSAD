@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\DetailTransModel;
 use App\Models\ProductListModel;
+use App\Http\Controllers\SUM;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
@@ -28,11 +29,10 @@ class ProductListController extends Controller
         //     ->where('DETAIL_TRANSACTION.SKU', '=', 'PRODUCT.SKU')
         //     ->get();
         $product = ProductListModel::all();
-        // ->select('PRODUCT.*', 'sum(DETAIL_TRANSACTION.QTY_PRODUCT)')
         // ->join('DETAIL_TRANSACTION', 'PRODUCT.SKU', '=', 'DETAIL_TRANSACTION.SKU')
-        // ->where('PRODUCT.SKU', '=', 'DETAIL_TRANSACTION.SKU')
+        // ->select('PRODUCT.*', SUM('DETAIL_TRANSACTION'.'QTY_PRODUCT'))
         // ->groupBy('SKU')
-        // ->orderBy('sum(DETAIL_TRANSACTION.QTY_PRODUCT)', 'desc')
+        // ->orderBy(SUM('DETAIL_TRANSACTION'.'QTY_PRODUCT'), 'desc')
         // ->get();
 
         // $sales = DB::table('DETAIL_TRANSACTION')
