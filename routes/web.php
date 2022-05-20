@@ -3,6 +3,7 @@
 use App\Http\Controllers\LihatDataController;
 use App\Http\Controllers\LogInController;
 use App\Http\Controllers\ProductListController;
+use App\Http\Controllers\TransactionListController;
 use App\Models\ProductListModel;
 use Illuminate\Support\Facades\Route;
 
