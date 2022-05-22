@@ -78,62 +78,25 @@
           <tr>
             <th scope="col" style="font-weight: 600; text-align:center;">Photo</th>
             <th scope="col" style="font-weight: 600; text-align:center;">SKU</th>
-            <th scope="col" style="font-weight: 600; text-align:center;">Name</th>
-            <th scope="col" style="font-weight: 600; text-align:center;">Total Sale</th>
+            <th scope="col" style="font-weight: 600; text-align:center; width: 168px;">Name</th>
             <th scope="col" style="font-weight: 600; text-align:center;">Size</th>
+            <th scope="col" style="font-weight: 600; text-align:center;">Total Sale</th>
             <th scope="col" style="font-weight: 600; text-align:center;">Price</th>
             <th scope="col" style="font-weight: 600; text-align:center;">Income</th>
           </tr>
         </thead>
         <tbody>
-            @foreach ($data as $i)
+            @foreach ($data as $d)
                 <tr>
-                    <th scope="row" style="text-align:center;">1</th>
-                    <td style="text-align:center;">{{$i->SKU}}</td>
-                    <td style="text-align:left;">{{$i->SKU}}</td>
-                    <td style="text-align:center;">{{$i->SKU}}</td>
-                    <td style="text-align:center;">{{$i->SKU}}</td>
-                    <td style="text-align:center;">Rp100.000</td>
-                    <td style="text-align:center;">Rp500.000</td>
+                    <th scope="row" style="text-align:center;"><img src="{{ asset('images/best/' . $d->IMAGE) }}" alt="" height=100 width=100></th>
+                    <td style="text-align:center;">{{$d->SKU}}</td>
+                    <td style="text-align:left;">{{$d->PRODUCT_NAME}}</td>
+                    <td style="text-align:center;">{{$d->SIZE}}</td>
+                    <td style="text-align:center;">{{$d->TOTAL_SOLD}}</td>
+                    <td style="text-align:center;">{{$d->PRICE}}</td>
+                    <td style="text-align:center;">{{$d->INCOME}}</td>
                 </tr>
             @endforeach
-
-          {{-- <tr>
-            <th scope="row" style="text-align:center;">1</th>
-            <td style="text-align:center;">20220315</td>
-            <td style="text-align:left;">Cleaner Bagus</td>
-            <td style="text-align:center;">5</td>
-            <td style="text-align:center;">200 ml</td>
-            <td style="text-align:center;">Rp100.000</td>
-            <td style="text-align:center;">Rp500.000</td>
-          </tr>
-          <tr>
-            <th scope="row" style="text-align:center;">1</th>
-            <td style="text-align:center;">20220315</td>
-            <td style="text-align:left;">Cleaner Bagus</td>
-            <td style="text-align:center;">5</td>
-            <td style="text-align:center;">200 ml</td>
-            <td style="text-align:center;">Rp100.000</td>
-            <td style="text-align:center;">Rp500.000</td>
-          </tr>
-          <tr>
-            <th scope="row" style="text-align:center;">1</th>
-            <td style="text-align:center;">20220315</td>
-            <td style="text-align:left;">Cleaner Bagus</td>
-            <td style="text-align:center;">5</td>
-            <td style="text-align:center;">200 ml</td>
-            <td style="text-align:center;">Rp100.000</td>
-            <td style="text-align:center;">Rp500.000</td>
-          </tr>
-          <tr>
-            <th scope="row" style="text-align:center;">1</th>
-            <td style="text-align:center;">20220315</td>
-            <td style="text-align:left;">Cleaner Bagus</td>
-            <td style="text-align:center;">5</td>
-            <td style="text-align:center;">200 ml</td>
-            <td style="text-align:center;">Rp100.000</td>
-            <td style="text-align:center;">Rp500.000</td>
-          </tr> --}}
         </tbody>
       </table>
 </body>

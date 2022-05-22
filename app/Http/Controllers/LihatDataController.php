@@ -18,8 +18,12 @@ class LihatDataController extends Controller
 
     public function report(){
         $dreport = "select * from most_popular_all ";
-        $data = ReportModel::where('SKU', 'B250007')->get();
+        $data = ReportModel::all();
         // $data = Report::query($dreport);
+
+        // $dreport = "select * from most_popular_all ";
+        // $data = ReportModel::where('SKU', 'B250007')->get();
+        // // $data = Report::query($dreport);
 
         return view("report", [
             "data" => $data
