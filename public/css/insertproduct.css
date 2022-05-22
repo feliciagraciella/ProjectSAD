@@ -22,38 +22,191 @@ body{
     letter-spacing: 1px;
 }
 
-.form-insert{
-    position: absolute;
-    left: 318px;
-    top: 150px;
-}
-
-input{
-    position:sticky;
-    left: 32%;
-    width: 60%;
-    border: none;
-    border-radius: 8px;
-    height: 35px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 5px 15px;
-}
-
-.barisganjil{
+.baris1 {
     background-color: #f7f7f7;
-    width: 500px;
-    height:55px;
-    padding: 8px 0px 0px 30px;
-}
-
-.barisgenap{
     height: 50px;
-    padding: 8px 0px 0px 30px;
+    position: absolute;
+    top: 150px;
+    padding: 13px 0px 0px 27px;
+    width: 35%;
+    left:305px;
+    margin-left: 25%;
+    transform: translateX(-70%);
 }
 
-.button{
-    margin-top: 8%;
+.boxsku {
+    position: absolute;
+    right: 0;
+    margin: 0;
+    top: 160px;
+    left:305px;
+    margin-left: 10%;
+    z-index: 10;
+}
+
+.boxname {
+    position: absolute;
+    right: 0;
+    margin: 0;
+    top: 220px;
+    left:305px;
+    margin-left: 10%;
+    z-index: 10;
+}
+
+.boxprice {
+    position: absolute;
+    right: 0;
+    margin: 0;
+    top: 340px;
+    left:305px;
+    margin-left: 10%;
+    z-index: 10;
+}
+
+.boxqty {
+    position: absolute;
+    right: 0;
+    margin: 0;
+    top: 340px;
+    left:305px;
+    margin-left: 27.4%;
+    z-index: 10;
+}
+
+.boxcat{
+    position: absolute;
+    margin: 0;
+    top: 280px;
+    left:305px;
+    margin-left: 10%;
+    background-color: #FFFFFF;
+}
+
+.boxsize{
+    position: absolute;
+    margin: 0;
+    top: 400px;
+    left:305px;
+    margin-left: 10%;
+    background-color: #FFFFFF;
+}
+
+.boxdesc{
+    position: absolute;
+    margin: 0;
+    top: 460px;
+    left:305px;
+    margin-left: 10%;
+    background-color: #FFFFFF;
+}
+
+.baris2 {
+    position: absolute;
+    top: 210px;
+    padding: 13px 0px 0px 30px;
+    left:305px;
+    margin-left: 4%;
+    transform: translateX(-70%);
+}
+
+.baris3 {
+    background-color: #f7f7f7;
+    height: 50px;
+    position: absolute;
+    top: 270px;
+    padding: 13px 0px 0px 30px;
+    width: 35%;
+    left:305px;
+    margin-left: 25%;
+    transform: translateX(-70%);
+}
+
+.baris4-1 {
+    position: absolute;
+    top: 330px;
+    padding: 13px 0px 0px 22px;
+    left:305px;
+    margin-left: 4%;
+    transform: translateX(-70%);
+}
+
+.baris4-2 {
+    position: absolute;
+    top: 330px;
+    padding: 13px 0px 0px 22px;
+    left:305px;
+    margin-left: 24%;
+    transform: translateX(-70%);
+}
+
+.baris5 {
+    background-color: #f7f7f7;
+    height: 50px;
+    position: absolute;
+    top: 390px;
+    padding: 13px 0px 0px 30px;
+    width: 35%;
+    left:305px;
+    margin-left: 25%;
+    transform: translateX(-70%);
+}
+
+.baris6 {
+    position: absolute;
+    top: 450px;
+    padding: 13px 0px 0px 125px;
+    left:305px;
+    margin-left: 4%;
+    transform: translateX(-70%);
+}
+
+.buttondel{
+    position: absolute;
+    top: 560px;
     border-radius: 8px;
-    width: 40%;
-    margin-left: 5%;
+    width: 15%;
+    left:70px;
+    margin-left: 4%;
+    transform: translateX(100%);
+    border: 1px solid #DEE1E6;
+}
+
+.buttonins{
+    position: absolute;
+    top: 560px;
+    border-radius: 8px;
+    width: 15%;
+    left:300px;
+    margin-left: 4%;
+    transform: translateX(100%);
+    border: 1px solid #DEE1E6;
+}
+
+.productphoto{
+    overflow:hidden;
+    width: 270px;
+    height: 270px;
+    position: absolute;
+    top: 190px;
+    left:0px;
+    margin-left: 48%;
+    transform: translateX(100%);
+    background-color: #DEE1E6;
+    text-align: center;
+}
+
+.productphoto img{
+    height: 270px;
+}
+
+.buttonimg{
+    position: absolute;
+    top: 490px;
+    border-radius: 8px;
+    width: 15%;
+    left:0px;
+    margin-left: 55%;
+    transform: translateX(100%);
     border: 1px solid #DEE1E6;
 }

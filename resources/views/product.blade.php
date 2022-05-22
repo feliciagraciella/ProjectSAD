@@ -58,13 +58,13 @@
             <tbody>
                 @foreach($product as $p)
                 <tr>
-                    <td style="font-weight: 600; text-align:left;">""</td>
+                    <td style="text-align:center"><img src="../images/best/{{$p->SKU}}.jpg" alt="" height=70></td>
                     <td style="font-weight: 600; text-align:left;">{{$p->SKU}}</td>
                     <td style="font-weight: 600; text-align:left;">{{$p->ID_CATEGORY}}</td>
                     <td style="font-weight: 600; text-align:left;">{{$p->P_NAME}}</td>
                     <td style="font-weight: 600; text-align:left;">{{$p->STOCK}}</td>
-                    <td style="font-weight: 600; text-align:left;">{{$p->SIZE}}</td>
-                    <td style="font-weight: 600; text-align:left;">{{$p->PRICE}}</td>
+                    <td style="font-weight: 600; text-align:left;">{{$p->SIZE}} ml</td>
+                    <td style="font-weight: 600; text-align:left;">Rp {{$p->PRICE}}</td>
                     <td style="font-weight: 600; text-align:left; width: 10%;"><span style="text-align:center;"
                             class="close">&#10005;</span></td>
                 </tr>

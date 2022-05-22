@@ -83,6 +83,24 @@ body{
     background-color: #FFFFFF;
 }
 
+.boxsize{
+    position: absolute;
+    margin: 0;
+    top: 400px;
+    left:305px;
+    margin-left: 10%;
+    background-color: #FFFFFF;
+}
+
+.boxdesc{
+    position: absolute;
+    margin: 0;
+    top: 460px;
+    left:305px;
+    margin-left: 10%;
+    background-color: #FFFFFF;
+}
+
 .baris2 {
     position: absolute;
     top: 210px;
@@ -141,4 +159,54 @@ body{
     left:305px;
     margin-left: 4%;
     transform: translateX(-70%);
+}
+
+.buttondel{
+    position: absolute;
+    top: 560px;
+    border-radius: 8px;
+    width: 15%;
+    left:70px;
+    margin-left: 4%;
+    transform: translateX(100%);
+    border: 1px solid #DEE1E6;
+}
+
+.buttonins{
+    position: absolute;
+    top: 560px;
+    border-radius: 8px;
+    width: 15%;
+    left:300px;
+    margin-left: 4%;
+    transform: translateX(100%);
+    border: 1px solid #DEE1E6;
+}
+
+.productphoto{
+    overflow:hidden;
+    width: 270px;
+    height: 270px;
+    position: absolute;
+    top: 190px;
+    left:0px;
+    margin-left: 48%;
+    transform: translateX(100%);
+    background-color: #DEE1E6;
+    text-align: center;
+}
+
+.productphoto img{
+    height: 270px;
+}
+
+.buttonimg{
+    position: absolute;
+    top: 490px;
+    border-radius: 8px;
+    width: 15%;
+    left:0px;
+    margin-left: 55%;
+    transform: translateX(100%);
+    border: 1px solid #DEE1E6;
 }

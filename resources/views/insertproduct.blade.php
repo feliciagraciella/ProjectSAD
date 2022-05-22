@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href={{ asset('css/insertproduct.css') }} type="text/css" />
+    <link rel="stylesheet" href={{ asset('css/productdetail.css') }} type="text/css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -22,44 +22,78 @@
 </head>
 
 <body>
-    <h5 class=title>Insert Product</h5>
-    <form class="form-insert" action="/action_page.php">
-        <div class="barisganjil">
-            <label for="fname">SKU</label>
-            <input type="text" id="sku" name="sku"><br><br>
+    <h5 class=title>Product Detail</h5>
+    <div class="baris1">SKU</div>
+    <div class="boxsku">
+        <input type="text" class="form-control btn btn-sm"
+            style="text-transform:unset !important; width: 310px; text-align: center;" >
+    </div>
+
+    <div class="baris2">Name</div>
+    <div class="boxname">
+        <input type="text" class="form-control btn btn-sm"
+            style="text-transform:unset !important; width: 310px; text-align: center;" >
+    </div>
+
+    <div class="baris3">Category</div>
+    <div class="boxcat">
+        <a class="btn btn-sm dropdown-toggle dropdown-toggle-split" href="#"
+            style="text-transform:unset !important; width: 310px; text-align: right;" role="button"
+            id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" style="font-size: smaller;" href="#">Cleaner</a>
+            <a class="dropdown-item" style="font-size: smaller;" href="#">Protect</a>
+            <a class="dropdown-item" style="font-size: smaller;" href="#">Tools</a>
         </div>
-        <div class="barisgenap">
-            <label for="lname">Name</label>
-            <input type="text" id="name" name="name"><br><br>
+    </div>
+
+    <div class="baris4-1">Price</div>
+    <div class="boxprice">
+        <input type="text" class="form-control btn btn-sm"
+            style="text-transform:unset !important; width: 150px; text-align: center;">
+    </div>
+
+    <div class="baris4-2">Qty</div>
+    <div class="boxqty">
+        <input type="text" class="form-control btn btn-sm"
+            style="text-transform:unset !important; width: 70px; text-align: center;">
+    </div>
+
+    <div class="baris5">Size</div>
+    <div class="boxsize">
+        <a class="btn btn-sm dropdown-toggle dropdown-toggle-split" href="#"
+            style="text-transform:unset !important; width: 310px; text-align: right;" role="button"
+            id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" style="font-size: smaller;" href="#">30 ml</a>
+            <a class="dropdown-item" style="font-size: smaller;" href="#">250 ml</a>
+            <a class="dropdown-item" style="font-size: smaller;" href="#">320 ml</a>
+            <a class="dropdown-item" style="font-size: smaller;" href="#">500 ml</a>
         </div>
-        <div class="barisganjil">
-            <label for="lname">Category</label>
-            <input type="text" id="cat" name="cat"><br><br>
-            {{-- <select id="country" name="country">
-                <option value="australia">Australia</option>
-                <option value="canada">Canada</option>
-                <option value="usa">USA</option>
-              </select> --}}
-        </div>
-        <div class="barisgenap">
-            <label for="lname">Price</label>
-            <input type="text" id="price" name="price"><br><br>
-        </div>
-        <div class="barisganjil">
-            <label for="lname">Qty</label>
-            <input type="text" id="qty" name="qty"><br><br>
-        </div>
-        <div class="barisgenap">
-            <label for="lname">Size</label>
-            <input type="text" id="size" name="size"><br><br>
-        </div>
-        <div class="barisganjil">
-            <label for="lname">Description</label>
-            <input type="text" id="desc" name="desc"><br><br>
-        </div>
-        <button type="submitdel" class="button" name="deleteall" value="bar" style="background-color: #f7f7f7">Delete All</button>
-        <button type="submitins" class="button" name="insert" value="bar" style="background-color: #dee1e6">Insert</button>
-    </form>
+    </div>
+
+
+    <div class="baris6">Description</div>
+    <div class="boxdesc">
+        <input type="text" class="form-control btn btn-sm"
+            style="text-transform:unset !important; width: 310px; height: 70px; text-align: center;">
+    </div>
+
+    <button type="submitdel" class="buttondel" name="deleteall" value="bar"
+        style="background-color: #f7f7f7">Delete All</button>
+    <button type="submitins" class="buttonins" name="insert" value="bar"
+        style="background-color: #dee1e6">Insert</button>
+
+    <div class="productphoto">
+        <img class="photo" src={{ asset('images/logo.png') }}>
+    </div>
+    <button type="submitins" class="buttonimg" name="insert" value="bar"
+            style="background-color: #dee1e6">Choose Image</button>
+
 </body>
 
 </html>

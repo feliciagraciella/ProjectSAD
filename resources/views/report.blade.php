@@ -91,7 +91,7 @@
                     <th scope="row" style="text-align:center;"><img src="{{ asset('images/best/' . $d->IMAGE) }}" alt="" height=100 width=100></th>
                     <td style="text-align:center;">{{$d->SKU}}</td>
                     <td style="text-align:left;">{{$d->PRODUCT_NAME}}</td>
-                    <td style="text-align:center;">{{$d->SIZE}}</td>
+                    <td style="text-align:center;">{{$d->SIZE}} ml</td>
                     <td style="text-align:center;">{{$d->TOTAL_SOLD}}</td>
                     <td style="text-align:center;">{{$d->PRICE}}</td>
                     <td style="text-align:center;">{{$d->INCOME}}</td>
