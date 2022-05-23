@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Menu;
-use App\Models\Cart;
+use App\Models\TransactionDetailModel;
 use App\Models\TransactionListModel;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -13,10 +12,19 @@ class TransactionListController extends Controller
 {
     public function translist()
     {
-        $trans = TransactionListModel::all();
+        $trans = TransactionListModel::orderBy('DATE_TRANSACTION', 'desc')->get();
 
         return view("transactionlist", [
             "trans" => $trans
+        ]);
+    }
+
+    public function details($id)
+    {
+        $transdet = TransactionDetailModel::find($id);
+
+        return view("transactiondetail", [
+            "transdet" => $transdet,
         ]);
     }
 }
