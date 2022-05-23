@@ -16,6 +16,4 @@ class ProductListModel extends Model
 
     //Timestamp di false
     public $timestamps = false;
-
-
 }

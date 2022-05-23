@@ -28,6 +28,7 @@ class ProductListController extends Controller
         //     ->groupBy('SKU')
         //     ->where('DETAIL_TRANSACTION.SKU', '=', 'PRODUCT.SKU')
         //     ->get();
+
         $product = ProductListModel::all();
         // ->join('DETAIL_TRANSACTION', 'PRODUCT.SKU', '=', 'DETAIL_TRANSACTION.SKU')
         // ->select('PRODUCT.*', SUM('DETAIL_TRANSACTION'.'QTY_PRODUCT'))
@@ -41,9 +42,16 @@ class ProductListController extends Controller
         //     ->orderBy('SUM(QTY_PRODUCT)', 'desc')
         //     ->get();
 
+        // $product = DB::table('PRODUCT')
+        //     ->join('DETAIL_TRANSACTION', 'PRODUCT.SKU', '=', 'DETAIL_TRANSACTION.SKU')
+        //     ->select('PRODUCT.*', SUM('DETAIL_TRANSACTION'.'QTY_PRODUCT'))
+        //     ->groupBy('SKU')
+        //     ->orderBy(SUM('DETAIL_TRANSACTION'.'QTY_PRODUCT'), 'desc')
+        //     ->get();
+
         return view("home", [
             "product" => $product
-                ->take(5),
+                ->take(5)
             // "sales" => $sales
             //     ->take(4)
         ]);
