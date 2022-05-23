@@ -32,14 +32,16 @@
 
             <tbody>
                 @foreach ($trans as $t)
+                {{-- <a href="{{ ('transactiondetail/'.$t->ID_TRANSACTION) }}"> --}}
                 <tr>
-                    <td style="font-weight: 600; text-align:left;">{{ $t -> ID_TRANSACTION }}</td>
-                    <td style="font-weight: 600; text-align:left;">{{ $t -> DATE_TRANSACTION }}</td>
-                    <td style="font-weight: 600; text-align:left;">{{ $t -> PLATFORM }}</td>
-                    <td style="font-weight: 600; text-align:left;">{{ $t -> TOTAL_QTY }}</td>
-                    <td style="font-weight: 600; text-align:left;">{{ $t -> TOTAL_PRICE }}</td>
+                    <td style="font-weight: 600; text-align:left;"><a href="{{ ('transactiondetail/'.$t->ID_TRANSACTION) }}">{{ $t -> ID_TRANSACTION }}</a></td>
+                    <td style="font-weight: 600; text-align:left;"><a href="{{ ('transactiondetail/'.$t->ID_TRANSACTION) }}">{{ $t -> DATE_TRANSACTION }}</a></td>
+                    <td style="font-weight: 600; text-align:left;"><a href="{{ ('transactiondetail/'.$t->ID_TRANSACTION) }}">{{ $t -> PLATFORM }}</a></td>
+                    <td style="font-weight: 600; text-align:left;"><a href="{{ ('transactiondetail/'.$t->ID_TRANSACTION) }}">{{ $t -> TOTAL_QTY }}</a></td>
+                    <td style="font-weight: 600; text-align:left;"><a href="{{ ('transactiondetail/'.$t->ID_TRANSACTION) }}">{{ $t -> TOTAL_PRICE }}</a></td>
                 </tr>
                 @endforeach
+
             </tbody>
 
         </table>

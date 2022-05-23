@@ -18,7 +18,8 @@ class LihatDataController extends Controller
     //     $this->LihatDataModel = new LihatDataModel();
     // }
 
-    public function report(){
+    public function report()
+    {
         $dreport = "select * from most_popular_all ";
         $data = ReportModel::paginate(10);
         // $data = Report::query($dreport);
@@ -29,6 +30,11 @@ class LihatDataController extends Controller
 
         return view("report", [
             "data" => $data
+        ]);
+
+        return view("home", [
+            "data" => $data
+                ->take(4)
         ]);
     }
 

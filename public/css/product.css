@@ -49,3 +49,9 @@ body{
     color: black;
     text-decoration: underline;
 }
+
+.butinsertproduct {
+    position: absolute;
+    top: 95px;
+    right: 6.8%;
+}

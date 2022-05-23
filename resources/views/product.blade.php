@@ -23,6 +23,9 @@
 
 <body>
     <h5 class=title>Products List</h5>
+    <div class="butinsertproduct">
+        <a href="/insertproduct"><button type="button" class="btn btn-outline-secondary btn-sm" style="text-transform: unset !important; ">Insert Product <span class="iconify" data-icon="akar-icons:circle-plus-fill"></span></button></a>
+    </div>
     <div class="baris1">
 
         <div class="dropdown-show2">
@@ -38,11 +41,11 @@
                 <a class="dropdown-item" style="font-size: smaller;" href="#">Size</a>
             </div>
         </div>
-        <a class="viewcat" href="#">View Category</a>
+        <a class="viewcat" href="/category">View Category</a>
     </div>
 
     <div class=table>
-        <table class="table" style="width: 70%; position: absolute; left: 320px; top: 250px;">
+        <table class="table table-hover" style="width: 70%; position: absolute; left: 320px; top: 250px;">
             <thead>
                 <tr>
                     <th scope="col" style="font-weight: 700; text-align:left;">Photo</th>

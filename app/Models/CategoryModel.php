@@ -5,15 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ProductListModel extends Model
+class CategoryModel extends Model
 {
     use HasFactory;
 
-    protected $table = "PRODUCT";
-    public $primaryKey = "SKU";
+    protected $table = "CATEGORY";
+    public $primaryKey = "ID_CATEGORY";
     //Primary key nya adalah varchar
     public $incrementing = false;
 
     //Timestamp di false
     public $timestamps = false;
+
+
 }
