@@ -14,26 +14,35 @@
 <body>
     <h5 class=title>Report</h5>
     <div class="dropdown-show">
-        <a class="btn btn-sm dropdown-toggle dropdown-toggle-split" href="#" style="text-transform:unset !important" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="btn btn-sm dropdown-toggle dropdown-toggle-split" href="#" style="text-transform:unset !important;" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Select Report
         </a>
 
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="#">Total Sales</a>
-          <a class="dropdown-item" href="#">Monthly</a>
-          <a class="dropdown-item" href="#">Last 30 Days</a>
-          <a class="dropdown-item" href="#">Last 7 Days</a>
+          <a class="dropdown-item" href="#">Finance</a>
+          <a class="dropdown-item" href="#">Product Sales</a>
         </div>
     </div>
     <div class="dropdown-show2">
         <a class="btn btn-sm dropdown-toggle dropdown-toggle-split" href="#" style="text-transform:unset !important; margin-left: -28px;" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Select Platform
+            Select Platform
         </a>
 
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
           <a class="dropdown-item" href="#">All</a>
           <a class="dropdown-item" href="#">Tokopedia</a>
           <a class="dropdown-item" href="#">Shopee</a>
+        </div>
+    </div>
+    <div class="dropdown-show3">
+        <a class="btn btn-sm dropdown-toggle dropdown-toggle-split" href="#" style="text-transform:unset !important; margin-left: -28px;" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Select Period
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="#">All</a>
+          <a class="dropdown-item" href="#">Last 7 Days</a>
+          <a class="dropdown-item" href="#">Last 30 Days</a>
         </div>
     </div>
 

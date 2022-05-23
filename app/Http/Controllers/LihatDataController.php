@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 // use App\Models\LihatDataModel;
 // use App\Models\Report;
 use App\Models\ReportModel;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Collection;
 use DB;
 
 class LihatDataController extends Controller
@@ -18,7 +20,7 @@ class LihatDataController extends Controller
 
     public function report(){
         $dreport = "select * from most_popular_all ";
-        $data = ReportModel::all();
+        $data = ReportModel::paginate(10);
         // $data = Report::query($dreport);
 
         // $dreport = "select * from most_popular_all ";
