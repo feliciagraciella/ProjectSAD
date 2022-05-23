@@ -26,13 +26,13 @@
     <div class="baris1">SKU</div>
     <div class="boxsku">
         <input type="text" class="form-control btn btn-sm"
-            style="text-transform:unset !important; width: 310px; text-align: center;" >
+            style="text-transform:unset !important; width: 310px; text-align: center;">
     </div>
 
     <div class="baris2">Name</div>
     <div class="boxname">
         <input type="text" class="form-control btn btn-sm"
-            style="text-transform:unset !important; width: 310px; text-align: center;" >
+            style="text-transform:unset !important; width: 310px; text-align: center;">
     </div>
 
     <div class="baris3">Category</div>
@@ -91,8 +91,11 @@
     <div class="productphoto">
         <img class="photo" src={{ asset('images/logo.png') }}>
     </div>
-    <button type="submitins" class="buttonimg" name="insert" value="bar"
-            style="background-color: #dee1e6">Choose Image</button>
+    {{-- <button type="submitins" class="buttonimg" name="insert" value="bar"
+            style="background-color: #dee1e6">Choose Image</button> --}}
+    <form action="/action_page.php">
+        <input class="buttonimg" type="file" id="myFile" name="filename">
+    </form>
 
 </body>
 
