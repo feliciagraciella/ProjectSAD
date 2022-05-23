@@ -15,26 +15,35 @@
 <body>
     <h5 class=title>Report</h5>
     <div class="dropdown-show">
-        <a class="btn btn-sm dropdown-toggle dropdown-toggle-split" href="#" style="text-transform:unset !important" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="btn btn-sm dropdown-toggle dropdown-toggle-split" href="#" style="text-transform:unset !important;" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Select Report
         </a>
 
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="#">Total Sales</a>
-          <a class="dropdown-item" href="#">Monthly</a>
-          <a class="dropdown-item" href="#">Last 30 Days</a>
-          <a class="dropdown-item" href="#">Last 7 Days</a>
+          <a class="dropdown-item" href="#">Product Sales</a>
+          <a class="dropdown-item" href="#">Finance</a>
         </div>
     </div>
     <div class="dropdown-show2">
         <a class="btn btn-sm dropdown-toggle dropdown-toggle-split" href="#" style="text-transform:unset !important; margin-left: -28px;" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Select Platform
+            Select Platform
         </a>
 
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
           <a class="dropdown-item" href="#">All</a>
           <a class="dropdown-item" href="#">Tokopedia</a>
           <a class="dropdown-item" href="#">Shopee</a>
+        </div>
+    </div>
+    <div class="dropdown-show3">
+        <a class="btn btn-sm dropdown-toggle dropdown-toggle-split" href="#" style="text-transform:unset !important; margin-left: -28px;" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Select Period
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="#">All</a>
+          <a class="dropdown-item" href="#">Last 7 Days</a>
+          <a class="dropdown-item" href="#">Last 30 Days</a>
         </div>
     </div>
     {{-- <div style="width: 80%;margin: 0 auto;">
@@ -60,26 +69,26 @@
     <div class="income">
         <h5 style="font-weight: 600;">Total Income</h5>
         <div class="subtitle-income">
-            Gross Profit
+            Net Profit
         </div>
         <div class="subvalue-income">
             Rp10.000.000
         </div>
         <br>
         <div class="subtitle-income">
-            Net Profit
+            Platform Fee
         </div>
         <div class="subvalue-income">
-            Rp7.500.000
+            Rp500.000
         </div>
     </div>
     <table class="table table-hover" style="width: 70%; position: absolute; left: 320px; top: 464px;">
         <thead>
           <tr>
             <th scope="col" style="font-weight: 600; text-align:center;">Photo</th>
-            <th scope="col" style="font-weight: 600; text-align:center;">SKU</th>
+            <th scope="col" style="font-weight: 600; text-align:center; width: 100px;">SKU</th>
             <th scope="col" style="font-weight: 600; text-align:center; width: 168px;">Name</th>
-            <th scope="col" style="font-weight: 600; text-align:center;">Size</th>
+            <th scope="col" style="font-weight: 600; text-align:center; width: 120px;">Size</th>
             <th scope="col" style="font-weight: 600; text-align:center;">Total Sale</th>
             <th scope="col" style="font-weight: 600; text-align:center;">Price</th>
             <th scope="col" style="font-weight: 600; text-align:center;">Income</th>
@@ -98,6 +107,9 @@
                 </tr>
             @endforeach
         </tbody>
+        <div class="pagination-button">
+            {{ $data->links() }}
+        </div>
       </table>
 </body>
 

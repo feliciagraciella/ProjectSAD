@@ -19,22 +19,22 @@
     <div class=table>
         <table class="table" style="width: 70%; position: absolute; left: 320px; top: 140px;">
             <thead>
-              <tr>
-                <th scope="col" style="font-weight: 700; text-align:left;">Transaction ID</th>
-                <th scope="col" style="font-weight: 700; text-align:left;">Date</th>
-                <th scope="col" style="font-weight: 700; text-align:left;">Platform</th>
-                <th scope="col" style="font-weight: 700; text-align:left;">Product</th>
-                <th scope="col" style="font-weight: 700; text-align:left;">Quantity</th>
-              </tr>
+                <tr>
+                    <th scope="col" style="font-weight: 700; text-align:left;">Transaction ID</th>
+                    <th scope="col" style="font-weight: 700; text-align:left;">SKU</th>
+                    <th scope="col" style="font-weight: 700; text-align:left;">Quantity</th>
+
+                </tr>
             </thead>
             <tbody>
-              <tr>
-                <td style="font-weight: 600; text-align:left;">T20220315</td>
-                <td style="font-weight: 600;text-align:left;">20220315</td>
-                <td style="font-weight: 600;text-align:left;">Tokopedia</td>
-                <td style="font-weight: 600;text-align:left;">Cleaner Bagus</td>
-                <td style="font-weight: 600;text-align:left;">2</td>
-              </tr>
+                @foreach ($transdet as $td)
+                <tr>
+                    <td style="font-weight: 600; text-align:left;">{{$td -> ID_TRANSACTION}}</td>
+                    <td style="font-weight: 600;text-align:left;">{{$td -> SKU}}</td>
+                    <td style="font-weight: 600;text-align:left;">{{$td -> QTY_PRODUCT}}</td>
+                </tr>
+                @endforeach
+
             </tbody>
         </table>
     </div>

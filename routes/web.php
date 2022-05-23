@@ -67,6 +67,8 @@ Route::get("/category", [CategoryController::class, "category"]);
 Route::get("/home", [ProductListController::class, "productlisthome"]);
 
 Route::get("/header", [LogInController::class, "authenticate"]);
+ Route::get("/1", [LihatDataController::class, "report"]);
+//  Route::get('/header', [LogInController::class, 'authenticate']);
 // Route::get("/home", [DetailTransController::class, "total_sales"]);
 
 
@@ -90,10 +92,8 @@ Route::get('/insertproduct', function () {
 
 Route::get('/transactionlist', [TransactionListController::class, 'translist']);
 
-Route::get('/transactiondetail', function () {
-    return view('transactiondetail', [
-        // "title" => "About Us"
-    ]);
+Route::prefix("/transactiondetail")->group(function (){
+    Route::get("/{id}", [TransactionListController::class, "details"]);
 });
 
 Route::get('/inserttransaction', function () {

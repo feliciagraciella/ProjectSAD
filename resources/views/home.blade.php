@@ -52,7 +52,7 @@
             <h3>Most Popular Products</h3>
             <div class="column-popular">
                 <div class="rect1">
-                    {{-- <img src="{{ asset('images/best/' . $sales->SUM(QTY_PRODUCT)) }}"> --}}
+                    {{-- <img src="{{ asset('images/best/' . $data->IMAGE) }}" alt="" height=100 width=100> --}}
                 </div>
             </div>
             <div class="column-popular">
@@ -70,6 +70,7 @@
 
                 </div>
             </div>
+
         </div>
 
         <div class="all-products">
@@ -81,7 +82,7 @@
                         <th scope="col" style="font-weight: 600; text-align:center;">Photo</th>
                         <th scope="col" style="font-weight: 600; text-align:center;">SKU</th>
                         <th scope="col" style="font-weight: 600; text-align:center;">Name</th>
-                        <th scope="col" style="font-weight: 600; text-align:center;">Total Sale</th>
+                        <th scope="col" style="font-weight: 600; text-align:center;">Total Sales</th>
                         <th scope="col" style="font-weight: 600; text-align:center;">Size</th>
                         <th scope="col" style="font-weight: 600; text-align:center;">Price</th>
                     </tr>
