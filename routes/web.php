@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DetailTransController;
 use App\Http\Controllers\LihatDataController;
 use App\Http\Controllers\LogInController;
@@ -60,7 +61,11 @@ Route::get('/report2', function () {
 // });
 
 Route::get("/product", [ProductListController::class, "productlist"]);
+
+Route::get("/category", [CategoryController::class, "category"]);
+
 Route::get("/home", [ProductListController::class, "productlisthome"]);
+
 Route::get("/header", [LogInController::class, "authenticate"]);
 // Route::get("/home", [DetailTransController::class, "total_sales"]);
 
