@@ -12,7 +12,7 @@ body{
     font-weight: 700;
 }
 
-.dropdown-show2{
+/* .custom-select{
     position: absolute;
     margin: 0;
     top: 50%;
@@ -24,11 +24,9 @@ body{
     width: 150px;
     letter-spacing: 1px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
+} */
 
-.dropdown-show2 a:hover {
-    background-color: #f7f7f7;
-}
+
 
 .baris1 {
     background-color: #f7f7f7;
