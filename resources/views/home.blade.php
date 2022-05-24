@@ -96,8 +96,8 @@
                             </th>
                             <td style="text-align:center;">{{ $p->SKU }}</td>
                             <td style="text-align:left;">{{ $p->P_NAME }}</td>
-                            {{-- <td style="text-align:center;">{{ $p->sum(DETAIL_TRANSACTION . QTY_PRODUCT) }}</td> --}}
-                            <td style="text-align:center;">5</td>
+                            <td style="text-align:center;">{{ $p->SUM('DETAIL_TRANSACTION' . 'QTY_PRODUCT') }}</td>
+                            {{-- <td style="text-align:center;">5</td> --}}
                             <td style="text-align:center;">{{ $p->SIZE }}</td>
                             <td style="text-align:center;">{{ $p->PRICE }}</td>
                         </tr>
