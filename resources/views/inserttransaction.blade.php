@@ -15,17 +15,17 @@
 
 <body>
     <h5 class=title>Insert Transaction</h5>
-    <div class="baris1">
+    <div class="baris1" style="z-index: 1000">
         <h4 class="datetitle">Date</h4>
         <input class="btn btn-sm calendar" style="text-transform:unset !important;" type="date">
 
-        <h4 class="platformtitle">Platform</h4>
+        <h4 class="platformtitle" >Platform</h4>
         <div class="dropdown-show2">
             <a class="btn btn-sm dropdown-toggle dropdown-toggle-split" href="#" style="text-transform:unset !important; width: 150px;" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Select Platform
             </a>
 
-            <div class="dropdown-menu" style="z-index: 98" aria-labelledby="dropdownMenuLink">
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
               <a class="dropdown-item" style="font-size: smaller;" href="#">All</a>
               <a class="dropdown-item" style="font-size: smaller;" href="#">Tokopedia</a>
               <a class="dropdown-item" style="font-size: smaller;" href="#">Shopee</a>

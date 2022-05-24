@@ -94,8 +94,8 @@
         </nav>
     </div> --}}
 
-    <div class="topbar"
-        style="background-color: white; overflow: hidden; width: 100%; height: 52px; position:fixed; z-index:99; top: 0; left:250px; ">
+    <div class="topbar" style="background-color: white; width: 100%; height: 52px; position:fixed; z-index:99; top: 0; left:250px; ">
+    {{-- <div class="topbar" style="background-color: grey; height: 52px; position:sticky; z-index:99; top: 0; left:250px; "> --}}
         <div class="date" style="text-align: center">
             <script>
                 date = new Date().toLocaleDateString();
@@ -112,9 +112,9 @@
                 </i>
             </a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink"
-                style="position: fixed;">
+                style="position: fixed; float: right;">
                 <li>
-                    <a style="text-align: left; color: black; position: fixed; right: -150px;" class="dropdown-item"
+                    <a style="text-align: left; color: black; " class="dropdown-item"
                         href="/login">Log Out</a>
                 </li>
             </ul>
