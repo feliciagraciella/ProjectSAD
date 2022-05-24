@@ -28,7 +28,7 @@
     </div>
     <div class="baris1">
 
-        <div class="dropdown-show2">
+        {{-- <div class="dropdown-show2">
             <a class="btn btn-sm dropdown-toggle dropdown-toggle-split" href="#"
                 style="text-transform:unset !important; width: 150px; " role="button" id="dropdownMenuLink"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -40,7 +40,15 @@
                 <a class="dropdown-item" style="font-size: smaller;" href="#">Qty</a>
                 <a class="dropdown-item" style="font-size: smaller;" href="#">Size</a>
             </div>
-        </div>
+        </div> --}}
+
+        <select class="dropdown-show2" name="cars" id="cars">
+            <option href="#" value="volvo">Volvo</option>
+            <option href="#" value="saab">Saab</option>
+            <option href="#" value="opel">Opel</option>
+            <option href="#" value="audi">Audi</option>
+          </select>
+
         <a class="viewcat" href="/category">View Category</a>
     </div>
 
