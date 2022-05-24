@@ -107,10 +107,10 @@
                 </tr>
             @endforeach
         </tbody>
-        <div class="pagination-button">
-            {{ $data->links() }}
-        </div>
       </table>
+    {{-- <div class="pagination-button">
+        {{ $data->links() }}
+    </div> --}}
 </body>
 
 </html>

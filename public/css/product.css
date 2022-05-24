@@ -16,10 +16,18 @@ body{
     position: absolute;
     margin: 0;
     top: 50%;
+    font: Poppins;
+    text-align: center;
     transform: translateY(-50%);
+    border-radius: 5px;
+    border: none;
     width: 150px;
-    background-color: #FFFFFF;
     letter-spacing: 1px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.dropdown-show2 a:hover {
+    background-color: #f7f7f7;
 }
 
 .baris1 {
