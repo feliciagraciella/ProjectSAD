@@ -16,6 +16,4 @@ class TransactionListModel extends Model
 
     //Timestamp di false
     public $timestamps = false;
-
-
 }

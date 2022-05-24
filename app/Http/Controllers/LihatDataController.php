@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-// use App\Models\LihatDataModel;
+use App\Models\TransactionListModel;
 // use App\Models\Report;
 use App\Models\ReportModel;
 use Illuminate\Pagination\Paginator;
@@ -20,16 +20,17 @@ class LihatDataController extends Controller
 
     public function report()
     {
-        $dreport = "select * from most_popular_all ";
-        $data = ReportModel::all();
-        // $data = Report::query($dreport);
-
         // $dreport = "select * from most_popular_all ";
-        // $data = ReportModel::where('SKU', 'B250007')->get();
-        // // $data = Report::query($dreport);
+        $data = ReportModel::all();
+
+        $income = DB::select("select fNetProfit() as `NetProfit`");
+
+        $admin = DB::select("select fAdminFee() as `AdminFee`");
 
         return view("report", [
-            "data" => $data
+            "data" => $data,
+            "income" => $income[0]->NetProfit,
+            "admin" => $admin[0]->AdminFee
         ]);
 
         return view("home", [
