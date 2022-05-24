@@ -72,14 +72,14 @@
             Net Profit
         </div>
         <div class="subvalue-income">
-            Rp10.000.000
+            Rp{{$income}}
         </div>
         <br>
         <div class="subtitle-income">
             Platform Fee
         </div>
         <div class="subvalue-income">
-            Rp500.000
+            Rp{{$admin}}
         </div>
     </div>
     <table class="table table-hover" style="width: 70%; position: absolute; left: 320px; top: 464px;">

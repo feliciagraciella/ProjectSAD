@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use DB;
 
 // class Report extends Authenticatable
 class ReportModel extends Model
@@ -21,4 +22,5 @@ class ReportModel extends Model
 
     //timestamp difalse
     public $timestamp = false;
+
 }
