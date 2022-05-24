@@ -1,0 +1,104 @@
+.body {
+    overflow-x: hidden;
+}
+.title{
+    position: absolute;
+    left: 318px;
+    top: 96px;
+    color: black;
+    font-weight: 700;
+}
+
+.totaltransaction {
+    height: 50px;
+    /* position: absolute; */
+    /* top: 700px; */
+    padding: 30px;
+    width: 30%;
+    /* left: 305px; */
+    /* margin-left: 50%; */
+    transform: translateX(120%);
+    margin-top: 150px;
+}
+
+.inputtotaltrans {
+    position: absolute;
+    right: 0;
+    float: right;
+    /* top: 50%; */
+    width: 70px;
+    font-family: Poppins;
+    font-size: medium;
+    font-weight: 700;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.totalplatfee {
+    height: 50px;
+    /* position: absolute; */
+    /* top: 750px; */
+    padding: 30px;
+    width: 70%;
+    /* left: 305px; */
+    margin-left: 50%;
+    transform: translateX(-70%);
+}
+
+.totalfee {
+    /* position: absolute; */
+    /* right: 25%; */
+    width: 70px;
+    font-family: Poppins;
+    font-size: smaller;
+    font-weight: 700;
+    margin: 0;
+    /* top: 50%; */
+    transform: translateY(-50%);
+
+}
+
+.inputtotalfee {
+    position: absolute;
+    right: 0;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 30px;
+}
+
+.hrhasil {
+    width: 26%;
+    color:black;
+    left: 200px;
+    margin-left: 50%;
+    top: 790px;
+    position:absolute;
+}
+
+.totalakhir {
+    height: 50px;
+    position: absolute;
+    top: 810px;
+    padding: 30px;
+    width: 70%;
+    left: 305px;
+    margin-left: 50%;
+    transform: translateX(-70%);
+}
+
+.totalakhirr {
+    /* position: absolute; */
+    /* right: 0; */
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 30px;
+    font-family: Poppins;
+    font-size:small;
+    text-align: right;
+    font-weight: 700;
+}
+
+
