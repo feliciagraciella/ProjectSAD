@@ -112,7 +112,7 @@
               <option value="0">Select car:</option>
               <option value="1">Audi</option>
               <option value="2">BMW</option>
-              
+
             </select>
         </div>
 
@@ -218,12 +218,12 @@
                 @foreach($product as $p)
                 <tr>
                     <td style="text-align:center"><img src="../images/best/{{$p->SKU}}.jpg" alt="" height=70></td>
-                    <td style="font-weight: 600; text-align:left;">{{$p->SKU}}</td>
-                    <td style="font-weight: 600; text-align:left;">{{$p->ID_CATEGORY}}</td>
-                    <td style="font-weight: 600; text-align:left;">{{$p->P_NAME}}</td>
-                    <td style="font-weight: 600; text-align:left;">{{$p->STOCK}}</td>
-                    <td style="font-weight: 600; text-align:left;">{{$p->SIZE}} ml</td>
-                    <td style="font-weight: 600; text-align:left;">Rp {{$p->PRICE}}</td>
+                    <td style="font-weight: 600; text-align:left;"><a href="{{ ('productdetail/'.$p->SKU) }}">{{$p->SKU}}</a></td>
+                    <td style="font-weight: 600; text-align:left;"><a href="{{ ('productdetail/'.$p->SKU) }}">{{$p->ID_CATEGORY}}</td>
+                    <td style="font-weight: 600; text-align:left;"><a href="{{ ('productdetail/'.$p->SKU) }}">{{$p->P_NAME}}</td>
+                    <td style="font-weight: 600; text-align:left;"><a href="{{ ('productdetail/'.$p->SKU) }}">{{$p->STOCK}}</td>
+                    <td style="font-weight: 600; text-align:left;"><a href="{{ ('productdetail/'.$p->SKU) }}">{{$p->SIZE}} ml</td>
+                    <td style="font-weight: 600; text-align:left;"><a href="{{ ('productdetail/'.$p->SKU) }}">Rp {{$p->PRICE}}</td>
                     <td style="font-weight: 600; text-align:left; width: 10%;"><span style="text-align:center;"
                             class="close">&#10005;</span></td>
                 </tr>

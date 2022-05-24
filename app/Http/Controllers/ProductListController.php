@@ -21,6 +21,24 @@ class ProductListController extends Controller
         ]);
     }
 
+    // public function productdetail($sku)
+    // {
+    //     $item = DB::table('PRODUCT')
+    //     ->where('SKU', $sku)
+    //     ->first();
+    //     // dd($item);
+    //     // $email=Session::get('login');
+    //     // $rid ="select R_ID from reseller where R_EMAIL='".$email."';";
+    //     // $reseller_id = DB::select($rid);
+    //     // dd($reseller_id);
+    //     return view("productdetail", [
+    //         "nama" => $item->J_MERK,
+    //         "i" => $item,
+    //         "sku" => $sku,
+    //         "email"=> $email
+    //     ]);
+    // }
+
     public function productlisthome()
     {
         // $sales = DetailTransModel::all()
