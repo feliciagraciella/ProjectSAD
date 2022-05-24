@@ -32,33 +32,29 @@
         }
 
         .select-selected {
-          background-color: DodgerBlue;
+          background-color: white;
         }
 
         /*style the arrow inside the select element:*/
         .select-selected:after {
           position: absolute;
           content: "";
-          top: 14px;
+          /* top: 14px; */
           right: 10px;
           width: 0;
           height: 0;
-          border: 6px solid transparent;
-          border-color: #fff transparent transparent transparent;
         }
 
         /*point the arrow upwards when the select box is open (active):*/
         .select-selected.select-arrow-active:after {
           border-color: transparent transparent #fff transparent;
-          top: 7px;
+          /* top: 7px; */
         }
 
         /*style the items (options), including the selected item:*/
         .select-items div,.select-selected {
-          color: #ffffff;
+          color: black;
           padding: 8px 16px;
-          border: 1px solid transparent;
-          border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
           cursor: pointer;
           user-select: none;
         }
@@ -66,7 +62,7 @@
         /*style items (options):*/
         .select-items {
           position: absolute;
-          background-color: DodgerBlue;
+          background-color: white;
           top: 100%;
           left: 0;
           right: 0;
@@ -107,12 +103,11 @@
         </div> --}}
 
 
-        <div class="btn btn-sm custom-select" style="width:200px;">
-            <select>
+        <div class="custom-select" style="width:200px;">
+            <select class="btn-sm ">
               <option value="0">Select car:</option>
               <option value="1">Audi</option>
               <option value="2">BMW</option>
-              
             </select>
         </div>
 
