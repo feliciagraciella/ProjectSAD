@@ -8,7 +8,7 @@ use App\Models\TransactionListModel;
 use App\Models\ReportModel;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Collection;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class LihatDataController extends Controller
 {
@@ -35,7 +35,9 @@ class LihatDataController extends Controller
 
         return view("home", [
             "data" => $data
-                ->take(4)
+                ->take(4),
+            "income" => $income[0]->NetProfit,
+            "admin" => $admin[0]->AdminFee
         ]);
     }
 
