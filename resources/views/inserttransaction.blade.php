@@ -60,7 +60,7 @@
     </div>
 
     <div class=table>
-        <table class="table" style="width: 70%; position: absolute; left: 320px; top: 380px;">
+        <table class="table" style="width: 70%; position: absolute; left: 320px; top: 380px; overflow-y:scroll;">
             <thead>
               <tr>
                 <th scope="col" style="font-weight: 700; text-align:left;">Transaction ID</th>
