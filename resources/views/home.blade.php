@@ -96,8 +96,8 @@
                             </th>
                             <td style="text-align:center;">{{ $p->SKU }}</td>
                             <td style="text-align:left;">{{ $p->P_NAME }}</td>
-                            <td style="text-align:center;">{{ $p->SUM('DETAIL_TRANSACTION' . 'QTY_PRODUCT') }}</td>
-                            {{-- <td style="text-align:center;">5</td> --}}
+                            {{-- <td style="text-align:center;">{{ $p->SUM('DETAIL_TRANSACTION' . 'QTY_PRODUCT') }}</td> --}}
+                            <td style="text-align:center;">5</td>
                             <td style="text-align:center;">{{ $p->SIZE }}</td>
                             <td style="text-align:center;">{{ $p->PRICE }}</td>
                         </tr>
@@ -114,6 +114,7 @@
                     <span class="iconify" data-icon="dashicons:money-alt" style="color: black; "></span>
                 </p>
                 <h5 class="netprofit-text">Net&nbspProfit</h5>
+                {{-- <h5 class="netprofit-amt">Rp{{ $income }}</h5> --}}
                 <h5 class="netprofit-amt">Rp7.500.000</h5>
             </div>
             <div class="plat-fee" style="left: 80%; position: absolute; top: 180px;">
@@ -121,7 +122,8 @@
                     <span class="iconify" data-icon="dashicons:money-alt" style="color: black; "></span>
                 </p>
                 <h5 class="fee-text">Platform&nbspFee</h5>
-                <h5 class="fee-amt">Rp1.500.000</h5>
+                {{-- <h5 class="fee-amt">Rp{{ $admin }}</h5> --}}
+                <h5 class="fee-amt">Rp15.000.000</h5>
             </div>
         </div>
 

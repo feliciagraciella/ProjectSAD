@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LogInController extends Controller
 {
@@ -18,6 +19,7 @@ class LogInController extends Controller
 
     public function authenticate(Request $request)
     {
+        // $user = Auth::user() ->id;
         $request->validate([
             'admin' => ['required'],
             'password' => ['required'],
@@ -32,8 +34,9 @@ class LogInController extends Controller
             if ($password == $obj['PASSWORD_ADMIN']) {
                 $request->session()->put('admin', $obj['ID_ADMIN']);
 
+                $user = Auth::user() ->id;
 
-                $admin = session('idAdmin');
+                // $admin = session('idAdmin');
 
                 return view('header', [
                     'admin' => $admin
