@@ -21,7 +21,7 @@ class TransactionListController extends Controller
 
     public function details($id)
     {
-        $transdet = TransactionDetailModel::find($id);
+        $transdet = TransactionDetailModel::where('ID_TRANSACTION', $id)->get();
 
         return view("transactiondetail", [
             "transdet" => $transdet,
