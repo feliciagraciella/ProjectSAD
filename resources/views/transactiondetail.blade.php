@@ -49,17 +49,18 @@
 
     <div class="totalplatfee">
         <h4 class="totalfee" style="width: 150px;">Total Platform Fee</h4>
-        <div class="inputtotalfee">
+        <h4  class="inputtotaltrans" style="width: 150px; text-align: right;">Rp. 500.000</h4>
+        {{-- <div class="inputtotalfee">
             <input type="text" class="form-control btn btn-sm" style="text-transform:unset !important; width: 200px; text-align: right;
             text-align:right;" placeholder="Enter value">
-        </div>
+        </div> --}}
     </div>
 
     <hr class="hrhasil">
 
     <div class="totalakhir">
         <h4 class="totalfee" style="width: 150px;">Total</h4>
-        <h4 class="totalakhirr" style="width: 150px;">Rp. 500.000</h4>
+        <h4 class="inputtotaltrans" style="width: 150px;">Rp. 500.000</h4>
     </div>
 
 </body>

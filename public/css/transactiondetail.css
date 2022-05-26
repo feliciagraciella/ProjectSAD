@@ -10,53 +10,40 @@
 }
 
 .totaltransaction {
-    height: 50px;
-    /* position: absolute; */
-    /* top: 700px; */
-    padding: 30px;
+    height: 10px;
     width: 30%;
-    /* left: 305px; */
-    /* margin-left: 50%; */
-    transform: translateX(120%);
+    transform: translateX(200%);
     margin-top: 150px;
+    padding: 30px;
+    padding-top: 15px;
 }
 
 .inputtotaltrans {
-    position: absolute;
-    right: 0;
     float: right;
-    /* top: 50%; */
     width: 70px;
     font-family: Poppins;
     font-size: medium;
     font-weight: 700;
     margin: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    text-align: right;
 }
 
 .totalplatfee {
-    height: 50px;
-    /* position: absolute; */
-    /* top: 750px; */
+    /* height: 35px; */
     padding: 30px;
-    width: 70%;
-    /* left: 305px; */
-    margin-left: 50%;
-    transform: translateX(-70%);
+    width: 30%;
+    transform: translateX(200%);
+    padding: 30px;
+    padding-top: 15px;
 }
 
 .totalfee {
-    /* position: absolute; */
-    /* right: 25%; */
+    float: left;
     width: 70px;
     font-family: Poppins;
     font-size: smaller;
     font-weight: 700;
     margin: 0;
-    /* top: 50%; */
-    transform: translateY(-50%);
-
 }
 
 .inputtotalfee {
@@ -71,26 +58,18 @@
 .hrhasil {
     width: 26%;
     color:black;
-    left: 200px;
-    margin-left: 50%;
-    top: 790px;
-    position:absolute;
+    transform: translateX(240%);
 }
 
 .totalakhir {
-    height: 50px;
-    position: absolute;
-    top: 810px;
     padding: 30px;
-    width: 70%;
-    left: 305px;
-    margin-left: 50%;
-    transform: translateX(-70%);
+    width: 30%;
+    transform: translateX(200%);
+    padding: 30px;
+    padding-top: 15px;
 }
 
-.totalakhirr {
-    /* position: absolute; */
-    /* right: 0; */
+/* .totalakhirr {
     margin: 0;
     top: 50%;
     transform: translateY(-50%);
@@ -99,6 +78,6 @@
     font-size:small;
     text-align: right;
     font-weight: 700;
-}
+} */
 
 
