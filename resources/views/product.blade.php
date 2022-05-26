@@ -23,8 +23,10 @@
     <style>
         /*the container must be positioned relative:*/
         .custom-select {
-          position: relative;
+          position: absolute;
           font-family: Arial;
+          top: 50%;
+          transform: translateY(-50%);
         }
 
         .custom-select select {
@@ -37,24 +39,26 @@
 
         /*style the arrow inside the select element:*/
         .select-selected:after {
-          position: absolute;
-          content: "";
-          /* top: 14px; */
-          right: 10px;
-          width: 0;
-          height: 0;
+            position: absolute;
+            content: "";
+            top: 14px;
+            right: 10px;
+            width: 0;
+            height: 0;
+            border: 6px solid transparent;
+            border-color: black transparent transparent transparent;
         }
 
         /*point the arrow upwards when the select box is open (active):*/
         .select-selected.select-arrow-active:after {
-          border-color: transparent transparent #fff transparent;
-          /* top: 7px; */
+        border-color: transparent transparent black transparent;
+          top: 7px;
         }
 
         /*style the items (options), including the selected item:*/
         .select-items div,.select-selected {
           color: black;
-          padding: 8px 16px;
+          padding-left: 8px;
           cursor: pointer;
           user-select: none;
         }
@@ -104,8 +108,8 @@
 
 
         <div class="custom-select" style="width:200px;">
-            <select class="btn-sm ">
-              <option value="0">Select car:</option>
+            <select class="btn-sm">
+              <option value="0">Sort by</option>
               <option value="1">Audi</option>
               <option value="2">BMW</option>
             </select>

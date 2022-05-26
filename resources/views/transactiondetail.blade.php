@@ -15,13 +15,15 @@
 <body>
     <h5 class=title>Transaction Detail</h5>
 
+    <h6 style="margin-top: 50px" class=title>Transaction ID : {{$id}}</h6>
 
-    <div class="table" style="padding-left: 320px; transform:translateY(140px);">
+    <div class="table" style="padding-left: 320px; transform:translateY(170px);">
         <table class="table" style="width: 90%;">
             <thead>
                 <tr>
-                    <th scope="col" style="font-weight: 700; text-align:left;">Transaction ID</th>
+                    <th scope="col" style="font-weight: 700; text-align:left;">Image</th>
                     <th scope="col" style="font-weight: 700; text-align:left;">SKU</th>
+                    <th scope="col" style="font-weight: 700; text-align:left;">Name</th>
                     <th scope="col" style="font-weight: 700; text-align:left;">Quantity</th>
 
                 </tr>
@@ -29,8 +31,9 @@
             <tbody>
                 @foreach ($transdet as $td)
                 <tr>
-                    <td style="font-weight: 600; text-align:left;">{{$td -> ID_TRANSACTION}}</td>
+                    <td style="text-align:left;"><img src="../images/best/{{$td->SKU}}.jpg" alt="" height=70></td>
                     <td style="font-weight: 600;text-align:left;">{{$td -> SKU}}</td>
+                    <td style="font-weight: 600; text-align:left;">{{$td -> P_NAME}}</td>
                     <td style="font-weight: 600;text-align:left;">{{$td -> QTY_PRODUCT}}</td>
                 </tr>
                 @endforeach
@@ -42,14 +45,14 @@
         <h4 class="totalfee" style="width: 150px;">Total Transaction</h4>
 
         {{-- <div class="inputtotaltrans"> --}}
-        <h4  class="inputtotaltrans" style="width: 150px; text-align: right;">Rp. 500.000</h4>
+        <h4  class="inputtotaltrans" style="width: 150px; text-align: right;">Rp. {{$trans[0] -> TOTAL_PRICE}}</h4>
             {{-- <input type="text" class="form-control btn btn-sm" style="text-transform:unset !important; width: 200px; text-align: right;" placeholder="Enter value"> --}}
         {{-- </div> --}}
     </div>
 
     <div class="totalplatfee">
         <h4 class="totalfee" style="width: 150px;">Total Platform Fee</h4>
-        <h4  class="inputtotaltrans" style="width: 150px; text-align: right;">Rp. 500.000</h4>
+        <h4  class="inputtotaltrans" style="width: 150px; text-align: right;">Rp. {{$trans[0] -> TOTAL_FEE}}</h4>
         {{-- <div class="inputtotalfee">
             <input type="text" class="form-control btn btn-sm" style="text-transform:unset !important; width: 200px; text-align: right;
             text-align:right;" placeholder="Enter value">
@@ -60,7 +63,7 @@
 
     <div class="totalakhir">
         <h4 class="totalfee" style="width: 150px;">Total</h4>
-        <h4 class="inputtotaltrans" style="width: 150px;">Rp. 500.000</h4>
+        <h4 class="inputtotaltrans" style="width: 150px;">Rp. {{$trans[0] -> NET_PRICE}}</h4>
     </div>
 
 </body>
