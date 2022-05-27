@@ -66,19 +66,9 @@ Route::get('/report2', function () {
 // });
 
 Route::get("/product", [ProductListController::class, "productlist"]);
-
 Route::get("/category", [CategoryController::class, "category"]);
-
-// Route::get("/home", [ProductListController::class, "productlisthome"]);
-
 Route::get("/header", [LogInController::class, "authenticate"]);
 Route::get("/home", [HomeController::class, "reporthome"]);
-// Route::prefix('admin')->group(function () {
-
-// });
-//  Route::get('/header', [LogInController::class, 'authenticate']);
-// Route::get("/home", [DetailTransController::class, "total_sales"]);
-
 
 // Route::get('/productdetail', function () {
 //     return view('productdetail', [
