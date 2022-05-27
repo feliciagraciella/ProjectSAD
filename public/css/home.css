@@ -81,7 +81,7 @@
     /* margin-left: 83%; */
     border-radius: 12px;
 }
-
+/*
 .rect2 {
     background: #f8f7f2;
     width: 150px;
@@ -104,7 +104,7 @@
     height: 150px;
     border-radius: 12px;
     margin-left: -50%;
-}
+} */
 
 .all-products h3 {
     font-weight: bold;
@@ -202,9 +202,11 @@
     font-size: smaller;
     font-family: "Poppins";
     color: black;
-    left: 40px;
-    top: 0;
-    position: absolute;
+    margin-left: 40px;
+    margin-top: 0;
+    display: flex;
+
+    /* position: absolute; */
 }
 
 .stock-qty {
@@ -212,7 +214,15 @@
     font-size: smaller;
     font-family: "Poppins";
     color: black;
-    left: 40px;
-    top: 20px;
-    position: absolute;
+    margin-left: 40px;
+    margin-top: 10px;
+    /* position: absolute; */
+}
+
+.stock-all {
+    margin-top: 5px;
+}
+
+.text {
+    top: 5px;
 }

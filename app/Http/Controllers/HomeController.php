@@ -59,11 +59,14 @@ class HomeController extends Controller
 
         $admin = DB::select("select fAdminFee() as `AdminFee`");
 
+        $stock = DB::select("select P_NAME, STOCK from PRODUCT where STOCK <= 10 order by STOCK asc");
+
         return view("home", [
             "data" => $data
                 ->take(4),
             "product" => $product
                 ->take(5),
+            "stock" => $stock,
             "income" => $income[0]->NetProfit,
             "admin" => $admin[0]->AdminFee
         ]);
