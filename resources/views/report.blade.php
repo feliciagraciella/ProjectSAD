@@ -31,42 +31,48 @@
                 Select Report
             </a>
 
-            {{-- <div class="dropdown-menu" aria-labelledby="dropdownMenuLink"> --}}
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 
-                
 
-                <button class="dropdown-item" type="submit" value="product-sales" name="select_product">Product Sales</button>
-                <button class="dropdown-item" type="submit" value="finance" name="select_finance">Finance</button>
-            {{-- </div> --}}
+
+                <button class="dropdown-item" type="submit" value="product-sales" name="select_report">Product Sales</button>
+                <button class="dropdown-item" type="submit" value="finance" name="select_report">Finance</button>
+            </div>
         </div>
     </form>
 
-    <div class="dropdown-show2">
-        <a class="btn btn-sm dropdown-toggle dropdown-toggle-split" href="#"
-            style="text-transform:unset !important; margin-left: -28px;" role="button" id="dropdownMenuLink"
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Select Platform
-        </a>
+    <form action="/report2" method="get">
+        @csrf
+        <div class="dropdown-show2" name="">
+            <a class="btn btn-sm dropdown-toggle dropdown-toggle-split"
+                style="text-transform:unset !important;" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Select Platform
+            </a>
 
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="#">All</a>
-            <a class="dropdown-item" href="#">Tokopedia</a>
-            <a class="dropdown-item" href="#">Shopee</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <button class="dropdown-item" type="submit" value="all" name="select_platform">All</button>
+                <button class="dropdown-item" type="submit" value="shopee" name="select_platform">Shopee</button>
+                <button class="dropdown-item" type="submit" value="tokopedia" name="select_platform">Tokopedia</button>
+            </div>
         </div>
-    </div>
-    <div class="dropdown-show3">
-        <a class="btn btn-sm dropdown-toggle dropdown-toggle-split" href="#"
-            style="text-transform:unset !important; margin-left: -28px;" role="button" id="dropdownMenuLink"
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Select Period
-        </a>
+    </form>
+    <form action="/report2" method="get">
+        @csrf
+        <div class="dropdown-show3" name="">
+            <a class="btn btn-sm dropdown-toggle dropdown-toggle-split"
+                style="text-transform:unset !important;" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Select Period
+            </a>
 
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="#">All</a>
-            <a class="dropdown-item" href="#">Last 7 Days</a>
-            <a class="dropdown-item" href="#">Last 30 Days</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <button class="dropdown-item" type="submit" value="all" name="select_period">All</button>
+                <button class="dropdown-item" type="submit" value="7days" name="select_period">Last 7 Days</button>
+                <button class="dropdown-item" type="submit" value="30days" name="select_period">Last 30 Days</button>
+            </div>
         </div>
-    </div>
+    </form>
     {{-- <div style="width: 80%;margin: 0 auto;">
         {!! $chart->container() !!}
     </div>

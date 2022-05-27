@@ -41,19 +41,7 @@ class ReportController extends Controller
 
         $kuery = $req->query();
         dd($kuery);
-        // dd($report);
-
-        // $data = ReportModel::all();
-
-        // $income = DB::select("select fNetProfit() as `NetProfit`");
-
-        // $admin = DB::select("select fAdminFee() as `AdminFee`");
-
-        // return view("report", [
-        //     "data" => $data,
-        //     "income" => $income[0]->NetProfit,
-        //     "admin" => $admin[0]->AdminFee
-        // ]);
+      
 
     }
 
