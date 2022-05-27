@@ -70,7 +70,10 @@ Route::get("/category", [CategoryController::class, "category"]);
 Route::get("/home", [ProductListController::class, "productlisthome"]);
 
 Route::get("/header", [LogInController::class, "authenticate"]);
- Route::get("/1", [LihatDataController::class, "report"]);
+Route::get("/", [LihatDataController::class, "report"]);
+// Route::prefix('admin')->group(function () {
+
+// });
 //  Route::get('/header', [LogInController::class, 'authenticate']);
 // Route::get("/home", [DetailTransController::class, "total_sales"]);
 
