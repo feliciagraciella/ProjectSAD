@@ -26,7 +26,7 @@
     <form action="#" method="POST" enctype="multipart/form-data" class="form">
         <div class="baris1">SKU</div>
         <div class="boxsku">
-            <input type="text" id="sku" name="sku" class="form-control btn btn-sm" placeholder="SKU"
+            <input type="text" id="sku" name="sku" value="{{ $SKU }}" class="form-control btn btn-sm" placeholder="SKU"
                 style="text-transform:unset !important; width: 310px; text-align: center;">
         </div>
 
@@ -45,17 +45,6 @@
                 <option>Protect</option>
                 <option>Tools</option>
             </select>
-
-            {{-- <a class="btn btn-sm dropdown-toggle dropdown-toggle-split" href="#"
-                style="text-transform:unset !important; width: 310px; text-align: right;" role="button"
-                id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            </a>
-
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" style="font-size: smaller;" href="#">Cleaner</a>
-                <a class="dropdown-item" style="font-size: smaller;" href="#">Protect</a>
-                <a class="dropdown-item" style="font-size: smaller;" href="#">Tools</a>
-            </div> --}}
         </div>
 
         <div class="baris4-1">Price</div>

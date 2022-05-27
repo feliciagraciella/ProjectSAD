@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\DetailTransModel;
 use App\Models\ProductListModel;
+use App\Models\ProductDetailModel;
 use App\Http\Controllers\SUM;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -21,6 +22,15 @@ class ProductListController extends Controller
         ]);
     }
 
+    public function productdetail()
+    {
+        $product = ProductDetailModel::all();
+
+        return view('productdetail', [
+            'product' => $product
+        ]);
+    }
+
     public function addproduct(Request $request)
     {
         $messages = array();
@@ -34,31 +44,31 @@ class ProductListController extends Controller
         $image = $_POST['image'];
 
         //validasi input
-        if($sku == ''){
+        if ($sku == '') {
             array_push($messages, 'SKU must be filled out.');
         }
-        if($name == ''){
+        if ($name == '') {
             array_push($messages, 'Name must be filled out.');
         }
-        if($cat == ''){
+        if ($cat == '') {
             array_push($messages, 'Category name must be filled out.');
         }
-        if($price == ''){
+        if ($price == '') {
             array_push($messages, 'Price must be filled out.');
         }
-        if($qty == ''){
+        if ($qty == '') {
             array_push($messages, 'Qty must be filled out.');
         }
-        if($size == ''){
+        if ($size == '') {
             array_push($messages, 'Size must be filled out.');
         }
-        if($desc == ''){
+        if ($desc == '') {
             array_push($messages, 'Description must be filled out.');
         }
         // if($image == ''){
         //     array_push($messages, 'Image must be filled out.');
         // }
-        if (isset($messages) && count($messages)>0){
+        if (isset($messages) && count($messages) > 0) {
             return redirect('/product');
         }
 
@@ -72,10 +82,10 @@ class ProductListController extends Controller
             'desc' => $desc
         ];
 
-        $user = New ProductListModel();
+        $user = new ProductListModel();
         $flag_exist = $user->addproduct($data);
 
-        if($flag_exist==1){
+        if ($flag_exist == 1) {
             return redirect('/product');
         }
 
@@ -83,24 +93,6 @@ class ProductListController extends Controller
         $data = $request->all();
         $data['image'] = $request->file('image')->store('images', 'public');
     }
-
-    // public function productdetail($sku)
-    // {
-    //     $item = DB::table('PRODUCT')
-    //     ->where('SKU', $sku)
-    //     ->first();
-    //     // dd($item);
-    //     // $email=Session::get('login');
-    //     // $rid ="select R_ID from reseller where R_EMAIL='".$email."';";
-    //     // $reseller_id = DB::select($rid);
-    //     // dd($reseller_id);
-    //     return view("productdetail", [
-    //         "nama" => $item->J_MERK,
-    //         "i" => $item,
-    //         "sku" => $sku,
-    //         "email"=> $email
-    //     ]);
-    // }
 
     public function productlisthome()
     {

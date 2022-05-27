@@ -72,11 +72,12 @@ Route::get("/header", [LogInController::class, "authenticate"]);
 // Route::get("/home", [DetailTransController::class, "total_sales"]);
 
 
-Route::get('/productdetail', function () {
-    return view('productdetail', [
-        // "title" => "About Us"
-    ]);
-});
+// Route::get('/productdetail', function () {
+//     return view('productdetail', [
+//         // "title" => "About Us"
+//     ]);
+// });
+Route::get('/{product}', [ProductListController::class, 'show']);
 
 Route::get('/insertproduct', function () {
     return view('insertproduct', [
@@ -94,12 +95,6 @@ Route::get('/transactionlist', [TransactionListController::class, 'translist']);
 
 Route::prefix("/transactiondetail")->group(function (){
     Route::get("/{id}", [TransactionListController::class, "details"]);
-});
-
-Route::get('/inserttransaction', function () {
-    return view('inserttransaction', [
-        // "title" => "About Us"
-    ]);
 });
 
 Route::get('chart', 'ChartController@index');
