@@ -17,39 +17,47 @@
     <h5 class=title>Insert Transaction</h5>
     <div class="baris1" style="z-index: 1000">
         <h4 class="datetitle">Date</h4>
-        <input class="btn btn-sm calendar" style="text-transform:unset !important;" type="date">
+        <input class="btn btn-sm calendar" style="text-transform:unset !important; width: 200px;" type="date">
 
         <h4 class="platformtitle" >Platform</h4>
-        <div class="dropdown-show2">
+        <div class="dropdown-show2" >
+            <select class="dropdowncat" id="cat" name="cat"
+                style="text-transform:unset !important; width: 200px; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <option>Select Platform</option>
+                <option>Tokopedia</option>
+                <option>Shopee</option>
+            </select>
+        </div>
+        {{-- <div class="dropdown-show2">
             <a class="btn btn-sm dropdown-toggle dropdown-toggle-split" href="#" style="text-transform:unset !important; width: 150px;" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Select Platform
             </a>
+
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
               <a class="dropdown-item" style="font-size: smaller;" href="#">All</a>
               <a class="dropdown-item" style="font-size: smaller;" href="#">Tokopedia</a>
               <a class="dropdown-item" style="font-size: smaller;" href="#">Shopee</a>
             </div>
-        </div>
+        </div> --}}
     </div>
 
     <div class="baris2">
         <h4 class="datetitle">Product</h4>
         <div class="dropdown-show3">
-            <a class="btn btn-sm dropdown-toggle dropdown-toggle-split" href="#" style="text-transform:unset !important; width: 150px; " role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Select Product
-            </a>
-
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item" style="font-size: smaller;" href="#">Cleaner 1</a>
-              <a class="dropdown-item" style="font-size: smaller;" href="#">Cleaner 2</a>
-              <a class="dropdown-item" style="font-size: smaller;" href="#">Cleaner 3</a>
-            </div>
+            <select class="dropdowncat" id="cat" name="cat"
+                style="text-transform:unset !important; width: 200px; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <option>Select Product</option>
+                <option>Tokopedia</option>
+                <option>Shopee</option>
+            </select>
         </div>
 
         <h4 class="platformtitle">Quantity</h4>
         <div class="numericupdown">
-            <input class="form-control btn btn-sm d-inline text-center me-3 txtJumlah" name="inputQuantity" min=0 type="number" value="0" style="width: 150px;">
+            <input class="form-control btn btn-sm d-inline text-center me-3 txtJumlah" name="inputQuantity" min=0 type="number" value="0" style="width: 200px;">
         </div>
     </div>
 

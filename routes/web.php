@@ -67,25 +67,17 @@ Route::GET("/report2", [ReportController::class, "report2"]);
 // });
 
 Route::get("/product", [ProductListController::class, "productlist"]);
-
 Route::get("/category", [CategoryController::class, "category"]);
-
-// Route::get("/home", [ProductListController::class, "productlisthome"]);
-
 Route::get("/header", [LogInController::class, "authenticate"]);
 Route::get("/home", [HomeController::class, "reporthome"]);
-// Route::prefix('admin')->group(function () {
 
+// Route::get('/productdetail', function () {
+//     return view('productdetail', [
+//         // "title" => "About Us"
+//     ]);
 // });
-//  Route::get('/header', [LogInController::class, 'authenticate']);
-// Route::get("/home", [DetailTransController::class, "total_sales"]);
 
-
-Route::get('/productdetail', function () {
-    return view('productdetail', [
-        // "title" => "About Us"
-    ]);
-});
+Route::get("/productdetail/{sku}", [ProductListController::class, "productdetail"]);
 
 Route::get('/insertproduct', function () {
     return view('insertproduct', [
@@ -101,14 +93,14 @@ Route::get('/insertproduct', function () {
 
 Route::get('/transactionlist', [TransactionListController::class, 'translist']);
 
-Route::prefix("/transactiondetail")->group(function (){
-    Route::get("/{id}", [TransactionListController::class, "details"]);
-});
-
 Route::get('/inserttransaction', function () {
     return view('inserttransaction', [
         // "title" => "About Us"
     ]);
+});
+
+Route::prefix("/transactiondetail")->group(function (){
+    Route::get("/{id}", [TransactionListController::class, "details"]);
 });
 
 Route::get('chart', 'ChartController@index');

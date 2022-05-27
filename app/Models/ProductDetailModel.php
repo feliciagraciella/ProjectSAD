@@ -4,9 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use DB;
 
-class ProductListModel extends Model
+class ProductDetailModel extends Model
 {
     use HasFactory;
 
@@ -17,4 +16,6 @@ class ProductListModel extends Model
 
     //Timestamp di false
     public $timestamps = false;
+
+
 }

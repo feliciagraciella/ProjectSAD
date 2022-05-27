@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\DetailTransModel;
 use App\Models\ProductListModel;
+use App\Models\ProductDetailModel;
 use App\Http\Controllers\SUM;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -21,6 +22,15 @@ class ProductListController extends Controller
         ]);
     }
 
+    public function productdetail($sku)
+    {
+        $product = ProductDetailModel::select('SKU', 'ID_CATEGORY', 'P_NAME', 'SIZE', 'PRICE', 'STOCK', 'DESCRIPTION', 'IMAGE')->where('SKU', $sku)->get();
+
+        return view('productdetail', [
+            'product' => $product[0]
+        ]);
+    }
+
     public function addproduct(Request $request)
     {
         $messages = array();
@@ -34,31 +44,31 @@ class ProductListController extends Controller
         $image = $_POST['image'];
 
         //validasi input
-        if($sku == ''){
+        if ($sku == '') {
             array_push($messages, 'SKU must be filled out.');
         }
-        if($name == ''){
+        if ($name == '') {
             array_push($messages, 'Name must be filled out.');
         }
-        if($cat == ''){
+        if ($cat == '') {
             array_push($messages, 'Category name must be filled out.');
         }
-        if($price == ''){
+        if ($price == '') {
             array_push($messages, 'Price must be filled out.');
         }
-        if($qty == ''){
+        if ($qty == '') {
             array_push($messages, 'Qty must be filled out.');
         }
-        if($size == ''){
+        if ($size == '') {
             array_push($messages, 'Size must be filled out.');
         }
-        if($desc == ''){
+        if ($desc == '') {
             array_push($messages, 'Description must be filled out.');
         }
         // if($image == ''){
         //     array_push($messages, 'Image must be filled out.');
         // }
-        if (isset($messages) && count($messages)>0){
+        if (isset($messages) && count($messages) > 0) {
             return redirect('/product');
         }
 
@@ -72,10 +82,10 @@ class ProductListController extends Controller
             'desc' => $desc
         ];
 
-        $user = New ProductListModel();
+        $user = new ProductListModel();
         $flag_exist = $user->addproduct($data);
 
-        if($flag_exist==1){
+        if ($flag_exist == 1) {
             return redirect('/product');
         }
 
@@ -83,63 +93,4 @@ class ProductListController extends Controller
         $data = $request->all();
         $data['image'] = $request->file('image')->store('images', 'public');
     }
-
-    // public function productdetail($sku)
-    // {
-    //     $item = DB::table('PRODUCT')
-    //     ->where('SKU', $sku)
-    //     ->first();
-    //     // dd($item);
-    //     // $email=Session::get('login');
-    //     // $rid ="select R_ID from reseller where R_EMAIL='".$email."';";
-    //     // $reseller_id = DB::select($rid);
-    //     // dd($reseller_id);
-    //     return view("productdetail", [
-    //         "nama" => $item->J_MERK,
-    //         "i" => $item,
-    //         "sku" => $sku,
-    //         "email"=> $email
-    //     ]);
-    // }
-
-    // public function productlisthome()
-    // {
-    //     // $sales = DetailTransModel::all()
-    //     //     ->select('SKU', 'sum(QTY_PRODUCT)')
-    //     //     ->groupBy('SKU')
-    //     //     ->where('DETAIL_TRANSACTION.SKU', '=', 'PRODUCT.SKU')
-    //     //     ->get();
-
-    //     $product = ProductListModel::all();
-    //     // ->join('DETAIL_TRANSACTION', 'PRODUCT.SKU', '=', 'DETAIL_TRANSACTION.SKU')
-    //     // ->select('PRODUCT.*', SUM('DETAIL_TRANSACTION'.'QTY_PRODUCT'))
-    //     // ->groupBy('SKU')
-    //     // ->orderBy(SUM('DETAIL_TRANSACTION'.'QTY_PRODUCT'), 'desc')
-    //     // ->get();
-
-    //     // $sales = DB::table('DETAIL_TRANSACTION')
-    //     //     ->select(DB::raw('SKU', 'SUM(QTY_PRODUCT)'))
-    //     //     ->where('DETAIL_TRANSACTION.SKU', '=', 'PRODUCT_SKU')
-    //     //     ->orderBy('SUM(QTY_PRODUCT)', 'desc')
-    //     //     ->get();
-
-    //     // $product = DB::table('PRODUCT')
-    //     //     ->join('DETAIL_TRANSACTION', 'PRODUCT.SKU', '=', 'DETAIL_TRANSACTION.SKU')
-    //     //     ->select('PRODUCT.*', DB::raw("SUM('DETAIL_TRANSACTION'.'QTY_PRODUCT')"))
-    //     //     ->groupBy('SKU')
-    //     //     ->orderBy(DB::raw("SUM('DETAIL_TRANSACTION'.'QTY_PRODUCT')"))
-    //     //     ->get();
-
-    //     // $product = DB::table('PRODUCT')
-    //     //         ->select('PRODUCT.SKU', 'ID_CATEGORY', 'P_NAME', 'SIZE', 'PRICE', 'STOCK', 'DESCRIPTION', 'IMAGE', DB::raw('IFNULL'(SUM('DETAIL_TRANSACTION.QTY_PRODUCT'), 0))
-    //     //         ->leftJoin('DETAIL_TRANSACTION','PRODUCT.SKU','=','DETAIL_TRANSACTION.SKU')
-    //     //         ->where('PRODUCT.STATUS_DELETE','=',0)
-    //     //         ->groupBy('PRODUCT.SKU','ID_CATEGORY','P_NAME','SIZE','PRICE','STOCK','DESCRIPTION','IMAGE')
-    //     //         ->get();
-
-    //     return view("home", [
-    //         "product" => $product
-    //             ->take(5)
-    //     ]);
-    // }
 }

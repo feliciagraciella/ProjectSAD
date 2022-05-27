@@ -212,7 +212,7 @@
                     <th scope="col" style="font-weight: 700; text-align:left;">Price</th>
                     <th scope="col" style="font-weight: 700; text-align:left;"></th>
                 </tr>
-            </thead>
+            </thead>    
             <tbody>
                 @foreach($product as $p)
                 <tr>
