@@ -46,18 +46,19 @@ Route::get('/home', function () {
 // Route::prefix("/report")->group(function (){
 //     Route::get("/{id}", [ReportController::class, "report"]);
 // });
-Route::POST("/invoice/{email}/{tanggal}", [ShopController::class, "invoice"]);
-Route::get("/report", [ReportController::class, "report"]);
+// Route::POST("/invoice/{email}/{tanggal}", [ShopController::class, "invoice"]);
+Route::GET("/report", [ReportController::class, "report"]);
+Route::GET("/report2", [ReportController::class, "report2"]);
 // Route::get('/report', function () {
 //     return view('report', [
 //     ]);
 // });
 
-Route::get('/report2', function () {
-    return view('report2', [
-        // "title" => "About Us"
-    ]);
-});
+// Route::get('/report2', function () {
+//     return view('report2', [
+//         // "title" => "About Us"
+//     ]);
+// });
 
 // Route::get('/product', function () {
 //     return view('product', [

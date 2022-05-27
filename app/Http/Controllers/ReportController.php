@@ -18,20 +18,16 @@ class ReportController extends Controller
     //     $this->LihatDataModel = new LihatDataModel();
     // }
 
-    public function report(Request $req)
+
+
+    public function report()
     {
-        $report = [
-            'report'=> $req->value
-        ];
-        dd($req);
-        // $dreport = "select * from most_popular_all ";
         $data = ReportModel::all();
 
         $income = DB::select("select fNetProfit() as `NetProfit`");
 
         $admin = DB::select("select fAdminFee() as `AdminFee`");
-
-
+        // $dreport = "select * from most_popular_all ";
         return view("report", [
             "data" => $data,
             "income" => $income[0]->NetProfit,
@@ -39,6 +35,28 @@ class ReportController extends Controller
         ]);
 
     }
+
+    public function report2(Request $req)
+    {
+
+        $kuery = $req->query();
+        dd($kuery);
+        // dd($report);
+
+        // $data = ReportModel::all();
+
+        // $income = DB::select("select fNetProfit() as `NetProfit`");
+
+        // $admin = DB::select("select fAdminFee() as `AdminFee`");
+
+        // return view("report", [
+        //     "data" => $data,
+        //     "income" => $income[0]->NetProfit,
+        //     "admin" => $admin[0]->AdminFee
+        // ]);
+
+    }
+
 
     // public function reporthome()
     // {
