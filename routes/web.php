@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DetailTransController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LihatDataController;
 use App\Http\Controllers\LogInController;
 use App\Http\Controllers\ProductListController;
@@ -22,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 
 Route::get('/header', function () {
@@ -68,10 +69,13 @@ Route::get("/product", [ProductListController::class, "productlist"]);
 
 Route::get("/category", [CategoryController::class, "category"]);
 
-Route::get("/home", [ProductListController::class, "productlisthome"]);
+// Route::get("/home", [ProductListController::class, "productlisthome"]);
 
 Route::get("/header", [LogInController::class, "authenticate"]);
- Route::get("/1", [LihatDataController::class, "report"]);
+Route::get("/home", [HomeController::class, "reporthome"]);
+// Route::prefix('admin')->group(function () {
+
+// });
 //  Route::get('/header', [LogInController::class, 'authenticate']);
 // Route::get("/home", [DetailTransController::class, "total_sales"]);
 

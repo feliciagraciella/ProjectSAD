@@ -38,13 +38,23 @@ class ReportController extends Controller
             "admin" => $admin[0]->AdminFee
         ]);
 
-        return view("home", [
-            "data" => $data
-                ->take(4),
-            "income" => $income[0]->NetProfit,
-            "admin" => $admin[0]->AdminFee
-        ]);
     }
+
+    // public function reporthome()
+    // {
+    //     $data = ReportModel::all();
+
+    //     $income = DB::select("select fNetProfit() as `NetProfit`");
+
+    //     $admin = DB::select("select fAdminFee() as `AdminFee`");
+
+    //     return view("home", [
+    //         "data" => $data
+    //             ->take(4),
+    //         "income" => $income[0]->NetProfit,
+    //         "admin" => $admin[0]->AdminFee
+    //     ]);
+    // }
 
     // public function view_data(Request $request){
     //     $nm = $request->nmtable;
