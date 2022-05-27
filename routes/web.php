@@ -42,10 +42,11 @@ Route::get('/home', function () {
         // "title" => "About Us"
     ]);
 });
-Route::prefix("/report")->group(function (){
-    Route::get("/{id}", [ReportController::class, "report"]);
-});
-// Route::get("/report", [ReportController::class, "report"]);
+// Route::prefix("/report")->group(function (){
+//     Route::get("/{id}", [ReportController::class, "report"]);
+// });
+Route::POST("/invoice/{email}/{tanggal}", [ShopController::class, "invoice"]);
+Route::get("/report", [ReportController::class, "report"]);
 // Route::get('/report', function () {
 //     return view('report', [
 //     ]);

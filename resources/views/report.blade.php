@@ -15,14 +15,18 @@
 <body>
     <h5 class=title>Report</h5>
     <div class="dropdown-show">
-        <a class="btn btn-sm dropdown-toggle dropdown-toggle-split" href="#" style="text-transform:unset !important;" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="btn btn-sm dropdown-toggle dropdown-toggle-split" style="text-transform:unset !important;" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Select Report
         </a>
 
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="#">Product Sales</a>
-          <a class="dropdown-item" href="#">Finance</a>
+          <a class="dropdown-item" href="/report/product-sales" type="submit" value="product-sales" name="select-report">Product Sales</a>
+          <a class="dropdown-item" href="/report/finance" type="submit" value="finance" name="select-report">Finance</a>
         </div>
+        {{-- <form action="/report/product-sales" method="POST">
+            @csrf
+            <button class="paybutton" type="submit" value={{$beli_id}} name="beli_id">Pay Now</button>
+        </form> --}}
     </div>
     <div class="dropdown-show2">
         <a class="btn btn-sm dropdown-toggle dropdown-toggle-split" href="#" style="text-transform:unset !important; margin-left: -28px;" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

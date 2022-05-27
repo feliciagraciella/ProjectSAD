@@ -18,8 +18,12 @@ class ReportController extends Controller
     //     $this->LihatDataModel = new LihatDataModel();
     // }
 
-    public function report()
+    public function report(Request $req)
     {
+        $report = [
+            'report'=> $req->value
+        ];
+        dd($req);
         // $dreport = "select * from most_popular_all ";
         $data = ReportModel::all();
 
@@ -27,7 +31,7 @@ class ReportController extends Controller
 
         $admin = DB::select("select fAdminFee() as `AdminFee`");
 
-        
+
         return view("report", [
             "data" => $data,
             "income" => $income[0]->NetProfit,
