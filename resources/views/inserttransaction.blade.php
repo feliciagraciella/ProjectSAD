@@ -20,15 +20,18 @@
         <input class="btn btn-sm calendar" style="text-transform:unset !important; width: 200px;" type="date">
 
         <h4 class="platformtitle" >Platform</h4>
-        <div class="dropdown-show2" >
-            <select class="dropdowncat" id="cat" name="cat"
-                style="text-transform:unset !important; width: 200px; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <option>Select Platform</option>
-                <option>Tokopedia</option>
-                <option>Shopee</option>
-            </select>
-        </div>
+        <form action="/report2" method="get">
+            @csrf
+            <div class="dropdown-show2" >
+                <select class="dropdowncat" id="cat" name="cat"
+                    style="text-transform:unset !important; width: 200px; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <option>Select Platform</option>
+                    <option>Tokopedia</option>
+                    <option>Shopee</option>
+                </select>
+            </div>
+        </form>
         {{-- <div class="dropdown-show2">
             <a class="btn btn-sm dropdown-toggle dropdown-toggle-split" href="#" style="text-transform:unset !important; width: 150px;" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Select Platform
@@ -45,15 +48,18 @@
 
     <div class="baris2">
         <h4 class="datetitle">Product</h4>
-        <div class="dropdown-show3">
-            <select class="dropdowncat" id="cat" name="cat"
-                style="text-transform:unset !important; width: 200px; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <option>Select Product</option>
-                <option>Tokopedia</option>
-                <option>Shopee</option>
-            </select>
-        </div>
+        <form action="/report2" method="get">
+            @csrf
+            <div class="dropdown-show3">
+                <select class="dropdowncat" id="cat" name="cat"
+                    style="text-transform:unset !important; width: 200px; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <option value="" name="">Select Product</option>
+                    <option value="Tokopedia">Tokopedia</option>
+                    <option value="Shopee">Shopee</option>
+                </select>
+            </div>
+        </form>
 
         <h4 class="platformtitle">Quantity</h4>
         <div class="numericupdown">
