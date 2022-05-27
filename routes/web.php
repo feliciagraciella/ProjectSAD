@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 
 Route::get('/header', function () {
@@ -70,7 +70,7 @@ Route::get("/category", [CategoryController::class, "category"]);
 Route::get("/home", [ProductListController::class, "productlisthome"]);
 
 Route::get("/header", [LogInController::class, "authenticate"]);
-Route::get("/", [LihatDataController::class, "report"]);
+Route::get("/1", [ReportController::class, "reporthome"]);
 // Route::prefix('admin')->group(function () {
 
 // });

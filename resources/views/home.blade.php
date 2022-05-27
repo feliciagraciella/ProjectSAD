@@ -52,7 +52,7 @@
             <h3>Most Popular Products</h3>
             <div class="column-popular">
                 <div class="rect1">
-                    {{-- <img src="{{ asset('images/best/' . $data->IMAGE) }}" alt="" height=100 width=100> --}}
+                    <img src="{{ asset('images/best/' . $data->IMAGE) }}" alt="" height=100 width=100>
                 </div>
             </div>
             <div class="column-popular">
