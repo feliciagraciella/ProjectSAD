@@ -51,31 +51,15 @@
         <div class="popular-products">
             <h3>Most Popular Products</h3>
             @foreach ($data as $d)
-            <div class="popular">
-                <div class="column-popular">
-                    <div class="rect1">
-                        <img src="{{ asset('images/best/' . $d->IMAGE) }}" alt="" width="150px" height="150px" style="border-radius: 12px">
+                <div class="popular">
+                    <div class="column-popular">
+                        <div class="rect1">
+                            <img src="{{ asset('images/best/' . $d->IMAGE) }}" alt="" width="150px" height="150px"
+                                style="border-radius: 12px">
+                        </div>
                     </div>
                 </div>
-            </div>
-
             @endforeach
-
-            {{-- <div class="column-popular">
-                <div class="rect2">
-
-                </div>
-            </div>
-            <div class="column-popular">
-                <div class="rect3">
-
-                </div>
-            </div>
-            <div class="column-popular">
-                <div class="rect4">
-
-                </div>
-            </div> --}}
 
         </div>
 
@@ -98,7 +82,6 @@
                         <tr>
                             <th scope="row" style="text-align:center;">
                                 <img src="{{ asset('images/best/' . $p->IMAGE) }}" alt="" height=100 width=100>
-                                {{-- <img src="{{ asset('images/best/{{ $p->IMAGE }}') }}"alt="" height=50 width=50> --}}
                             </th>
                             <td style="text-align:center;">{{ $p->SKU }}</td>
                             <td style="text-align:left;">{{ $p->P_NAME }}</td>
@@ -121,7 +104,6 @@
                 </p>
                 <h5 class="netprofit-text">Net&nbspProfit</h5>
                 <h5 class="netprofit-amt">Rp{{ $income }}</h5>
-                {{-- <h5 class="netprofit-amt">Rp7.500.000</h5> --}}
             </div>
             <div class="plat-fee" style="left: 80%; position: absolute; top: 180px;">
                 <p class="finance1">
@@ -129,19 +111,33 @@
                 </p>
                 <h5 class="fee-text">Platform&nbspFee</h5>
                 <h5 class="fee-amt">Rp{{ $admin }}</h5>
-                {{-- <h5 class="fee-amt">Rp15.000.000</h5> --}}
             </div>
         </div>
 
         <div class="restock">
             <h3>Restock Soon</h3>
-            <div class="restock1" style="left: 80%; position: absolute; top: 300px;">
+            {{-- <div class="restock1" style="left: 80%; position: absolute; top: 300px;">
                 <p class="warning1">
                     <span class="iconify" data-icon="ep:warning-filled" style="color: black;"></span>
                 </p>
                 <h5 class="stock-text">Product&nbspName</h5>
                 <h5 class="stock-qty">Stock:&nbsp3</h5>
+            </div> --}}
+            {{-- @foreach ($stock as $s) --}}
+            <div class="restock1" style="left: 80%; position: absolute; top: 300px;">
+                @foreach ($stock as $s)
+                    <div class="stock-all">
+                        <p class="warning1">
+                            <span class="iconify" data-icon="ep:warning-filled" style="color: black;"></span>
+                        </p>
+                        
+                        <h5 class="stock-text" style="width: 200px">{{ $s->P_NAME }}</h5>
+                        <h5 class="stock-qty">Stock:&nbsp{{ $s->STOCK }}</h5>
+                    </div>
+                @endforeach
             </div>
+
+            {{-- @endforeach --}}
 
 
         </div>
