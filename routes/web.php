@@ -85,7 +85,8 @@ Route::get("/home", [HomeController::class, "reporthome"]);
 //         // "title" => "About Us"
 //     ]);
 // });
-Route::get('/{product}', [ProductListController::class, 'show']);
+
+Route::get("/productdetail/{sku}", [ProductListController::class, "productdetail"]);
 
 Route::get('/insertproduct', function () {
     return view('insertproduct', [
