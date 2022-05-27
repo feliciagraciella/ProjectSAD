@@ -5,6 +5,7 @@ use App\Http\Controllers\DetailTransController;
 use App\Http\Controllers\LihatDataController;
 use App\Http\Controllers\LogInController;
 use App\Http\Controllers\ProductListController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\TransactionListController;
 use App\Models\ProductListModel;
 use Illuminate\Support\Facades\Route;
@@ -41,8 +42,10 @@ Route::get('/home', function () {
         // "title" => "About Us"
     ]);
 });
-
-Route::get("/report", [LihatDataController::class, "report"]);
+Route::prefix("/report")->group(function (){
+    Route::get("/{id}", [ReportController::class, "report"]);
+});
+// Route::get("/report", [ReportController::class, "report"]);
 // Route::get('/report', function () {
 //     return view('report', [
 //     ]);

@@ -10,7 +10,7 @@ use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 
-class LihatDataController extends Controller
+class ReportController extends Controller
 {
     //
     // function __construct()
@@ -27,6 +27,7 @@ class LihatDataController extends Controller
 
         $admin = DB::select("select fAdminFee() as `AdminFee`");
 
+        
         return view("report", [
             "data" => $data,
             "income" => $income[0]->NetProfit,
