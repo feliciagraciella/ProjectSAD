@@ -10,7 +10,7 @@ use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 
-class LihatDataController extends Controller
+class ReportController extends Controller
 {
     //
     // function __construct()
@@ -18,8 +18,12 @@ class LihatDataController extends Controller
     //     $this->LihatDataModel = new LihatDataModel();
     // }
 
-    public function report()
+    public function report(Request $req)
     {
+        $report = [
+            'report'=> $req->value
+        ];
+        dd($req);
         // $dreport = "select * from most_popular_all ";
         $data = ReportModel::all();
 
@@ -27,19 +31,30 @@ class LihatDataController extends Controller
 
         $admin = DB::select("select fAdminFee() as `AdminFee`");
 
+
         return view("report", [
             "data" => $data,
             "income" => $income[0]->NetProfit,
             "admin" => $admin[0]->AdminFee
         ]);
 
-        return view("home", [
-            "data" => $data
-                ->take(4),
-            "income" => $income[0]->NetProfit,
-            "admin" => $admin[0]->AdminFee
-        ]);
     }
+
+    // public function reporthome()
+    // {
+    //     $data = ReportModel::all();
+
+    //     $income = DB::select("select fNetProfit() as `NetProfit`");
+
+    //     $admin = DB::select("select fAdminFee() as `AdminFee`");
+
+    //     return view("home", [
+    //         "data" => $data
+    //             ->take(4),
+    //         "income" => $income[0]->NetProfit,
+    //         "admin" => $admin[0]->AdminFee
+    //     ]);
+    // }
 
     // public function view_data(Request $request){
     //     $nm = $request->nmtable;

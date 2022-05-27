@@ -2,9 +2,11 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DetailTransController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LihatDataController;
 use App\Http\Controllers\LogInController;
 use App\Http\Controllers\ProductListController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\TransactionListController;
 use App\Models\ProductListModel;
 use Illuminate\Support\Facades\Route;
@@ -21,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 
 Route::get('/header', function () {
@@ -41,8 +43,11 @@ Route::get('/home', function () {
         // "title" => "About Us"
     ]);
 });
-
-Route::get("/report", [LihatDataController::class, "report"]);
+// Route::prefix("/report")->group(function (){
+//     Route::get("/{id}", [ReportController::class, "report"]);
+// });
+Route::POST("/invoice/{email}/{tanggal}", [ShopController::class, "invoice"]);
+Route::get("/report", [ReportController::class, "report"]);
 // Route::get('/report', function () {
 //     return view('report', [
 //     ]);
@@ -64,10 +69,13 @@ Route::get("/product", [ProductListController::class, "productlist"]);
 
 Route::get("/category", [CategoryController::class, "category"]);
 
-Route::get("/home", [ProductListController::class, "productlisthome"]);
+// Route::get("/home", [ProductListController::class, "productlisthome"]);
 
 Route::get("/header", [LogInController::class, "authenticate"]);
- Route::get("/1", [LihatDataController::class, "report"]);
+Route::get("/home", [HomeController::class, "reporthome"]);
+// Route::prefix('admin')->group(function () {
+
+// });
 //  Route::get('/header', [LogInController::class, 'authenticate']);
 // Route::get("/home", [DetailTransController::class, "total_sales"]);
 
