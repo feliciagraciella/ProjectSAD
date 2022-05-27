@@ -50,12 +50,18 @@
 
         <div class="popular-products">
             <h3>Most Popular Products</h3>
-            <div class="column-popular">
-                <div class="rect1">
-                    <img src="{{ asset('images/best/' . $data->IMAGE) }}" alt="" height=100 width=100>
+            @foreach ($data as $d)
+            <div class="popular">
+                <div class="column-popular">
+                    <div class="rect1">
+                        <img src="{{ asset('images/best/' . $d->IMAGE) }}" alt="" width="150px" height="150px" style="border-radius: 12px">
+                    </div>
                 </div>
             </div>
-            <div class="column-popular">
+
+            @endforeach
+
+            {{-- <div class="column-popular">
                 <div class="rect2">
 
                 </div>
@@ -69,7 +75,7 @@
                 <div class="rect4">
 
                 </div>
-            </div>
+            </div> --}}
 
         </div>
 
@@ -114,16 +120,16 @@
                     <span class="iconify" data-icon="dashicons:money-alt" style="color: black; "></span>
                 </p>
                 <h5 class="netprofit-text">Net&nbspProfit</h5>
-                {{-- <h5 class="netprofit-amt">Rp{{ $income }}</h5> --}}
-                <h5 class="netprofit-amt">Rp7.500.000</h5>
+                <h5 class="netprofit-amt">Rp{{ $income }}</h5>
+                {{-- <h5 class="netprofit-amt">Rp7.500.000</h5> --}}
             </div>
             <div class="plat-fee" style="left: 80%; position: absolute; top: 180px;">
                 <p class="finance1">
                     <span class="iconify" data-icon="dashicons:money-alt" style="color: black; "></span>
                 </p>
                 <h5 class="fee-text">Platform&nbspFee</h5>
-                {{-- <h5 class="fee-amt">Rp{{ $admin }}</h5> --}}
-                <h5 class="fee-amt">Rp15.000.000</h5>
+                <h5 class="fee-amt">Rp{{ $admin }}</h5>
+                {{-- <h5 class="fee-amt">Rp15.000.000</h5> --}}
             </div>
         </div>
 

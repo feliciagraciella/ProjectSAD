@@ -69,8 +69,12 @@
     width: 25%;
 }
 
+.popular{
+    
+}
+
 .rect1 {
-    background: #f8f7f2;
+    /* background: #f8f7f2; */
     width: 150px;
     height: 150px;
     margin-left: 83%;
