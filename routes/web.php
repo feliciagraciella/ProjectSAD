@@ -93,11 +93,8 @@ Route::get('/insertproduct', function () {
 
 Route::get('/transactionlist', [TransactionListController::class, 'translist']);
 
-Route::get('/inserttransaction', function () {
-    return view('inserttransaction', [
-        // "title" => "About Us"
-    ]);
-});
+Route::get('/inserttransaction', [TransactionListController::class, 'dropdownproduct']);
+
 
 Route::prefix("/transactiondetail")->group(function (){
     Route::get("/{id}", [TransactionListController::class, "details"]);

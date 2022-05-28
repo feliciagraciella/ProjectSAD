@@ -20,43 +20,34 @@
         <input class="btn btn-sm calendar" style="text-transform:unset !important; width: 200px;" type="date">
 
         <h4 class="platformtitle" >Platform</h4>
-        <form action="/report2" method="get">
+        <form method="get">
             @csrf
             <div class="dropdown-show2" >
-                <select class="dropdowncat" id="cat" name="cat"
+                <select class="dropdowncat" id="cat" name="selectplatform"
                     style="text-transform:unset !important; width: 200px; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <option>Select Platform</option>
-                    <option>Tokopedia</option>
-                    <option>Shopee</option>
+                    <option value="">Select Platform</option>
+                    <option value="tokopedia">Tokopedia</option>
+                    <option value="shopee">Shopee</option>
                 </select>
             </div>
         </form>
-        {{-- <div class="dropdown-show2">
-            <a class="btn btn-sm dropdown-toggle dropdown-toggle-split" href="#" style="text-transform:unset !important; width: 150px;" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Select Platform
-            </a>
-
-
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item" style="font-size: smaller;" href="#">All</a>
-              <a class="dropdown-item" style="font-size: smaller;" href="#">Tokopedia</a>
-              <a class="dropdown-item" style="font-size: smaller;" href="#">Shopee</a>
-            </div>
-        </div> --}}
     </div>
 
     <div class="baris2">
         <h4 class="datetitle">Product</h4>
-        <form action="/report2" method="get">
+        <form method="get">
             @csrf
             <div class="dropdown-show3">
-                <select class="dropdowncat" id="cat" name="cat"
+                <select class="dropdowncat" id="cat" name="product"
                     style="text-transform:unset !important; width: 200px; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <option value="" name="">Select Product</option>
-                    <option value="Tokopedia">Tokopedia</option>
-                    <option value="Shopee">Shopee</option>
+                    <option value="">Select Product</option>
+
+                    @foreach($product as $p)
+                    <option value="{{$p -> SKU}}">{{$p -> P_NAME}}</option>
+                    @endforeach
+
                 </select>
             </div>
         </form>

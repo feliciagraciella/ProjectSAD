@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ProductListModel;
 use App\Models\TransactionDetailModel;
 use App\Models\TransactionListModel;
 use Illuminate\Http\Request;
@@ -31,6 +32,25 @@ class TransactionListController extends Controller
             "transdet" => $transdet,
             "trans" => $trans,
             "id" => $id
+        ]);
+    }
+
+    public function dropdown1(Request $req)
+    {
+
+        $dd1 = $req->input("selectplatform");
+
+        return view("inserttransaction", [
+            "dd1" => $dd1
+        ]);
+    }
+
+    public function dropdownproduct()
+    {
+        $product = ProductListModel::select('P_NAME', 'SKU')->get();
+
+        return view("inserttransaction", [
+            "product" => $product
         ]);
     }
 }
