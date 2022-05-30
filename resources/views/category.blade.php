@@ -40,7 +40,7 @@
 
     <h5 class=title2>Category List</h5>
     <div class=table>
-        <table class="table table-hover" style="width: 70%; position: absolute; left: 320px; top: 350px;">
+        <table class="table table-hover" style="width: 70%; position: absolute; left: 320px; top: 300px;">
             <thead>
                 <tr>
                     <th scope="col" style="font-weight: 700; text-align:left;">Category ID</th>
