@@ -6,41 +6,48 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+// use Session;
 
 class LogInController extends Controller
 {
     //
-    public function index()
-    {
-        return view('login', [
-            "title" => "Log In"
-        ]);
-    }
+    // public function index()
+    // {
+    //     return view('login', [
+    //         "title" => "Log In"
+    //     ]);
+    // }
 
     public function authenticate(Request $request)
     {
         // $user = Auth::user() ->id;
         $request->validate([
-            'admin' => ['required'],
+            'idadmin' => ['required'],
             'password' => ['required'],
         ]);
-        $admin = $request->admin;
+        $idadmin = $request->idadmin;
         $password = $request->password;
-        $userdata = DB::table('ADMIN')->where('ID_ADMIN', $admin)->first();
+        $userdata = DB::table('ADMIN')->where('ID_ADMIN', $idadmin)->first();
         if (is_null($userdata)) {
             return back()->with('LoginError', 'Log In Failed');
         } else {
             $obj = get_object_vars($userdata);
-            if ($password == $obj['PASSWORD_ADMIN']) {
-                $request->session()->put('admin', $obj['ID_ADMIN']);
 
-                $user = Auth::user() ->id;
+            if ($password == $obj['PASSWORD_ADMIN']) {
+
+                $request->session()->put('idadmin', $obj['ID_ADMIN']);
+                // Session::put('idadmin', $obj['ID_ADMIN']);
+
+
+
+                // $user = Auth::user() ->id;
 
                 // $admin = session('idAdmin');
 
-                return view('header', [
-                    'admin' => $admin
-                ]);
+                // return view('/', [
+                //     'idadmin' => $idadmin,
+                //     'userdata' => $obj
+                // ]);
 
                 // //titip buat id pembeli
                 // $idAdmin = $obj['ID_ADMIN'];

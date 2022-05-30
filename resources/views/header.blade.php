@@ -94,8 +94,9 @@
         </nav>
     </div> --}}
 
-    <div class="topbar" style="background-color: white; width: 100%; height: 52px; position:fixed; z-index:99; top: 0; left:250px; ">
-    {{-- <div class="topbar" style="background-color: grey; height: 52px; position:sticky; z-index:99; top: 0; left:250px; "> --}}
+    <div class="topbar"
+        style="background-color: white; width: 100%; height: 52px; position:fixed; z-index:99; top: 0; left:250px; ">
+        {{-- <div class="topbar" style="background-color: grey; height: 52px; position:sticky; z-index:99; top: 0; left:250px; "> --}}
         <div class="date" style="text-align: center">
             <script>
                 date = new Date().toLocaleDateString();
@@ -107,15 +108,15 @@
                 class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuLink"
                 role="button" data-mdb-toggle="dropdown" aria-expanded="false">
                 <i class="fas fa-user" style="color: black; position: fixed;">
-                    {{-- <p style="font-family: Poppins; margin-left: 5px; float: right;"> {{ $admin->ID_ADMIN }} </p> --}}
-                    <p style="font-family: Poppins; margin-left: 5px; float: right;"> A001 </p>
+                    {{-- @dd($idadmin) --}}
+                    <p style="font-family: Poppins; margin-left: 5px; float: right;"> {{ session('idadmin') }} </p>
+                    {{-- <p style="font-family: Poppins; margin-left: 5px; float: right;"> A001 </p> --}}
                 </i>
             </a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink"
                 style="position: fixed; float: right;">
                 <li>
-                    <a style="text-align: left; color: black; " class="dropdown-item"
-                        href="/login">Log Out</a>
+                    <a style="text-align: left; color: black; " class="dropdown-item" href="/login">Log Out</a>
                 </li>
             </ul>
         </div>

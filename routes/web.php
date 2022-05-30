@@ -9,6 +9,7 @@ use App\Http\Controllers\ProductListController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\TransactionListController;
 use App\Models\ProductListModel;
+use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -68,7 +69,9 @@ Route::GET("/report2", [ReportController::class, "report2"]);
 
 Route::get("/product", [ProductListController::class, "productlist"]);
 Route::get("/category", [CategoryController::class, "category"]);
-Route::get("/header", [LogInController::class, "authenticate"]);
+// Route::get("header", [LogInController::class, "authenticate"]);
+Route::post('/', [LogInController::class, 'authenticate']);
+// Route::get('header', [LogInController::class, 'authenticate']);
 Route::get("/home", [HomeController::class, "reporthome"]);
 
 // Route::get('/productdetail', function () {

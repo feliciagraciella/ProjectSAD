@@ -15,7 +15,7 @@ class ReportModel extends Model
 {
     use HasFactory;
 
-    protected $table = "most_popular_all";
+    protected $table = "product_all_all";
     public $primaryKey ="SKU";
     //primary adalah varchar
     public $incrementing = false;

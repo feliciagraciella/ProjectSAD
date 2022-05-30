@@ -130,9 +130,12 @@
                         <p class="warning1">
                             <span class="iconify" data-icon="ep:warning-filled" style="color: black;"></span>
                         </p>
-                        
-                        <h5 class="stock-text" style="width: 200px">{{ $s->P_NAME }}</h5>
-                        <h5 class="stock-qty">Stock:&nbsp{{ $s->STOCK }}</h5>
+                        <div class="stockk">
+                            <h5 class="stock-text" style="width: 200px">{{ $s->P_NAME }}</h5>
+                            <h5 class="stock-qty">Stock:&nbsp{{ $s->STOCK }}</h5>
+                        </div>
+                        {{-- <h5 class="stock-text" style="width: 200px">{{ $s->P_NAME }}</h5>
+                        <h5 class="stock-qty">Stock:&nbsp{{ $s->STOCK }}</h5> --}}
                     </div>
                 @endforeach
             </div>
