@@ -14,7 +14,7 @@
 <body>
     <h5 class=title>Category List</h5>
     <div class="button">
-        <a href="/insertcategory"><button type="button" class="btn btn-outline-secondary btn-sm" style="text-transform: unset !important; ">Insert Category <span class="iconify" data-icon="akar-icons:circle-plus-fill"></span></button></a>
+        <a href="#"><button type="button" class="btn btn-outline-secondary btn-sm" style="text-transform: unset !important; ">Insert Category <span class="iconify" data-icon="akar-icons:circle-plus-fill"></span></button></a>
     </div>
 
 

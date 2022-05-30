@@ -123,3 +123,22 @@ body {
         font-size: 18px;
     }
 }
+
+.dropdown-show{
+    position: absolute;
+    left: 318px;
+    top: 129px;
+}
+.dropdown-show2{
+    position: absolute;
+    left: 445px;
+    top: 129px;
+}
+.dropdown-show3{
+    position: absolute;
+    left: 580px;
+    top: 129px;
+}
+.dropdown-item{
+    font-size: smaller;
+}
