@@ -44,6 +44,12 @@ Route::get('/home', function () {
         // "title" => "About Us"
     ]);
 });
+
+Route::get('/insertcategory', function () {
+    return view('insertcategory', [
+        // "title" => "About Us"
+    ]);
+});
 // Route::prefix("/report")->group(function (){
 //     Route::get("/{id}", [ReportController::class, "report"]);
 // });
@@ -69,6 +75,7 @@ Route::GET("/report2", [ReportController::class, "report2"]);
 
 Route::get("/product", [ProductListController::class, "productlist"]);
 Route::get("/category", [CategoryController::class, "category"]);
+Route::get("/insertcategory", [CategoryController::class, "category"]);
 // Route::get("header", [LogInController::class, "authenticate"]);
 Route::post('/', [LogInController::class, 'authenticate']);
 // Route::get('header', [LogInController::class, 'authenticate']);
