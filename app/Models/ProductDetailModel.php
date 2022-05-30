@@ -17,5 +17,7 @@ class ProductDetailModel extends Model
     //Timestamp di false
     public $timestamps = false;
 
-
+    // public function category() {
+    //     return $this->belongsTo(CategoryModel::class);
+    // }
 }
