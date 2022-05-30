@@ -17,5 +17,7 @@ class CategoryModel extends Model
     //Timestamp di false
     public $timestamps = false;
 
-
+    // public function products() {
+    //     return $this->hasMany(ProductDetailModel::class);
+    // }
 }
