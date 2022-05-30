@@ -38,11 +38,15 @@ class ReportController extends Controller
 
     public function report2(Request $req)
     {
-
         $kuery = $req->query();
-        dd($kuery);
-      
+        // dd($kuery["select_report"]);
+        if($kuery["select_report"] == "product_sales"){
+            $data = ReportModel::all();
 
+            $income = DB::select("select fNetProfit() as `NetProfit`");
+
+            $admin = DB::select("select fAdminFee() as `AdminFee`");
+        }
     }
 
 

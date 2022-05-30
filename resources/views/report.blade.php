@@ -35,7 +35,7 @@
 
 
 
-                <button class="dropdown-item" type="submit" value="product-sales" name="select_report">Product Sales</button>
+                <button class="dropdown-item" type="submit" value="product_sales" name="select_report">Product Sales</button>
                 <button class="dropdown-item" type="submit" value="finance" name="select_report">Finance</button>
             </div>
         </div>
