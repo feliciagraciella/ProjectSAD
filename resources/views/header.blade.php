@@ -113,13 +113,13 @@
                     {{-- <p style="font-family: Poppins; margin-left: 5px; float: right;"> A001 </p> --}}
                 </i>
             </a>
-            {{-- <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink"
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink"
                 style="position: fixed; float: right;">
                 <li>
                     <a style="text-align: left; color: black; " class="dropdown-item" href="/login">Log Out</a>
                 </li>
-            </ul> --}}
-            
+            </ul>
+
         </div>
         <hr class="topbar-hr">
     </div>
