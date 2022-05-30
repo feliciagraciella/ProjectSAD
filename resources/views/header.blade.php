@@ -95,7 +95,7 @@
     </div> --}}
 
     <div class="topbar"
-        style="background-color: white; width: 100%; height: 52px; position:fixed; z-index:99; top: 0; left:250px; ">
+        style="background-color: white; width: 100%; height: 52px; position:fixed; z-index:1001; top: 0; left:250px; ">
         {{-- <div class="topbar" style="background-color: grey; height: 52px; position:sticky; z-index:99; top: 0; left:250px; "> --}}
         <div class="date" style="text-align: center">
             <script>
@@ -119,7 +119,7 @@
                     <a style="text-align: left; color: black; " class="dropdown-item" href="/login">Log Out</a>
                 </li>
             </ul> --}}
-            
+
         </div>
         <hr class="topbar-hr">
     </div>
