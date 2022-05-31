@@ -23,9 +23,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('login');
-});
+
+// Route::get('/', function () {
+//     return view('login');
+// });
 
 Route::get('/header', function () {
     return view('header', [
@@ -77,8 +78,17 @@ Route::get("/product", [ProductListController::class, "productlist"]);
 Route::get("/category", [CategoryController::class, "category"]);
 Route::get("/insertcategory", [CategoryController::class, "category"]);
 // Route::get("header", [LogInController::class, "authenticate"]);
+Route::get('/', [LogInController::class, 'index']);
 Route::post('/', [LogInController::class, 'authenticate']);
 // Route::get('header', [LogInController::class, 'authenticate']);
+
+// Route::get('header', function () {
+//     return view('index');
+// });
+// Route::get('/', [LogInController::class, 'index'])->name('login')->middleware('guest');
+// Route::post('/', [LoginController::class, 'authenticate']);
+// Route::post('/', [LoginController::class, 'logout']);
+
 Route::get("/home", [HomeController::class, "reporthome"]);
 
 // Route::get('/productdetail', function () {
@@ -104,7 +114,7 @@ Route::get('/insertproduct', function () {
 Route::get('/transactionlist', [TransactionListController::class, 'translist']);
 
 Route::get('/inserttransaction', [TransactionListController::class, 'dropdownproduct']);
-
+Route::post('/inserttransaction', [TransactionListController::class, 'addCart']);
 
 Route::prefix("/transactiondetail")->group(function (){
     Route::get("/{id}", [TransactionListController::class, "details"]);

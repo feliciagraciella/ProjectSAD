@@ -41,9 +41,9 @@
             <select class="dropdowncat" id="cat" name="cat" value="{{ $product->ID_CATEGORY }}"
                 style="text-transform:unset !important; width: 310px; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <option>Cleaner</option>
-                <option>Protect</option>
-                <option>Tools</option>
+                @foreach($cat as $c)
+                    <option value="{{$c -> C_NAME}}">{{$c -> C_NAME}}</option>
+                    @endforeach
             </select>
         </div>
 
@@ -64,10 +64,9 @@
             <select class="dropdownsize" id="size" name="size" value="{{ $product->SIZE }}"
                 style="text-transform:unset !important; width: 310px; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <option>30 ml</option>
-                <option>50 ml</option>
-                <option>320 ml</option>
-                <option>500 ml</option>
+                @foreach($size as $s)
+                <option value="{{$s -> SIZE}}">{{$s -> SIZE}} ml</option>
+                @endforeach
             </select>
         </div>
 

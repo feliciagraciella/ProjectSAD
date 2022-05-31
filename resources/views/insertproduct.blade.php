@@ -42,9 +42,9 @@
             <select class="dropdowncat" id="cat" name="cat"
                 style="text-transform:unset !important; width: 310px; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <option>Cleaner</option>
-                <option>Protect</option>
-                <option>Tools</option>
+                @foreach($cat as $c)
+                    <option value="{{$c -> C_NAME}}">{{$c -> C_NAME}}</option>
+                    @endforeach
             </select>
 
             {{-- <a class="btn btn-sm dropdown-toggle dropdown-toggle-split" href="#"

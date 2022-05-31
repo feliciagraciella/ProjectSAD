@@ -6,6 +6,7 @@ use App\Models\DetailTransModel;
 use App\Models\ProductListModel;
 use App\Models\ProductDetailModel;
 use App\Http\Controllers\SUM;
+use App\Models\CategoryModel;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
@@ -25,9 +26,22 @@ class ProductListController extends Controller
     public function productdetail($sku)
     {
         $product = ProductDetailModel::select('SKU', 'ID_CATEGORY', 'P_NAME', 'SIZE', 'PRICE', 'STOCK', 'DESCRIPTION', 'IMAGE')->where('SKU', $sku)->get();
+        $category = CategoryModel::select('C_NAME')->get();
+        $size = ProductListModel::select('SIZE')->groupBy('SIZE')->get();
 
         return view('productdetail', [
-            'product' => $product[0]
+            'product' => $product[0],
+            "cat" => $category,
+            'size' => $size
+        ]);
+    }
+
+    public function dropdowncategory()
+    {
+        $category = CategoryModel::select('C_NAME')->get();
+
+        return view("productdetail", [
+            "cat" => $category
         ]);
     }
 

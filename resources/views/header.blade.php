@@ -110,9 +110,13 @@
                 <i class="fas fa-user" style="color: black; position: fixed;">
                     {{-- @dd($idadmin) --}}
                     {{-- <p style="font-family: Poppins; margin-left: 5px; float: right;"> {{ session('idadmin') }} </p> --}}
-                    <a class="logout"" href="/" style="color: black;">
+                    {{-- <a class="logout" href="/" style="color: black;">
                         <p style="font-family: Poppins; margin-left: 5px; float: right;"> A001 &nbsp&nbsp|&nbsp&nbspLog Out</p>
-                    </a>
+                    </a> --}}
+                    <p style="font-family: Poppins; margin-left: 5px; float: right;"> {{ session('idadmin') }} &nbsp&nbsp|&nbsp&nbspLog Out</p>
+                    {{-- <a class="logout" href="/" method="POST" style="color: black;">
+                        <p style="font-family: Poppins; margin-left: 5px; float: right;"> {{ auth()->user()->name }} &nbsp&nbsp|&nbsp&nbspLog Out</p>
+                    </a> --}}
                 </i>
             </a>
             {{-- <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink"
