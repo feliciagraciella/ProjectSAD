@@ -22,7 +22,7 @@ class ReportController extends Controller
 
     public function report()
     {
-        $data = ReportModel::all();
+        $data = DB::select("select * from product_all_all");
 
         $income = DB::select("select fNetProfit() as `NetProfit`");
 
@@ -39,51 +39,171 @@ class ReportController extends Controller
     public function report2(Request $req)
     {
         $kuery = $req->query();
+
+        // $report = "product_sales";
+        // $platform = "all";
+        // $period = "all";
         // dd($kuery["select_report"]);
-        if($kuery["select_report"] == "product_sales"){
-            $data = ReportModel::all();
 
-            $income = DB::select("select fNetProfit() as `NetProfit`");
+        if(!empty($kuery["select_report"])){
+            $report = $kuery["select_report"];
+        }
+        if(!empty($kuery["select_platform"])){
+            $platform = $kuery["select_platform"];
+        }
+        if(!empty($kuery["select_period"])){
+            $period = $kuery["select_period"];
+        }
+        // else{
+        //     $report = "product_sales";
+        //     $platform = "all";
+        //     $period = "all";
+        // }
+        // dd($report);
+        if($report == "product_sales"){
+            if($report == "product_sales" && $platform == "all" && $period == "all"){
+                $data = DB::select("select * from product_all_all");
 
-            $admin = DB::select("select fAdminFee() as `AdminFee`");
+                $income = DB::select("select fNetProfit() as `NetProfit`");
+
+                $admin = DB::select("select fAdminFee() as `AdminFee`");
+            }
+            elseif($report == "product_sales" && $platform == "all" && $period == "seven"){
+                $data = DB::select("select * from product_all_seven");
+
+                $income = DB::select("select fNetProfit() as `NetProfit`");
+
+                $admin = DB::select("select fAdminFee() as `AdminFee`");
+                // dd($data);
+            }
+            elseif($report == "product_sales" && $platform == "all" && $period == "thirty"){
+                $data = DB::select("select * from product_all_thirty");
+
+                $income = DB::select("select fNetProfit() as `NetProfit`");
+
+                $admin = DB::select("select fAdminFee() as `AdminFee`");
+            }
+            elseif($report == "product_sales" && $platform == "shopee" && $period == "all"){
+                $data = DB::select("select * from product_shopee_all");
+
+                $income = DB::select("select fNetProfit() as `NetProfit`");
+
+                $admin = DB::select("select fAdminFee() as `AdminFee`");
+            }
+            elseif($report == "product_sales" && $platform == "shopee" && $period == "seven"){
+                $data = DB::select("select * from product_shopee_seven");
+
+                $income = DB::select("select fNetProfit() as `NetProfit`");
+
+                $admin = DB::select("select fAdminFee() as `AdminFee`");
+            }
+            elseif($report == "product_sales" && $platform == "shopee" && $period == "thirty"){
+                $data = DB::select("select * from product_shopee_thirty");
+
+                $income = DB::select("select fNetProfit() as `NetProfit`");
+
+                $admin = DB::select("select fAdminFee() as `AdminFee`");
+            }
+            elseif($report == "product_sales" && $platform == "tokopedia" && $period == "all"){
+                $data = DB::select("select * from product_tokopedia_all");
+
+                $income = DB::select("select fNetProfit() as `NetProfit`");
+
+                $admin = DB::select("select fAdminFee() as `AdminFee`");
+            }
+            elseif($report == "product_sales" && $platform == "tokopedia" && $period == "seven"){
+                $data = DB::select("select * from product_tokopedia_seven");
+
+                $income = DB::select("select fNetProfit() as `NetProfit`");
+
+                $admin = DB::select("select fAdminFee() as `AdminFee`");
+            }
+            elseif($report == "product_sales" && $platform == "tokopedia" && $period == "thirty"){
+                $data = DB::select("select * from product_tokopedia_thirty");
+
+                $income = DB::select("select fNetProfit() as `NetProfit`");
+
+                $admin = DB::select("select fAdminFee() as `AdminFee`");
+            }
+            dd($report);
+            return view("report", [
+                "data" => $data,
+                "income" => $income[0]->NetProfit,
+                "admin" => $admin[0]->AdminFee
+            ]);
+        }
+
+        if($report == "finance"){
+            if($report == "finance" && $platform == "all" && $period == "all"){
+                $data = DB::select("select * from finance_all_all");
+
+                $income = DB::select("select fNetProfit() as `NetProfit`");
+
+                $admin = DB::select("select fAdminFee() as `AdminFee`");
+            }
+            elseif($report == "finance" && $platform == "all" && $period == "seven"){
+                $data = DB::select("select * from finance_all_seven");
+
+                $income = DB::select("select fNetProfit() as `NetProfit`");
+
+                $admin = DB::select("select fAdminFee() as `AdminFee`");
+                // dd($data);
+            }
+            elseif($report == "finance" && $platform == "all" && $period == "thirty"){
+                $data = DB::select("select * from finance_all_thirty");
+
+                $income = DB::select("select fNetProfit() as `NetProfit`");
+
+                $admin = DB::select("select fAdminFee() as `AdminFee`");
+            }
+            elseif($report == "finance" && $platform == "shopee" && $period == "all"){
+                $data = DB::select("select * from finance_all_thirty");
+
+                $income = DB::select("select fNetProfit() as `NetProfit`");
+
+                $admin = DB::select("select fAdminFee() as `AdminFee`");
+            }
+            elseif($report == "finance" && $platform == "shopee" && $period == "seven"){
+                $data = DB::select("select * from finance_all_thirty");
+
+                $income = DB::select("select fNetProfit() as `NetProfit`");
+
+                $admin = DB::select("select fAdminFee() as `AdminFee`");
+            }
+            elseif($report == "finance" && $platform == "shopee" && $period == "thirty"){
+                $data = DB::select("select * from finance_all_thirty");
+
+                $income = DB::select("select fNetProfit() as `NetProfit`");
+
+                $admin = DB::select("select fAdminFee() as `AdminFee`");
+            }
+            elseif($report == "finance" && $platform == "tokopedia" && $period == "all"){
+                $data = DB::select("select * from finance_all_thirty");
+
+                $income = DB::select("select fNetProfit() as `NetProfit`");
+
+                $admin = DB::select("select fAdminFee() as `AdminFee`");
+            }
+            elseif($report == "finance" && $platform == "tokopedia" && $period == "seven"){
+                $data = DB::select("select * from finance_all_thirty");
+
+                $income = DB::select("select fNetProfit() as `NetProfit`");
+
+                $admin = DB::select("select fAdminFee() as `AdminFee`");
+            }
+            elseif($report == "finance" && $platform == "tokopedia" && $period == "thirty"){
+                $data = DB::select("select * from finance_all_thirty");
+
+                $income = DB::select("select fNetProfit() as `NetProfit`");
+
+                $admin = DB::select("select fAdminFee() as `AdminFee`");
+            }
+
+            return view("report2", [
+                "data" => $data,
+                "income" => $income[0]->NetProfit,
+                "admin" => $admin[0]->AdminFee
+            ]);
         }
     }
-
-
-    // public function reporthome()
-    // {
-    //     $data = ReportModel::all();
-
-    //     $income = DB::select("select fNetProfit() as `NetProfit`");
-
-    //     $admin = DB::select("select fAdminFee() as `AdminFee`");
-
-    //     return view("home", [
-    //         "data" => $data
-    //             ->take(4),
-    //         "income" => $income[0]->NetProfit,
-    //         "admin" => $admin[0]->AdminFee
-    //     ]);
-    // }
-
-    // public function view_data(Request $request){
-    //     $nm = $request->nmtable;
-
-    //     if($nm == 'customer') {
-    //         $customer = $this ->LihatDataModel->get_cust();
-    //         return view('lihatdatacust', ['customer' => $customer]);
-    //     }
-    //     elseif($nm == 'item') {
-    //         $item = $this ->LihatDataModel->get_item();
-    //         return view('lihatdataitem', ['item' => $item]);
-    //     }
-    //     elseif($nm == 'trans_header') {
-    //         $transhead = $this ->LihatDataModel->get_transhead();
-    //         return view('lihatdatatranshead', ['transhead' => $transhead]);
-    //     }
-    //     elseif($nm == 'trans_detail') {
-    //         $transdet = $this ->LihatDataModel->get_transdet();
-    //         return view('lihatdatatransdet', ['transdet' => $transdet]);
-    //     }
-    // }
 }

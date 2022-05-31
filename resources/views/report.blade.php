@@ -32,9 +32,6 @@
             </a>
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-
-
-
                 <button class="dropdown-item" type="submit" value="product_sales" name="select_report">Product Sales</button>
                 <button class="dropdown-item" type="submit" value="finance" name="select_report">Finance</button>
             </div>
@@ -68,8 +65,8 @@
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <button class="dropdown-item" type="submit" value="all" name="select_period">All</button>
-                <button class="dropdown-item" type="submit" value="7days" name="select_period">Last 7 Days</button>
-                <button class="dropdown-item" type="submit" value="30days" name="select_period">Last 30 Days</button>
+                <button class="dropdown-item" type="submit" value="seven" name="select_period">Last 7 Days</button>
+                <button class="dropdown-item" type="submit" value="thirty" name="select_period">Last 30 Days</button>
             </div>
         </div>
     </form>

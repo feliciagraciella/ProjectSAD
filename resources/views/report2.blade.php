@@ -13,38 +13,54 @@
 @include('header')
 <body>
     <h5 class=title>Report</h5>
-    <div class="dropdown-show">
-        <a class="btn btn-sm dropdown-toggle dropdown-toggle-split" href="#" style="text-transform:unset !important;" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Select Report
-        </a>
+    <form action="/report2" method="get">
+        @csrf
+        <div class="dropdown-show" name="">
+            <a class="btn btn-sm dropdown-toggle dropdown-toggle-split"
+                style="text-transform:unset !important;" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Select Report
+            </a>
 
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="#">Finance</a>
-          <a class="dropdown-item" href="#">Product Sales</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <button class="dropdown-item" type="submit" value="product_sales" name="select_report">Product Sales</button>
+                <button class="dropdown-item" type="submit" value="finance" name="select_report">Finance</button>
+            </div>
         </div>
-    </div>
-    <div class="dropdown-show2">
-        <a class="btn btn-sm dropdown-toggle dropdown-toggle-split" href="#" style="text-transform:unset !important; margin-left: -28px;" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Select Platform
-        </a>
+    </form>
 
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="#">All</a>
-          <a class="dropdown-item" href="#">Tokopedia</a>
-          <a class="dropdown-item" href="#">Shopee</a>
-        </div>
-    </div>
-    <div class="dropdown-show3">
-        <a class="btn btn-sm dropdown-toggle dropdown-toggle-split" href="#" style="text-transform:unset !important; margin-left: -28px;" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Select Period
-        </a>
+    <form action="/report2" method="get">
+        @csrf
+        <div class="dropdown-show2" name="">
+            <a class="btn btn-sm dropdown-toggle dropdown-toggle-split"
+                style="text-transform:unset !important;" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Select Platform
+            </a>
 
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="#">All</a>
-          <a class="dropdown-item" href="#">Last 7 Days</a>
-          <a class="dropdown-item" href="#">Last 30 Days</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <button class="dropdown-item" type="submit" value="all" name="select_platform">All</button>
+                <button class="dropdown-item" type="submit" value="shopee" name="select_platform">Shopee</button>
+                <button class="dropdown-item" type="submit" value="tokopedia" name="select_platform">Tokopedia</button>
+            </div>
         </div>
-    </div>
+    </form>
+    <form action="/report2" method="get">
+        @csrf
+        <div class="dropdown-show3" name="">
+            <a class="btn btn-sm dropdown-toggle dropdown-toggle-split"
+                style="text-transform:unset !important;" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Select Period
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <button class="dropdown-item" type="submit" value="all" name="select_period">All</button>
+                <button class="dropdown-item" type="submit" value="seven" name="select_period">Last 7 Days</button>
+                <button class="dropdown-item" type="submit" value="thirty" name="select_period">Last 30 Days</button>
+            </div>
+        </div>
+    </form>
 
     <div class="income">
         <h5 style="font-weight: 600;">Total Income</h5>
@@ -65,49 +81,21 @@
     <table class="table table-hover" style="width: 70%; position: absolute; left: 320px; top: 464px;">
         <thead>
           <tr>
-            <th scope="col" style="font-weight: 600; text-align:center;">Transaction ID</th>
-            <th scope="col" style="font-weight: 600; text-align:center;">Date</th>
-            <th scope="col" style="font-weight: 600; text-align:center;">Platform</th>
-            <th scope="col" style="font-weight: 600; text-align:center;">Total Qty</th>
-            <th scope="col" style="font-weight: 600; text-align:center;">Total Price</th>
+            <th scope="col" style="font-weight: 600; text-align:left;">Platform</th>
+            <th scope="col" style="font-weight: 600; text-align:center;">Month</th>
+            <th scope="col" style="font-weight: 600; text-align:right;">Net Profit</th>
+            <th scope="col" style="font-weight: 600; text-align:right;">Operational Fee</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row" style="text-align:center;">T20220315</th>
-            <td style="text-align:center;">2022-03-15</td>
-            <td style="text-align:center;">Tokopedia</td>
-            <td style="text-align:center;">5</td>
-            <td style="text-align:center;">Rp500.000</td>
-          </tr>
-          <tr>
-            <th scope="row" style="text-align:center;">T20220315</th>
-            <td style="text-align:center;">2022-03-15</td>
-            <td style="text-align:center;">Tokopedia</td>
-            <td style="text-align:center;">5</td>
-            <td style="text-align:center;">Rp500.000</td>
-          </tr>
-          <tr>
-            <th scope="row" style="text-align:center;">T20220315</th>
-            <td style="text-align:center;">2022-03-15</td>
-            <td style="text-align:center;">Tokopedia</td>
-            <td style="text-align:center;">5</td>
-            <td style="text-align:center;">Rp500.000</td>
-          </tr>
-          <tr>
-            <th scope="row" style="text-align:center;">T20220315</th>
-            <td style="text-align:center;">2022-03-15</td>
-            <td style="text-align:center;">Tokopedia</td>
-            <td style="text-align:center;">5</td>
-            <td style="text-align:center;">Rp500.000</td>
-          </tr>
-          <tr>
-            <th scope="row" style="text-align:center;">T20220315</th>
-            <td style="text-align:center;">2022-03-15</td>
-            <td style="text-align:center;">Tokopedia</td>
-            <td style="text-align:center;">5</td>
-            <td style="text-align:center;">Rp500.000</td>
-          </tr>
+            @foreach ($data as $d)
+            <tr>
+                <th scope="row" style="text-align:left;">{{$d->PLATFORM}}</th>
+                <td style="text-align:center;">{{$d->MONTH}}</td>
+                <td style="text-align:right;">{{$d->NET_PROFIT}}</td>
+                <td style="text-align:right;">{{$d->OPERATIONAL_FEE}}</td>
+              </tr>
+            @endforeach
         </tbody>
       </table>
 </body>
