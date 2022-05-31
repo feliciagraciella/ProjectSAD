@@ -23,9 +23,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('login');
-});
+
+// Route::get('/', function () {
+//     return view('login');
+// });
 
 Route::get('/header', function () {
     return view('header', [
@@ -77,6 +78,7 @@ Route::get("/product", [ProductListController::class, "productlist"]);
 Route::get("/category", [CategoryController::class, "category"]);
 Route::get("/insertcategory", [CategoryController::class, "category"]);
 // Route::get("header", [LogInController::class, "authenticate"]);
+Route::get('/', [LogInController::class, 'index']);
 Route::post('/', [LogInController::class, 'authenticate']);
 // Route::get('header', [LogInController::class, 'authenticate']);
 Route::get("/home", [HomeController::class, "reporthome"]);

@@ -11,12 +11,12 @@ use Illuminate\Support\Facades\Auth;
 class LogInController extends Controller
 {
     //
-    // public function index()
-    // {
-    //     return view('login', [
-    //         "title" => "Log In"
-    //     ]);
-    // }
+    public function index()
+    {
+        return view('login', [
+            "title" => "Log In"
+        ]);
+    }
 
     public function authenticate(Request $request)
     {
@@ -28,6 +28,9 @@ class LogInController extends Controller
         $idadmin = $request->idadmin;
         $password = $request->password;
         $userdata = DB::table('ADMIN')->where('ID_ADMIN', $idadmin)->first();
+
+        // $obj = get_object_vars($userdata);
+        // $request->session()->put('idadmin', $obj['ID_ADMIN']);
         if (is_null($userdata)) {
             return back()->with('LoginError', 'Log In Failed');
         } else {
