@@ -46,6 +46,8 @@ class LogInController extends Controller
             if ($password == $obj['PASSWORD_ADMIN']) {
 
                 $request->session()->put('idadmin', $obj['ID_ADMIN']);
+                $tes = $request->session()->get('idadmin');
+                session()->save();
                 // Session::put('idadmin', $obj['ID_ADMIN']);
 
                 // $user = Auth::user() ->id;
