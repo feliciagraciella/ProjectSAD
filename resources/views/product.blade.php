@@ -23,34 +23,20 @@
 <body>
     <h5 class=title>Products List</h5>
     <div class="butinsertproduct">
-        <a href="/insertproduct"><button type="button" class="btn btn-outline-secondary btn-sm" style="text-transform: unset !important; ">Insert Product <span class="iconify" data-icon="akar-icons:circle-plus-fill"></span></button></a>
+        <a href="/insertproduct"><button type="button" class="btn btn-outline-secondary btn-sm"
+                style="text-transform: unset !important; ">Insert Product <span class="iconify"
+                    data-icon="akar-icons:circle-plus-fill"></span></button></a>
     </div>
     <div class="baris1">
-
-        {{-- <div class="dropdown-show2">
-            <a class="btn btn-sm dropdown-toggle dropdown-toggle-split" href="#"
-                style="text-transform:unset !important; width: 150px; " role="button" id="dropdownMenuLink"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Sort By
-            </a>
-
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" style="font-size: smaller;" href="#">Price</a>
-                <a class="dropdown-item" style="font-size: smaller;" href="#">Qty</a>
-                <a class="dropdown-item" style="font-size: smaller;" href="#">Size</a>
-            </div>
-        </div> --}}
-
-
-        <div class="custom-select" style="width:200px;">
-            <select class="btn-sm">
-              <option value="0">Sort by</option>
-              <option value="1">Audi</option>
-              <option value="2">BMW</option>
-            </select>
-        </div>
-
-        <a class="viewcat" href="/category">View Category</a>
+        <p class="datetitle" style="margin-top: -12px;">Sort By</p>
+        <select class="dropdown-show2" id="sortby" name="sortby"
+            style="text-transform:unset !important; width: 150px; transform: translateY(-43px); margin-left: 10%; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <option value="Price">Price</option>
+            <option value="Qty">Qty</option>
+            <option value="Size">Size</option>
+        </select>
+    <a class="viewcat" href="/category">View Category</a>
     </div>
 
     <div class=table>
@@ -68,18 +54,25 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($product as $p)
-                <tr>
-                    <td style="text-align:center"><img src="../images/best/{{$p->SKU}}.jpg" alt="" height=70></td>
-                    <td style="font-weight: 600; text-align:left;"><a href="{{ ('productdetail/'.$p->SKU) }}">{{$p->SKU}}</a></td>
-                    <td style="font-weight: 600; text-align:left;"><a href="{{ ('productdetail/'.$p->SKU) }}">{{$p->ID_CATEGORY}}</td>
-                    <td style="font-weight: 600; text-align:left;"><a href="{{ ('productdetail/'.$p->SKU) }}">{{$p->P_NAME}}</td>
-                    <td style="font-weight: 600; text-align:left;"><a href="{{ ('productdetail/'.$p->SKU) }}">{{$p->STOCK}}</td>
-                    <td style="font-weight: 600; text-align:left;"><a href="{{ ('productdetail/'.$p->SKU) }}">{{$p->SIZE}} ml</td>
-                    <td style="font-weight: 600; text-align:left;"><a href="{{ ('productdetail/'.$p->SKU) }}">Rp {{$p->PRICE}}</td>
-                    <td style="font-weight: 600; text-align:left; width: 10%;"><span style="text-align:center;"
-                            class="close">&#10005;</span></td>
-                </tr>
+                @foreach ($product as $p)
+                    <tr>
+                        <td style="text-align:center"><img src="../images/best/{{ $p->SKU }}.jpg" alt=""
+                                height=70></td>
+                        <td style="font-weight: 600; text-align:left;"><a
+                                href="{{ 'productdetail/' . $p->SKU }}">{{ $p->SKU }}</a></td>
+                        <td style="font-weight: 600; text-align:left;"><a
+                                href="{{ 'productdetail/' . $p->SKU }}">{{ $p->ID_CATEGORY }}</td>
+                        <td style="font-weight: 600; text-align:left;"><a
+                                href="{{ 'productdetail/' . $p->SKU }}">{{ $p->P_NAME }}</td>
+                        <td style="font-weight: 600; text-align:left;"><a
+                                href="{{ 'productdetail/' . $p->SKU }}">{{ $p->STOCK }}</td>
+                        <td style="font-weight: 600; text-align:left;"><a
+                                href="{{ 'productdetail/' . $p->SKU }}">{{ $p->SIZE }} ml</td>
+                        <td style="font-weight: 600; text-align:left;"><a href="{{ 'productdetail/' . $p->SKU }}">Rp
+                                {{ $p->PRICE }}</td>
+                        <td style="font-weight: 600; text-align:left; width: 10%;"><span style="text-align:center;"
+                                class="close">&#10005;</span></td>
+                    </tr>
                 @endforeach
             </tbody>
         </table>

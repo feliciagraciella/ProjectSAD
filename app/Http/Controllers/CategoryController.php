@@ -19,4 +19,13 @@ class CategoryController extends Controller
             "cat" => $cat
         ]);
     }
+
+    public function category2()
+    {
+        $cat = CategoryModel::all();
+
+        return view("insertproduct", [
+            "cat" => $cat
+        ]);
+    }
 }
