@@ -81,6 +81,14 @@ Route::get("/insertcategory", [CategoryController::class, "category"]);
 Route::get('/', [LogInController::class, 'index']);
 Route::post('/', [LogInController::class, 'authenticate']);
 // Route::get('header', [LogInController::class, 'authenticate']);
+
+// Route::get('header', function () {
+//     return view('index');
+// });
+// Route::get('/', [LogInController::class, 'index'])->name('login')->middleware('guest');
+// Route::post('/', [LoginController::class, 'authenticate']);
+// Route::post('/', [LoginController::class, 'logout']);
+
 Route::get("/home", [HomeController::class, "reporthome"]);
 
 // Route::get('/productdetail', function () {

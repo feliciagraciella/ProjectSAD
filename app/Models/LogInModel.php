@@ -31,4 +31,7 @@ class LogInModel extends Authenticatable
         'password',
         'remember_token',
     ];
+
+    
 }
+
