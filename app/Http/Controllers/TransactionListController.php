@@ -35,9 +35,11 @@ class TransactionListController extends Controller
         ]);
     }
 
-    public function dropdown1(Request $req)
+    public function insert(Request $req)
     {
 
+        $dd1 = $req->input("selectplatform");
+        $dd2 = $req->input("selectplatform");
         $dd1 = $req->input("selectplatform");
 
         return view("inserttransaction", [
