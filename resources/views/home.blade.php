@@ -54,9 +54,12 @@
                 <div class="popular">
                     <div class="column-popular">
                         <div class="rect1">
-                            <a href="{{ 'productdetail/' . $d->SKU }}"></a>
+                            <a href="{{ 'productdetail/' . $d->SKU }}">
                                 <img src="{{ asset('images/best/' . $d->IMAGE) }}" alt="" width="150px" height="150px"
                                     style="border-radius: 12px">
+                            </a>
+                                {{-- <img src="{{ asset('images/best/' . $d->IMAGE) }}" alt="" width="150px" height="150px"
+                                    style="border-radius: 12px"> --}}
                         </div>
                     </div>
                 </div>

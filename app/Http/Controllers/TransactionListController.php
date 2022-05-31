@@ -35,21 +35,30 @@ class TransactionListController extends Controller
         ]);
     }
 
-    public function insert(Request $req)
+    public function addCart(Request $req)
     {
+        $date = $req->input("date");
+        $dd1 = $req->get("selectplatform");
+        $dd2 = $req->input("product");
+        $qty = $req->get("inputQuantity");
 
-        $dd1 = $req->input("selectplatform");
-        $dd2 = $req->input("selectplatform");
-        $dd1 = $req->input("selectplatform");
 
-        return view("inserttransaction", [
-            "dd1" => $dd1
+        DB::table('CART')->insert([
+            'ID_TRANSACTION' => "AAAA",
+            'SKU' => $dd2,
+            'QTY_PRODUCT' => $qty,
+            'STATUS_DELETE' => '0'
         ]);
+
+        return redirect();
+        // return view("inserttransaction", [
+        //     "dd1" => $dd1
+        // ]);
     }
 
     public function dropdownproduct()
     {
-        $product = ProductListModel::select('P_NAME', 'SKU')->get();
+        $product = ProductListModel::select(DB::raw("CONCAT(P_NAME, ' ', SIZE, 'mL') AS NAME"), 'SKU')->get();
 
         return view("inserttransaction", [
             "product" => $product

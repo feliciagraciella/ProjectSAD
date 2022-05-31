@@ -29,7 +29,7 @@
             @csrf
             <div class="box">
                 <input type="text" id="name" name="name" class="form-control btn btn-sm"
-                    style="text-transform:unset !important; width: 310px; text-align: center;">
+                    style="text-transform:unset !important; width: 310px; text-align: left;">
             </div>
         </form>
         <div class="buttonadd2">
@@ -43,18 +43,18 @@
         <table class="table table-hover" style="width: 70%; position: absolute; left: 320px; top: 300px;">
             <thead>
                 <tr>
-                    <th scope="col" style="font-weight: 700; text-align:left;">Category ID</th>
-                    <th scope="col" style="font-weight: 700; text-align:left;">Category Name</th>
-                    <th scope="col" style="font-weight: 700; text-align:left;">Total Product</th>
+                    <th scope="col" style="font-weight: 700; text-align:center;">Category ID</th>
+                    <th scope="col" style="font-weight: 700; text-align:center;">Category Name</th>
+                    <th scope="col" style="font-weight: 700; text-align:center;">Total Product</th>
                 </tr>
             </thead>
 
             <tbody>
                 @foreach ($cat as $c)
                     <tr>
-                        <td style="font-weight: 600; text-align:left;">{{ $c->ID_CATEGORY }}</td>
-                        <td style="font-weight: 600; text-align:left;">{{ $c->C_NAME }}</td>
-                        <td style="font-weight: 600; text-align:left;">{{ $c->TOTAL_PRODUCT }}</td>
+                        <td style="font-weight: 600; text-align:center;">{{ $c->ID_CATEGORY }}</td>
+                        <td style="font-weight: 600; text-align:center;">{{ $c->C_NAME }}</td>
+                        <td style="font-weight: 600; text-align:center;">{{ $c->TOTAL_PRODUCT }}</td>
                     </tr>
                 @endforeach
             </tbody>
