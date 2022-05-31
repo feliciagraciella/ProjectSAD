@@ -17,53 +17,60 @@
     <h5 class=title>Insert Transaction</h5>
     <div class="baris1" style="z-index: 1000">
         <h4 class="datetitle">Date</h4>
-        <input class="btn btn-sm calendar" style="text-transform:unset !important; width: 200px;" type="date">
+        <input class="btn btn-sm calendar" name="date" style="text-transform:unset !important; width: 200px;" type="date">
 
         <h4 class="platformtitle" >Platform</h4>
         <form method="get">
             @csrf
-            <div class="dropdown-show2" >
-                <select class="dropdowncat" id="cat" name="selectplatform"
-                    style="text-transform:unset !important; width: 200px; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <option value="">Select Platform</option>
-                    <option value="tokopedia">Tokopedia</option>
-                    <option value="shopee">Shopee</option>
-                </select>
-            </div>
+                <div class="dropdown-show2" >
+                    <select class="dropdowncat" id="cat" name="selectplatform"
+                        style="text-transform:unset !important; width: 200px; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <option value="">Select Platform</option>
+                        <option value="tokopedia">Tokopedia</option>
+                        <option value="shopee">Shopee</option>
+                    </select>
+                </div>
         </form>
     </div>
 
-    <div class="baris2">
-        <h4 class="datetitle">Product</h4>
-        <form method="get">
-            @csrf
-            <div class="dropdown-show3">
-                <select class="dropdowncat" id="cat" name="product"
-                    style="text-transform:unset !important; width: 200px; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <option value="">Select Product</option>
 
-                    @foreach($product as $p)
-                    <option value="{{$p -> SKU}}">{{$p -> P_NAME}}</option>
-                    @endforeach
 
-                </select>
+    <form method="POST" action="/inserttransaction">
+        @csrf
+            <div class="baris2">
+                <h4 class="datetitle">Product</h4>
+                <form method="get">
+                    @csrf
+                        <div class="dropdown-show3">
+                            <select class="dropdowncat" id="cat" name="product"
+                                style="text-transform:unset !important; width: 200px; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <option value="">Select Product</option>
+
+                                @foreach($product as $p)
+                                <option value="{{$p -> SKU}}">{{$p -> NAME}}</option>
+                                @endforeach
+
+                            </select>
+                        </div>
+                </form>
+
+                <h4 class="platformtitle">Quantity</h4>
+                <form method="get">
+                    @csrf
+                        <div class="numericupdown">
+                            <input class="form-control btn btn-sm d-inline text-center me-3 txtJumlah" name="inputQuantity" min=0 value="0" type="number" style="width: 200px;">
+                        </div>
+                </form>
             </div>
-        </form>
 
-        <h4 class="platformtitle">Quantity</h4>
-        <div class="numericupdown">
-            <input class="form-control btn btn-sm d-inline text-center me-3 txtJumlah" name="inputQuantity" min=0 type="number" value="0" style="width: 200px;">
-        </div>
-    </div>
-
-    <div class="baris3">
-        <div class="buttonadd">
-            <button type="button" class="btn btn-secondary btn-sm" style="text-transform: unset !important; width: 150px; ">Add</button>
-        </div>
-    </div>
-
+            <div class="baris3">
+                <div class="buttonadd">
+                    <button type="button" class="btn btn-secondary btn-sm" style="text-transform: unset !important; width: 150px; ">Add</button>
+                </div>
+            </div>
+    </form>
     <div class=table>
         <table class="table" style="width: 70%; position: absolute; left: 320px; top: 380px; overflow-y:scroll;">
             <thead>
