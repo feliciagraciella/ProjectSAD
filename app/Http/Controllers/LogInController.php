@@ -54,7 +54,7 @@ class LogInController extends Controller
 
                 // $admin = session('idAdmin');
 
-                return view('/', [
+                return view('/home', [
                     'idadmin' => $idadmin,
                     'userdata' => $obj
                 ]);

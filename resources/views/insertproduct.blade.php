@@ -82,9 +82,9 @@
             </textarea>
         </div>
 
-        <button type="submit" class="buttondel" name="deleteall" value="bar"
+        <button type="submit" class="buttondel" name="action" value="delete"
             style="background-color: #f7f7f7">Delete All</button>
-        <button type="submit" class="buttonins" name="insert" value="bar"
+        <button type="submit" class="buttonins" name="action" value="insert"
             style="background-color: #dee1e6">Insert</button>
 
         <div class="productphoto">

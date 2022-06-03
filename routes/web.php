@@ -34,7 +34,7 @@ Route::get('/header', function () {
     ]);
 });
 
-Route::get('/login', function () {
+Route::get('/', function () {
     return view('login', [
         // "title" => "About Us"
     ]);
@@ -131,3 +131,4 @@ Route::get('chart', 'ChartController@index');
 // Route::get('insert','ProductListController@');
 Route::post('create', [ProductListController::class, "insert"]);
 
+Route::post('create2', [ProductListController::class, "detail"]);
