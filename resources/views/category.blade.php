@@ -22,7 +22,7 @@
 </head>
 
 <body>
-    <h5 class=title>Insert Category</h5>
+    <h5 class=title>Add Category</h5>
     <div class="baris1" style="z-index: 1000">
         <h4 class="name">Category Name</h4>
         <form action="/product" method="POST" enctype="multipart/form-data" class="form">
@@ -31,10 +31,13 @@
                 <input type="text" id="name" name="name" class="form-control btn btn-sm"
                     style="text-transform:unset !important; width: 310px; text-align: left;">
             </div>
+            <div class="buttonadd2">
+                <button type="button" onclick="window.location.reload(true)" class="btn btn-secondary btn-sm" style="text-transform: unset !important; width: 150px ; ">Add</button>
+            </div>
         </form>
-        <div class="buttonadd2">
+        {{-- <div class="buttonadd2">
             <button type="button" class="btn btn-secondary btn-sm" style="text-transform: unset !important; width: 150px ; ">Add</button>
-        </div>
+        </div> --}}
     </div>
 
 

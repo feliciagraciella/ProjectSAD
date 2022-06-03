@@ -132,7 +132,7 @@
                 @foreach ($stock as $s)
                     <div class="stock-all">
                         <p class="warning1">
-                            <span class="iconify" data-icon="ep:warning-filled" style="color: black;"></span>
+                            <span class="iconify" data-icon="ep:warning-filled" style="color: rgba(255, 0, 0, 0.772);"></span>
                         </p>
                         <div class="stockk">
                             <h5 class="stock-text" style="width: 200px">{{ $s->P_NAME }}</h5>

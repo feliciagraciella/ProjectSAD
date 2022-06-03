@@ -20,5 +20,7 @@ class ChartController extends Controller
         // ]);
 
         // return view('report', [compact('chart') => $chart]);
+
+        
     }
 }

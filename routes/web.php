@@ -78,6 +78,7 @@ Route::get("/product", [ProductListController::class, "productlist"]);
 Route::get("/category", [CategoryController::class, "category"]);
 Route::get("/insertcategory", [CategoryController::class, "category"]);
 Route::get("/insertproduct", [CategoryController::class, "insproduct"]);
+// Route::post("/category", [CategoryController::class, "category"]);
 // Route::get("header", [LogInController::class, "authenticate"]);
 Route::get('/', [LogInController::class, 'index']);
 Route::post('/', [LogInController::class, 'authenticate']);

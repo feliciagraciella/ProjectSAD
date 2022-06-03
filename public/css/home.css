@@ -61,7 +61,7 @@
     font-family: "Poppins";
     color: black;
     margin-left: 21%;
-    margin-top: 205px;
+    margin-top: 210px;
 }
 
 .column-popular {
@@ -70,8 +70,8 @@
 }
 
 .popular {
-    margin-left: 21%;
-    margin-right: 25%;
+    margin-left: 20.5%;
+    margin-right: 24%;
 }
 
 .rect1 {
@@ -121,7 +121,7 @@
     font-family: "Poppins";
     color: black;
     margin-left: 67%;
-    top: 548px;
+    top: 550px;
     position: absolute;
 }
 
