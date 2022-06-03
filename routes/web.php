@@ -76,7 +76,7 @@ Route::GET("/report2", [ReportController::class, "report2"]);
 
 Route::get("/product", [ProductListController::class, "productlist"]);
 Route::get("/category", [CategoryController::class, "category"]);
-Route::post("/category", [CategoryController::class, "category"]);
+// Route::post("/category", [CategoryController::class, "category"]);
 // Route::get("header", [LogInController::class, "authenticate"]);
 Route::get('/', [LogInController::class, 'index']);
 Route::post('/', [LogInController::class, 'authenticate']);
