@@ -48,18 +48,63 @@ class ProductListController extends Controller
     public function insert(Request $request)
     {
         $sku = $request->input('sku', '.jpg');
+                $name = $request->input('name');
+                $cat = $request->input('cat');
+                $price = $request->input('price');
+                $qty = $request->input('qty');
+                $size = $request->input('size');
+                $desc = $request->input('desc');
+
+        switch ($request->input('action')) {
+            case 'insert':
+                // $sku = $request->input('sku', '.jpg');
+                // $name = $request->input('name');
+                // $cat = $request->input('cat');
+                // $price = $request->input('price');
+                // $qty = $request->input('qty');
+                // $size = $request->input('size');
+                // $desc = $request->input('desc');
+                $data=array('SKU'=>$sku,"P_NAME"=>$name,"ID_CATEGORY"=>$cat,"PRICE"=>$price,"STOCK"=>$qty,"SIZE"=>$size,"DESCRIPTION"=>$desc,"IMAGE"=>$sku, "STATUS_DELETE"=>'0');
+                DB::table('PRODUCT')->insert($data);
+                return redirect('product')->with('status',"Insert successfully");
+                break;
+
+            case 'delete':
+                
+                break;
+            }
+    }
+
+    public function detail(Request $request)
+    {
+        $sku = $request->input('sku', '.jpg');
         $name = $request->input('name');
         $cat = $request->input('cat');
         $price = $request->input('price');
         $qty = $request->input('qty');
         $size = $request->input('size');
         $desc = $request->input('desc');
-        $email = $request->input('email');
-        $data=array('SKU'=>$sku,"P_NAME"=>$name,"ID_CATEGORY"=>$cat,"PRICE"=>$price,"STOCK"=>$qty,"SIZE"=>$size,"DESCRIPTION"=>$desc,"IMAGE"=>$sku, "STATUS_DELETE"=>'0');
-        DB::table('PRODUCT')->insert($data);
-        return redirect('product')->with('status',"Insert successfully");
-    }
 
+        switch ($request->input('action')) {
+            case 'delete':
+                // $sku = $request->input('sku', '.jpg');
+                // $name = $request->input('name');
+                // $cat = $request->input('cat');
+                // $price = $request->input('price');
+                // $qty = $request->input('qty');
+                // $size = $request->input('size');
+                // $desc = $request->input('desc');
+                $data=array('SKU'=>$sku,"P_NAME"=>$name,"ID_CATEGORY"=>$cat,"PRICE"=>$price,"STOCK"=>$qty,"SIZE"=>$size,"DESCRIPTION"=>$desc,"IMAGE"=>$sku, "STATUS_DELETE"=>'0');
+                DB::table('PRODUCT')->insert($data);
+                return redirect('product')->with('status',"Insert successfully");
+                break;
+
+            case 'edit':
+
+                break;
+            }
+    }
+}
 
     // public function addproduct(Request $request)
     // {
@@ -123,4 +168,3 @@ class ProductListController extends Controller
     //     $data = $request->all();
     //     $data['image'] = $request->file('image')->store('images', 'public');
     // }
-}
