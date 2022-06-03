@@ -22,7 +22,7 @@
 </head>
 
 <body>
-    <h5 class=title>Insert Category</h5>
+    <h5 class=title>Add Category</h5>
     <div class="baris1" style="z-index: 1000">
         <h4 class="name">Category Name</h4>
         <form action="/product" method="POST" enctype="multipart/form-data" class="form">
