@@ -116,7 +116,7 @@ Route::get("/productdetail/{sku}", [ProductListController::class, "productdetail
 Route::get('/transactionlist', [TransactionListController::class, 'translist']);
 
 Route::get('/inserttransaction', [TransactionListController::class, 'dropdownproduct']);
-Route::post('/inserttransaction', [TransactionListController::class, 'addCart']);
+Route::post('/inserttrans', [TransactionListController::class, 'addCart']);
 
 Route::prefix("/transactiondetail")->group(function (){
     Route::get("/{id}", [TransactionListController::class, "details"]);
@@ -130,3 +130,4 @@ Route::get('chart', 'ChartController@index');
 
 // Route::get('insert','ProductListController@');
 Route::post('create', [ProductListController::class, "insert"]);
+

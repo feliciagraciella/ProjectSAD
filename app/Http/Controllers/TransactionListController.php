@@ -39,18 +39,28 @@ class TransactionListController extends Controller
     {
         $date = $req->input("date");
         $dd1 = $req->get("selectplatform");
+
+        if ($dd1 == "Tokopedia"){
+            $id = "T" . date('Ymd', strtotime($date));;
+        }
+        else {
+            $id = "S" . date('Ymd', strtotime($date));
+        }
+
         $dd2 = $req->input("product");
         $qty = $req->get("inputQuantity");
 
 
         DB::table('CART')->insert([
-            'ID_TRANSACTION' => "AAAA",
+            'ID_TRANSACTION' => $id,
+            'DATE' => $date,
+            'PLATFORM' => $dd1,
             'SKU' => $dd2,
             'QTY_PRODUCT' => $qty,
             'STATUS_DELETE' => '0'
         ]);
 
-        return redirect();
+        return redirect('inserttransaction');
         // return view("inserttransaction", [
         //     "dd1" => $dd1
         // ]);
@@ -59,9 +69,11 @@ class TransactionListController extends Controller
     public function dropdownproduct()
     {
         $product = ProductListModel::select(DB::raw("CONCAT(P_NAME, ' ', SIZE, 'mL') AS NAME"), 'SKU')->get();
+        $cart = DB::table('CART')->get();
 
         return view("inserttransaction", [
-            "product" => $product
+            "product" => $product,
+            "cart" => $cart
         ]);
     }
 }
