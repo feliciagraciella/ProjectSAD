@@ -57,7 +57,7 @@
                     </div>
                     <div class="container2">
                         <div class="buttonmasuk">
-                            <button>Log In</button>
+                            <button type="submit">Log In</button>
                         </div>
                     </div>
                 </form>
