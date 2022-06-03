@@ -18,7 +18,7 @@ class HomeController extends Controller
             //     ->where('DETAIL_TRANSACTION.SKU', '=', 'PRODUCT.SKU')
             //     ->get();
 
-            $product = ProductListModel::all();
+            $product = DB::select("select * from `product_all_all` order by SKU asc limit 5");
             // ->join('DETAIL_TRANSACTION', 'PRODUCT.SKU', '=', 'DETAIL_TRANSACTION.SKU')
             // ->select('PRODUCT.*', SUM('DETAIL_TRANSACTION'.'QTY_PRODUCT'))
             // ->groupBy('SKU')
@@ -61,11 +61,12 @@ class HomeController extends Controller
 
         $stock = DB::select("select P_NAME, STOCK from PRODUCT where STOCK <= 10 order by STOCK asc");
 
+
         return view("home", [
             "data" => $data
                 ->take(4),
             "product" => $product
-                ->take(5),
+                ,
             "stock" => $stock,
             "income" => $income[0]->NetProfit,
             "admin" => $admin[0]->AdminFee

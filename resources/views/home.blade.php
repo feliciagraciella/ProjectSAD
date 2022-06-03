@@ -76,7 +76,7 @@
                         <th scope="col" style="font-weight: 600; text-align:center;">Photo</th>
                         <th scope="col" style="font-weight: 600; text-align:center;">SKU</th>
                         <th scope="col" style="font-weight: 600; text-align:center;">Name</th>
-                        <th scope="col" style="font-weight: 600; text-align:center;">Total Sales</th>
+                        <th scope="col" style="font-weight: 600; text-align:center;">Sold</th>
                         <th scope="col" style="font-weight: 600; text-align:center;">Size</th>
                         <th scope="col" style="font-weight: 600; text-align:center;">Price</th>
                     </tr>
@@ -88,9 +88,10 @@
                                 <img src="{{ asset('images/best/' . $p->IMAGE) }}" alt="" height=100 width=100>
                             </th>
                             <td style="text-align:center;">{{ $p->SKU }}</td>
-                            <td style="text-align:left;">{{ $p->P_NAME }}</td>
+                            <td style="text-align:left;">{{ $p->PRODUCT_NAME }}</td>
                             {{-- <td style="text-align:center;">{{ $p->SUM('DETAIL_TRANSACTION' . 'QTY_PRODUCT') }}</td> --}}
-                            <td style="text-align:center;">5</td>
+                            {{-- <td style="text-align:center;">5</td> --}}
+                            <td style="text-align:center;">{{ $p->TOTAL_SOLD }}</td>
                             <td style="text-align:center;">{{ $p->SIZE }}</td>
                             <td style="text-align:center;">{{ $p->PRICE }}</td>
                         </tr>
