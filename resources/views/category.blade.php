@@ -31,10 +31,13 @@
                 <input type="text" id="name" name="name" class="form-control btn btn-sm"
                     style="text-transform:unset !important; width: 310px; text-align: left;">
             </div>
+            <div class="buttonadd2" onclick="window.location.reload();">
+                <button type="button" class="btn btn-secondary btn-sm" style="text-transform: unset !important; width: 150px ; ">Add</button>
+            </div>
         </form>
-        <div class="buttonadd2">
+        {{-- <div class="buttonadd2">
             <button type="button" class="btn btn-secondary btn-sm" style="text-transform: unset !important; width: 150px ; ">Add</button>
-        </div>
+        </div> --}}
     </div>
 
 
