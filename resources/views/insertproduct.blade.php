@@ -23,7 +23,7 @@
 <body>
     <h5 class=title>Insert Product</h5>
 
-    <form action="/product" method="POST" enctype="multipart/form-data" class="form">
+    <form action="/create" method="POST" enctype="multipart/form-data" class="form">
         @csrf
         <div class="baris1">SKU</div>
         <div class="boxsku">
@@ -42,21 +42,14 @@
             <select class="dropdowncat" id="cat" name="cat"
                 style="text-transform:unset !important; width: 310px; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                @foreach($cat as $c)
+                {{-- @foreach($cat as $c)
                     <option value="{{$c -> C_NAME}}">{{$c -> C_NAME}}</option>
-                    @endforeach
+                    @endforeach --}}
+                <option value="A">Cleaner</option>
+                <option value="B">Protector</option>
+                <option value="C">Coating Factory</option>
+                <option value="D">Tools</option>
             </select>
-
-            {{-- <a class="btn btn-sm dropdown-toggle dropdown-toggle-split" href="#"
-                style="text-transform:unset !important; width: 310px; text-align: right;" role="button"
-                id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            </a>
-
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" style="font-size: smaller;" href="#">Cleaner</a>
-                <a class="dropdown-item" style="font-size: smaller;" href="#">Protect</a>
-                <a class="dropdown-item" style="font-size: smaller;" href="#">Tools</a>
-            </div> --}}
         </div>
 
         <div class="baris4-1">Price</div>
@@ -76,24 +69,10 @@
             <select class="dropdownsize" id="size" name="size"
                 style="text-transform:unset !important; width: 310px; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <option>30 ml</option>
-                <option>50 ml</option>
-                <option>320 ml</option>
-                <option>500 ml</option>
+                @foreach($size as $s)
+                <option value="{{$s -> SIZE}}">{{$s -> SIZE}} ml</option>
+                @endforeach
             </select>
-
-            {{-- <a class="btn btn-sm dropdown-toggle dropdown-toggle-split" href="#"
-                style="text-transform:unset !important; width: 310px; text-align: right;" role="button"
-                id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            </a>
-
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" style="font-size: smaller;" href="#">30 ml</a>
-                <a class="dropdown-item" style="font-size: smaller;" href="#">250 ml</a>
-                <a class="dropdown-item" style="font-size: smaller;" href="#">320 ml</a>
-                <a class="dropdown-item" style="font-size: smaller;" href="#">500 ml</a>
-            </div> --}}
-
         </div>
 
         <div class="baris6">Description</div>

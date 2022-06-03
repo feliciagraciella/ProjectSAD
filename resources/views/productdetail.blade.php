@@ -78,8 +78,8 @@
             </textarea>
         </div>
 
-        <button type="submit" class="buttondel" name="deleteall" value="bar"
-            style="background-color: #f7f7f7">Delete</button>
+        {{-- <button type="submit" class="buttondel" name="deleteall" value="bar"
+            style="background-color: #f7f7f7">Delete</button> --}}
         <button href="" type="" class="buttonins" name="edit" value="bar"
             style="background-color: #dee1e6">Edit</button>
 

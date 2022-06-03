@@ -43,14 +43,13 @@
         <table class="table table-hover" style="width: 70%; position: absolute; left: 320px; top: 250px;">
             <thead>
                 <tr>
-                    <th scope="col" style="font-weight: 700; text-align:left;">Photo</th>
+                    <th scope="col" style="font-weight: 700; text-align:left;">  Photo</th>
                     <th scope="col" style="font-weight: 700; text-align:left;">SKU Product</th>
                     <th scope="col" style="font-weight: 700; text-align:left;">Category</th>
                     <th scope="col" style="font-weight: 700; text-align:left;">Product Name</th>
                     <th scope="col" style="font-weight: 700; text-align:left;">Qty</th>
                     <th scope="col" style="font-weight: 700; text-align:left;">Size</th>
                     <th scope="col" style="font-weight: 700; text-align:left;">Price</th>
-                    <th scope="col" style="font-weight: 700; text-align:left;"></th>
                 </tr>
             </thead>
             <tbody>
@@ -70,8 +69,6 @@
                                 href="{{ 'productdetail/' . $p->SKU }}">{{ $p->SIZE }} ml</td>
                         <td style="font-weight: 600; text-align:left;"><a href="{{ 'productdetail/' . $p->SKU }}">Rp
                                 {{ $p->PRICE }}</td>
-                        <td style="font-weight: 600; text-align:left; width: 10%;"><span style="text-align:center;"
-                                class="close">&#10005;</span></td>
                     </tr>
                 @endforeach
             </tbody>

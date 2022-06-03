@@ -35,7 +35,7 @@
                 <p>Please enter your details</p>
             </div>
             <div class="form-signin">
-                <form action="/home" method="get">
+                <form action="/" method="get">
                     @csrf
                     <div class="container">
                         <div class="containercontroller">

@@ -77,6 +77,7 @@ Route::GET("/report2", [ReportController::class, "report2"]);
 Route::get("/product", [ProductListController::class, "productlist"]);
 Route::get("/category", [CategoryController::class, "category"]);
 Route::get("/insertcategory", [CategoryController::class, "category"]);
+Route::get("/insertproduct", [CategoryController::class, "insproduct"]);
 // Route::get("header", [LogInController::class, "authenticate"]);
 Route::get('/', [LogInController::class, 'index']);
 Route::post('/', [LogInController::class, 'authenticate']);
@@ -99,11 +100,11 @@ Route::get("/home", [HomeController::class, "reporthome"]);
 
 Route::get("/productdetail/{sku}", [ProductListController::class, "productdetail"]);
 
-Route::get('/insertproduct', function () {
-    return view('insertproduct', [
-        // "title" => "About Us"
-    ]);
-});
+// Route::get('/insertproduct', function () {
+//     return view('insertproduct', [
+//         // "title" => "About Us"
+//     ]);
+// });
 
 // Route::get('/transactionlist', function () {
 //     return view('transactionlist', [
@@ -125,3 +126,6 @@ Route::get('chart', 'ChartController@index');
 // Route::get('/login', [LogInController::class, 'index']);
 // Route::post('/login', [LogInController::class, 'authenticate']);
 // Route::post('/home', [LogInController::class, 'authenticate']);
+
+// Route::get('insert','ProductListController@');
+Route::post('create', [ProductListController::class, "insert"]);
