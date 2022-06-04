@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CartModel;
 use App\Models\ProductListModel;
 use App\Models\TransactionDetailModel;
 use App\Models\TransactionListModel;
@@ -50,20 +51,33 @@ class TransactionListController extends Controller
         $dd2 = $req->input("product");
         $qty = $req->get("inputQuantity");
 
+        $p = DB::table('PRODUCT')->where('SKU', $dd2);
+        CartModel::updateCart($dd2, $dd1, $date, $id, $p, $qty);
 
-        DB::table('CART')->insert([
-            'ID_TRANSACTION' => $id,
-            'DATE' => $date,
-            'PLATFORM' => $dd1,
-            'SKU' => $dd2,
-            'QTY_PRODUCT' => $qty,
-            'STATUS_DELETE' => '0'
-        ]);
+
+        // DB::table('CART')->insert([
+        //     'ID_TRANSACTION' => $id,
+        //     'DATE' => $date,
+        //     'PLATFORM' => $dd1,
+        //     'SKU' => $dd2,
+        //     'QTY_PRODUCT' => $qty,
+        //     'STATUS_DELETE' => '0'
+        // ]);
 
         return redirect('inserttransaction');
         // return view("inserttransaction", [
         //     "dd1" => $dd1
         // ]);
+    }
+
+    // public function updateQty(Request $req)
+    // {
+
+    // }
+
+    public function deleteAll()
+    {
+        DB::table('CART')->deleteAll();
     }
 
     public function dropdownproduct()

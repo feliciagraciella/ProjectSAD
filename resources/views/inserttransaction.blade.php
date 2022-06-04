@@ -112,7 +112,7 @@
 
     <div class="buttonbutton">
         <div class="buttondelete">
-            <form method="POST" action="/deleteal">
+            <form method="POST" onclick="return confirm('Are you sure?')" action="/deleteall">
                 @csrf
                 <button type="button" class="btn btn-outline-secondary btn-sm" style="text-transform: unset !important; width: 120px; ">Delete All</button>
             </form>
