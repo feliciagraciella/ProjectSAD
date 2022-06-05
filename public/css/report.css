@@ -30,6 +30,11 @@ body{
 .dropdown-item{
     font-size: smaller;
 }
+.button-apply{
+    left: 703px;
+    position: absolute;
+    top: 129px;
+}
 
 /* styling income */
 .income{

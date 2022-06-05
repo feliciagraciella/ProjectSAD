@@ -54,12 +54,12 @@ class ReportController extends Controller
         if(!empty($kuery["select_period"])){
             $period = $kuery["select_period"];
         }
-        // else{
-        //     $report = "product_sales";
-        //     $platform = "all";
-        //     $period = "all";
-        // }
-        // dd($report);
+        else{
+            $report = "product_sales";
+            $platform = "all";
+            $period = "all";
+        }
+
         if($report == "product_sales"){
             if($report == "product_sales" && $platform == "all" && $period == "all"){
                 $data = DB::select("select * from product_all_all");
@@ -125,7 +125,7 @@ class ReportController extends Controller
 
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
-            dd($report);
+            // dd($report);
             return view("report", [
                 "data" => $data,
                 "income" => $income[0]->NetProfit,
@@ -205,5 +205,6 @@ class ReportController extends Controller
                 "admin" => $admin[0]->AdminFee
             ]);
         }
+        dd($report, $platform, $period);
     }
 }

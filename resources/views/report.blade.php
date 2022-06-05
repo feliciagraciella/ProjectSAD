@@ -70,6 +70,12 @@
             </div>
         </div>
     </form>
+    <div class="button-apply">
+        <form>
+            @csrf
+            <button type="button" class="btn btn-dark btn-sm" style="text-transform: unset !important;">Apply</button>
+        </form>
+    </div>
     {{-- <div style="width: 80%;margin: 0 auto;">
         {!! $chart->container() !!}
     </div>
