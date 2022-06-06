@@ -75,7 +75,7 @@ class ProductListController extends Controller
         }
     }
 
-    public function editproduct(Request $request)
+    public function deleteproduct(Request $request)
     {
         $sku = $request->input('sku');
         DB::table('PRODUCT')->where([['SKU', '=', $sku]])->delete();
@@ -90,11 +90,24 @@ class ProductListController extends Controller
         $qty = $request->input('qty');
         $size = $request->input('size');
         $desc = $request->input('desc');
-        DB::table('PRODUCT')->where([['SKU', '=', $sku]])->update(['P_NAME' => $name]);
+        $del = '2';
+
+        // DB::table('PRODUCT')->where([['SKU', '=', $sku]])->update(["STATUS_DELETE" => 2]);
+        DB::table('update PRODUCT set STATUS_DELETE = ? WHERE SKU = ?', [[$del,$sku]]);
+        return redirect('product')->with('success', "Update successfully");
+
+        // DB::table('PRODUCT')->whereIn('SKU', $sku)->update(["P_NAME" => $name, "PRICE" => $price, "STOCK" => $qty, "SIZE" => $size, "DESCRIPTION" => $desc]);
         // DB::table('update PRODUCT set P_NAME = ?, SIZE = ?, PRICE = ?, STOCK = ?, `DESCRIPTION` = ? WHERE SKU = ?', [$name,$size,$price,$qty,$desc,$sku]);
         // return redirect('product')->with('success', "Update successfully");
-        echo "Record updated successfully.<br/>";
-        echo '<a href = "/edit-records">Click Here</a> to go back.';
+
+        // $data=array("P_NAME" => $name, "PRICE" => $price, "STOCK" => $qty, "SIZE" => $size, "DESCRIPTION" => $desc, "STATUS_DELETE" => '0');
+        // DB::table('PRODUCT')->update($data);
+        // DB::table('PRODUCT')->whereIn('SKU', $sku)->update($request->all());
+
+        // $data=array("STATUS_DELETE" => '1');
+        // DB::table('PRODUCT')->update($data);
+        // DB::table('PRODUCT')->where('SKU', $sku)->update($request->all());
+        // return redirect('product')->with('success', "Update successfully")
     }
 }
 

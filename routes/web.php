@@ -139,4 +139,4 @@ Route::post('create', [ProductListController::class, "insert"]);
 
 Route::post('/deleteprod', [ProductListController::class, "deleteproduct"]);
 
-Route::post('/editprod', [ProductListController::class, "editproduct"]);
+Route::post('/editprod', [ProductListController::class, "updateproduct"]);
