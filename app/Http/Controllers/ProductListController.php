@@ -48,12 +48,12 @@ class ProductListController extends Controller
     public function insert(Request $request)
     {
         $sku = $request->input('sku', '.jpg');
-                $name = $request->input('name');
-                $cat = $request->input('cat');
-                $price = $request->input('price');
-                $qty = $request->input('qty');
-                $size = $request->input('size');
-                $desc = $request->input('desc');
+        $name = $request->input('name');
+        $cat = $request->input('cat');
+        $price = $request->input('price');
+        $qty = $request->input('qty');
+        $size = $request->input('size');
+        $desc = $request->input('desc');
 
         switch ($request->input('action')) {
             case 'insert':
@@ -64,15 +64,15 @@ class ProductListController extends Controller
                 // $qty = $request->input('qty');
                 // $size = $request->input('size');
                 // $desc = $request->input('desc');
-                $data=array('SKU'=>$sku,"P_NAME"=>$name,"ID_CATEGORY"=>$cat,"PRICE"=>$price,"STOCK"=>$qty,"SIZE"=>$size,"DESCRIPTION"=>$desc,"IMAGE"=>$sku, "STATUS_DELETE"=>'0');
+                $data = array('SKU' => $sku, "P_NAME" => $name, "ID_CATEGORY" => $cat, "PRICE" => $price, "STOCK" => $qty, "SIZE" => $size, "DESCRIPTION" => $desc, "IMAGE" => $sku, "STATUS_DELETE" => '0');
                 DB::table('PRODUCT')->insert($data);
-                return redirect('product')->with('status',"Insert successfully");
+                return redirect('product')->with('success', "Insert successfully");
                 break;
 
             case 'delete':
-                
+
                 break;
-            }
+        }
     }
 
     public function detail(Request $request)
@@ -94,15 +94,22 @@ class ProductListController extends Controller
                 // $qty = $request->input('qty');
                 // $size = $request->input('size');
                 // $desc = $request->input('desc');
-                $data=array('SKU'=>$sku,"P_NAME"=>$name,"ID_CATEGORY"=>$cat,"PRICE"=>$price,"STOCK"=>$qty,"SIZE"=>$size,"DESCRIPTION"=>$desc,"IMAGE"=>$sku, "STATUS_DELETE"=>'0');
-                DB::table('PRODUCT')->insert($data);
-                return redirect('product')->with('status',"Insert successfully");
-                break;
+                // DB::table('PRODUCT')
+                // ->where([
+                //     ['SKU', '=', $sku]
+                // ])
+                // ->delete();
+                // return redirect('product')->with('success',"Delete successfully");
+                // break;
+                DB::delete('DELETE FROM PRODUCT WHERE SKU = ?', [$sku]);
+                echo ("Product record deleted successfully.");
+                return redirect('product');
+
 
             case 'edit':
 
                 break;
-            }
+        }
     }
 }
 

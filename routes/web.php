@@ -116,7 +116,9 @@ Route::get("/productdetail/{sku}", [ProductListController::class, "productdetail
 Route::get('/transactionlist', [TransactionListController::class, 'translist']);
 
 Route::get('/inserttransaction', [TransactionListController::class, 'dropdownproduct']);
-Route::post('/inserttrans', [TransactionListController::class, 'addCart']);
+Route::post('inserttrans', [TransactionListController::class, 'addCart']);
+Route::post('insertt', [TransactionListController::class, 'insertTrans']);
+Route::post('deleteall', [TransactionListController::class, 'deleteAll']);
 
 Route::prefix("/transactiondetail")->group(function (){
     Route::get("/{id}", [TransactionListController::class, "details"]);
@@ -128,7 +130,10 @@ Route::get('chart', 'ChartController@index');
 // Route::post('/login', [LogInController::class, 'authenticate']);
 // Route::post('/home', [LogInController::class, 'authenticate']);
 
-// Route::get('insert','ProductListController@');
 Route::post('create', [ProductListController::class, "insert"]);
 
-Route::post('create2', [ProductListController::class, "detail"]);
+// Route::post('create2', [ProductListController::class, "detail"]);
+
+// Route::delete('/create2', [ProductListController::class, "detail"]);
+Route::get('delete-records', [ProductListController::class, "index"]);
+Route::get('delete/{SKU}', [ProductListController::class, "detail"]);

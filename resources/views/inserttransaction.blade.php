@@ -20,14 +20,14 @@
         @csrf
             <div class="baris1" style="z-index: 1000">
                 <h4 class="datetitle">Date</h4>
-                <input class="btn btn-sm calendar" name="date" style="text-transform:unset !important; width: 200px;" type="date">
+                <input class="btn btn-sm calendar" value={{$date}} name="date" style="text-transform:unset !important; width: 200px;" type="date">
 
                 <h4 class="platformtitle" >Platform</h4>
                 <div class="dropdown-show2" >
                     <select class="dropdowncat" id="cat" name="selectplatform"
                         style="text-transform:unset !important; width: 200px; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <option value="">Select Platform</option>
+                        <option value="" disabled selected hidden>{{$platform}}</option>
                         <option value="Tokopedia">Tokopedia</option>
                         <option value="Shopee">Shopee</option>
                     </select>
@@ -40,7 +40,7 @@
                     <select class="dropdowncat" id="cat" name="product"
                         style="text-transform:unset !important; width: 200px; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <option value="">Select Product</option>
+                        <option value="" disabled selected hidden>Select Product</option>
 
                         @foreach($product as $p)
                         <option value="{{$p -> SKU}}">{{$p -> NAME}}</option>
@@ -88,39 +88,41 @@
         </table>
     </div>
 
-    <div class="totaltransaction">
-        <h4 class="totalfee" style="width: 150px;">Total Transaction</h4>
-        <div class="inputtotaltrans">
-            <input type="text" class="form-control btn btn-sm" style="text-transform:unset !important; width: 200px; text-align: right;" placeholder="Enter value">
-        </div>
-    </div>
+    <form method="POST" action="/insertt">
+        @csrf
+            <div class="totaltransaction">
+                <h4 class="totalfee" style="width: 150px;">Total Transaction</h4>
+                <div class="inputtotaltrans">
+                    <input type="text" class="form-control btn btn-sm" style="text-transform:unset !important; width: 200px; text-align: right;" placeholder="Enter value">
+                </div>
+            </div>
 
-    <div class="totalplatfee">
-        <h4 class="totalfee" style="width: 150px;">Total Platform Fee</h4>
-        <div class="inputtotalfee">
-            <input type="text" class="form-control btn btn-sm" style="text-transform:unset !important; width: 200px; text-align: right;
-            text-align:right;" placeholder="Enter value">
-        </div>
-    </div>
+            <div class="totalplatfee">
+                <h4 class="totalfee" style="width: 150px;">Total Platform Fee</h4>
+                <div class="inputtotalfee">
+                    <input type="text" class="form-control btn btn-sm" style="text-transform:unset !important; width: 200px; text-align: right;
+                    text-align:right;" placeholder="Enter value">
+                </div>
+            </div>
 
-    <hr class="hrhasil">
+            <hr class="hrhasil">
 
-    <div class="totalakhir">
-        <h4 class="totalfee" style="width: 150px;">Total</h4>
-        <h4 class="totalakhirr" style="width: 150px;">Rp. 500.000</h4>
-    </div>
+            <div class="totalakhir">
+                <h4 class="totalfee" style="width: 150px;">Total</h4>
+                <h4 class="totalakhirr" style="width: 150px;">Rp. 500.000</h4>
+            </div>
 
     <div class="buttonbutton">
-        <div class="buttondelete">
-            <form method="POST" onclick="return confirm('Are you sure?')" action="/deleteall">
-                @csrf
-                <button type="button" class="btn btn-outline-secondary btn-sm" style="text-transform: unset !important; width: 120px; ">Delete All</button>
-            </form>
-        </div>
         <div class="buttoninsert">
-            <form>
+
+                <button type="submit" name="insertprice" class="btn btn-secondary btn-sm" style="text-transform: unset !important; width: 120px; ">Insert</button>
+    </form>
+        </div>
+        <div class="buttondelete">
+            {{-- <form method="POST" onclick="return confirm('Are you sure?')" action="/deleteall"> --}}
+            <form method="POST" action="/deleteall">
                 @csrf
-                <button type="button" class="btn btn-secondary btn-sm" style="text-transform: unset !important; width: 120px; ">Insert</button>
+                <button type="submit" name="insertfee" class="btn btn-outline-secondary btn-sm" style="text-transform: unset !important; width: 120px; ">Delete All</button>
             </form>
         </div>
     </div>
