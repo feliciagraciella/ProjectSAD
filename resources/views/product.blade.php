@@ -22,6 +22,8 @@
 
 <body>
     <h5 class=title>Products List</h5>
+    <form action="/sortby" method="GET">
+        @csrf
     <div class="butinsertproduct">
         <a href="/insertproduct"><button type="button" class="btn btn-outline-secondary btn-sm"
                 style="text-transform: unset !important; ">Insert Product <span class="iconify"
@@ -38,6 +40,10 @@
         </select>
         <a class="viewcat" href="/category">View Category</a>
     </div>
+    <div class="button-apply">
+        <button type="submit" class="btn btn-dark btn-sm" name="action" value="apply" style="text-transform: unset !important;">Apply</button>
+    </div>
+    </form>
 
     <div class=table>
         <table class="table table-hover" style="width: 70%; position: absolute; left: 320px; top: 250px;">

@@ -109,6 +109,24 @@ class ProductListController extends Controller
         // DB::table('PRODUCT')->where('SKU', $sku)->update($request->all());
         // return redirect('product')->with('success', "Update successfully")
     }
+
+    public function sortby(Request $req)
+    {
+        $sortby = $req->get("sortby");
+
+        if($sortby == "Price"){
+            $product = DB::select("select * from PRODUCT order by PRICE");
+        }
+        elseif($sortby == "Qty"){
+            $product = DB::select("select * from PRODUCT order by STOCK");
+        }
+        elseif($sortby == "Size"){
+            $product = DB::select("select * from PRODUCT order by SIZE");
+        }
+        return view("product", [
+            "product" => $product
+        ]);
+    }
 }
 
     // public function addproduct(Request $request)

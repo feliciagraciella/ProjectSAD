@@ -45,3 +45,10 @@ body{
     top: 95px;
     right: 6.8%;
 }
+
+.button-apply{
+    position: absolute;
+    left: 610px;
+    top: 165px;
+    z-index: 99;
+}
