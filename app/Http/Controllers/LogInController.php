@@ -10,6 +10,15 @@ use Illuminate\Support\Facades\Auth;
 
 class LogInController extends Controller
 {
+    // public function __construct()
+    // {
+    //     $this->middleware('guest')->except('logout');
+    // }
+
+    // public function id()
+    // {
+    //     return 'name';
+    // }
     //
     public function index()
     {
@@ -20,22 +29,30 @@ class LogInController extends Controller
 
     public function authenticate(Request $request)
     {
-        // $user = Auth::user() ->id;
-        // $adminid = $request->validate([
-        //     'idadmin' => ['required'],
-        //     'password' => ['required'],
+        // $credentials = $request->validate([
+        //     'admin' => 'required',
+        //     'password' => 'required'
         // ]);
-        // if(Auth::attempt($adminid)){
+
+        // if(Auth::attempt($credentials)) {
         //     $request->session()->regenerate();
         //     return redirect()->intended('/home');
         // }
 
-        // return back()->with('LoginError', 'Log In Failed');
+        // return back()->with('Log in Error', 'Login failed');
 
-        $idadmin = $request->idadmin;
+        $request->validate([
+            'admin' => ['required'],
+            'password' => ['required'],
+        ]);
+        // if(Auth::attempt($adminid)){
+        //     $request->session()->regenerate();
+        //     return redirect()->intended('/home');
+        // }
+        $idadmin = $request->admin;
         $password = $request->password;
         $userdata = DB::table('ADMIN')->where('ID_ADMIN', $idadmin)->first();
-
+        @dd($userdata);
         // $obj = get_object_vars($userdata);
         // $request->session()->put('idadmin', $obj['ID_ADMIN']);
         if (is_null($userdata)) {
@@ -44,19 +61,11 @@ class LogInController extends Controller
             $obj = get_object_vars($userdata);
 
             if ($password == $obj['PASSWORD_ADMIN']) {
-
-                //$request->session()->put('idadmin', $obj['ID_ADMIN']);
-                $request->session()->put('idadmin', $idadmin);
-                //session()->save();
-                // Session::put('idadmin', $obj['ID_ADMIN']);
-
-                // $user = Auth::user() ->id;
-
-                // $admin = session('idAdmin');
+                $request->session()->put('idadmin', $request->admin);
 
                 return view('/home', [
-                    'idadmin' => $idadmin,
-                    'userdata' => $obj
+                    'admin' => $idadmin,
+                    'password' => $obj
                 ]);
             } else {
                 return back()->with('LoginError', 'Log In Failed');

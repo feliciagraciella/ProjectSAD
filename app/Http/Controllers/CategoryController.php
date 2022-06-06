@@ -14,8 +14,6 @@ class CategoryController extends Controller
 {
     public function category(Request $request)
     {
-        $cat = CategoryModel::all();
-
         $idcat = DB::select('select `fID_Cat`()');
         $obj = get_object_vars($idcat[0]);
         DB::table('CATEGORY')->insert([
@@ -25,11 +23,33 @@ class CategoryController extends Controller
             'STATUS_DELETE' => 0
         ]);
 
-        // return redirect('category')->with('status',"Insert successfully");
+        return redirect('category')->with('status',"Insert successfully");
+    }
+
+    public function category2()
+    {
+        $cat = CategoryModel::all();
+
         return view("category", [
             "cat" => $cat
         ]);
     }
+
+    // public function category(Request $request)
+    // {
+    //     $idcat = CategoryModel::select('`fID_Cat`()');
+    //     $name = $request->input('name');
+    //     $totalqty = 0;
+    //     $del = 0;
+
+    //     switch ($request->input('action')) {
+    //         case 'insert':
+    //             $data = array('ID_CATEGORY' => $idcat, "C_NAME" => $name, "TOTAL_PRODUCT" => $totalqty, "STATUS_DELETE" => $del);
+    //             DB::table('CATEGORY')->insert($data);
+    //             return redirect('category')->with('success', "Insert successfully");
+    //             break;
+    //     }
+    // }
 
     public function insproduct()
     {
