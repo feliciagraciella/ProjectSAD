@@ -22,60 +22,49 @@
 
 <body>
     <h5 class=title>Report</h5>
-    <form action="/report2" method="get">
+    <form action="/report2" method="GET">
         @csrf
         <div class="dropdown-show" name="">
-            <a class="btn btn-sm dropdown-toggle dropdown-toggle-split"
-                style="text-transform:unset !important;" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                Select Report
-            </a>
-
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <button class="dropdown-item" type="submit" value="product_sales" name="select_report">Product Sales</button>
-                <button class="dropdown-item" type="submit" value="finance" name="select_report">Finance</button>
-            </div>
+            <select class="btn btn-sm dropdown-toggle dropdown-toggle-split" name="select_report" style="text-transform:unset !important;"
+                role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" required>
+                {{-- <div class="dropdown-menu" aria-labelledby="dropdownMenuLink"> --}}
+                    <option value="" disabled selected hidden>Select Report</option>
+                    <option class="dropdown-item" type="submit" value="Product Sales">Product
+                        Sales</option>
+                    <option class="dropdown-item" type="submit" value="Finance">Finance</option>
+                {{-- </div> --}}
+            </select>
         </div>
-    </form>
 
-    <form action="/report2" method="get">
-        @csrf
+
         <div class="dropdown-show2" name="">
-            <a class="btn btn-sm dropdown-toggle dropdown-toggle-split"
-                style="text-transform:unset !important;" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                Select Platform
-            </a>
-
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <button class="dropdown-item" type="submit" value="all" name="select_platform">All</button>
-                <button class="dropdown-item" type="submit" value="shopee" name="select_platform">Shopee</button>
-                <button class="dropdown-item" type="submit" value="tokopedia" name="select_platform">Tokopedia</button>
-            </div>
+            <select class="btn btn-sm dropdown-toggle dropdown-toggle-split" name="select_platform" style="text-transform:unset !important;"
+                role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" required>
+                {{-- <div class="dropdown-menu" aria-labelledby="dropdownMenuLink"> --}}
+                    <option value=""  disabled selected hidden>Select Platform</option>
+                    <option class="dropdown-item" type="submit" value="All">All</option>
+                    <option class="dropdown-item" type="submit" value="Shopee">Shopee</option>
+                    <option class="dropdown-item" type="submit" value="Tokopedia">Tokopedia
+                    </option>
+                {{-- </div> --}}
+            </select>
         </div>
-    </form>
-    <form action="/report2" method="get">
-        @csrf
+
         <div class="dropdown-show3" name="">
-            <a class="btn btn-sm dropdown-toggle dropdown-toggle-split"
-                style="text-transform:unset !important;" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                Select Period
-            </a>
-
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <button class="dropdown-item" type="submit" value="all" name="select_period">All</button>
-                <button class="dropdown-item" type="submit" value="seven" name="select_period">Last 7 Days</button>
-                <button class="dropdown-item" type="submit" value="thirty" name="select_period">Last 30 Days</button>
-            </div>
+            <select class="btn btn-sm dropdown-toggle dropdown-toggle-split" name="select_period" style="text-transform:unset !important;"
+                role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" required>
+                {{-- <div class="dropdown-menu" aria-labelledby="dropdownMenuLink"> --}}
+                    <option value="" disabled selected hidden>Select Period</option>
+                    <option class="dropdown-item" type="submit" value="All">All</option>
+                    <option class="dropdown-item" type="submit" value="Last 7 Days">Last 7 Days</option>
+                    <option class="dropdown-item" type="submit" value="Last 30 Days">Last 30 Days</option>
+                {{-- </div> --}}
+            </select>
+        </div>
+        <div class="button-apply">
+            <button type="submit" class="btn btn-dark btn-sm" name="action" value="apply" style="text-transform: unset !important;">Apply</button>
         </div>
     </form>
-    <div class="button-apply">
-        <form>
-            @csrf
-            <button type="button" class="btn btn-dark btn-sm" style="text-transform: unset !important;">Apply</button>
-        </form>
-    </div>
     {{-- <div style="width: 80%;margin: 0 auto;">
         {!! $chart->container() !!}
     </div>
@@ -111,6 +100,9 @@
         <div class="subvalue-income">
             Rp{{$admin}}
         </div>
+    </div>
+    <div class="subtitle-report">
+        {{$reportname}}
     </div>
     <table class="table table-hover" style="width: 70%; position: absolute; left: 320px; top: 464px;">
         <thead>
