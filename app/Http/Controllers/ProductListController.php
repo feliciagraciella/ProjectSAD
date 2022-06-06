@@ -75,41 +75,26 @@ class ProductListController extends Controller
         }
     }
 
-    public function detail(Request $request)
+    public function editproduct(Request $request)
     {
-        $sku = $request->input('sku', '.jpg');
+        $sku = $request->input('sku');
+        DB::table('PRODUCT')->where([['SKU', '=', $sku]])->delete();
+        return redirect('product')->with('success', "Delete successfully");
+    }
+
+    public function updateproduct(Request $request)
+    {
+        $sku = $request->input('sku');
         $name = $request->input('name');
-        $cat = $request->input('cat');
         $price = $request->input('price');
         $qty = $request->input('qty');
         $size = $request->input('size');
         $desc = $request->input('desc');
-
-        switch ($request->input('action')) {
-            case 'delete':
-                // $sku = $request->input('sku', '.jpg');
-                // $name = $request->input('name');
-                // $cat = $request->input('cat');
-                // $price = $request->input('price');
-                // $qty = $request->input('qty');
-                // $size = $request->input('size');
-                // $desc = $request->input('desc');
-                // DB::table('PRODUCT')
-                // ->where([
-                //     ['SKU', '=', $sku]
-                // ])
-                // ->delete();
-                // return redirect('product')->with('success',"Delete successfully");
-                // break;
-                DB::delete('DELETE FROM PRODUCT WHERE SKU = ?', [$sku]);
-                echo ("Product record deleted successfully.");
-                return redirect('product');
-
-
-            case 'edit':
-
-                break;
-        }
+        DB::table('PRODUCT')->where([['SKU', '=', $sku]])->update(['P_NAME' => $name]);
+        // DB::table('update PRODUCT set P_NAME = ?, SIZE = ?, PRICE = ?, STOCK = ?, `DESCRIPTION` = ? WHERE SKU = ?', [$name,$size,$price,$qty,$desc,$sku]);
+        // return redirect('product')->with('success', "Update successfully");
+        echo "Record updated successfully.<br/>";
+        echo '<a href = "/edit-records">Click Here</a> to go back.';
     }
 }
 

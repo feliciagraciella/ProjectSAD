@@ -23,8 +23,8 @@
 <body>
     <h5 class=title>Product Detail</h5>
 
-    <form action="" method="POST" enctype="multipart/form-data" class="form">
-        @csrf @method('DELETE')
+    <form action="/deleteprod" method="POST" enctype="multipart/form-data" class="form">
+        @csrf
         <div class="baris1">SKU</div>
         <div class="boxsku">
             <input type="text" id="sku" name="sku" value="{{ $product->SKU }}" class="form-control btn btn-sm" placeholder="SKU"
@@ -81,14 +81,18 @@
 
         <button type="submit" class="buttondel" name="deleteall" value="delete"
             style="background-color: #f7f7f7">Delete</button>
-        <button type="submit" class="buttonins" name="edit" value="edit"
-            style="background-color: #dee1e6">Edit</button>
 
         <div class="productphoto">
             <img class="photo" src="../images/best/{{$product->SKU}}.jpg">
         </div>
 
         <input class="buttonimg" type="file" id="image" name="image">
+    </form>
+
+    <form action="/editprod" method="POST" enctype="multipart/form-data" class="form">
+        @csrf
+        <button type="submit" class="buttonins" name="edit" value="edit"
+            style="background-color: #dee1e6">Edit</button>
     </form>
 
 </body>

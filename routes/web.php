@@ -130,8 +130,6 @@ Route::get('chart', 'ChartController@index');
 
 Route::post('create', [ProductListController::class, "insert"]);
 
-// Route::post('create2', [ProductListController::class, "detail"]);
+Route::post('/deleteprod', [ProductListController::class, "deleteproduct"]);
 
-// Route::delete('/create2', [ProductListController::class, "detail"]);
-Route::get('delete-records', [ProductListController::class, "index"]);
-Route::get('delete/{SKU}', [ProductListController::class, "detail"]);
+Route::post('/editprod', [ProductListController::class, "editproduct"]);
