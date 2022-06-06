@@ -128,7 +128,10 @@ Route::get('chart', 'ChartController@index');
 // Route::post('/login', [LogInController::class, 'authenticate']);
 // Route::post('/home', [LogInController::class, 'authenticate']);
 
-// Route::get('insert','ProductListController@');
 Route::post('create', [ProductListController::class, "insert"]);
 
-Route::post('create2', [ProductListController::class, "detail"]);
+// Route::post('create2', [ProductListController::class, "detail"]);
+
+// Route::delete('/create2', [ProductListController::class, "detail"]);
+Route::get('delete-records', [ProductListController::class, "index"]);
+Route::get('delete/{SKU}', [ProductListController::class, "detail"]);
