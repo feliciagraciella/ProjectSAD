@@ -102,6 +102,7 @@
 
         <div class="finance">
             <h3>Finance</h3>
+            <h4>(Last 7 Days)</h4>
             <div class="netprofit" style="left: 80%; position: absolute; top: 125px;">
                 <p class="finance1">
                     <span class="iconify" data-icon="dashicons:money-alt" style="color: black; "></span>

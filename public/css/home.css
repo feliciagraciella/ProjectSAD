@@ -139,6 +139,16 @@
     position: absolute;
 }
 
+.finance h4{
+    font-weight: bold;
+    font-size: small;
+    font-family: "Poppins";
+    color: black;
+    left: 86%;
+    top: 95px;
+    position: absolute;
+}
+
 .finance1 {
     font-size: 30px;
 }
