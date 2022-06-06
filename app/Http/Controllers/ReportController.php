@@ -31,44 +31,28 @@ class ReportController extends Controller
         return view("report", [
             "data" => $data,
             "income" => $income[0]->NetProfit,
-            "admin" => $admin[0]->AdminFee
+            "admin" => $admin[0]->AdminFee,
+            "reportname" => "Product Sales/All/All"
         ]);
 
     }
 
     public function report2(Request $req)
     {
-        $kuery = $req->query();
-
-        // $report = "product_sales";
-        // $platform = "all";
-        // $period = "all";
-        // dd($kuery["select_report"]);
-
-        if(!empty($kuery["select_report"])){
-            $report = $kuery["select_report"];
-        }
-        if(!empty($kuery["select_platform"])){
-            $platform = $kuery["select_platform"];
-        }
-        if(!empty($kuery["select_period"])){
-            $period = $kuery["select_period"];
-        }
-        else{
-            $report = "product_sales";
-            $platform = "all";
-            $period = "all";
-        }
-
-        if($report == "product_sales"){
-            if($report == "product_sales" && $platform == "all" && $period == "all"){
+        $report = $req->get("select_report");
+        $platform = $req->get("select_platform");
+        $period = $req->get("select_period");
+        $reportname = $report."/".$platform."/".$period;
+        // dd($reportname);
+        if($report == "Product Sales"){
+            if($platform == "All" && $period == "All"){
                 $data = DB::select("select * from product_all_all");
 
                 $income = DB::select("select fNetProfit() as `NetProfit`");
 
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
-            elseif($report == "product_sales" && $platform == "all" && $period == "seven"){
+            elseif($platform == "All" && $period == "Last 7 Days"){
                 $data = DB::select("select * from product_all_seven");
 
                 $income = DB::select("select fNetProfit() as `NetProfit`");
@@ -76,49 +60,49 @@ class ReportController extends Controller
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
                 // dd($data);
             }
-            elseif($report == "product_sales" && $platform == "all" && $period == "thirty"){
+            elseif($platform == "All" && $period == "Last 30 Days"){
                 $data = DB::select("select * from product_all_thirty");
 
                 $income = DB::select("select fNetProfit() as `NetProfit`");
 
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
-            elseif($report == "product_sales" && $platform == "shopee" && $period == "all"){
+            elseif($platform == "Shopee" && $period == "All"){
                 $data = DB::select("select * from product_shopee_all");
 
                 $income = DB::select("select fNetProfit() as `NetProfit`");
 
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
-            elseif($report == "product_sales" && $platform == "shopee" && $period == "seven"){
+            elseif($platform == "Shopee" && $period == "Last 7 Days"){
                 $data = DB::select("select * from product_shopee_seven");
 
                 $income = DB::select("select fNetProfit() as `NetProfit`");
 
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
-            elseif($report == "product_sales" && $platform == "shopee" && $period == "thirty"){
+            elseif($platform == "Shopee" && $period == "Last 30 Days"){
                 $data = DB::select("select * from product_shopee_thirty");
 
                 $income = DB::select("select fNetProfit() as `NetProfit`");
 
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
-            elseif($report == "product_sales" && $platform == "tokopedia" && $period == "all"){
+            elseif($platform == "Tokopedia" && $period == "All"){
                 $data = DB::select("select * from product_tokopedia_all");
 
                 $income = DB::select("select fNetProfit() as `NetProfit`");
 
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
-            elseif($report == "product_sales" && $platform == "tokopedia" && $period == "seven"){
+            elseif($platform == "Tokopedia" && $period == "Last 7 Days"){
                 $data = DB::select("select * from product_tokopedia_seven");
 
                 $income = DB::select("select fNetProfit() as `NetProfit`");
 
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
-            elseif($report == "product_sales" && $platform == "tokopedia" && $period == "thirty"){
+            elseif($platform == "Tokopedia" && $period == "Last 30 Days"){
                 $data = DB::select("select * from product_tokopedia_thirty");
 
                 $income = DB::select("select fNetProfit() as `NetProfit`");
@@ -129,19 +113,20 @@ class ReportController extends Controller
             return view("report", [
                 "data" => $data,
                 "income" => $income[0]->NetProfit,
-                "admin" => $admin[0]->AdminFee
+                "admin" => $admin[0]->AdminFee,
+                "reportname" => $reportname
             ]);
         }
 
-        if($report == "finance"){
-            if($report == "finance" && $platform == "all" && $period == "all"){
+        if($report == "Finance"){
+            if($platform == "All" && $period == "All"){
                 $data = DB::select("select * from finance_all_all");
 
                 $income = DB::select("select fNetProfit() as `NetProfit`");
 
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
-            elseif($report == "finance" && $platform == "all" && $period == "seven"){
+            elseif($platform == "All" && $period == "Last 7 Days"){
                 $data = DB::select("select * from finance_all_seven");
 
                 $income = DB::select("select fNetProfit() as `NetProfit`");
@@ -149,49 +134,49 @@ class ReportController extends Controller
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
                 // dd($data);
             }
-            elseif($report == "finance" && $platform == "all" && $period == "thirty"){
+            elseif($platform == "All" && $period == "Last 30 Days"){
                 $data = DB::select("select * from finance_all_thirty");
 
                 $income = DB::select("select fNetProfit() as `NetProfit`");
 
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
-            elseif($report == "finance" && $platform == "shopee" && $period == "all"){
+            elseif($platform == "Shopee" && $period == "All"){
                 $data = DB::select("select * from finance_all_thirty");
 
                 $income = DB::select("select fNetProfit() as `NetProfit`");
 
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
-            elseif($report == "finance" && $platform == "shopee" && $period == "seven"){
+            elseif($platform == "Shopee" && $period == "Last 7 Days"){
                 $data = DB::select("select * from finance_all_thirty");
 
                 $income = DB::select("select fNetProfit() as `NetProfit`");
 
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
-            elseif($report == "finance" && $platform == "shopee" && $period == "thirty"){
+            elseif($platform == "Shopee" && $period == "Last 30 Days"){
                 $data = DB::select("select * from finance_all_thirty");
 
                 $income = DB::select("select fNetProfit() as `NetProfit`");
 
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
-            elseif($report == "finance" && $platform == "tokopedia" && $period == "all"){
+            elseif($platform == "Tokopedia" && $period == "All"){
                 $data = DB::select("select * from finance_all_thirty");
 
                 $income = DB::select("select fNetProfit() as `NetProfit`");
 
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
-            elseif($report == "finance" && $platform == "tokopedia" && $period == "seven"){
+            elseif($platform == "Tokopedia" && $period == "Last 7 Days"){
                 $data = DB::select("select * from finance_all_thirty");
 
                 $income = DB::select("select fNetProfit() as `NetProfit`");
 
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
-            elseif($report == "finance" && $platform == "tokopedia" && $period == "thirty"){
+            elseif($platform == "Tokopedia" && $period == "Last 30 Days"){
                 $data = DB::select("select * from finance_all_thirty");
 
                 $income = DB::select("select fNetProfit() as `NetProfit`");
@@ -202,9 +187,10 @@ class ReportController extends Controller
             return view("report2", [
                 "data" => $data,
                 "income" => $income[0]->NetProfit,
-                "admin" => $admin[0]->AdminFee
+                "admin" => $admin[0]->AdminFee,
+                "reportname" => $reportname
             ]);
         }
-        dd($report, $platform, $period);
+
     }
 }
