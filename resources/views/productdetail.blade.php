@@ -23,8 +23,8 @@
 <body>
     <h5 class=title>Product Detail</h5>
 
-    <form action="/create2" method="POST" enctype="multipart/form-data" class="form">
-        @csrf
+    <form action="" method="POST" enctype="multipart/form-data" class="form">
+        @csrf @method('DELETE')
         <div class="baris1">SKU</div>
         <div class="boxsku">
             <input type="text" id="sku" name="sku" value="{{ $product->SKU }}" class="form-control btn btn-sm" placeholder="SKU"
