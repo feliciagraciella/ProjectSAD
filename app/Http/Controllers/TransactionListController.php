@@ -6,6 +6,7 @@ use App\Models\CartModel;
 use App\Models\ProductListModel;
 use App\Models\TransactionDetailModel;
 use App\Models\TransactionListModel;
+use Illuminate\Cache\RedisTaggedCache;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
@@ -70,24 +71,58 @@ class TransactionListController extends Controller
         // ]);
     }
 
-    // public function updateQty(Request $req)
-    // {
+    public function insertTrans(Request $req)
+    {
+        $trans = DB::table('CART')->select('ID_TRANSACTION', 'DATE', 'PLATFORM')->groupBy('ID_TRANSACTION')->get();
+        $totalprice = $req->input("insertprice");
+        $totalqty = DB::table('CART')->select(DB::raw('SUM(QTY_PRODUCT)'))->get();
+        $totalfee = $req->input("insertfee");
 
-    // }
+
+        DB::table('TRANSACTION')->insert([
+            'DATE_TRANSACTION' => $trans->DATE,
+            'ID_ADMIN' => 'A001',
+            'ID_TRANSACTION' => $trans->ID_TRANSACTION,
+            'NET_PRICE' => $totalprice - $totalfee,
+            'PLATFORM' => $trans->PLATFORM,
+            'STATUS_DELETE' => '0',
+            'TOTAL_FEE' => $totalfee,
+            'TOTAL_PRICE' => $totalprice,
+            'TOTAL_QTY' => $totalqty
+        ]);
+
+        return redirect('inserttransaction');
+    }
 
     public function deleteAll()
     {
-        DB::table('CART')->deleteAll();
+        DB::table('CART')->delete();
+
+        return redirect('inserttransaction');
     }
 
     public function dropdownproduct()
     {
         $product = ProductListModel::select(DB::raw("CONCAT(P_NAME, ' ', SIZE, 'mL') AS NAME"), 'SKU')->get();
         $cart = DB::table('CART')->get();
+        // $platform = DB::table('CART')->select('PLATFORM')->limit(1)->get();
+
+        if(count($cart)!=0){
+            $platform = DB::table('CART')->select('PLATFORM')->limit(1)->get();
+            $platformname = $platform[0]->PLATFORM;
+            $date = DB::table('CART')->select('DATE')->limit(1)->get();
+            $datee = $date[0]->DATE;
+        }
+        else{
+            $platform = "Select Platform";
+            $date = "";
+        }
 
         return view("inserttransaction", [
             "product" => $product,
-            "cart" => $cart
+            "cart" => $cart,
+            "platform" => $platformname,
+            "date" => $datee
         ]);
     }
 }
