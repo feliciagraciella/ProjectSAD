@@ -80,8 +80,12 @@ Route::get("/insertcategory", [CategoryController::class, "category"]);
 Route::get("/insertproduct", [CategoryController::class, "insproduct"]);
 // Route::post("/category", [CategoryController::class, "category"]);
 // Route::get("header", [LogInController::class, "authenticate"]);
+
+
 Route::get('/', [LogInController::class, 'index']);
 Route::post('/', [LogInController::class, 'authenticate']);
+
+
 // Route::get('header', [LogInController::class, 'authenticate']);
 
 // Route::get('header', function () {

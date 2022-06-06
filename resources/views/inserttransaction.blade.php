@@ -27,10 +27,10 @@
                     <select class="dropdowncat" id="cat" name="selectplatform"
                         style="text-transform:unset !important; width: 200px; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <option value="" disabled selected hidden>{{$platform}}</option>
+                        <option value="{{$platform}}" disabled selected hidden>{{$platform}}</option>
                         <option value="Tokopedia">Tokopedia</option>
                         <option value="Shopee">Shopee</option>
-                    </select>
+                    </select> 
                 </div>
             </div>
 
