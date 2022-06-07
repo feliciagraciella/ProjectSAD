@@ -58,6 +58,13 @@ body{
     font-size:small;
     font-weight: 500;
 }
+/* styling chart */
+#reportchart{
+    width: 500px;
+    position: relative;
+    left: 303px;
+    top: 170px;
+}
 /* styling table */
 .column{
     font-weight: 800;
