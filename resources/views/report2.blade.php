@@ -1,59 +1,72 @@
 <!DOCTYPE html>
 
 <html>
-    <link rel="stylesheet" href={{ asset('css/report.css') }} type="text/css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href={{ asset('css/report.css') }} type="text/css" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+</script>
+
 <head>
 </head>
 
 @include('header')
+
 <body>
     <h5 class=title>Report</h5>
     <form action="/report2" method="GET">
         @csrf
         <div class="dropdown-show" name="">
-            <select class="btn btn-sm dropdown-toggle dropdown-toggle-split" name="select_report" style="text-transform:unset !important;"
-                role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" required>
+            <select class="btn btn-sm dropdown-toggle dropdown-toggle-split" name="select_report"
+                style="text-transform:unset !important;" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false" required>
                 {{-- <div class="dropdown-menu" aria-labelledby="dropdownMenuLink"> --}}
-                    <option value="" disabled selected hidden>Select Report</option>
-                    <option class="dropdown-item" type="submit" value="Product Sales">Product
-                        Sales</option>
-                    <option class="dropdown-item" type="submit" value="Finance">Finance</option>
+                <option value="" disabled selected hidden>Select Report</option>
+                <option class="dropdown-item" type="submit" value="Product Sales">Product
+                    Sales</option>
+                <option class="dropdown-item" type="submit" value="Finance">Finance</option>
                 {{-- </div> --}}
             </select>
         </div>
 
 
         <div class="dropdown-show2" name="">
-            <select class="btn btn-sm dropdown-toggle dropdown-toggle-split" name="select_platform" style="text-transform:unset !important;"
-                role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" required>
+            <select class="btn btn-sm dropdown-toggle dropdown-toggle-split" name="select_platform"
+                style="text-transform:unset !important;" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false" required>
                 {{-- <div class="dropdown-menu" aria-labelledby="dropdownMenuLink"> --}}
-                    <option value=""  disabled selected hidden>Select Platform</option>
-                    <option class="dropdown-item" type="submit" value="All">All</option>
-                    <option class="dropdown-item" type="submit" value="Shopee">Shopee</option>
-                    <option class="dropdown-item" type="submit" value="Tokopedia">Tokopedia
-                    </option>
+                <option value="" disabled selected hidden>Select Platform</option>
+                <option class="dropdown-item" type="submit" value="All">All</option>
+                <option class="dropdown-item" type="submit" value="Shopee">Shopee</option>
+                <option class="dropdown-item" type="submit" value="Tokopedia">Tokopedia
+                </option>
                 {{-- </div> --}}
             </select>
         </div>
 
         <div class="dropdown-show3" name="">
-            <select class="btn btn-sm dropdown-toggle dropdown-toggle-split" name="select_period" style="text-transform:unset !important;"
-                role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" required>
+            <select class="btn btn-sm dropdown-toggle dropdown-toggle-split" name="select_period"
+                style="text-transform:unset !important;" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false" required>
                 {{-- <div class="dropdown-menu" aria-labelledby="dropdownMenuLink"> --}}
-                    <option value="" disabled selected hidden>Select Period</option>
-                    <option class="dropdown-item" type="submit" value="All">All</option>
-                    <option class="dropdown-item" type="submit" value="Last 7 Days">Last 7 Days</option>
-                    <option class="dropdown-item" type="submit" value="Last 30 Days">Last 30 Days</option>
+                <option value="" disabled selected hidden>Select Period</option>
+                <option class="dropdown-item" type="submit" value="All">All</option>
+                <option class="dropdown-item" type="submit" value="Last 7 Days">Last 7 Days</option>
+                <option class="dropdown-item" type="submit" value="Last 30 Days">Last 30 Days</option>
                 {{-- </div> --}}
             </select>
         </div>
         <div class="button-apply">
-            <button type="submit" class="btn btn-dark btn-sm" name="action" value="apply" style="text-transform: unset !important;">Apply</button>
+            <button type="submit" class="btn btn-dark btn-sm" name="action" value="apply"
+                style="text-transform: unset !important;">Apply</button>
         </div>
     </form>
 
@@ -76,14 +89,14 @@
     <div class="subtitle-report">
         {{$reportname}}
     </div>
-    <table class="table table-hover" style="width: 70%; position: absolute; left: 320px; top: 464px;">
+    <table class="table table-hover" style="width: 70%; position: absolute; left: 320px; top: 624px;">
         <thead>
-          <tr>
-            <th scope="col" style="font-weight: 600; text-align:left;">Platform</th>
-            <th scope="col" style="font-weight: 600; text-align:center;">Month</th>
-            <th scope="col" style="font-weight: 600; text-align:right;">Net Profit</th>
-            <th scope="col" style="font-weight: 600; text-align:right;">Operational Fee</th>
-          </tr>
+            <tr>
+                <th scope="col" style="font-weight: 600; text-align:left;">Platform</th>
+                <th scope="col" style="font-weight: 600; text-align:center;">Month</th>
+                <th scope="col" style="font-weight: 600; text-align:right;">Net Profit</th>
+                <th scope="col" style="font-weight: 600; text-align:right;">Operational Fee</th>
+            </tr>
         </thead>
         <tbody>
             @foreach ($data as $d)
@@ -92,10 +105,85 @@
                 <td style="text-align:center;">{{$d->MONTH}}</td>
                 <td style="text-align:right;">{{$d->NET_PROFIT}}</td>
                 <td style="text-align:right;">{{$d->OPERATIONAL_FEE}}</td>
-              </tr>
+            </tr>
             @endforeach
         </tbody>
-      </table>
+    </table>
+    <div id="reportchart"></div>
+    <script src="https://code.highcharts.com/highcharts.js">
+    </script>
+    <script>
+        Highcharts.chart('reportchart', {
+
+            title: {
+                text: 'Solar Employment Growth by Sector, 2010-2016'
+            },
+
+            subtitle: {
+                text: 'Source: thesolarfoundation.com'
+            },
+
+            yAxis: {
+                title: {
+                    text: 'Number of Employees'
+                }
+            },
+
+            xAxis: {
+                accessibility: {
+                    rangeDescription: 'Range: 2010 to 2017'
+                }
+            },
+
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle'
+            },
+
+            plotOptions: {
+                series: {
+                    label: {
+                        connectorAllowed: false
+                    },
+                    pointStart: 2010
+                }
+            },
+
+            series: [{
+                name: 'Installation',
+                data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
+            }, {
+                name: 'Manufacturing',
+                data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
+            }, {
+                name: 'Sales & Distribution',
+                data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
+            }, {
+                name: 'Project Development',
+                data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]
+            }, {
+                name: 'Other',
+                data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]
+            }],
+
+            responsive: {
+                rules: [{
+                    condition: {
+                        maxWidth: 500
+                    },
+                    chartOptions: {
+                        legend: {
+                            layout: 'horizontal',
+                            align: 'center',
+                            verticalAlign: 'bottom'
+                        }
+                    }
+                }]
+            }
+
+        });
+    </script>
 </body>
 
 </html>
