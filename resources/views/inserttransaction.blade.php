@@ -105,7 +105,7 @@
             <div class="totalplatfee">
                 <h4 class="totalfee" style="width: 150px;">Total Platform Fee</h4>
                 <div class="inputtotalfee">
-                    <input type="text" name="insertfee" class="form-control btn btn-sm" style="text-transform:unset !important; width: 200px; text-align: right;
+                    <input type="text" name="insertfeepphp" class="form-control btn btn-sm" style="text-transform:unset !important; width: 200px; text-align: right;
                     text-align:right;" placeholder="Enter value">
                 </div>
             </div>
