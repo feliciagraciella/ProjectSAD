@@ -39,8 +39,8 @@ body{
 /* styling income */
 .income{
     position: absolute;
-    top: 232px;
-    right: 142px;
+    top: 249px;
+    right: 66px;
     color: black;
 }
 .subtitle-income{
@@ -54,16 +54,17 @@ body{
 .subtitle-report{
     position: absolute;
     left: 324px;
-    top: 430px;
+    top: 594px;
     font-size:small;
     font-weight: 500;
 }
 /* styling chart */
 #reportchart{
-    width: 500px;
+    width: 740px;
     position: relative;
     left: 303px;
-    top: 170px;
+    top: 184px;
+    
 }
 /* styling table */
 .column{
