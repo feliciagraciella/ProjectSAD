@@ -58,6 +58,7 @@ Route::get('/insertcategory', function () {
 // Route::POST("/invoice/{email}/{tanggal}", [ShopController::class, "invoice"]);
 Route::get("/report", [ReportController::class, "report"]);
 Route::get("report2", [ReportController::class, "report2"]);
+
 // Route::get('/report', function () {
 //     return view('report', [
 //     ]);

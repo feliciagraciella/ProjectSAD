@@ -15,13 +15,13 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>
+    
 </head>
 
 @include('header')
 
 <body>
-    <h5 class=title>Report</h5>
+    <h5 class="title">Report</h5>
     <form action="/report2" method="GET">
         @csrf
         <div class="dropdown-show" name="">
@@ -65,6 +65,8 @@
             <button type="submit" class="btn btn-dark btn-sm" name="action" value="apply" style="text-transform: unset !important;">Apply</button>
         </div>
     </form>
+    <h1>Laravel Google Chart Example - ItSolutionstuff.com</h1>
+    <div id="linechart" style="width: 900px; height: 500px"></div>
     {{-- <div style="width: 80%;margin: 0 auto;">
         {!! $chart->container() !!}
     </div>

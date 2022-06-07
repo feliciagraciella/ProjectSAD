@@ -63,14 +63,14 @@
             Gross Profit
         </div>
         <div class="subvalue-income">
-            Rp10.000.000
+            Rp{{$income}}
         </div>
         <br>
         <div class="subtitle-income">
             Net Profit
         </div>
         <div class="subvalue-income">
-            Rp7.500.000
+            Rp{{$admin}}
         </div>
     </div>
     <div class="subtitle-report">
