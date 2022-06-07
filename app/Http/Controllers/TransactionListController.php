@@ -73,23 +73,39 @@ class TransactionListController extends Controller
 
     public function insertTrans(Request $req)
     {
-        $trans = DB::table('CART')->select('ID_TRANSACTION', 'DATE', 'PLATFORM')->groupBy('ID_TRANSACTION')->get();
-        $totalprice = $req->input("insertprice");
-        $totalqty = DB::table('CART')->select(DB::raw('SUM(QTY_PRODUCT)'))->get();
+        $trans = DB::table('CART')->select('ID_TRANSACTION', 'DATE', 'PLATFORM')->groupBy('ID_TRANSACTION', 'DATE', 'PLATFORM')->limit(1)->get();
+
+        $totalqty = DB::table('CART')->select(DB::raw('SUM(QTY_PRODUCT) as `SUM`'))->get();
         $totalfee = $req->input("insertfee");
+        $totalprice = $req->input("insertprice");
 
+        $transdet = DB::table('CART')->get();
 
-        DB::table('TRANSACTION')->insert([
-            'DATE_TRANSACTION' => $trans->DATE,
+        // dd($transdet);
+        TransactionListModel::insert([
+            'DATE_TRANSACTION' => $trans[0]->DATE,
             'ID_ADMIN' => 'A001',
-            'ID_TRANSACTION' => $trans->ID_TRANSACTION,
+            'ID_TRANSACTION' => $trans[0]->ID_TRANSACTION,
             'NET_PRICE' => $totalprice - $totalfee,
-            'PLATFORM' => $trans->PLATFORM,
+            'PLATFORM' => $trans[0]->PLATFORM,
             'STATUS_DELETE' => '0',
             'TOTAL_FEE' => $totalfee,
             'TOTAL_PRICE' => $totalprice,
-            'TOTAL_QTY' => $totalqty
+            'TOTAL_QTY' => $totalqty[0]->SUM
         ]);
+
+
+        foreach ($transdet as $td)
+        {
+            TransactionDetailModel::insert([
+                'SKU' => $td->SKU,
+                'ID_TRANSACTION' => $td->ID_TRANSACTION,
+                'QTY_PRODUCT' => $td->QTY_PRODUCT,
+                'STATUS_DELETE' => '0'
+            ]);
+        }
+
+        DB::table('CART')->delete();
 
         return redirect('inserttransaction');
     }
@@ -114,8 +130,8 @@ class TransactionListController extends Controller
             $datee = $date[0]->DATE;
         }
         else{
-            $platform = "Select Platform";
-            $date = "";
+            $platformname = "Select Platform";
+            $datee = "YYYY/MM/DD";
         }
 
         return view("inserttransaction", [
@@ -124,5 +140,16 @@ class TransactionListController extends Controller
             "platform" => $platformname,
             "date" => $datee
         ]);
+    }
+
+    public function deleteCart(Request $request)
+    {
+        $id = $request->input("deletecart");
+
+        // $cart = DB::table('CART')->where('SKU', $id)->get();
+
+        DB::table('CART')->where('SKU', $id)->delete();
+
+        return redirect('inserttransaction');
     }
 }

@@ -20,7 +20,7 @@
         @csrf
             <div class="baris1" style="z-index: 1000">
                 <h4 class="datetitle">Date</h4>
-                <input class="btn btn-sm calendar" value={{$date}} name="date" style="text-transform:unset !important; width: 200px;" type="date">
+                <input class="btn btn-sm calendar" value="{{$date}}" name="date" style="text-transform:unset !important; width: 200px;" type="date">
 
                 <h4 class="platformtitle" >Platform</h4>
                 <div class="dropdown-show2" >
@@ -30,7 +30,7 @@
                         <option value="{{$platform}}" disabled selected hidden>{{$platform}}</option>
                         <option value="Tokopedia">Tokopedia</option>
                         <option value="Shopee">Shopee</option>
-                    </select> 
+                    </select>
                 </div>
             </div>
 
@@ -61,46 +61,51 @@
                 </div>
             </div>
     </form>
-    <div class="table">
-        <table class="table" style="width: 70%; position: absolute; left: 320px; top: 380px; overflow-y:scroll;">
-            <thead>
-              <tr>
-                <th scope="col" style="font-weight: 700; text-align:left;">Transaction ID</th>
-                <th scope="col" style="font-weight: 700; text-align:left;">Date</th>
-                <th scope="col" style="font-weight: 700; text-align:left;">Platform</th>
-                <th scope="col" style="font-weight: 700; text-align:left;">Product</th>
-                <th scope="col" style="font-weight: 700; text-align:left;">Quantity</th>
-                <th scope="col" style="font-weight: 700; text-align:left;"></th>
-              </tr>
-            </thead>
-            <tbody>
-                @foreach ($cart as $c)
+
+    <form method="POST" action="/deletecart">
+        @csrf
+            <div class="table">
+                <table class="table" style="width: 70%; position: absolute; left: 320px; top: 380px; overflow-y:scroll;">
+                    <thead>
                     <tr>
-                        <td style="font-weight: 600; text-align:left;">{{$c -> ID_TRANSACTION}}</td>
-                        <td style="font-weight: 600; text-align:left;">{{$c -> DATE}}</td>
-                        <td style="font-weight: 600; text-align:left;">{{$c -> PLATFORM}}</td>
-                        <td style="font-weight: 600; text-align:left;">{{$c -> SKU}}</td>
-                        <td style="font-weight: 600; text-align:left;">{{$c -> QTY_PRODUCT}}</td>
-                        <td style="font-weight: 600; text-align:left; width: 10%;"><span style="text-align:center; margin-right:30px;" class="close">&#10005;</span></td>
+                        <th scope="col" style="font-weight: 700; text-align:left;">Transaction ID</th>
+                        <th scope="col" style="font-weight: 700; text-align:left;">Date</th>
+                        <th scope="col" style="font-weight: 700; text-align:left;">Platform</th>
+                        <th scope="col" style="font-weight: 700; text-align:left;">Product</th>
+                        <th scope="col" style="font-weight: 700; text-align:left;">Quantity</th>
+                        <th scope="col" style="font-weight: 700; text-align:left;"></th>
                     </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
+                    </thead>
+                    <tbody>
+                        @foreach ($cart as $c)
+                            <tr>
+                                <td style="font-weight: 600; text-align:left;">{{$c -> ID_TRANSACTION}}</td>
+                                <td style="font-weight: 600; text-align:left;">{{$c -> DATE}}</td>
+                                <td style="font-weight: 600; text-align:left;">{{$c -> PLATFORM}}</td>
+                                <td style="font-weight: 600; text-align:left;">{{$c -> SKU}}</td>
+                                <td style="font-weight: 600; text-align:left;">{{$c -> QTY_PRODUCT}}</td>
+                                <td style="font-weight: 600; text-align:left; width: 10%;"><button name="deletecart" value="{{ $c->SKU }}" type="submit" style="text-align:center; margin-right:30px;" class="close">&#10005;</button></td>
+                                {{-- <td style="font-weight: 600; text-align:left; width: 10%;"><span onclick="myform.submit()" style="text-align:center; margin-right:30px;" class="close">&#10005;</span></td> --}}
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+    </form>
 
     <form method="POST" action="/insertt">
         @csrf
             <div class="totaltransaction">
                 <h4 class="totalfee" style="width: 150px;">Total Transaction</h4>
                 <div class="inputtotaltrans">
-                    <input type="text" class="form-control btn btn-sm" style="text-transform:unset !important; width: 200px; text-align: right;" placeholder="Enter value">
+                    <input type="text" name="insertprice" class="form-control btn btn-sm" style="text-transform:unset !important; width: 200px; text-align: right;" placeholder="Enter value">
                 </div>
             </div>
 
             <div class="totalplatfee">
                 <h4 class="totalfee" style="width: 150px;">Total Platform Fee</h4>
                 <div class="inputtotalfee">
-                    <input type="text" class="form-control btn btn-sm" style="text-transform:unset !important; width: 200px; text-align: right;
+                    <input type="text" name="insertfee" class="form-control btn btn-sm" style="text-transform:unset !important; width: 200px; text-align: right;
                     text-align:right;" placeholder="Enter value">
                 </div>
             </div>
@@ -119,8 +124,8 @@
     </form>
         </div>
         <div class="buttondelete">
-            {{-- <form method="POST" onclick="return confirm('Are you sure?')" action="/deleteall"> --}}
-            <form method="POST" action="/deleteall">
+            <form method="POST" onclick="return confirm('Are you sure?')" action="/deleteall">
+            {{-- <form method="POST" action="/deleteall"> --}}
                 @csrf
                 <button type="submit" name="insertfee" class="btn btn-outline-secondary btn-sm" style="text-transform: unset !important; width: 120px; ">Delete All</button>
             </form>
