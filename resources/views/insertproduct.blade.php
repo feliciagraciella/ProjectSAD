@@ -28,23 +28,20 @@
         <div class="baris1">SKU</div>
         <div class="boxsku">
             <input type="text" id="sku" name="sku" class="form-control btn btn-sm"
-                style="text-transform:unset !important; width: 310px; text-align: center;" disabled="disabled">
+                style="text-transform:unset !important; width: 310px; text-align: center;">
         </div>
 
         <div class="baris2">Name</div>
         <div class="boxname">
-            <input type="text" id="name" name="name" class="form-control btn btn-sm"
+            <input type="text" id="name" name="name" class="form-control btn btn-sm" required
                 style="text-transform:unset !important; width: 310px; text-align: center;">
         </div>
 
         <div class="baris3">Category</div>
         <div class="boxcat">
-            <select class="dropdowncat" id="cat" name="cat"
+            <select class="dropdowncat" id="cat" name="cat" required
                 style="text-transform:unset !important; width: 310px; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                {{-- @foreach($cat as $c)
-                    <option value="{{$c -> C_NAME}}">{{$c -> C_NAME}}</option>
-                    @endforeach --}}
                 <option value="A">Cleaner</option>
                 <option value="B">Protector</option>
                 <option value="C">Coating Factory</option>
@@ -54,32 +51,31 @@
 
         <div class="baris4-1">Price</div>
         <div class="boxprice">
-            <input type="text" id="price" name="price" class="form-control btn btn-sm"
+            <input type="text" id="price" name="price" class="form-control btn btn-sm" required
                 style="text-transform:unset !important; width: 150px; text-align: center;">
         </div>
 
         <div class="baris4-2">Qty</div>
         <div class="boxqty">
-            <input type="number" id="qty" name="qty" class="form-control btn btn-sm"
+            <input type="number" id="qty" name="qty" class="form-control btn btn-sm" required
                 style="text-transform:unset !important; width: 70px; text-align: center;">
         </div>
 
         <div class="baris5">Size</div>
         <div class="boxsize">
-            <select class="dropdownsize" id="size" name="size"
+            <select required class="dropdownsize" id="size" name="size"
                 style="text-transform:unset !important; width: 310px; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                @foreach($size as $s)
-                <option value="{{$s -> SIZE}}">{{$s -> SIZE}} ml</option>
+                @foreach ($size as $s)
+                    <option value="{{ $s->SIZE }}">{{ $s->SIZE }} ml</option>
                 @endforeach
             </select>
         </div>
 
         <div class="baris6">Description</div>
         <div class="boxdesc">
-            <textarea name="desc" id="desc" cols="30" rows="3"
-                style="text-transform:unset !important; width: 310px; height: 70px; text-align: left; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;">
-            </textarea>
+            <textarea name="desc" id="desc" cols="30" rows="3" required="required"
+                style="text-transform:unset !important; width: 310px; height: 70px; text-align: left; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"></textarea>
         </div>
 
         <button type="submit" class="buttondel" name="action" value="delete"
