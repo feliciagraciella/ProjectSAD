@@ -30,6 +30,7 @@ body{
     right: 0;
     margin-right:  30px;
     top: 50%;
+    z-index: 99;
     transform: translateY(-50%);
     background-color: #FFFFFF;
 }
