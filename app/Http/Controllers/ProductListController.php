@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Str;
 
 class ProductListController extends Controller
 {
@@ -47,7 +48,8 @@ class ProductListController extends Controller
 
     public function insert(Request $request)
     {
-        $sku = $request->input('sku', '.jpg');
+        $sku = $request->input('sku');
+        $skuimage = $request->input('sku') . '.jpg';
         $name = $request->input('name');
         $cat = $request->input('cat');
         $price = $request->input('price');
@@ -57,14 +59,7 @@ class ProductListController extends Controller
 
         switch ($request->input('action')) {
             case 'insert':
-                // $sku = $request->input('sku', '.jpg');
-                // $name = $request->input('name');
-                // $cat = $request->input('cat');
-                // $price = $request->input('price');
-                // $qty = $request->input('qty');
-                // $size = $request->input('size');
-                // $desc = $request->input('desc');
-                $data = array('SKU' => $sku, "P_NAME" => $name, "ID_CATEGORY" => $cat, "PRICE" => $price, "STOCK" => $qty, "SIZE" => $size, "DESCRIPTION" => $desc, "IMAGE" => $sku, "STATUS_DELETE" => '0');
+                $data = array('SKU' => $sku, "P_NAME" => $name, "ID_CATEGORY" => $cat, "PRICE" => $price, "STOCK" => $qty, "SIZE" => $size, "DESCRIPTION" => $desc, "IMAGE" => $skuimage, "STATUS_DELETE" => '0');
                 DB::table('PRODUCT')->insert($data);
                 return redirect('product')->with('success', "Insert successfully");
                 break;
@@ -82,14 +77,14 @@ class ProductListController extends Controller
     //     return redirect('product')->with('success', "Delete successfully");
     // }
 
-    public function deleteproduct(Request $request)
+    public function deleteOReditproduct(Request $request)
     {
         $sku = $request->input('sku');
         $name = $request->input('name');
         $price = $request->input('price');
         $qty = $request->input('qty');
-        $size = $request->input('size');
         $desc = $request->input('desc');
+        $price2 = Str::substr($price, 3);
 
         switch ($request->input('action')) {
             case 'delete':
@@ -98,24 +93,11 @@ class ProductListController extends Controller
                 return redirect('product')->with('success', "Delete successfully");
                 break;
 
-        // DB::table('PRODUCT')->where([['SKU', '=', $sku]])->update(["STATUS_DELETE" => 2]);
-        // // DB::table('update PRODUCT set STATUS_DELETE = ? WHERE SKU = ?', [[$del,$sku]]);
-        // return redirect('product')->with('success', "Update successfully");
-
-        // DB::table('PRODUCT')->whereIn('SKU', $sku)->update(["P_NAME" => $name, "PRICE" => $price, "STOCK" => $qty, "SIZE" => $size, "DESCRIPTION" => $desc]);
-        // DB::table('update PRODUCT set P_NAME = ?, SIZE = ?, PRICE = ?, STOCK = ?, `DESCRIPTION` = ? WHERE SKU = ?', [$name,$size,$price,$qty,$desc,$sku]);
-        // return redirect('product')->with('success', "Update successfully");
-
-        // $data=array("P_NAME" => $name, "PRICE" => $price, "STOCK" => $qty, "SIZE" => $size, "DESCRIPTION" => $desc, "STATUS_DELETE" => '0');
-        // DB::table('PRODUCT')->update($data);
-        // DB::table('PRODUCT')->whereIn('SKU', $sku)->update($request->all());
-
-        case 'edit':
-        $data=array("STATUS_DELETE" => '5');
-        DB::table('PRODUCT')->where('SKU', $sku)->update($data);
-        // DB::table('PRODUCT')->where('SKU', $sku)->update(["STATUS_DELETE" => 2]);
-        return redirect('product')->with('success', "Update successfully");
-            break;
+            case 'edit':
+                $data = array("P_NAME" => $name, "STOCK" => $qty, "PRICE" => $price2, "DESCRIPTION" => $desc);
+                DB::table('PRODUCT')->where('SKU', $sku)->update($data);
+                return redirect('product')->with('success', "Update successfully");
+                break;
         }
     }
 
@@ -123,13 +105,11 @@ class ProductListController extends Controller
     {
         $sortby = $req->get("sortby");
 
-        if($sortby == "Price"){
+        if ($sortby == "Price") {
             $product = DB::select("select * from PRODUCT order by PRICE");
-        }
-        elseif($sortby == "Qty"){
+        } elseif ($sortby == "Qty") {
             $product = DB::select("select * from PRODUCT order by STOCK");
-        }
-        elseif($sortby == "Size"){
+        } elseif ($sortby == "Size") {
             $product = DB::select("select * from PRODUCT order by SIZE");
         }
         return view("product", [
