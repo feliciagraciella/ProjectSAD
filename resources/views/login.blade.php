@@ -52,7 +52,7 @@
                                 <input type="text" name="admin" class="@error('admin') is-invalid @enderror" autofocus
                                     required placeholder="Admin ID" />
                                 @error('admin')
-                                {{-- <input type="text" name="admin" class="form-control @error('name') is-invalid @enderror"
+                                    {{-- <input type="text" name="admin" class="form-control @error('name') is-invalid @enderror"
                                     value="{{ old('name') }}" required autocomplete="name" autofocus
                                     placeholder="Admin ID" />
                                 @error('name')
@@ -60,7 +60,7 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror --}}
-                                <div class="invalid-feedback" style="padding-bottom : 10px">
+                                    <div class="invalid-feedback" style="padding-bottom : 10px">
                                         {{ $message }}
                                     </div>
                                 @enderror
