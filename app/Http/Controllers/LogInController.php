@@ -73,6 +73,36 @@ class LogInController extends Controller
         }
     }
 
+    // public function authentication(Request $req){
+    //     $email = $_POST['email'];
+    //     $password = $req->input('password');
+    //     $data = [
+    //         'email' => $email,
+    //         'password' => $password
+    //     ];
+
+    //     $user = new SignUpModel;
+    //     $flag_exist = $user->isExist($data);
+
+
+    //     if ($flag_exist){
+    //         //2.a. Jika KETEMU, maka session LOGIN dibuat
+    //         Session::put('login', $email);
+    //         Session::put('pass', $password);
+    //         Session::flash('success', 'Anda berhasil Login!');
+    //         $req->session()->flash('authentication');
+
+
+    //         return redirect('/welcome');
+
+    //     } else {
+    //         //2.b. Jika TIDKA KETEMU, maka kembali ke LOGIN dan tampilkan PESAN
+    //         Session::flash('error', 'Email atau Password tidak sesuai!');
+    //         return redirect('/sign-in');
+    //     }
+
+    // }
+
     // public function logout(Request $request){
     //     Auth::logout();
     //     request()->session()->invalidate();
