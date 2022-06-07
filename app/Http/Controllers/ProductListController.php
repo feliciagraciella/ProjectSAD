@@ -75,14 +75,14 @@ class ProductListController extends Controller
         }
     }
 
-    public function deleteproduct(Request $request)
-    {
-        $sku = $request->input('sku');
-        DB::table('PRODUCT')->where([['SKU', '=', $sku]])->delete();
-        return redirect('product')->with('success', "Delete successfully");
-    }
+    // public function deleteproduct(Request $request)
+    // {
+    //     $sku = $request->input('sku');
+    //     DB::table('PRODUCT')->where([['SKU', '=', $sku]])->delete();
+    //     return redirect('product')->with('success', "Delete successfully");
+    // }
 
-    public function updateproduct(Request $request)
+    public function deleteproduct(Request $request)
     {
         $sku = $request->input('sku');
         $name = $request->input('name');
@@ -90,11 +90,17 @@ class ProductListController extends Controller
         $qty = $request->input('qty');
         $size = $request->input('size');
         $desc = $request->input('desc');
-        $del = '2';
+
+        switch ($request->input('action')) {
+            case 'delete':
+                $sku = $request->input('sku');
+                DB::table('PRODUCT')->where([['SKU', '=', $sku]])->delete();
+                return redirect('product')->with('success', "Delete successfully");
+                break;
 
         // DB::table('PRODUCT')->where([['SKU', '=', $sku]])->update(["STATUS_DELETE" => 2]);
-        DB::table('update PRODUCT set STATUS_DELETE = ? WHERE SKU = ?', [[$del,$sku]]);
-        return redirect('product')->with('success', "Update successfully");
+        // // DB::table('update PRODUCT set STATUS_DELETE = ? WHERE SKU = ?', [[$del,$sku]]);
+        // return redirect('product')->with('success', "Update successfully");
 
         // DB::table('PRODUCT')->whereIn('SKU', $sku)->update(["P_NAME" => $name, "PRICE" => $price, "STOCK" => $qty, "SIZE" => $size, "DESCRIPTION" => $desc]);
         // DB::table('update PRODUCT set P_NAME = ?, SIZE = ?, PRICE = ?, STOCK = ?, `DESCRIPTION` = ? WHERE SKU = ?', [$name,$size,$price,$qty,$desc,$sku]);
@@ -104,10 +110,13 @@ class ProductListController extends Controller
         // DB::table('PRODUCT')->update($data);
         // DB::table('PRODUCT')->whereIn('SKU', $sku)->update($request->all());
 
-        // $data=array("STATUS_DELETE" => '1');
-        // DB::table('PRODUCT')->update($data);
-        // DB::table('PRODUCT')->where('SKU', $sku)->update($request->all());
-        // return redirect('product')->with('success', "Update successfully")
+        case 'edit':
+        $data=array("STATUS_DELETE" => '5');
+        DB::table('PRODUCT')->where('SKU', $sku)->update($data);
+        // DB::table('PRODUCT')->where('SKU', $sku)->update(["STATUS_DELETE" => 2]);
+        return redirect('product')->with('success', "Update successfully");
+            break;
+        }
     }
 
     public function sortby(Request $req)

@@ -27,14 +27,14 @@
         @csrf
         <div class="baris1">SKU</div>
         <div class="boxsku">
-            <input type="text" id="sku" name="sku" value="{{ $product->SKU }}" class="form-control btn btn-sm" placeholder="SKU"
-                style="text-transform:unset !important; width: 310px; text-align: center;">
+            <input type="text" id="sku" name="sku" value="{{ $product->SKU }}" class="form-control btn btn-sm"
+                placeholder="SKU" style="text-transform:unset !important; width: 310px; text-align: center;">
         </div>
 
         <div class="baris2">Name</div>
         <div class="boxname">
-            <input type="text" id="name" name="name" value="{{ $product->P_NAME }}" class="form-control btn btn-sm" placeholder="Name"
-                style="text-transform:unset !important; width: 310px; text-align: center;">
+            <input type="text" id="name" name="name" value="{{ $product->P_NAME }}" class="form-control btn btn-sm"
+                placeholder="Name" style="text-transform:unset !important; width: 310px; text-align: center;">
         </div>
 
         <div class="baris3">Category</div>
@@ -42,22 +42,23 @@
             <select class="dropdowncat" id="cat" name="cat" value="{{ $product->ID_CATEGORY }}"
                 style="text-transform:unset !important; width: 310px; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                @foreach($cat as $c)
-                    <option value="{{$c -> C_NAME}}">{{$c -> C_NAME}}</option>
-                    @endforeach
+                @foreach ($cat as $c)
+                    <option value="{{ $c->C_NAME }}">{{ $c->C_NAME }}</option>
+                @endforeach
             </select>
         </div>
 
         <div class="baris4-1">Price</div>
         <div class="boxprice">
-            <input type="text" id="price" name="price" value="Rp {{ $product->PRICE }}" class="form-control btn btn-sm" placeholder="Price"
+            <input type="text" id="price" name="price" value="Rp {{ $product->PRICE }}"
+                class="form-control btn btn-sm" placeholder="Price"
                 style="text-transform:unset !important; width: 150px; text-align: center;">
         </div>
 
         <div class="baris4-2">Qty</div>
         <div class="boxqty">
-            <input type="number" id="qty" name="qty" value="{{ $product->STOCK }}" class="form-control btn btn-sm" placeholder="Qty"
-                style="text-transform:unset !important; width: 70px; text-align: center;">
+            <input type="number" id="qty" name="qty" value="{{ $product->STOCK }}" class="form-control btn btn-sm"
+                placeholder="Qty" style="text-transform:unset !important; width: 70px; text-align: center;">
         </div>
 
         <div class="baris5">Size</div>
@@ -65,8 +66,8 @@
             <select class="dropdownsize" id="size" name="size" value="{{ $product->SIZE }}"
                 style="text-transform:unset !important; width: 310px; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                @foreach($size as $s)
-                <option value="{{$s -> SIZE}}">{{$s -> SIZE}} ml</option>
+                @foreach ($size as $s)
+                    <option value="{{ $s->SIZE }}">{{ $s->SIZE }} ml</option>
                 @endforeach
             </select>
         </div>
@@ -79,21 +80,23 @@
             </textarea>
         </div>
 
-        <button type="submit" class="buttondel" name="deleteall" value="delete"
+        <button type="submit" class="buttondel" name="action" value="delete"
             style="background-color: #f7f7f7">Delete</button>
+        <button type="submit" class="buttonins" name="action" value="edit"
+            style="background-color: #dee1e6">Edit</button>
 
         <div class="productphoto">
-            <img class="photo" src="../images/best/{{$product->SKU}}.jpg">
+            <img class="photo" src="../images/best/{{ $product->SKU }}.jpg">
         </div>
 
         <input class="buttonimg" type="file" id="image" name="image">
     </form>
 
-    <form action="/editprod" method="POST" enctype="multipart/form-data" class="form">
-        @csrf
-        <button type="submit" class="buttonins" name="edit" value="edit"
-            style="background-color: #dee1e6">Edit</button>
-    </form>
+    {{-- <form action="/editprod" method="POST" enctype="multipart/form-data" class="form">
+        @csrf --}}
+    {{-- <button type="submit" class="buttonins" name="edit" value="edit"
+            style="background-color: #dee1e6">Edit</button> --}}
+    {{-- </form> --}}
 
 </body>
 
