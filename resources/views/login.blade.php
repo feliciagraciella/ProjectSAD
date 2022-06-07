@@ -49,21 +49,21 @@
                         <div class="containercontroller">
                             <div class="admin">
                                 <h2 style="font-size: small;">Admin ID :</h2>
-                                {{-- <input type="text" name="admin" class="@error('admin') is-invalid @enderror" autofocus
+                                <input type="text" name="admin" class="@error('admin') is-invalid @enderror" autofocus
                                     required placeholder="Admin ID" />
-                                @error('admin') --}}
-                                <input type="text" name="admin" class="form-control @error('name') is-invalid @enderror"
+                                @error('admin')
+                                    {{-- <input type="text" name="admin" class="form-control @error('name') is-invalid @enderror"
                                     value="{{ old('name') }}" required autocomplete="name" autofocus
                                     placeholder="Admin ID" />
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
-                                {{-- <div class="invalid-feedback" style="padding-bottom : 10px">
+                                @enderror --}}
+                                    <div class="invalid-feedback" style="padding-bottom : 10px">
                                         {{ $message }}
                                     </div>
-                                @enderror --}}
+                                @enderror
                             </div>
                             <div class="password" style="margin-top: 10px">
                                 <h2 style="font-size: small;">Password :</h2>

@@ -10,6 +10,7 @@ use Illuminate\Cache\RedisTaggedCache;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
+use PDO;
 
 class TransactionListController extends Controller
 {
@@ -40,10 +41,19 @@ class TransactionListController extends Controller
     public function addCart(Request $req)
     {
         $date = $req->input("date");
-        $dd1 = $req->get("selectplatform");
+        $dd1 = $req->input("selectplatform");
 
-        if ($dd1 == "Tokopedia"){
-            $id = "T" . date('Ymd', strtotime($date));;
+        $platform = DB::table('CART')->select('PLATFORM')->limit(1)->get();
+        $platformname = $platform[0]->PLATFORM;
+        if($platformname == "Tokopedia"){
+            $dd1 = "Tokopedia";
+        }
+        else{
+            $dd1 = "Shopee";
+        }
+
+        if ($dd1 == "Tokopedia" || $platformname == "Tokopedia"){
+            $id = "T" . date('Ymd', strtotime($date));
         }
         else {
             $id = "S" . date('Ymd', strtotime($date));
@@ -53,6 +63,8 @@ class TransactionListController extends Controller
         $qty = $req->get("inputQuantity");
 
         $p = DB::table('PRODUCT')->where('SKU', $dd2);
+
+
         CartModel::updateCart($dd2, $dd1, $date, $id, $p, $qty);
 
 
@@ -81,7 +93,7 @@ class TransactionListController extends Controller
 
         $transdet = DB::table('CART')->get();
 
-        // dd($transdet);
+        // dd($transdet[0]->SKU);
         TransactionListModel::insert([
             'DATE_TRANSACTION' => $trans[0]->DATE,
             'ID_ADMIN' => 'A001',
@@ -104,6 +116,15 @@ class TransactionListController extends Controller
                 'STATUS_DELETE' => '0'
             ]);
         }
+
+        // for ($x = 0; $x < count($transdet); $x++) {
+        //     TransactionDetailModel::insert([
+        //         'SKU' => $transdet[$x]->SKU,
+        //         'ID_TRANSACTION' => $transdet[$x]->ID_TRANSACTION,
+        //         'QTY_PRODUCT' => $transdet[$x]->QTY_PRODUCT,
+        //         'STATUS_DELETE' => '0'
+        //     ]);
+        //   }
 
         DB::table('CART')->delete();
 

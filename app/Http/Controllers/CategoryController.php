@@ -19,8 +19,8 @@ class CategoryController extends Controller
         DB::table('CATEGORY')->insert([
             'ID_CATEGORY' => $obj['`fID_Cat`()'],
             'C_NAME' => $request->input('name'),
-            'TOTAL_PRODUCT' => 0,
-            'STATUS_DELETE' => 0
+            'TOTAL_PRODUCT' => '0',
+            'STATUS_DELETE' => '0'
         ]);
 
         return redirect('category')->with('status',"Insert successfully");
