@@ -32,7 +32,10 @@
                     style="text-transform:unset !important; width: 310px; text-align: left;">
             </div>
             <div class="buttonadd2">
-                <button type="submit" value="insert" class="btn btn-secondary btn-sm" style="text-transform: unset !important; width: 150px ; ">Add</button>
+                {{-- <button type="submit" class="buttondel" name="action" value="delete"
+                    style="width: 150p">Add</button> --}}
+                <button type="submit" name="action" value="insert" class="btn btn-secondary btn-sm"
+                    style="text-transform: unset !important; width: 150px ; ">Add</button>
             </div>
         </form>
         {{-- <div class="buttonadd2">
