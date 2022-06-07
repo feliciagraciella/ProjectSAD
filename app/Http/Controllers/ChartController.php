@@ -3,24 +3,28 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Visitor;
+use DB;
 
-class ChartController extends Controller
+class HomeController extends Controller
 {
-    public function index()
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function googleLineChart()
     {
-        // $users = DB::table("PRODUCT")
-        //         ->select('*')
-        //         ->get();
+        // $data = DB::select("select * from finance_all_all");
 
-        // $chart = new UserChart;
-        // $chart->labels(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']);
-        // $chart->dataset('New User Register Chart', 'line', $users)->options([
-        //     'fill' => 'true',
-        //     'borderColor' => '#51C1C0'
-        // ]);
+        // $result[] = ['Month','Net Profit'];
+        // foreach ($data as $key => $value) {
+        //     $result[++$key] = [$value->MONTH, (int)$value->NET_PROFIT];
+        // }
 
-        // return view('report', [compact('chart') => $chart]);
+        // return view('google-line-chart')
+        //         ->with('data',json_encode($result));
 
-        
+        // dd($data);
     }
 }
