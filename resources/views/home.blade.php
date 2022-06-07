@@ -37,12 +37,14 @@
             <a href="/report">View All</a>
             <div class="column-report">
                 <div class="rect-tokped">
-
+                    <img src={{ asset('images/icon/tokped.png') }}
+                        style="background: #f8f7f2; width: 31px; height:31px; margin-left: 10px; margin-top: 10px;" />
                 </div>
             </div>
             <div class="column-report">
                 <div class="rect-shopee">
-
+                    <img src={{ asset('images/icon/shopee.png') }}
+                        style="background: #f8f7f2; width: 35px; height:35px; margin-left: 10px; margin-top: 10px;" />
                 </div>
             </div>
         </div>
@@ -57,7 +59,7 @@
                                 <img src="{{ asset('images/best/' . $d->IMAGE) }}" alt="" width="150px" height="150px"
                                     style="border-radius: 12px">
                             </a>
-                                {{-- <img src="{{ asset('images/best/' . $d->IMAGE) }}" alt="" width="150px" height="150px"
+                            {{-- <img src="{{ asset('images/best/' . $d->IMAGE) }}" alt="" width="150px" height="150px"
                                     style="border-radius: 12px"> --}}
                         </div>
                     </div>
@@ -102,7 +104,7 @@
 
         <div class="finance">
             <h3>Finance</h3>
-            <h4>(Last 7 Days)</h4>
+            <h4>&nbsp(Last 7 Days)</h4>
             <div class="netprofit" style="left: 80%; position: absolute; top: 125px;">
                 <p class="finance1">
                     <span class="iconify" data-icon="dashicons:money-alt" style="color: black; "></span>
@@ -133,7 +135,8 @@
                 @foreach ($stock as $s)
                     <div class="stock-all">
                         <p class="warning1">
-                            <span class="iconify" data-icon="ep:warning-filled" style="color: rgba(255, 0, 0, 0.772);"></span>
+                            <span class="iconify" data-icon="ep:warning-filled"
+                                style="color: rgba(255, 0, 0, 0.772);"></span>
                         </p>
                         <div class="stockk">
                             <h5 class="stock-text" style="width: 200px">{{ $s->P_NAME }}</h5>

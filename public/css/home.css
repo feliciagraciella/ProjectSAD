@@ -141,11 +141,11 @@
 
 .finance h4{
     font-weight: bold;
-    font-size: small;
+    font-size: x-small;
     font-family: "Poppins";
     color: black;
-    left: 86%;
-    top: 95px;
+    left: 86.5%;
+    top: 97px;
     position: absolute;
 }
 
