@@ -28,7 +28,7 @@
         <div class="baris1">SKU</div>
         <div class="boxsku">
             <input type="text" id="sku" name="sku" class="form-control btn btn-sm"
-                style="text-transform:unset !important; width: 310px; text-align: center;">
+                style="text-transform:unset !important; width: 310px; text-align: center;" disabled="disabled">
         </div>
 
         <div class="baris2">Name</div>

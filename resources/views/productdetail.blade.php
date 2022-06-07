@@ -28,7 +28,7 @@
         <div class="baris1">SKU</div>
         <div class="boxsku">
             <input type="text" id="sku" name="sku" value="{{ $product->SKU }}" class="form-control btn btn-sm"
-                placeholder="SKU" style="text-transform:unset !important; width: 310px; text-align: center;">
+                placeholder="SKU" style="text-transform:unset !important; width: 310px; text-align: center;" disabled="disabled">
         </div>
 
         <div class="baris2">Name</div>
@@ -41,7 +41,7 @@
         <div class="boxcat">
             <select class="dropdowncat" id="cat" name="cat" value="{{ $product->ID_CATEGORY }}"
                 style="text-transform:unset !important; width: 310px; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled="disabled">
                 @foreach ($cat as $c)
                     <option value="{{ $c->C_NAME }}">{{ $c->C_NAME }}</option>
                 @endforeach
@@ -65,7 +65,7 @@
         <div class="boxsize">
             <select class="dropdownsize" id="size" name="size" value="{{ $product->SIZE }}"
                 style="text-transform:unset !important; width: 310px; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled="disabled">
                 @foreach ($size as $s)
                     <option value="{{ $s->SIZE }}">{{ $s->SIZE }} ml</option>
                 @endforeach
