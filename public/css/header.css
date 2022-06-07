@@ -63,13 +63,13 @@ body {
 .date {
     position: fixed;
     right: 40%;
-    top: -9px;
+    top: -7px;
     font-size: small;
 }
 .profile-id {
     position: fixed;
-    right: 12%;
-    top: 30px;
+    right: 14.5%;
+    top: 22spx;
     font-size: small;
 }
 .topbar-hr {
