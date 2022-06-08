@@ -83,13 +83,51 @@
         <button type="submit" class="buttonins" name="action" value="insert"
             style="background-color: #dee1e6">Insert</button>
 
-        <div class="productphoto">
-            <img class="photo" src={{ asset('images/logo.png') }}>
-        </div>
+        {{-- <div class="productphoto" style="z-index: 99;"> --}}
+            <img class="image-preview img-fluid">
+        {{-- </div> --}}
 
-        <input class="buttonimg" type="file" id="image" name="image">
+        <input class="buttonimg" type="file" id="image" name="image" onchange="previewImage()">
     </form>
 
-</body>
+    {{-- <script>
+        $('input[type="file"][name="image"]').val('')
+        $('input[type="file"][name="image"]').on('change', function(){
+            var img_path = $(this)[0].value;
+            var img_holder = $('.img-holder');
+            var extension = img_path.substring(img_path.lastIndexOf('.')+1).toLowerCase();
 
+            if(extension == 'jpeg' || extension == 'jpg' || extension == 'png'){
+                if(typeof(FileReader) != 'undefined'){
+                    img_holder.empty();
+                    var reader = new FileReader();
+                    reader.onload = function(e){
+                        $('<img/>', {'src':e.target.result,'class':'img-fluid', 'style':'max-width:100px;'})
+                        appendTo(img_holder);
+                    }
+                    img_holder.show();
+                    reader.readAsDataURL($(this)[0].files[0]);
+                }else{
+                    $img_holder.html('This browser does not support FileReader');
+                }
+            }else{
+                $(img_holder).empty();
+            }
+        }) --}}
+
+        // public function previewImage {
+        //     const image = document.querySelector('#image');
+        //     const imgPreview = document.querySelector('.image-preview');
+        //     imgPreview.style.display = 'block';
+
+        //     const oFReader = new FileReader();
+        //     oFReader.readAsDataURL(image.files[0]);
+
+        //     oFReader.onload = function(oFREvent){
+        //         imgPreview.src = oFREvent.target.result;
+        //     }
+        // }
+    </script>
+
+</body>
 </html>
