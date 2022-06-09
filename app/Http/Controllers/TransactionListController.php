@@ -41,10 +41,17 @@ class TransactionListController extends Controller
     public function addCart(Request $req)
     {
         $date = $req->input("date");
-        $dd1 = $req->input("selectplatform");
 
-        $platform = DB::table('CART')->select('PLATFORM')->limit(1)->get();
-        $platformname = $platform[0]->PLATFORM;
+        $cart = DB::table('CART')->get();
+        if(count($cart)!=0){
+            $platform = DB::table('CART')->select('PLATFORM')->limit(1)->get();
+            $platformname = $platform[0]->PLATFORM;
+        }
+        else{
+            $platformname = $req->input("selectplatform");
+        }
+
+
         if($platformname == "Tokopedia"){
             $dd1 = "Tokopedia";
         }
@@ -88,8 +95,11 @@ class TransactionListController extends Controller
         $trans = DB::table('CART')->select('ID_TRANSACTION', 'DATE', 'PLATFORM')->groupBy('ID_TRANSACTION', 'DATE', 'PLATFORM')->limit(1)->get();
 
         $totalqty = DB::table('CART')->select(DB::raw('SUM(QTY_PRODUCT) as `SUM`'))->get();
+        $totalprice = $req->input("p");
         $totalfee = $req->input("insertfee");
-        $totalprice = $req->input("insertprice");
+
+
+        // dd($totalprice);
 
         $transdet = DB::table('CART')->get();
 

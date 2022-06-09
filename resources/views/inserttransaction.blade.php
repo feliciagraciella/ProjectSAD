@@ -51,7 +51,7 @@
 
                 <h4 class="platformtitle">Quantity</h4>
                 <div class="numericupdown">
-                    <input class="form-control btn btn-sm d-inline text-center me-3 txtJumlah" name="inputQuantity" min=0 value="0" type="number" style="width: 200px;">
+                    <input class="form-control btn btn-sm d-inline text-center me-3 txtJumlah" name="inputQuantity" min=1 value="0" type="number" style="width: 200px;">
                 </div>
             </div>
 
@@ -93,20 +93,19 @@
             </div>
     </form>
 
-    <form method="POST" action="/insertt">
+    <form method="POST" onclick="return confirm('Are you sure?')" action="/insertt">
         @csrf
             <div class="totaltransaction">
                 <h4 class="totalfee" style="width: 150px;">Total Transaction</h4>
                 <div class="inputtotaltrans">
-                    <input type="text" name="insertprice" class="form-control btn btn-sm" style="text-transform:unset !important; width: 200px; text-align: right;" placeholder="Enter value">
+                    <input type="text" name="p" class="form-control btn btn-sm" style="text-transform:unset !important; width: 200px; text-align: right;" placeholder="Enter value">
                 </div>
             </div>
 
             <div class="totalplatfee">
                 <h4 class="totalfee" style="width: 150px;">Total Platform Fee</h4>
                 <div class="inputtotalfee">
-                    <input type="text" name="insertfeepphp" class="form-control btn btn-sm" style="text-transform:unset !important; width: 200px; text-align: right;
-                    text-align:right;" placeholder="Enter value">
+                    <input type="text" name="insertfee" class="form-control btn btn-sm" style="text-transform:unset !important; width: 200px; text-align: right;" placeholder="Enter value">
                 </div>
             </div>
 
@@ -117,20 +116,19 @@
                 <h4 class="totalakhirr" style="width: 150px;">Rp. 500.000</h4>
             </div>
 
-    <div class="buttonbutton">
-        <div class="buttoninsert">
-
-                <button type="submit" name="insertprice" class="btn btn-secondary btn-sm" style="text-transform: unset !important; width: 120px; ">Insert</button>
+            <div class="buttonbutton">
+                <div class="buttoninsert">
+                    <button type="submit" name="insertprice" class="btn btn-secondary btn-sm" style="text-transform: unset !important; width: 120px; ">Insert</button>
+                </div>
+                <div class="buttondelete">
+                    <form method="POST" onclick="return confirm('Are you sure?')" action="/deleteall">
+                    {{-- <form method="POST" action="/deleteall"> --}}
+                        @csrf
+                        <button type="submit" name="insertfee" class="btn btn-outline-secondary btn-sm" style="text-transform: unset !important; width: 120px; ">Delete All</button>
+                    </form>
+                </div>
+            </div>
     </form>
-        </div>
-        <div class="buttondelete">
-            <form method="POST" onclick="return confirm('Are you sure?')" action="/deleteall">
-            {{-- <form method="POST" action="/deleteall"> --}}
-                @csrf
-                <button type="submit" name="insertfee" class="btn btn-outline-secondary btn-sm" style="text-transform: unset !important; width: 120px; ">Delete All</button>
-            </form>
-        </div>
-    </div>
 </body>
 
 </html>
