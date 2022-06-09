@@ -3,6 +3,7 @@
 <html>
 
 <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href={{ asset('css/insertproduct.css') }} type="text/css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
@@ -17,6 +18,8 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 </head>
 
@@ -84,11 +87,32 @@
             style="background-color: #dee1e6">Insert</button>
 
         {{-- <div class="productphoto" style="z-index: 99;"> --}}
-            <img class="image-preview img-fluid">
+        {{-- <img class="image-preview img-fluid"> --}}
         {{-- </div> --}}
-
-        <input class="buttonimg" type="file" id="image" name="image" onchange="previewImage()">
+        {{-- <div class="productphoto" style="z-index: 99;"> --}}
+            <input class="buttonimg" type="file" id="formFile" name="image" onchange="preview()">
+            <img id="frame" src="" class="img-fluid" style="width:400px; position: absolute; top: 400px; left:0px; margin-left: 55%;">
+        {{-- </div> --}}
     </form>
+
+    {{-- <div class="container col-md-6">
+        <div class="mb-5">
+            <label for="Image" class="form-label">Bootstrap 5 image Upload with Preview</label> --}}
+    {{-- <input class="form-control" type="file" id="formFile" onchange="preview()"> --}}
+    {{-- <button onclick="clearImage()" class="btn btn-primary mt-3">Click me</button> --}}
+    {{-- </div> --}}
+    {{-- <img id="frame" src="" class="img-fluid" />
+    </div> --}}
+
+    <script>
+        function preview() {
+            frame.src = URL.createObjectURL(event.target.files[0]);
+        }
+        // function clearImage() {
+        //     document.getElementById('formFile').value = null;
+        //     frame.src = "";
+        // }
+    </script>
 
     {{-- <script>
         $('input[type="file"][name="image"]').val('')
@@ -113,21 +137,22 @@
             }else{
                 $(img_holder).empty();
             }
-        }) --}}
+        })
 
-        // public function previewImage {
-        //     const image = document.querySelector('#image');
-        //     const imgPreview = document.querySelector('.image-preview');
-        //     imgPreview.style.display = 'block';
+        public function previewImage {
+            const image = document.querySelector('#image');
+            const imgPreview = document.querySelector('.image-preview');
+            imgPreview.style.display = 'block';
 
-        //     const oFReader = new FileReader();
-        //     oFReader.readAsDataURL(image.files[0]);
+            const oFReader = new FileReader();
+            oFReader.readAsDataURL(image.files[0]);
 
-        //     oFReader.onload = function(oFREvent){
-        //         imgPreview.src = oFREvent.target.result;
-        //     }
-        // }
-    </script>
+            oFReader.onload = function(oFREvent){
+                imgPreview.src = oFREvent.target.result;
+            }
+        }
+    </script> --}}
 
 </body>
+
 </html>
