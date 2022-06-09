@@ -117,7 +117,7 @@ class ReportController extends Controller
                 $namaproduk[] = $d->PRODUCT_NAME;
                 $jumlahproduk[] = (int)$d->TOTAL_SOLD;
             }
-
+            // dd($namaproduk);
             return view("report", [
                 "data" => $data,
                 "income" => $income[0]->NetProfit,
@@ -196,12 +196,19 @@ class ReportController extends Controller
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
 
+            foreach($data as $d){
+                $tanggal[] = $d->DATE_TRANSACTION;
+                $profit[] = (int)$d->NET_PROFIT;
+            }
+
             return view("report2", [
                 "data" => $data,
                 "income" => $income[0]->NetProfit,
                 "admin" => $admin[0]->AdminFee,
                 "reportname" => $reportname,
-                "reportsub" => $reportsub
+                "reportsub" => $reportsub,
+                "tanggal" => $tanggal,
+                "profit" => $profit
             ]);
         }
 
