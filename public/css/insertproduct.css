@@ -184,34 +184,25 @@ body{
     transform: translateX(100%);
     background-color: #DEE1E6;
     text-align: center;
-}
-
-.productphoto img{
-    height: 270px;
+    display: block;
+    justify-content: center;
 }
 
 .buttonimg{
     position: absolute;
-    top: 490px;
-    border-radius: 8px;
-    width: 15%;
-    left:0px;
-    margin-left: 55%;
-    transform: translateX(100%);
-    border: 1px solid #DEE1E6;
+    top: 487px;
+    left: 0px;
+    margin-left: 68%;
 }
 
 #frame{
-    max-width: 300px;
-    max-height:300px;
-    position: absolute;
-    top: 155px;
-    left:0px;
-    margin-left: 45%;
-    transform: translateX(100%);
+    background-color: #DEE1E6;
+    background-size: 300px;
+    max-width: 100%;
+    max-height: 100%;
     background-color: #DEE1E6;
     text-align: center;
     align-items:center;
     vertical-align: middle;
-    min-height: 50px;
+    z-index: 99;
 }
