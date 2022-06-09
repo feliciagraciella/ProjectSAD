@@ -3,7 +3,6 @@
 <html>
 
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href={{ asset('css/insertproduct.css') }} type="text/css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
@@ -18,8 +17,6 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 </head>
 
@@ -86,73 +83,17 @@
         <button type="submit" class="buttonins" name="action" value="insert"
             style="background-color: #dee1e6">Insert</button>
 
-        {{-- <div class="productphoto" style="z-index: 99;"> --}}
-        {{-- <img class="image-preview img-fluid"> --}}
-        {{-- </div> --}}
-        {{-- <div class="productphoto" style="z-index: 99;"> --}}
-            <input class="buttonimg" type="file" id="formFile" name="image" onchange="preview()">
-            <img id="frame" src="" class="img-fluid" style="width:400px; position: absolute; top: 400px; left:0px; margin-left: 55%;">
-        {{-- </div> --}}
+            <div class="productphoto">
+        <input class="buttonimg" type="file" id="formFile" name="image" onchange="preview()">
+        <img id="frame" src="" class="img-fluid">
+            </div>
     </form>
-
-    {{-- <div class="container col-md-6">
-        <div class="mb-5">
-            <label for="Image" class="form-label">Bootstrap 5 image Upload with Preview</label> --}}
-    {{-- <input class="form-control" type="file" id="formFile" onchange="preview()"> --}}
-    {{-- <button onclick="clearImage()" class="btn btn-primary mt-3">Click me</button> --}}
-    {{-- </div> --}}
-    {{-- <img id="frame" src="" class="img-fluid" />
-    </div> --}}
 
     <script>
         function preview() {
             frame.src = URL.createObjectURL(event.target.files[0]);
         }
-        // function clearImage() {
-        //     document.getElementById('formFile').value = null;
-        //     frame.src = "";
-        // }
     </script>
 
-    {{-- <script>
-        $('input[type="file"][name="image"]').val('')
-        $('input[type="file"][name="image"]').on('change', function(){
-            var img_path = $(this)[0].value;
-            var img_holder = $('.img-holder');
-            var extension = img_path.substring(img_path.lastIndexOf('.')+1).toLowerCase();
-
-            if(extension == 'jpeg' || extension == 'jpg' || extension == 'png'){
-                if(typeof(FileReader) != 'undefined'){
-                    img_holder.empty();
-                    var reader = new FileReader();
-                    reader.onload = function(e){
-                        $('<img/>', {'src':e.target.result,'class':'img-fluid', 'style':'max-width:100px;'})
-                        appendTo(img_holder);
-                    }
-                    img_holder.show();
-                    reader.readAsDataURL($(this)[0].files[0]);
-                }else{
-                    $img_holder.html('This browser does not support FileReader');
-                }
-            }else{
-                $(img_holder).empty();
-            }
-        })
-
-        public function previewImage {
-            const image = document.querySelector('#image');
-            const imgPreview = document.querySelector('.image-preview');
-            imgPreview.style.display = 'block';
-
-            const oFReader = new FileReader();
-            oFReader.readAsDataURL(image.files[0]);
-
-            oFReader.onload = function(oFREvent){
-                imgPreview.src = oFREvent.target.result;
-            }
-        }
-    </script> --}}
-
 </body>
-
 </html>
