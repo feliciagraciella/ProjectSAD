@@ -201,6 +201,10 @@ class ReportController extends Controller
                 $intprofit[] = (int)$d->INT_NET_PROFIT;
             }
             // dd($profit, $tanggal);
+
+            $var1 = ",{name:";
+            $var2 = ",data:";
+            $var3 = "}";
             return view("report2", [
                 "data" => $data,
                 "income" => $income[0]->NetProfit,
@@ -208,7 +212,10 @@ class ReportController extends Controller
                 "reportname" => $reportname,
                 "reportsub" => $reportsub,
                 "tanggal" => $tanggal,
-                "intprofit" => $intprofit
+                "intprofit" => $intprofit,
+                "var1" => $var1,
+                "var2" => $var2,
+                "var3" => $var3
             ]);
         }
 
