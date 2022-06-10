@@ -154,42 +154,42 @@ class ReportController extends Controller
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
             elseif($platform == "Shopee" && $period == "All"){
-                $data = DB::select("select * from finance_all_thirty");
+                $data = DB::select("select * from finance_shopee_all");
 
                 $income = DB::select("select fNetProfit() as `NetProfit`");
 
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
             elseif($platform == "Shopee" && $period == "Last 7 Days"){
-                $data = DB::select("select * from finance_all_thirty");
+                $data = DB::select("select * from finance_shopee_seven");
 
                 $income = DB::select("select fNetProfit() as `NetProfit`");
 
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
             elseif($platform == "Shopee" && $period == "Last 30 Days"){
-                $data = DB::select("select * from finance_all_thirty");
+                $data = DB::select("select * from finance_shopee_thirty");
 
                 $income = DB::select("select fNetProfit() as `NetProfit`");
 
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
             elseif($platform == "Tokopedia" && $period == "All"){
-                $data = DB::select("select * from finance_all_thirty");
+                $data = DB::select("select * from finance_tokopedia_all");
 
                 $income = DB::select("select fNetProfit() as `NetProfit`");
 
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
             elseif($platform == "Tokopedia" && $period == "Last 7 Days"){
-                $data = DB::select("select * from finance_all_thirty");
+                $data = DB::select("select * from finance_tokopedia_seven");
 
                 $income = DB::select("select fNetProfit() as `NetProfit`");
 
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
             elseif($platform == "Tokopedia" && $period == "Last 30 Days"){
-                $data = DB::select("select * from finance_all_thirty");
+                $data = DB::select("select * from finance_tokopedia_thirty");
 
                 $income = DB::select("select fNetProfit() as `NetProfit`");
 
@@ -198,9 +198,13 @@ class ReportController extends Controller
 
             foreach($data as $d){
                 $tanggal[] = $d->DATE_TRANSACTION;
-                $profit[] = (int)$d->NET_PROFIT;
+                $intprofit[] = (int)$d->INT_NET_PROFIT;
             }
+            // dd($profit, $tanggal);
 
+            $var1 = ",{name:";
+            $var2 = ",data:";
+            $var3 = "}";
             return view("report2", [
                 "data" => $data,
                 "income" => $income[0]->NetProfit,
@@ -208,7 +212,10 @@ class ReportController extends Controller
                 "reportname" => $reportname,
                 "reportsub" => $reportsub,
                 "tanggal" => $tanggal,
-                "profit" => $profit
+                "intprofit" => $intprofit,
+                "var1" => $var1,
+                "var2" => $var2,
+                "var3" => $var3
             ]);
         }
 

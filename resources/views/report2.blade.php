@@ -125,14 +125,13 @@
 
             yAxis: {
                 title: {
-                    text: {!!json_encode($profit)!!}
+                    text: "Profit (Rp)"
                 }
             },
 
             xAxis: {
-                accessibility: {
-                    rangeDescription: 'Range: 2010 to 2017'
-                }
+                categories: {!!json_encode($tanggal)!!},
+                crosshair: true
             },
 
             legend: {
@@ -145,16 +144,14 @@
                 series: {
                     label: {
                         connectorAllowed: false
-                    },
-                    pointStart: 2010
+                    }
                 }
             },
-
             series: [{
-                name: {!!json_encode($tanggal)!!},
-                data: {!!json_encode($profit)!!}
-            }],
+                    name: {!!json_encode($tanggal)!!},
+                    data: {!!json_encode($intprofit)!!}
 
+            }],
             responsive: {
                 rules: [{
                     condition: {
