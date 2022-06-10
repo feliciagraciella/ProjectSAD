@@ -147,12 +147,11 @@
                     }
                 }
             },
-
             series: [{
-                name: "Profit",
-                data: {!!json_encode($intprofit)!!}
-            }],
+                    name: {!!json_encode($tanggal)!!},
+                    data: {!!json_encode($intprofit)!!}
 
+            }],
             responsive: {
                 rules: [{
                     condition: {
