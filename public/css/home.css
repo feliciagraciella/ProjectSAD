@@ -238,3 +238,17 @@
     margin-left: 20%;
     margin-top: -21%;
 }
+
+#chart1{
+    width: 740px;
+    position: relative;
+    left: 303px;
+    top: 184px;
+}
+
+#chart2{
+    width: 740px;
+    position: relative;
+    left: 303px;
+    top: 184px;
+}

@@ -62,7 +62,7 @@ class LogInController extends Controller
         $idadmin = $request->input('admin');
         $password = $request->input('password');
         $userdata = DB::table('ADMIN')->where('ID_ADMIN', $idadmin)->first();
-        dd($userdata);
+        // dd($userdata);
         // $obj = get_object_vars($userdata);
         // $request->session()->put('idadmin', $obj['ID_ADMIN']);
         if (is_null($userdata)) {
