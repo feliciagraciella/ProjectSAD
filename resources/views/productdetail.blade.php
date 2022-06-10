@@ -85,18 +85,25 @@
         <button type="submit" class="buttonins" name="action" value="edit"
             style="background-color: #dee1e6">Edit</button>
 
+            @if($post->image)
         <div class="productphoto">
             <img class="photo" src="../images/best/{{ $product->SKU }}.jpg">
         </div>
-
         <input class="buttonimg" type="file" id="image" name="image">
+
+        @else
+        
+        <input class="buttonimg" type="file" id="formFile" name="image" onchange="preview()">
+        <div class="productphoto">
+            <img id="frame" src="" class="img-responsive">
+        </div>
     </form>
 
-    {{-- <form action="/editprod" method="POST" enctype="multipart/form-data" class="form">
-        @csrf --}}
-    {{-- <button type="submit" class="buttonins" name="edit" value="edit"
-            style="background-color: #dee1e6">Edit</button> --}}
-    {{-- </form> --}}
+    <script>
+        function preview() {
+            frame.src = URL.createObjectURL(event.target.files[0]);
+        }
+    </script>
 
 </body>
 
