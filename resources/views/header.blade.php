@@ -74,9 +74,10 @@
                         <p style="font-family: Poppins; margin-left: 5px; float: right;"> A001 &nbsp&nbsp|&nbsp&nbspLog Out</p>
                     </a> --}}
                     <a class="logout" href="/" style="color: black;">
-                        <p style="font-family: Poppins; margin-left: 5px; float: right;">  {{ session('login') }} &nbsp&nbsp|&nbsp&nbspLog Out</p>
+                        <p style="font-family: Poppins; margin-left: 5px; float: right;"> {{ session('login') }}
+                            &nbsp&nbsp|&nbsp&nbspLog Out</p>
                     </a>
-                        {{-- <a class="logout" href="/" method="POST" style="color: black;">
+                    {{-- <a class="logout" href="/" method="POST" style="color: black;">
                         <p style="font-family: Poppins; margin-left: 5px; float: right;"> {{ auth()->user()->name }} &nbsp&nbsp|&nbsp&nbspLog Out</p>
                     </a> --}}
                 </i>
