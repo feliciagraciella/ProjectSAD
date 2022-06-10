@@ -16,11 +16,20 @@ class LogInController extends Controller
     //     $this->middleware('guest')->except('logout');
     // }
 
-    // public function id()
+    // public function getUserId(Request $request)
     // {
-    //     return 'name';
+    //     $user = Auth::user(); // Retrieve the currently authenticated user...
+    //     $id = Auth::id(); // Retrieve the currently authenticated user's ID...
+
+
+    //     $user = $request->user(); // returns an instance of the authenticated user...
+    //     $id = $request->user()->admin; // Retrieve the currently authenticated user's ID...
+
+
+    //     $user = auth()->user(); // Retrieve the currently authenticated user...
+    //     $id = auth()->id();  // Retrieve the currently authenticated user's ID...
     // }
-    //
+
     public function index()
     {
         return view('login', [
@@ -28,77 +37,58 @@ class LogInController extends Controller
         ]);
     }
 
-    // public function authenticate(Request $request)
-    // {
-    //     // $credentials = $request->validate([
-    //     //     'admin' => 'required',
-    //     //     'password' => 'required'
-    //     // ]);
-
-    //     // if(Auth::attempt($credentials)) {
-    //     //     $request->session()->regenerate();
-    //     //     return redirect()->intended('/home');
-    //     // }
-
-    //     // return back()->with('Log in Error', 'Login failed');
-
-    //     $request->validate([
-    //         'admin' => ['required'],
-    //         'password' => ['required'],
-    //     ]);
-    //     // if(Auth::attempt($adminid)){
-    //     //     $request->session()->regenerate();
-    //     //     return redirect()->intended('/home');
-    //     // }
-    //     $idadmin = $request->input('admin');
-    //     $password = $request->input('password');
-    //     $userdata = DB::table('ADMIN')->where('ID_ADMIN', $idadmin)->first();
-    //     dd($userdata);
-    //     // $obj = get_object_vars($userdata);
-    //     // $request->session()->put('idadmin', $obj['ID_ADMIN']);
-    //     if (is_null($userdata)) {
-    //         return back()->with('LoginError', 'Log In Failed');
-    //     } else {
-    //         $obj = get_object_vars($userdata);
-
-    //         if ($password == $obj['PASSWORD_ADMIN']) {
-    //             $request->session()->put('idadmin', $request->admin);
-
-    //             return view('/home', [
-    //                 'admin' => $idadmin,
-    //                 'password' => $obj
-    //             ]);
-    //         } else {
-    //             return back()->with('LoginError', 'Log In Failed');
-    //         }
-    //     }
-    // }
-
     public function authenticate(Request $request)
     {
-        $input = $request->all();
-        $request->validate(([
-            'admin' => 'required',
-            'password' => 'required',
-        ]));
-        $data = LogInModel::where('ID_ADMIN', $request->admin)->first();
-        if ($data != null) {
-            $obj = get_object_vars($data);
+        // $credentials = $request->validate([
+        //     'admin' => 'required',
+        //     'password' => 'required'
+        // ]);
 
-            if ('password' == $obj['PASSWORD_ADMIN']) {
-                $request->session()->put('data', $request->admin);
+        // if(Auth::attempt($credentials)) {
+        //     $request->session()->regenerate();
+        //     return redirect()->intended('/home');
+        // }
+
+        // return back()->with('Log in Error', 'Login failed');
+
+        $request->validate([
+            'admin' => ['required'],
+            'password' => ['required'],
+        ]);
+        // if(Auth::attempt($adminid)){
+        //     $request->session()->regenerate();
+        //     return redirect()->intended('/home');
+        // }
+        $idadmin = $request->input('admin');
+        $password = $request->input('password');
+        $userdata = DB::table('ADMIN')->where('ID_ADMIN', $idadmin)->first();
+        dd($userdata);
+        // $obj = get_object_vars($userdata);
+        // $request->session()->put('idadmin', $obj['ID_ADMIN']);
+        if (is_null($userdata)) {
+            return back()->with('LoginError', 'Log In Failed');
+        } else {
+            $obj = get_object_vars($userdata);
+
+            if ($password == $obj['PASSWORD_ADMIN']) {
+                $request->session()->put('idadmin', $request->admin);
 
                 return view('/home', [
-                    'admin' => $data,
+                    'admin' => $idadmin,
                     'password' => $obj
                 ]);
             } else {
                 return back()->with('LoginError', 'Log In Failed');
             }
-        } else {
-            return back()->with('LoginError', 'Log In Failed');
         }
     }
+
+    // public function manualLogin(){
+    //     $user = LogInModel::find(1);
+    //     Auth::login($user);
+    //     return redirect('/home');
+    // }
+
 
     // public function authentication(Request $req){
     //     $email = $_POST['email'];
