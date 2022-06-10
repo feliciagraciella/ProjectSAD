@@ -93,7 +93,7 @@
         <thead>
             <tr>
                 <th scope="col" style="font-weight: 600; text-align:left;">Platform</th>
-                <th scope="col" style="font-weight: 600; text-align:center;">Month</th>
+                <th scope="col" style="font-weight: 600; text-align:center;">Date</th>
                 <th scope="col" style="font-weight: 600; text-align:right;">Net Profit</th>
                 <th scope="col" style="font-weight: 600; text-align:right;">Operational Fee</th>
             </tr>
@@ -102,7 +102,7 @@
             @foreach ($data as $d)
             <tr>
                 <th scope="row" style="text-align:left;">{{$d->PLATFORM}}</th>
-                <td style="text-align:center;">{{$d->MONTH}}</td>
+                <td style="text-align:center;">{{$d->DATE_TRANSACTION}}</td>
                 <td style="text-align:right;">{{$d->NET_PROFIT}}</td>
                 <td style="text-align:right;">{{$d->OPERATIONAL_FEE}}</td>
             </tr>
