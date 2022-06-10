@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Models\LogInModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 // use Session;
@@ -27,49 +28,75 @@ class LogInController extends Controller
         ]);
     }
 
+    // public function authenticate(Request $request)
+    // {
+    //     // $credentials = $request->validate([
+    //     //     'admin' => 'required',
+    //     //     'password' => 'required'
+    //     // ]);
+
+    //     // if(Auth::attempt($credentials)) {
+    //     //     $request->session()->regenerate();
+    //     //     return redirect()->intended('/home');
+    //     // }
+
+    //     // return back()->with('Log in Error', 'Login failed');
+
+    //     $request->validate([
+    //         'admin' => ['required'],
+    //         'password' => ['required'],
+    //     ]);
+    //     // if(Auth::attempt($adminid)){
+    //     //     $request->session()->regenerate();
+    //     //     return redirect()->intended('/home');
+    //     // }
+    //     $idadmin = $request->input('admin');
+    //     $password = $request->input('password');
+    //     $userdata = DB::table('ADMIN')->where('ID_ADMIN', $idadmin)->first();
+    //     dd($userdata);
+    //     // $obj = get_object_vars($userdata);
+    //     // $request->session()->put('idadmin', $obj['ID_ADMIN']);
+    //     if (is_null($userdata)) {
+    //         return back()->with('LoginError', 'Log In Failed');
+    //     } else {
+    //         $obj = get_object_vars($userdata);
+
+    //         if ($password == $obj['PASSWORD_ADMIN']) {
+    //             $request->session()->put('idadmin', $request->admin);
+
+    //             return view('/home', [
+    //                 'admin' => $idadmin,
+    //                 'password' => $obj
+    //             ]);
+    //         } else {
+    //             return back()->with('LoginError', 'Log In Failed');
+    //         }
+    //     }
+    // }
+
     public function authenticate(Request $request)
     {
-        // $credentials = $request->validate([
-        //     'admin' => 'required',
-        //     'password' => 'required'
-        // ]);
+        $input = $request->all();
+        $request->validate(([
+            'admin' => 'required',
+            'password' => 'required',
+        ]));
+        $data = LogInModel::where('ID_ADMIN', $request->admin)->first();
+        if ($data != null) {
+            $obj = get_object_vars($data);
 
-        // if(Auth::attempt($credentials)) {
-        //     $request->session()->regenerate();
-        //     return redirect()->intended('/home');
-        // }
-
-        // return back()->with('Log in Error', 'Login failed');
-
-        $request->validate([
-            'admin' => ['required'],
-            'password' => ['required'],
-        ]);
-        // if(Auth::attempt($adminid)){
-        //     $request->session()->regenerate();
-        //     return redirect()->intended('/home');
-        // }
-        $idadmin = $request->input('admin');
-        $password = $request->input('password');
-        $userdata = DB::table('ADMIN')->where('ID_ADMIN', $idadmin)->first();
-        dd($userdata);
-        // $obj = get_object_vars($userdata);
-        // $request->session()->put('idadmin', $obj['ID_ADMIN']);
-        if (is_null($userdata)) {
-            return back()->with('LoginError', 'Log In Failed');
-        } else {
-            $obj = get_object_vars($userdata);
-
-            if ($password == $obj['PASSWORD_ADMIN']) {
-                $request->session()->put('idadmin', $request->admin);
+            if ('password' == $obj['PASSWORD_ADMIN']) {
+                $request->session()->put('data', $request->admin);
 
                 return view('/home', [
-                    'admin' => $idadmin,
+                    'admin' => $data,
                     'password' => $obj
                 ]);
             } else {
                 return back()->with('LoginError', 'Log In Failed');
             }
+        } else {
+            return back()->with('LoginError', 'Log In Failed');
         }
     }
 
