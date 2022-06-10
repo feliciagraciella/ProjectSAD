@@ -97,15 +97,15 @@ class LogInController extends Controller
     {
         $idadmin = $req->input('admin');
         $password = $req->input('password');
-        $data = [
+        $data1 = [
             'admin' => $idadmin,
             'password' => $password
         ];
 
-        dd($data);
+        // dd($data1);
 
         $user = new LogInModel;
-        $flag_exist = $user->isExist($data);
+        $flag_exist = $user->isExist($data1);
 
 
         if ($flag_exist){

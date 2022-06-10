@@ -68,7 +68,7 @@
                 class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuLink"
                 role="button" data-mdb-toggle="dropdown" aria-expanded="false">
                 <i class="fas fa-user" style="color: black; position: fixed;">
-                    {{-- @dd($idadmin) --}}
+                    {{-- @dd($data1) --}}
                     {{-- <p style="font-family: Poppins; margin-left: 5px; float: right;"> {{ session('idadmin') }} </p> --}}
                     {{-- <a class="logout" href="/" style="color: black;">
                         <p style="font-family: Poppins; margin-left: 5px; float: right;"> A001 &nbsp&nbsp|&nbsp&nbspLog Out</p>

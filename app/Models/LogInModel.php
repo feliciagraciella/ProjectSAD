@@ -54,10 +54,10 @@ use Laravel\Sanctum\HasApiTokens;
 
 class LogInModel extends Model
 {
-    public function isExist($data)
+    public function isExist($data1)
     {
         $cmd = "SELECT count(*) is_exist " ."FROM ADMIN " . "WHERE ID_ADMIN=:admin AND PASSWORD_ADMIN=:password;";
-        $ad = DB::select($cmd,$data);
+        $ad = DB::select($cmd,$data1);
 
         if($ad[0]->is_exist == 1){
             return true;
@@ -69,5 +69,12 @@ class LogInModel extends Model
         }
         return null;
     }
+
+    // public function get_acc($admin_login){
+    //     $cmd = "SELECT * from `ADMIN` a WHERE ID_ADMIN=:'admin'";
+    //     $data1 = ['admin'=> $admin_login];
+    //     $ad = DB::select($cmd,$data1);
+    //     return $ad[0];
+    // }
 
 }
