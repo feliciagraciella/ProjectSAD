@@ -104,7 +104,7 @@
             </script>
         </div>
         <div class="profile-id">
-            <a style="padding-right: 18%; float: right; margin-top: 5px"
+            <a style="padding-right: 18%; float: right; margin-top: 6px"
                 class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuLink"
                 role="button" data-mdb-toggle="dropdown" aria-expanded="false">
                 <i class="fas fa-user" style="color: black; position: fixed;">
