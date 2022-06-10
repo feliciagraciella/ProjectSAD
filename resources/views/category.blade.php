@@ -51,7 +51,7 @@
                 <tr>
                     <th scope="col" style="font-weight: 700; text-align:center;">Category ID</th>
                     <th scope="col" style="font-weight: 700; text-align:center;">Category Name</th>
-                    <th scope="col" style="font-weight: 700; text-align:center;">Total Product</th>
+                    <th scope="col" style="font-weight: 700; text-align:center;">Total Products</th>
                 </tr>
             </thead>
 

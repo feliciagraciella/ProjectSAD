@@ -8,6 +8,7 @@ use App\Models\LogInModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 // use Session;
+use Illuminate\Support\Facades\Session;
 
 class LogInController extends Controller
 {
@@ -37,8 +38,8 @@ class LogInController extends Controller
         ]);
     }
 
-    public function authenticate(Request $request)
-    {
+    // public function authenticate(Request $request)
+    // {
         // $credentials = $request->validate([
         //     'admin' => 'required',
         //     'password' => 'required'
@@ -51,37 +52,39 @@ class LogInController extends Controller
 
         // return back()->with('Log in Error', 'Login failed');
 
-        $request->validate([
-            'admin' => ['required'],
-            'password' => ['required'],
-        ]);
-        // if(Auth::attempt($adminid)){
-        //     $request->session()->regenerate();
-        //     return redirect()->intended('/home');
-        // }
-        $idadmin = $request->input('admin');
-        $password = $request->input('password');
-        $userdata = DB::table('ADMIN')->where('ID_ADMIN', $idadmin)->first();
-        dd($userdata);
-        // $obj = get_object_vars($userdata);
-        // $request->session()->put('idadmin', $obj['ID_ADMIN']);
-        if (is_null($userdata)) {
-            return back()->with('LoginError', 'Log In Failed');
-        } else {
-            $obj = get_object_vars($userdata);
 
-            if ($password == $obj['PASSWORD_ADMIN']) {
-                $request->session()->put('idadmin', $request->admin);
 
-                return view('/home', [
-                    'admin' => $idadmin,
-                    'password' => $obj
-                ]);
-            } else {
-                return back()->with('LoginError', 'Log In Failed');
-            }
-        }
-    }
+    //     $request->validate([
+    //         'admin' => ['required'],
+    //         'password' => ['required'],
+    //     ]);
+    //     // if(Auth::attempt($adminid)){
+    //     //     $request->session()->regenerate();
+    //     //     return redirect()->intended('/home');
+    //     // }
+    //     $idadmin = $request->input('admin');
+    //     $password = $request->input('password');
+    //     $userdata = DB::table('ADMIN')->where('ID_ADMIN', $idadmin)->first();
+    //     // dd($userdata);
+    //     // $obj = get_object_vars($userdata);
+    //     // $request->session()->put('idadmin', $obj['ID_ADMIN']);
+    //     if (is_null($userdata)) {
+    //         return back()->with('LoginError', 'Log In Failed');
+    //     } else {
+    //         $obj = get_object_vars($userdata);
+
+    //         if ($password == $obj['PASSWORD_ADMIN']) {
+    //             $request->session()->put('idadmin', $request->admin);
+
+    //             return view('/home', [
+    //                 'admin' => $idadmin,
+    //                 'password' => $obj
+    //             ]);
+    //         } else {
+    //             return back()->with('LoginError', 'Log In Failed');
+    //         }
+    //     }
+    // }
 
     // public function manualLogin(){
     //     $user = LogInModel::find(1);
@@ -90,40 +93,43 @@ class LogInController extends Controller
     // }
 
 
-    // public function authentication(Request $req){
-    //     $email = $_POST['email'];
-    //     $password = $req->input('password');
-    //     $data = [
-    //         'email' => $email,
-    //         'password' => $password
-    //     ];
+    public function authentication(Request $req)
+    {
+        $idadmin = $req->input('admin');
+        $password = $req->input('password');
+        $data = [
+            'admin' => $idadmin,
+            'password' => $password
+        ];
 
-    //     $user = new SignUpModel;
-    //     $flag_exist = $user->isExist($data);
+        dd($data);
 
-
-    //     if ($flag_exist){
-    //         //2.a. Jika KETEMU, maka session LOGIN dibuat
-    //         Session::put('login', $email);
-    //         Session::put('pass', $password);
-    //         Session::flash('success', 'Anda berhasil Login!');
-    //         $req->session()->flash('authentication');
+        $user = new LogInModel;
+        $flag_exist = $user->isExist($data);
 
 
-    //         return redirect('/welcome');
+        if ($flag_exist){
+            //2.a. Jika KETEMU, maka session LOGIN dibuat
+            Session::put('login', $idadmin);
+            Session::put('pass', $password);
+            Session::flash('success', 'Anda berhasil Login!');
+            $req->session()->flash('authentication');
 
-    //     } else {
-    //         //2.b. Jika TIDKA KETEMU, maka kembali ke LOGIN dan tampilkan PESAN
-    //         Session::flash('error', 'Email atau Password tidak sesuai!');
-    //         return redirect('/sign-in');
-    //     }
 
-    // }
+            return redirect('/home');
 
-    // public function logout(Request $request){
-    //     Auth::logout();
-    //     request()->session()->invalidate();
-    //     request()->session()->regenerateToken();
-    //     return redirect('/');
-    // }
+        } else {
+            //2.b. Jika TIDKA KETEMU, maka kembali ke LOGIN dan tampilkan PESAN
+            Session::flash('error', 'Email atau Password tidak sesuai!');
+            return redirect('/');
+        }
+
+    }
+
+    public function logout(Request $request){
+        Auth::logout();
+        request()->session()->invalidate();
+        request()->session()->regenerateToken();
+        return redirect('/');
+    }
 }
