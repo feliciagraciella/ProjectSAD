@@ -8,30 +8,46 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class LogInModel extends Authenticatable
+// class LogInModel extends Authenticatable
+// {
+//     use HasApiTokens, HasFactory, Notifiable;
+
+//     /**
+//      * The attributes that are mass assignable.
+//      *
+//      * @var string[]
+//      */
+//     protected $fillable = [
+//         'admin',
+//         'password'
+//     ];
+
+//     /**
+//      * The attributes that should be hidden for serialization.
+//      *
+//      * @var array
+//      */
+//     protected $hidden = [
+//         'password',
+//         'remember_token',
+//     ];
+
+
+// }
+class LogInModel extends Model
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var string[]
-     */
-    protected $fillable = [
-        'admin',
-        'password'
-    ];
+    protected $table = "ADMIN";
+    public $primaryKey = "ID_ADMIN";
+    //Primary key nya adalah varchar
+    public $incrementing = false;
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+    //Timestamp di false
+    public $timestamps = false;
 
-    
+    // public function products() {
+    //     return $this->hasMany(ProductDetailModel::class);
+    // }
 }
 

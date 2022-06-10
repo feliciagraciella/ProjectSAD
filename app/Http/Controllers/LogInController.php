@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Models\LogInModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 // use Session;
@@ -15,11 +16,20 @@ class LogInController extends Controller
     //     $this->middleware('guest')->except('logout');
     // }
 
-    // public function id()
+    // public function getUserId(Request $request)
     // {
-    //     return 'name';
+    //     $user = Auth::user(); // Retrieve the currently authenticated user...
+    //     $id = Auth::id(); // Retrieve the currently authenticated user's ID...
+
+
+    //     $user = $request->user(); // returns an instance of the authenticated user...
+    //     $id = $request->user()->admin; // Retrieve the currently authenticated user's ID...
+
+
+    //     $user = auth()->user(); // Retrieve the currently authenticated user...
+    //     $id = auth()->id();  // Retrieve the currently authenticated user's ID...
     // }
-    //
+
     public function index()
     {
         return view('login', [
@@ -72,6 +82,13 @@ class LogInController extends Controller
             }
         }
     }
+
+    // public function manualLogin(){
+    //     $user = LogInModel::find(1);
+    //     Auth::login($user);
+    //     return redirect('/home');
+    // }
+
 
     // public function authentication(Request $req){
     //     $email = $_POST['email'];

@@ -64,9 +64,29 @@ body{
     position: relative;
     left: 303px;
     top: 184px;
-    
+
 }
 /* styling table */
 .column{
     font-weight: 800;
+}
+
+.finance-report h3 {
+    font-weight: bold;
+    font-size: larger;
+    font-family: "Poppins";
+    color: black;
+    left: 80%;
+    top: 195px;
+    position: absolute;
+}
+
+.finance-report h4{
+    font-weight: bold;
+    font-size: x-small;
+    font-family: "Poppins";
+    color: black;
+    left: 86.5%;
+    top: 200px;
+    position: absolute;
 }
