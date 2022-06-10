@@ -86,7 +86,7 @@ Route::get("/insertproduct", [CategoryController::class, "insproduct"]);
 
 Route::get("header", [LogInController::class, 'authentication']);
 // Route::get('/', [LogInController::class, 'index']);
-Route::get('/', [LogInController::class, 'authentication']);
+Route::get('/login', [LogInController::class, 'authentication']);
 
 
 // Route::get('header', [LogInController::class, 'authenticate']);

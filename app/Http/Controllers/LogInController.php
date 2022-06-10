@@ -115,7 +115,7 @@ class LogInController extends Controller
             Session::flash('success', 'Anda berhasil Login!');
             $req->session()->flash('authentication');
 
-
+            
             return redirect('/home');
 
         } else {
