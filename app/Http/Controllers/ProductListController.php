@@ -12,6 +12,7 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
 
 class ProductListController extends Controller
 {
@@ -108,6 +109,18 @@ class ProductListController extends Controller
                 $data = array("P_NAME" => $name, "STOCK" => $qty, "PRICE" => $price2, "DESCRIPTION" => $desc);
                 DB::table('PRODUCT')->where('SKU', $sku)->update($data);
                 return redirect('product')->with('success', "Update successfully");
+
+                if($request->file('image')) {
+                    // $image_path = (public_path('images/best/'). $request->oldImage);
+                    // $image_path = '/images/best/'. $request->oldImage;
+                    if($request->oldImage){
+                        File::delete($request->oldImage);
+                    }
+
+                    $file = $request->file('image');
+                    $filename = $file->getClientOriginalName();
+                    $file->move(public_path('images/best'), $filename);
+                }
                 break;
         }
     }

@@ -85,18 +85,19 @@
         <button type="submit" class="buttonins" name="action" value="edit"
             style="background-color: #dee1e6">Edit</button>
 
-            @if($post->image)
+            <input type="hidden" name="oldImage" value="{{ $product->IMAGE }}">
+            @if($product->IMAGE)
         <div class="productphoto">
-            <img class="photo" src="../images/best/{{ $product->SKU }}.jpg">
+            <img id="frame" class="photo" src="../images/best/{{ $product->SKU }}.jpg">
         </div>
-        <input class="buttonimg" type="file" id="image" name="image">
 
         @else
-        
-        <input class="buttonimg" type="file" id="formFile" name="image" onchange="preview()">
         <div class="productphoto">
             <img id="frame" src="" class="img-responsive">
         </div>
+        @endif
+
+        <input class="buttonimg" type="file" id="formFile" name="image" onchange="preview()">
     </form>
 
     <script>
