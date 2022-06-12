@@ -77,14 +77,14 @@ class TransactionListController extends Controller
 
 
         if ($qty == 0){
-            return redirect('inserttransaction')->with('error', 'Quantity must be more than 0');
+            return redirect('inserttransaction')->back()->with("error", "Quantity must be more than 0");
         }
         else if($qty > $stok[0]->STOCK){
-            return redirect('inserttransaction')->with('error', 'Quantity cannot exceed the stock quantity');
+            return redirect('inserttransaction')->back()->with("error", "Quantity cannot exceed the stock quantity");
         }
         else if($qty > 0){
             CartModel::updateCart($dd2, $dd1, $date, $id, $p, $qty);
-            return redirect('inserttransaction');
+            return redirect()->back()->with("success", "Succefully added to cart");
         }
 
 
@@ -162,7 +162,7 @@ class TransactionListController extends Controller
 
     public function deleteAll()
     {
-        DB::table('CART')->delete();
+        DB::table('CART')->where('ID_ADMIN', session('login'))->delete();
 
         return redirect('inserttransaction');
     }
