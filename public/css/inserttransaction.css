@@ -121,8 +121,10 @@ body{
 .totaltransaction {
     height: 50px;
     width: 30%;
-    transform: translateX(200%);
-    margin-top: 400px;
+    /* transform: translateX(200%); */
+    transform: translateX(305px);
+    margin-left: 40%;
+    margin-top: 420px;
     padding: 30px;
     padding-top: 15px;
 }
@@ -141,8 +143,8 @@ body{
 .totalplatfee {
     height: 50px;
     width: 30%;
-    transform: translateX(200%);
-    /* margin-top: 30px; */
+    transform: translateX(305px);
+    margin-left: 40%;
     padding: 30px;
     padding-top: 15px;
 }
@@ -179,9 +181,11 @@ body{
 }
 
 .hrhasil {
-    width: 26%;
+    width: 28%;
     color:black;
-    transform: translateX(240%);
+    /* transform: translateX(240%); */
+    transform: translateX(330px);
+    margin-left: 40%;
     /* width: 26%;
     color:black;
     left: 200px;
@@ -193,14 +197,14 @@ body{
 .totalakhir {
     height: 50px;
     width: 30%;
-    transform: translateX(200%);
-    /* margin-top: 30px; */
+    transform: translateX(305px);
+    margin-left: 40%;
     padding: 30px;
     padding-top: 15px;
 }
 
 .totalakhirr {
-    position: absolute;
+    /* position: absolute;
     right: 0;
     margin: 0;
     top: 50%;
@@ -209,16 +213,25 @@ body{
     font-family: Poppins;
     font-size:small;
     text-align: right;
+    font-weight: 700; */
+
+    float: right;
+    width: 70px;
+    font-family: Poppins;
+    font-size: medium;
     font-weight: 700;
+    margin: 0;
+    text-align: right;
+    transform: translateY(-50%);
 }
 
 .buttonbutton {
     height: 50px;
     width: 30%;
-    transform: translateX(200%);
-    /* margin-top: 30px; */
     padding: 30px;
     padding-top: 15px;
+    transform: translateX(305px);
+    margin-left: 40%;
 }
 
 .buttondelete {

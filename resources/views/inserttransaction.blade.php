@@ -98,14 +98,14 @@
             <div class="totaltransaction">
                 <h4 class="totalfee" style="width: 150px;">Total Transaction</h4>
                 <div class="inputtotaltrans">
-                    <input type="text" name="p" class="form-control btn btn-sm" style="text-transform:unset !important; width: 200px; text-align: right;" placeholder="Enter value">
+                    <input oninput="myFunction()" id="inputtrans" type="text" name="p" class="form-control btn btn-sm" style="text-transform:unset !important; width: 200px; text-align: right;" placeholder="Enter value">
                 </div>
             </div>
 
             <div class="totalplatfee">
                 <h4 class="totalfee" style="width: 150px;">Total Platform Fee</h4>
                 <div class="inputtotalfee">
-                    <input type="text" name="insertfee" class="form-control btn btn-sm" style="text-transform:unset !important; width: 200px; text-align: right;" placeholder="Enter value">
+                    <input oninput="myFunction()" id="inputfee" type="text" name="insertfee" class="form-control btn btn-sm" style="text-transform:unset !important; width: 200px; text-align: right;" placeholder="Enter value">
                 </div>
             </div>
 
@@ -113,8 +113,10 @@
 
             <div class="totalakhir">
                 <h4 class="totalfee" style="width: 150px;">Total</h4>
-                <h4 class="totalakhirr" style="width: 150px;">Rp. 500.000</h4>
+                <h4 id="total" class="totalakhirr" style="width: 150px;"></h4>
             </div>
+
+            <script type="text/javascript" src="js/inserttrans.js"></script>
 
             <div class="buttonbutton">
                 <div class="buttoninsert">
