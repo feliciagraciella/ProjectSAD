@@ -124,7 +124,7 @@ body{
     /* transform: translateX(200%); */
     transform: translateX(305px);
     margin-left: 40%;
-    margin-top: 400px;
+    margin-top: 420px;
     padding: 30px;
     padding-top: 15px;
 }
@@ -181,10 +181,10 @@ body{
 }
 
 .hrhasil {
-    width: 26%;
+    width: 28%;
     color:black;
     /* transform: translateX(240%); */
-    transform: translateX(350px);
+    transform: translateX(330px);
     margin-left: 40%;
     /* width: 26%;
     color:black;
