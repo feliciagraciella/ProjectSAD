@@ -120,36 +120,42 @@ body{
 
 .totaltransaction {
     height: 50px;
-    position: absolute;
-    top: 700px;
+    width: 30%;
+    transform: translateX(200%);
+    margin-top: 400px;
     padding: 30px;
-    width: 70%;
-    left: 305px;
-    margin-left: 50%;
-    transform: translateX(-70%);
+    padding-top: 15px;
 }
 
 .inputtotaltrans {
-    position: absolute;
-    right: 0;
-    margin: 0;
-    top: 50%;
+    float: right;
+    width: 180px;
     transform: translateY(-50%);
-    margin-right: 30px;
+    font-family: Poppins;
+    font-size: medium;
+    font-weight: 700;
+    margin: 0;
+    text-align: right;
 }
 
 .totalplatfee {
     height: 50px;
-    position: absolute;
-    top: 750px;
+    width: 30%;
+    transform: translateX(200%);
+    /* margin-top: 30px; */
     padding: 30px;
-    width: 70%;
-    left: 305px;
-    margin-left: 50%;
-    transform: translateX(-70%);
+    padding-top: 15px;
 }
 
 .totalfee {
+    float: left;
+    width: 70px;
+    font-family: Poppins;
+    font-size: smaller;
+    font-weight: 700;
+    margin: 0;
+    transform: translateY(-50%);
+/*
     position: absolute;
     right: 25%;
     width: 100px;
@@ -158,36 +164,39 @@ body{
     font-weight: 700;
     margin: 0;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%); */
 }
 
 .inputtotalfee {
-    position: absolute;
-    right: 0;
-    margin: 0;
-    top: 50%;
+    float: right;
+    width: 180px;
     transform: translateY(-50%);
-    margin-right: 30px;
+    font-family: Poppins;
+    font-size: medium;
+    font-weight: 700;
+    margin: 0;
+    text-align: right;
 }
 
 .hrhasil {
     width: 26%;
     color:black;
+    transform: translateX(240%);
+    /* width: 26%;
+    color:black;
     left: 200px;
     margin-left: 50%;
     top: 790px;
-    position:absolute;
+    position:absolute; */
 }
 
 .totalakhir {
     height: 50px;
-    position: absolute;
-    top: 810px;
+    width: 30%;
+    transform: translateX(200%);
+    /* margin-top: 30px; */
     padding: 30px;
-    width: 70%;
-    left: 305px;
-    margin-left: 50%;
-    transform: translateX(-70%);
+    padding-top: 15px;
 }
 
 .totalakhirr {
@@ -205,19 +214,16 @@ body{
 
 .buttonbutton {
     height: 50px;
-    position: absolute;
-    top: 850px;
+    width: 30%;
+    transform: translateX(200%);
+    /* margin-top: 30px; */
     padding: 30px;
-    width: 70%;
-    left: 305px;
-    margin-left: 50%;
-    transform: translateX(-70%);
-    /* padding-bottom: 110px; */
+    padding-top: 15px;
 }
 
 .buttondelete {
     position: absolute;
-    right: 15%;
+    right: 30%;
     margin-right: 30px;
     top: 50%;
     transform: translateY(-50%);
@@ -227,7 +233,7 @@ body{
 .buttoninsert {
     position: absolute;
     right: 0;
-    margin-right: 30px;
+    margin-right: 15px;
     top: 50%;
     transform: translateY(-50%);
     background-color: #FFFFFF;
