@@ -82,13 +82,6 @@ class ProductListController extends Controller
         }
     }
 
-    // public function deleteproduct(Request $request)
-    // {
-    //     $sku = $request->input('sku');
-    //     DB::table('PRODUCT')->where([['SKU', '=', $sku]])->delete();
-    //     return redirect('product')->with('success', "Delete successfully");
-    // }
-
     public function deleteOReditproduct(Request $request)
     {
         $sku = $request->input('sku');
@@ -100,26 +93,35 @@ class ProductListController extends Controller
 
         switch ($request->input('action')) {
             case 'delete':
-                $sku = $request->input('sku');
-                DB::table('PRODUCT')->where([['SKU', '=', $sku]])->delete();
-                return redirect('product')->with('success', "Delete successfully");
+
+                $filename = $request->input('sku').'.jpg';
+                $image_path = (public_path('images/best/').$filename);
+                if (File::exists($image_path)) {
+                    File::delete($image_path);
+
+                    $sku = $request->input('sku');
+                    DB::table('PRODUCT')->where([['SKU', '=', $sku]])->delete();
+                    return redirect('product')->with('success', "Delete successfully");
+                }
                 break;
 
             case 'edit':
-                $data = array("P_NAME" => $name, "STOCK" => $qty, "PRICE" => $price2, "DESCRIPTION" => $desc);
-                DB::table('PRODUCT')->where('SKU', $sku)->update($data);
-                return redirect('product')->with('success', "Update successfully");
 
-                if($request->file('image')) {
-                    // $image_path = (public_path('images/best/'). $request->oldImage);
-                    // $image_path = '/images/best/'. $request->oldImage;
-                    if($request->oldImage){
-                        File::delete($request->oldImage);
+                if ($request->file('image')) {
+                    if ($request->oldImage) {
+                        $filename = $request->oldImage;
+                        if (File::exists(public_path('images/best'), $filename)) {
+                            File::delete(public_path('images/best'), $filename);
+                        }
                     }
 
                     $file = $request->file('image');
                     $filename = $file->getClientOriginalName();
                     $file->move(public_path('images/best'), $filename);
+
+                    $data = array("P_NAME" => $name, "STOCK" => $qty, "PRICE" => $price2, "DESCRIPTION" => $desc);
+                    DB::table('PRODUCT')->where('SKU', $sku)->update($data);
+                    return redirect('product')->with('success', "Update successfully");
                 }
                 break;
         }

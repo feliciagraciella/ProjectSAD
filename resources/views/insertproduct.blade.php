@@ -83,7 +83,7 @@
         <button type="submit" class="buttonins" name="action" value="insert"
             style="background-color: #dee1e6">Insert</button>
 
-        <input class="buttonimg" type="file" id="formFile" name="image" onchange="preview()">
+        <input class="buttonimg" type="file" id="formFile" name="image" onchange="preview()" required>
         <div class="productphoto">
             <img id="frame" src="" class="img-responsive">
         </div>
