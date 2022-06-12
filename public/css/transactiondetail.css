@@ -69,15 +69,20 @@
     padding-top: 15px;
 }
 
-/* .totalakhirr {
-    margin: 0;
+.buttonbutton {
+    height: 50px;
+    width: 30%;
+    transform: translateX(200%);
+    /* margin-top: 30px; */
+    padding: 30px;
+    padding-top: 15px;
+}
+
+.buttondelete {
+    position: absolute;
+    right: 0;
+    margin-right: 15px;
     top: 50%;
     transform: translateY(-50%);
-    margin-right: 30px;
-    font-family: Poppins;
-    font-size:small;
-    text-align: right;
-    font-weight: 700;
-} */
-
-
+    background-color: #FFFFFF;
+}

@@ -12,7 +12,8 @@ class CartModel
     {
         $data = DB::table('CART')->where([
             ['DATE', '=',$date],
-            ['PLATFORM', '=', $dd1]
+            ['PLATFORM', '=', $dd1],
+            ['ID_ADMIN', session('login')]
             ])->get();
         $check = false;
         foreach ($data as $d) {
@@ -28,6 +29,7 @@ class CartModel
             ];
             DB::table('CART')->insert([
                 'ID_TRANSACTION' => $id,
+                'ID_ADMIN' => session('login'),
                 'DATE' => $date,
                 'PLATFORM' => $dd1,
                 'SKU' => $dd2,
@@ -44,7 +46,8 @@ class CartModel
             ->where([
                 ['SKU', '=', $dd2],
                 ['DATE', '=',$date],
-                ['PLATFORM', '=', $dd1]
+                ['PLATFORM', '=', $dd1],
+                ['ID_ADMIN', session('login')]
                 ])
             ->update(['QTY_PRODUCT' => $d -> QTY_PRODUCT]);
 

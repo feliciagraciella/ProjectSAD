@@ -126,6 +126,7 @@ Route::post('inserttrans', [TransactionListController::class, 'addCart']);
 Route::post('insertt', [TransactionListController::class, 'insertTrans']);
 Route::post('deleteall', [TransactionListController::class, 'deleteAll']);
 Route::post('deletecart', [TransactionListController::class, 'deleteCart']);
+Route::post('deletetrans', [TransactionListController::class, 'deletetrans']);
 
 Route::prefix("/transactiondetail")->group(function (){
     Route::get("/{id}", [TransactionListController::class, "details"]);
