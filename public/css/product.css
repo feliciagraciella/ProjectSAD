@@ -52,3 +52,7 @@ body{
     top: 165px;
     z-index: 99;
 }
+
+a:link, a:visited {
+    color: black;
+  }

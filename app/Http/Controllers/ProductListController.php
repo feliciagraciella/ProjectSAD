@@ -49,10 +49,6 @@ class ProductListController extends Controller
 
     public function insert(Request $request)
     {
-        // return $request->file('image')->store('post-images');
-
-        $sku = $request->input('sku');
-        $skuimage = $request->input('sku') . '.jpg';
         $name = $request->input('name');
         $cat = $request->input('cat');
         $price = $request->input('price');
@@ -60,18 +56,24 @@ class ProductListController extends Controller
         $size = $request->input('size');
         $desc = $request->input('desc');
 
+        //SKU GENERATE
+        $skuu = $cat.$size;
+        $carisku = DB::table('PRODUCT')->where('SKU','LIKE','%'.$skuu.'%')->get();
+        $hitung = $carisku->count();
+        $lpad = str_pad($hitung+1,3,'0',STR_PAD_LEFT);
+        $skugen = $skuu.$lpad;
+        
+        $skuimage = $skugen.'.jpg';
 
         switch ($request->input('action')) {
             case 'insert':
                 if ($request->file('image')) {
-                    // $request->file('image')->store('images');
-
                     $file = $request->file('image');
-                    $filename = $file->getClientOriginalName();
+                    $filename = $file->storeAs('', $skuimage);
                     $file->move(public_path('images/best'), $filename);
                 }
 
-                $data = array('SKU' => $sku, "P_NAME" => $name, "ID_CATEGORY" => $cat, "PRICE" => $price, "STOCK" => $qty, "SIZE" => $size, "DESCRIPTION" => $desc, "IMAGE" => $skuimage, "STATUS_DELETE" => '0');
+                $data = array('SKU' => $skugen, "P_NAME" => $name, "ID_CATEGORY" => $cat, "PRICE" => $price, "STOCK" => $qty, "SIZE" => $size, "DESCRIPTION" => $desc, "IMAGE" => $skuimage, "STATUS_DELETE" => '0');
                 DB::table('PRODUCT')->insert($data);
                 return redirect('product')->with('success', "Insert successfully");
                 break;

@@ -28,7 +28,7 @@
         <div class="baris1">SKU</div>
         <div class="boxsku">
             <input type="text" id="sku" name="sku" class="form-control btn btn-sm"
-                style="text-transform:unset !important; width: 310px; text-align: center;">
+                style="text-transform:unset !important; width: 310px; text-align: center;" readonly>
         </div>
 
         <div class="baris2">Name</div>
@@ -78,7 +78,7 @@
                 style="text-transform:unset !important; width: 310px; height: 70px; text-align: left; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"></textarea>
         </div>
 
-        <button type="submit" class="buttondel" name="action" value="delete"
+        <button type="reset" class="buttondel" name="action" value="Reset"
             style="background-color: #f7f7f7">Delete All</button>
         <button type="submit" class="buttonins" name="action" value="insert"
             style="background-color: #dee1e6">Insert</button>
