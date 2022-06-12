@@ -159,7 +159,7 @@
         yAxis: {
             min: 0,
             title: {
-                text: '(pcs)'
+                text: 'Total Sold (pcs)'
             }
         },
         tooltip: {
@@ -177,8 +177,9 @@
             }
         },
         series: [{
-            name: "Total Sold",
-            data: {!!json_encode($jumlahproduk)!!}
+            name: {!!json_encode($platform)!!},
+            data: {!!json_encode($jumlahproduk)!!},
+            color: {!!json_encode($color)!!}
         }]
     });
 </script>

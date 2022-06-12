@@ -28,7 +28,7 @@
         <div class="baris1">SKU</div>
         <div class="boxsku">
             <input type="text" id="sku" name="sku" value="{{ $product->SKU }}" class="form-control btn btn-sm"
-                placeholder="SKU" style="text-transform:unset !important; width: 310px; text-align: center;">
+                placeholder="SKU" style="text-transform:unset !important; width: 310px; text-align: center;" readonly>
         </div>
 
         <div class="baris2">Name</div>
@@ -41,7 +41,7 @@
         <div class="boxcat">
             <select class="dropdowncat" id="cat" name="cat" value="{{ $product->ID_CATEGORY }}"
                 style="text-transform:unset !important; width: 310px; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled="disabled">
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled="true">
                 @foreach ($cat as $c)
                     <option value="{{ $c->C_NAME }}">{{ $c->C_NAME }}</option>
                 @endforeach
@@ -65,7 +65,7 @@
         <div class="boxsize">
             <select class="dropdownsize" id="size" name="size" value="{{ $product->SIZE }}"
                 style="text-transform:unset !important; width: 310px; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled="disabled">
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled="true">
                 @foreach ($size as $s)
                     <option value="{{ $s->SIZE }}">{{ $s->SIZE }} ml</option>
                 @endforeach
@@ -85,18 +85,19 @@
         <button type="submit" class="buttonins" name="action" value="edit"
             style="background-color: #dee1e6">Edit</button>
 
-            @if($post->image)
+            <input type="hidden" name="oldImage" value="{{ $product->IMAGE }}">
+            @if($product->IMAGE)
         <div class="productphoto">
-            <img class="photo" src="../images/best/{{ $product->SKU }}.jpg">
+            <img id="frame" class="photo" src="../images/best/{{ $product->SKU }}.jpg" value="{{ $product->IMAGE }}" name="image1">
         </div>
-        <input class="buttonimg" type="file" id="image" name="image">
 
         @else
-        
-        <input class="buttonimg" type="file" id="formFile" name="image" onchange="preview()">
         <div class="productphoto">
             <img id="frame" src="" class="img-responsive">
         </div>
+        @endif
+
+        <input class="buttonimg" type="file" id="formFile" name="image" onchange="preview()">
     </form>
 
     <script>

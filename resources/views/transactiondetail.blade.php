@@ -66,11 +66,14 @@
         <h4 class="inputtotaltrans" style="width: 150px;">Rp. {{$trans[0] -> NET_PRICE}}</h4>
     </div>
 
-    <div class="buttondelete">
-        <form method="POST" onclick="return confirm('Are you sure?')" action="/deletetrans">
-            @csrf
-            <button type="submit" name="insertfee" class="btn btn-outline-secondary btn-sm" style="text-transform: unset !important; width: 120px; ">Delete All</button>
-        </form>
+    <div class="buttonbutton">
+        <div class="buttondelete">
+            <form method="POST" onclick="return confirm('Are you sure?')" action="/deletetrans">
+            {{-- <form method="POST" action="/deleteall"> --}}
+                @csrf
+                <button type="submit" name="insertfee" class="btn btn-outline-secondary btn-sm" style="text-transform: unset !important; width: 170px; ">Delete Transaction</button>
+            </form>
+        </div>
     </div>
 
 </body>

@@ -33,7 +33,9 @@ class ReportController extends Controller
             "reportsub" => "All Period on All Platform",
             "namaproduk" => $namaproduk,
             "jumlahproduk" => $jumlahproduk,
-            "totalsold" => $totalsold[0]->SUM
+            "totalsold" => $totalsold[0]->SUM,
+            "platform" => "All",
+            "color" => "#4B5D67"
         ]);
 
     }
@@ -51,14 +53,14 @@ class ReportController extends Controller
                 $data = DB::select("select * from product_all_all");
                 $totalsold = DB::table('product_all_all')->select(DB::raw('SUM(TOTAL_SOLD) as `SUM`'))->get();
                 $income = DB::select("select fNetProfit() as `NetProfit`");
-
+                $color = "#4B5D67";
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
             elseif($platform == "All" && $period == "Last 7 Days"){
                 $data = DB::select("select * from product_all_seven");
                 $totalsold = DB::table('product_all_seven')->select(DB::raw('SUM(TOTAL_SOLD) as `SUM`'))->get();
                 $income = DB::select("select fNetProfit() as `NetProfit`");
-
+                $color = "#4B5D67";
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
                 // dd($data);
             }
@@ -66,49 +68,49 @@ class ReportController extends Controller
                 $data = DB::select("select * from product_all_thirty");
                 $totalsold = DB::table('product_all_thirty')->select(DB::raw('SUM(TOTAL_SOLD) as `SUM`'))->get();
                 $income = DB::select("select fNetProfit() as `NetProfit`");
-
+                $color = "#4B5D67";
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
             elseif($platform == "Shopee" && $period == "All"){
                 $data = DB::select("select * from product_shopee_all");
                 $totalsold = DB::table('product_shopee_all')->select(DB::raw('SUM(TOTAL_SOLD) as `SUM`'))->get();
                 $income = DB::select("select fNetProfit() as `NetProfit`");
-
+                $color = "#F15412";
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
             elseif($platform == "Shopee" && $period == "Last 7 Days"){
                 $data = DB::select("select * from product_shopee_seven");
                 $totalsold = DB::table('product_shopee_seven')->select(DB::raw('SUM(TOTAL_SOLD) as `SUM`'))->get();
                 $income = DB::select("select fNetProfit() as `NetProfit`");
-
+                $color = "#F15412";
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
             elseif($platform == "Shopee" && $period == "Last 30 Days"){
                 $data = DB::select("select * from product_shopee_thirty");
                 $totalsold = DB::table('product_shopee_thirty')->select(DB::raw('SUM(TOTAL_SOLD) as `SUM`'))->get();
                 $income = DB::select("select fNetProfit() as `NetProfit`");
-
+                $color = "#F15412";
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
             elseif($platform == "Tokopedia" && $period == "All"){
                 $data = DB::select("select * from product_tokopedia_all");
                 $totalsold = DB::table('product_tokopedia_all')->select(DB::raw('SUM(TOTAL_SOLD) as `SUM`'))->get();
                 $income = DB::select("select fNetProfit() as `NetProfit`");
-
+                $color = "#5FD068";
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
             elseif($platform == "Tokopedia" && $period == "Last 7 Days"){
                 $data = DB::select("select * from product_tokopedia_seven");
                 $totalsold = DB::table('product_tokopedia_seven')->select(DB::raw('SUM(TOTAL_SOLD) as `SUM`'))->get();
                 $income = DB::select("select fNetProfit() as `NetProfit`");
-
+                $color = "#5FD068";
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
             elseif($platform == "Tokopedia" && $period == "Last 30 Days"){
                 $data = DB::select("select * from product_tokopedia_thirty");
                 $totalsold = DB::table('product_tokopedia_thirty')->select(DB::raw('SUM(TOTAL_SOLD) as `SUM`'))->get();
                 $income = DB::select("select fNetProfit() as `NetProfit`");
-
+                $color = "#5FD068";
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
             // dd($report);
@@ -126,96 +128,149 @@ class ReportController extends Controller
                 "reportsub" => $reportsub,
                 "namaproduk" => $namaproduk,
                 "jumlahproduk" => $jumlahproduk,
-                "totalsold" => $totalsold[0]->SUM
+                "totalsold" => $totalsold[0]->SUM,
+                "color" => $color,
+                "platform" => $platform
             ]);
         }
 
+        #data1 = tabel, data2 = garis 1, data3 = garis 2
         if($report == "Finance"){
             if($platform == "All" && $period == "All"){
-                $data = DB::select("select * from finance_all_all");
-
+                $data1 = DB::select("select * from finance_all_all");
+                $data2 = DB::select("select * from finance_shopee_all");
+                $data3 = DB::select("select * from finance_tokopedia_all");
                 $income = DB::select("select fNetProfit() as `NetProfit`");
-
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
+                $color1 = "#F15412";
+                $color2 = "#5FD068";
+                $platform1 = "Shopee";
+                $platform2 = "Tokopedia";
             }
             elseif($platform == "All" && $period == "Last 7 Days"){
-                $data = DB::select("select * from finance_all_seven");
-
+                $data1 = DB::select("select * from finance_all_seven");
+                $data2 = DB::select("select * from finance_shopee_seven");
+                $data3 = DB::select("select * from finance_tokopedia_seven");
                 $income = DB::select("select fNetProfit() as `NetProfit`");
-
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
-                // dd($data);
+                $color1 = "#F15412";
+                $color2 = "#5FD068";
+                $platform1 = "Shopee";
+                $platform2 = "Tokopedia";
             }
             elseif($platform == "All" && $period == "Last 30 Days"){
-                $data = DB::select("select * from finance_all_thirty");
-
+                $data1 = DB::select("select * from finance_all_thirty");
+                $data2 = DB::select("select * from finance_shopee_thirty");
+                $data3 = DB::select("select * from finance_tokopedia_thirty");
                 $income = DB::select("select fNetProfit() as `NetProfit`");
-
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
+                $color1 = "#F15412";
+                $color2 = "#5FD068";
+                $platform1 = "Shopee";
+                $platform2 = "Tokopedia";
             }
             elseif($platform == "Shopee" && $period == "All"){
-                $data = DB::select("select * from finance_shopee_all");
-
+                $data1 = DB::select("select * from finance_shopee_all");
+                $data2 = $data1;
+                $data3 = $data1;
                 $income = DB::select("select fNetProfit() as `NetProfit`");
-
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
+                $color1 = "#F15412";
+                $color2 = "#FFFFFF";
+                $platform1 = "Shopee";
+                $platform2 = "";
             }
             elseif($platform == "Shopee" && $period == "Last 7 Days"){
-                $data = DB::select("select * from finance_shopee_seven");
-
+                $data1 = DB::select("select * from finance_shopee_seven");
+                $data2 = $data1;
+                $data3 = $data1;
                 $income = DB::select("select fNetProfit() as `NetProfit`");
-
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
+                $color1 = "#F15412";
+                $color2 = "#FFFFFF";
+                $platform1 = "Shopee";
+                $platform2 = "";
             }
             elseif($platform == "Shopee" && $period == "Last 30 Days"){
-                $data = DB::select("select * from finance_shopee_thirty");
-
+                $data1 = DB::select("select * from finance_shopee_thirty");
+                $data2 = $data1;
+                $data3 = $data1;
                 $income = DB::select("select fNetProfit() as `NetProfit`");
-
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
+                $color1 = "#F15412";
+                $color2 = "#FFFFFF";
+                $platform1 = "Shopee";
+                $platform2 = "";
             }
             elseif($platform == "Tokopedia" && $period == "All"){
-                $data = DB::select("select * from finance_tokopedia_all");
-
+                $data1 = DB::select("select * from finance_tokopedia_all");
+                $data2 = $data1;
+                $data3 = $data1;
                 $income = DB::select("select fNetProfit() as `NetProfit`");
-
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
+                $color1 = "#5FD068";
+                $color2 = "#FFFFFF";
+                $platform1 = "Tokopedia";
+                $platform2 = "";
             }
             elseif($platform == "Tokopedia" && $period == "Last 7 Days"){
-                $data = DB::select("select * from finance_tokopedia_seven");
-
+                $data1 = DB::select("select * from finance_tokopedia_seven");
+                $data2 = $data1;
+                $data3 = $data1;
                 $income = DB::select("select fNetProfit() as `NetProfit`");
-
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
+                $color1 = "#5FD068";
+                $color2 = "#FFFFFF";
+                $platform1 = "Tokopedia";
+                $platform2 = "";
             }
             elseif($platform == "Tokopedia" && $period == "Last 30 Days"){
-                $data = DB::select("select * from finance_tokopedia_thirty");
-
+                $data1 = DB::select("select * from finance_tokopedia_thirty");
+                $data2 = $data1;
+                $data3 = $data1;
                 $income = DB::select("select fNetProfit() as `NetProfit`");
-
                 $admin = DB::select("select fAdminFee() as `AdminFee`");
+                $color1 = "#5FD068";
+                $color2 = "#FFFFFF";
+                $platform1 = "Tokopedia";
+                $platform2 = "";
             }
 
-            foreach($data as $d){
-                $tanggal[] = $d->DATE_TRANSACTION;
-                $intprofit[] = (int)$d->INT_NET_PROFIT;
+            // masukin data 2 ke garis 1
+            foreach($data2 as $d){
+                $intprofit1[] = (int)$d->INT_NET_PROFIT;
             }
-            // dd($profit, $tanggal);
+            foreach($data1 as $d){
+                $tanggal1[] = $d->DATE_TRANSACTION;
+            }
 
-            $var1 = ",{name:";
-            $var2 = ",data:";
-            $var3 = "}";
+            if($platform == "All"){
+                foreach($data3 as $d){
+                    // masukin data 3 ke garis 2
+                    $intprofit2[] = (int)$d->INT_NET_PROFIT;
+                }
+            }
+            else{
+                foreach($data3 as $d){
+                    $intprofit2[] = "";
+                }
+            }
+            // dd($tanggal1);
             return view("report2", [
-                "data" => $data,
+                "data1" => $data1,
+                "data2" => $data2,
+                "data3" => $data3,
                 "income" => $income[0]->NetProfit,
                 "admin" => $admin[0]->AdminFee,
                 "reportname" => $reportname,
                 "reportsub" => $reportsub,
-                "tanggal" => $tanggal,
-                "intprofit" => $intprofit,
-                "var1" => $var1,
-                "var2" => $var2,
-                "var3" => $var3
+                "tanggal1" => $tanggal1,
+                "intprofit1" => $intprofit1,
+                "intprofit2" => $intprofit2,
+                "platform1" => $platform1,
+                "platform2" => $platform2,
+                "color1" => $color1,
+                "color2" => $color2
             ]);
         }
 

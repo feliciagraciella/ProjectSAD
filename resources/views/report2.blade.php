@@ -86,9 +86,9 @@
             Rp{{$admin}}
         </div>
     </div>
-    <div class="subtitle-report">
+    {{-- <div class="subtitle-report">
         {{$reportname}}
-    </div>
+    </div> --}}
     <table class="table table-hover" style="width: 70%; position: absolute; left: 320px; top: 624px;">
         <thead>
             <tr>
@@ -99,7 +99,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($data as $d)
+            @foreach ($data1 as $d)
             <tr>
                 <th scope="row" style="text-align:left;">{{$d->PLATFORM}}</th>
                 <td style="text-align:center;">{{$d->DATE_TRANSACTION}}</td>
@@ -130,7 +130,7 @@
             },
 
             xAxis: {
-                categories: {!!json_encode($tanggal)!!},
+                categories: {!!json_encode($tanggal1)!!},
                 crosshair: true
             },
 
@@ -148,8 +148,15 @@
                 }
             },
             series: [{
-                    name: {!!json_encode($tanggal)!!},
-                    data: {!!json_encode($intprofit)!!}
+                    name: {!!json_encode($platform1)!!},
+                    data: {!!json_encode($intprofit1)!!},
+                    color: {!!json_encode($color1)!!},
+
+            },
+            {
+                    name: {!!json_encode($platform2)!!},
+                    data: {!!json_encode($intprofit2)!!},
+                    color: {!!json_encode($color2)!!},
 
             }],
             responsive: {

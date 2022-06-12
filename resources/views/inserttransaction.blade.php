@@ -65,7 +65,7 @@
     <form method="POST" action="/deletecart">
         @csrf
             <div class="table">
-                <table class="table" style="width: 70%; position: absolute; left: 320px; top: 380px; overflow-y:scroll;">
+                <table class="table" style="width: 70%; transform:translateY(380px); margin-left: 320px; overflow-y:scroll;">
                     <thead>
                     <tr>
                         <th scope="col" style="font-weight: 700; text-align:left;">Transaction ID</th>
@@ -82,7 +82,7 @@
                                 <td style="font-weight: 600; text-align:left;">{{$c -> ID_TRANSACTION}}</td>
                                 <td style="font-weight: 600; text-align:left;">{{$c -> DATE}}</td>
                                 <td style="font-weight: 600; text-align:left;">{{$c -> PLATFORM}}</td>
-                                <td style="font-weight: 600; text-align:left;">{{$c -> SKU}}</td>
+                                <td style="font-weight: 600; text-align:left;">{{$c -> NAME}}</td>
                                 <td style="font-weight: 600; text-align:left;">{{$c -> QTY_PRODUCT}}</td>
                                 <td style="font-weight: 600; text-align:left; width: 10%;"><button name="deletecart" value="{{ $c->SKU }}" type="submit" style="text-align:center; margin-right:30px;" class="close">&#10005;</button></td>
                                 {{-- <td style="font-weight: 600; text-align:left; width: 10%;"><span onclick="myform.submit()" style="text-align:center; margin-right:30px;" class="close">&#10005;</span></td> --}}
@@ -93,19 +93,19 @@
             </div>
     </form>
 
-    <form method="POST" onclick="return confirm('Are you sure?')" action="/insertt">
+    <form method="POST" action="/insertt">
         @csrf
             <div class="totaltransaction">
                 <h4 class="totalfee" style="width: 150px;">Total Transaction</h4>
                 <div class="inputtotaltrans">
-                    <input type="text" name="p" class="form-control btn btn-sm" style="text-transform:unset !important; width: 200px; text-align: right;" placeholder="Enter value">
+                    <input oninput="myFunction()" id="inputtrans" type="text" name="p" class="form-control btn btn-sm" style="text-transform:unset !important; width: 200px; text-align: right;" placeholder="Enter value">
                 </div>
             </div>
 
             <div class="totalplatfee">
                 <h4 class="totalfee" style="width: 150px;">Total Platform Fee</h4>
                 <div class="inputtotalfee">
-                    <input type="text" name="insertfee" class="form-control btn btn-sm" style="text-transform:unset !important; width: 200px; text-align: right;" placeholder="Enter value">
+                    <input oninput="myFunction()" id="inputfee" type="text" name="insertfee" class="form-control btn btn-sm" style="text-transform:unset !important; width: 200px; text-align: right;" placeholder="Enter value">
                 </div>
             </div>
 
@@ -113,8 +113,10 @@
 
             <div class="totalakhir">
                 <h4 class="totalfee" style="width: 150px;">Total</h4>
-                <h4 class="totalakhirr" style="width: 150px;">Rp. 500.000</h4>
+                <h4 id="total" class="totalakhirr" style="width: 150px;"></h4>
             </div>
+
+            <script type="text/javascript" src="js/inserttrans.js"></script>
 
             <div class="buttonbutton">
                 <div class="buttoninsert">

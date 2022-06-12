@@ -12,6 +12,7 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
 
 class ProductListController extends Controller
 {
@@ -48,10 +49,6 @@ class ProductListController extends Controller
 
     public function insert(Request $request)
     {
-        // return $request->file('image')->store('post-images');
-
-        $sku = $request->input('sku');
-        $skuimage = $request->input('sku') . '.jpg';
         $name = $request->input('name');
         $cat = $request->input('cat');
         $price = $request->input('price');
@@ -59,18 +56,24 @@ class ProductListController extends Controller
         $size = $request->input('size');
         $desc = $request->input('desc');
 
+        //SKU GENERATE
+        $skuu = $cat.$size;
+        $carisku = DB::table('PRODUCT')->where('SKU','LIKE','%'.$skuu.'%')->get();
+        $hitung = $carisku->count();
+        $lpad = str_pad($hitung+1,3,'0',STR_PAD_LEFT);
+        $skugen = $skuu.$lpad;
+        
+        $skuimage = $skugen.'.jpg';
 
         switch ($request->input('action')) {
             case 'insert':
                 if ($request->file('image')) {
-                    // $request->file('image')->store('images');
-
                     $file = $request->file('image');
-                    $filename = $file->getClientOriginalName();
+                    $filename = $file->storeAs('', $skuimage);
                     $file->move(public_path('images/best'), $filename);
                 }
 
-                $data = array('SKU' => $sku, "P_NAME" => $name, "ID_CATEGORY" => $cat, "PRICE" => $price, "STOCK" => $qty, "SIZE" => $size, "DESCRIPTION" => $desc, "IMAGE" => $skuimage, "STATUS_DELETE" => '0');
+                $data = array('SKU' => $skugen, "P_NAME" => $name, "ID_CATEGORY" => $cat, "PRICE" => $price, "STOCK" => $qty, "SIZE" => $size, "DESCRIPTION" => $desc, "IMAGE" => $skuimage, "STATUS_DELETE" => '0');
                 DB::table('PRODUCT')->insert($data);
                 return redirect('product')->with('success', "Insert successfully");
                 break;
@@ -80,13 +83,6 @@ class ProductListController extends Controller
                 break;
         }
     }
-
-    // public function deleteproduct(Request $request)
-    // {
-    //     $sku = $request->input('sku');
-    //     DB::table('PRODUCT')->where([['SKU', '=', $sku]])->delete();
-    //     return redirect('product')->with('success', "Delete successfully");
-    // }
 
     public function deleteOReditproduct(Request $request)
     {
@@ -99,15 +95,36 @@ class ProductListController extends Controller
 
         switch ($request->input('action')) {
             case 'delete':
-                $sku = $request->input('sku');
-                DB::table('PRODUCT')->where([['SKU', '=', $sku]])->delete();
-                return redirect('product')->with('success', "Delete successfully");
+
+                $filename = $request->input('sku').'.jpg';
+                $image_path = (public_path('images/best/').$filename);
+                if (File::exists($image_path)) {
+                    File::delete($image_path);
+
+                    $sku = $request->input('sku');
+                    DB::table('PRODUCT')->where([['SKU', '=', $sku]])->delete();
+                    return redirect('product')->with('success', "Delete successfully");
+                }
                 break;
 
             case 'edit':
-                $data = array("P_NAME" => $name, "STOCK" => $qty, "PRICE" => $price2, "DESCRIPTION" => $desc);
-                DB::table('PRODUCT')->where('SKU', $sku)->update($data);
-                return redirect('product')->with('success', "Update successfully");
+
+                if ($request->file('image')) {
+                    if ($request->oldImage) {
+                        $filename = $request->oldImage;
+                        if (File::exists(public_path('images/best'), $filename)) {
+                            File::delete(public_path('images/best'), $filename);
+                        }
+                    }
+
+                    $file = $request->file('image');
+                    $filename = $file->getClientOriginalName();
+                    $file->move(public_path('images/best'), $filename);
+
+                    $data = array("P_NAME" => $name, "STOCK" => $qty, "PRICE" => $price2, "DESCRIPTION" => $desc);
+                    DB::table('PRODUCT')->where('SKU', $sku)->update($data);
+                    return redirect('product')->with('success', "Update successfully");
+                }
                 break;
         }
     }

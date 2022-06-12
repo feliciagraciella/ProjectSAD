@@ -10,6 +10,7 @@ use Illuminate\Cache\RedisTaggedCache;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 use PDO;
 
 class TransactionListController extends Controller
@@ -30,6 +31,7 @@ class TransactionListController extends Controller
 
         $trans = TransactionListModel::where('ID_TRANSACTION', $id)->get();
 
+        Session::put('idtransdet', $id);
 
         return view("transactiondetail", [
             "transdet" => $transdet,
@@ -71,8 +73,20 @@ class TransactionListController extends Controller
 
         $p = DB::table('PRODUCT')->where('SKU', $dd2);
 
+        $stok = DB::table('PRODUCT')->select('STOCK')->where('SKU', $dd2)->get();
 
-        CartModel::updateCart($dd2, $dd1, $date, $id, $p, $qty);
+
+        if ($qty == 0){
+            return redirect('inserttransaction')->back()->with("error", "Quantity must be more than 0");
+        }
+        else if($qty > $stok[0]->STOCK){
+            return redirect('inserttransaction')->back()->with("error", "Quantity cannot exceed the stock quantity");
+        }
+        else if($qty > 0){
+            CartModel::updateCart($dd2, $dd1, $date, $id, $p, $qty);
+            return redirect()->back()->with("success", "Succefully added to cart");
+        }
+
 
 
         // DB::table('CART')->insert([
@@ -92,6 +106,11 @@ class TransactionListController extends Controller
 
     public function insertTrans(Request $req)
     {
+        $validatedData = $req->validate([
+            'p' => ['required', 'numeric'],
+            'insertfee' => ['required', 'numeric'],
+        ]);
+
         $trans = DB::table('CART')->select('ID_TRANSACTION', 'DATE', 'PLATFORM')->groupBy('ID_TRANSACTION', 'DATE', 'PLATFORM')->limit(1)->get();
 
         $totalqty = DB::table('CART')->select(DB::raw('SUM(QTY_PRODUCT) as `SUM`'))->get();
@@ -106,7 +125,7 @@ class TransactionListController extends Controller
         // dd($transdet[0]->SKU);
         TransactionListModel::insert([
             'DATE_TRANSACTION' => $trans[0]->DATE,
-            'ID_ADMIN' => 'A001',
+            'ID_ADMIN' => session('login'),
             'ID_TRANSACTION' => $trans[0]->ID_TRANSACTION,
             'NET_PRICE' => $totalprice - $totalfee,
             'PLATFORM' => $trans[0]->PLATFORM,
@@ -143,7 +162,7 @@ class TransactionListController extends Controller
 
     public function deleteAll()
     {
-        DB::table('CART')->delete();
+        DB::table('CART')->where('ID_ADMIN', session('login'))->delete();
 
         return redirect('inserttransaction');
     }
@@ -151,7 +170,8 @@ class TransactionListController extends Controller
     public function dropdownproduct()
     {
         $product = ProductListModel::select(DB::raw("CONCAT(P_NAME, ' ', SIZE, 'mL') AS NAME"), 'SKU')->get();
-        $cart = DB::table('CART')->get();
+        $cart = DB::table('CART')->join('PRODUCT', 'CART.SKU', '=', 'PRODUCT.SKU')
+        ->select('CART.ID_TRANSACTION', 'CART.DATE', 'CART.PLATFORM', 'CART.QTY_PRODUCT', 'CART.SKU', DB::raw("CONCAT(P_NAME, ' ', SIZE, 'mL') AS NAME"))->where('ID_ADMIN', session('login'))->get();
         // $platform = DB::table('CART')->select('PLATFORM')->limit(1)->get();
 
         if(count($cart)!=0){
@@ -179,7 +199,16 @@ class TransactionListController extends Controller
 
         // $cart = DB::table('CART')->where('SKU', $id)->get();
 
-        DB::table('CART')->where('SKU', $id)->delete();
+        DB::table('CART')->where('SKU', $id)->where('ID_ADMIN', session('login'))->delete();
+
+        return redirect('inserttransaction');
+    }
+
+    public function deletetrans(Request $request)
+    {
+        dd(session('idtransdet'));
+        DB::table('TRANSACTION')->where('ID_TRANSACTION', )->delete();
+        DB::table('DETAIL_TRANSACTION')->where('ID_TRANSACTION', )->delete();
 
         return redirect('inserttransaction');
     }
