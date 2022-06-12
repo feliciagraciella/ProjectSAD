@@ -68,26 +68,12 @@
                 class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuLink"
                 role="button" data-mdb-toggle="dropdown" aria-expanded="false">
                 <i class="fas fa-user" style="color: black; position: fixed;">
-                    {{-- @dd($data1) --}}
-                    {{-- <p style="font-family: Poppins; margin-left: 5px; float: right;"> {{ session('idadmin') }} </p> --}}
-                    {{-- <a class="logout" href="/" style="color: black;">
-                        <p style="font-family: Poppins; margin-left: 5px; float: right;"> A001 &nbsp&nbsp|&nbsp&nbspLog Out</p>
-                    </a> --}}
                     <a class="logout" href="/" style="color: black;">
                         <p style="font-family: Poppins; margin-left: 5px; float: right;"> {{ session('login') }}
                             &nbsp&nbsp|&nbsp&nbspLog Out</p>
                     </a>
-                    {{-- <a class="logout" href="/" method="POST" style="color: black;">
-                        <p style="font-family: Poppins; margin-left: 5px; float: right;"> {{ auth()->user()->name }} &nbsp&nbsp|&nbsp&nbspLog Out</p>
-                    </a> --}}
                 </i>
             </a>
-            {{-- <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink"
-                style="position: fixed; float: right;">
-                <li>
-                    <a style="text-align: left; color: black; " class="dropdown-item" href="/login">Log Out</a>
-                </li>
-            </ul> --}}
 
         </div>
         <hr class="topbar-hr">

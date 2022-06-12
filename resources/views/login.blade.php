@@ -28,14 +28,14 @@
 
 
 <body style="background-color: #e5e5e5">
-    @if (session()->has('LoginError'))
+    {{-- @if (session()->has('LoginError'))
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
             {{ session('LoginError') }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close">
 
             </button>
         </div>
-    @endif
+    @endif --}}
     <div class="rectangle">
         <div class="column">
             <div class="text-signin">
@@ -52,14 +52,6 @@
                                 <input type="text" name="admin" class="@error('admin') is-invalid @enderror" autofocus
                                     required placeholder="Admin ID" />
                                 @error('admin')
-                                    {{-- <input type="text" name="admin" class="form-control @error('name') is-invalid @enderror"
-                                    value="{{ old('name') }}" required autocomplete="name" autofocus
-                                    placeholder="Admin ID" />
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror --}}
                                     <div class="invalid-feedback" style="padding-bottom : 10px">
                                         {{ $message }}
                                     </div>

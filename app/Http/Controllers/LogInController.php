@@ -112,15 +112,15 @@ class LogInController extends Controller
             //2.a. Jika KETEMU, maka session LOGIN dibuat
             Session::put('login', $idadmin);
             Session::put('pass', $password);
-            Session::flash('success', 'Anda berhasil Login!');
+            Session::flash('success', 'Log In SUccesful!');
             $req->session()->flash('authentication');
 
-            
+
             return redirect('/home');
 
         } else {
             //2.b. Jika TIDKA KETEMU, maka kembali ke LOGIN dan tampilkan PESAN
-            Session::flash('error', 'Email atau Password tidak sesuai!');
+            Session::flash('error', 'Log In Failed!');
             return redirect('/');
         }
 

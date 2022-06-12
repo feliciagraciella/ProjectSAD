@@ -50,7 +50,7 @@
             <thead>
                 <tr>
                     <th scope="col" style="font-weight: 700; text-align:left;"> Photo</th>
-                    <th scope="col" style="font-weight: 700; text-align:left;">SKU Product</th>
+                    <th scope="col" style="font-weight: 700; text-align:left;">SKU</th>
                     <th scope="col" style="font-weight: 700; text-align:left;">Category</th>
                     <th scope="col" style="font-weight: 700; text-align:left;">Product Name</th>
                     <th scope="col" style="font-weight: 700; text-align:left;">Qty</th>
