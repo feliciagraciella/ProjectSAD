@@ -162,6 +162,8 @@ class TransactionListController extends Controller
 
     public function deleteAll()
     {
+        $cartt=DB::table('CART')->where('ID_ADMIN', session('login'))->get();
+        // dd($cartt);
         DB::table('CART')->where('ID_ADMIN', session('login'))->delete();
 
         return redirect('inserttransaction');
@@ -179,17 +181,20 @@ class TransactionListController extends Controller
             $platformname = $platform[0]->PLATFORM;
             $date = DB::table('CART')->select('DATE')->limit(1)->get();
             $datee = $date[0]->DATE;
+            $disable = "disabled";
         }
         else{
             $platformname = "Select Platform";
             $datee = "YYYY/MM/DD";
+            $disable = "";
         }
 
         return view("inserttransaction", [
             "product" => $product,
             "cart" => $cart,
             "platform" => $platformname,
-            "date" => $datee
+            "date" => $datee,
+            "disable" => $disable
         ]);
     }
 

@@ -80,9 +80,9 @@
             </textarea>
         </div>
 
-        <button type="submit" class="buttondel" name="action" value="delete"
+        <button onclick="return confirm('Are you sure?')" type="submit" class="buttondel" name="action" value="delete"
             style="background-color: #f7f7f7">Delete</button>
-        <button type="submit" class="buttonins" name="action" value="edit"
+        <button onclick="return confirm('Are you sure?')" type="submit" class="buttonins" name="action" value="edit"
             style="background-color: #dee1e6">Edit</button>
 
             <input type="hidden" name="oldImage" value="{{ $product->IMAGE }}">

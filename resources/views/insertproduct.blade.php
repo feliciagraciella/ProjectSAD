@@ -78,9 +78,9 @@
                 style="text-transform:unset !important; width: 310px; height: 70px; text-align: left; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"></textarea>
         </div>
 
-        <button type="reset" class="buttondel" name="action" value="Reset"
+        <button onclick="return confirm('Are you sure?')" type="reset" class="buttondel" name="action" value="Reset"
             style="background-color: #f7f7f7">Delete All</button>
-        <button type="submit" class="buttonins" name="action" value="insert"
+        <button onclick="return confirm('Are you sure?')" type="submit" class="buttonins" name="action" value="insert"
             style="background-color: #dee1e6">Insert</button>
 
         <input class="buttonimg" type="file" id="formFile" name="image" onchange="preview()" required>

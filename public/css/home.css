@@ -41,7 +41,7 @@
 
 .rect-tokped {
     background: #f8f7f2;
-    width: 50%;
+    width: 48.5%;
     height: 165px;
     margin-left: 41%;
     border-radius: 12px;
@@ -49,7 +49,7 @@
 
 .rect-shopee {
     background: #f8f7f2;
-    width: 50%;
+    width: 48.5%;
     height: 165px;
     border-radius: 12px;
     margin-left: -2.75%;
@@ -139,7 +139,7 @@
     position: absolute;
 }
 
-.finance h4{
+.finance h4 {
     font-weight: bold;
     font-size: x-small;
     font-family: "Poppins";
@@ -239,14 +239,14 @@
     margin-top: -21%;
 }
 
-#chart1{
+#chart1 {
     width: 740px;
     position: relative;
     left: 303px;
     top: 184px;
 }
 
-#chart2{
+#chart2 {
     width: 740px;
     position: relative;
     left: 303px;
