@@ -38,7 +38,7 @@ body{
     font-family: Poppins;
     font-size: smaller;
     position: absolute;
-    left: 50%;
+    left: 58%;
     margin: 0;
     top: 50%;
     transform: translateY(-50%);
@@ -47,7 +47,7 @@ body{
 
 .dropdown-show2{
     position: absolute;
-    left: 65%;
+    left: 73%;
     margin: 0;
     top: 50%;
     transform: translateY(-50%);
@@ -102,7 +102,7 @@ body{
 
 .numericupdown {
     position: absolute;
-    left: 65%;
+    left: 73%;
     margin: 0;
     top: 50%;
     transform: translateY(-50%);
