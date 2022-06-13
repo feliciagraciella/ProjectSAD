@@ -38,15 +38,15 @@
             <div class="column-report">
                 <div class="rect-tokped">
                     <img src={{ asset('images/icon/tokped.png') }}
-                        style="background: #f8f7f2; width: 31px; height:31px; margin-left: 10px; margin-top: 10px;"/>
-                    {{-- <div id="chart1"></div> --}}
+                        style="background: #f8f7f2; width: 31px; height:31px; margin-left: 10px; margin-top: 10px;" />
+                    <div id="chart1"></div>
                 </div>
             </div>
             <div class="column-report">
                 <div class="rect-shopee">
                     <img src={{ asset('images/icon/shopee.png') }}
                         style="background: #f8f7f2; width: 35px; height:35px; margin-left: 10px; margin-top: 10px;" />
-                    {{-- <div id="chart2"></div> --}}
+                    <div id="chart2"></div>
                 </div>
             </div>
         </div>
@@ -131,18 +131,20 @@
             {{-- @foreach ($stock as $s) --}}
             <div class="restock1" style="left: 80%; position: absolute; top: 300px;">
                 @foreach ($stock as $s)
-                    <div class="stock-all">
-                        <p class="warning1">
-                            <span class="iconify" data-icon="ep:warning-filled"
-                                style="color: rgba(255, 0, 0, 0.772);"></span>
-                        </p>
-                        <div class="stockk">
-                            <h5 class="stock-text" style="width: 200px">{{ $s->P_NAME }}</h5>
-                            <h5 class="stock-qty">Stock:&nbsp{{ $s->STOCK }}</h5>
-                        </div>
-                        {{-- <h5 class="stock-text" style="width: 200px">{{ $s->P_NAME }}</h5>
+                    <a href="{{ 'productdetail/' . $s->SKU }}">
+                        <div class="stock-all">
+                            <p class="warning1">
+                                <span class="iconify" data-icon="ep:warning-filled"
+                                    style="color: rgba(255, 0, 0, 0.772);"></span>
+                            </p>
+                            <div class="stockk">
+                                <h5 class="stock-text" style="width: 200px">{{ $s->P_NAME }}</h5>
+                                <h5 class="stock-qty">Stock:&nbsp{{ $s->STOCK }}</h5>
+                            </div>
+                            {{-- <h5 class="stock-text" style="width: 200px">{{ $s->P_NAME }}</h5>
                         <h5 class="stock-qty">Stock:&nbsp{{ $s->STOCK }}</h5> --}}
-                    </div>
+                        </div>
+                    </a>
                 @endforeach
             </div>
 
@@ -154,94 +156,125 @@
     </div>
 
 
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script>
+        Highcharts.chart('chart1', {
+            title: {
+                text: " "
+            },
 
-    <script src="https://code.highcharts.com/highcharts.js">
+            subtitle: {
+                text: " "
+            },
+
+            // yAxis: {
+            //     title: {
+            //         text: "Profit (Rp)"
+            //     }
+            // },
+            yAxis: {
+                title: {
+                    text: " "
+                },
+                gridLineWidth: 0,
+                gridLineColor: 'transparent',
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#437ede'
+                }]
+            },
+
+            // xAxis: {
+            //     lineColor: 'transparent'
+            //     // categories: {!! json_encode($tanggal1) !!},
+            //     // crosshair: true
+            // },
+            series: [{
+                name: "Tokopedia",
+                data: {!! json_encode($tokped) !!},
+                color: {!! json_encode($color1) !!},
+
+            }],
+            responsive: {
+                rules: [{
+                    condition: {
+                        maxWidth: 500
+                    },
+                    chartOptions: {
+                        legend: {
+                            // layout: 'horizontal',
+                            // align: 'center',
+                            // verticalAlign: 'bottom'
+                            enabled: false
+                        }
+                    }
+                }]
+            }
+
+        });
     </script>
-{{-- <script>
-    Highcharts.chart('chart1', {
-        chart: {
-            type: 'column'
-        },
-        // title: {
-        //     text: {!!json_encode($reportname)!!}
-        //     // text: "halo"
-        // },
-        // subtitle: {
-        //     text: {!!json_encode($reportsub)!!}
-        //     // text: "halo"
-        // },
-        xAxis: {
-            categories: {!!json_encode($namaproduk)!!},
-            crosshair: true
-        },
-        yAxis: {
-            min: 0,
+    <script>
+        Highcharts.chart('chart2', {
+            // chart:{
+            //     backgroundColor:  "#FFFFFF",
+            //     type: 'line'
+            // }
             title: {
-                text: '(pcs)'
-            }
-        },
-        tooltip: {
-            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-            pointFormat: '<tr><td style="color:{series.color};padding:0;">{xAxis.categories}: </td>' +
-                '<td style="padding:0"><b>{point.y} pcs</b></td></tr>',
-            footerFormat: '</table>',
-            shared: true,
-            useHTML: true
-        },
-        plotOptions: {
-            column: {
-                pointPadding: 0.1,
-                borderWidth: 0
-            }
-        },
-        series: [{
-            name: "Total Sold",
-            data: {!!json_encode($jumlahproduk)!!}
-        }]
-    });
+                text: " "
+            },
 
-    Highcharts.chart('chart2', {
-        chart: {
-            type: 'column'
-        },
-        // title: {
-        //     text: {!!json_encode($reportname)!!}
-        //     // text: "halo"
-        // },
-        // subtitle: {
-        //     text: {!!json_encode($reportsub)!!}
-        //     // text: "halo"
-        // },
-        xAxis: {
-            categories: {!!json_encode($namaproduk)!!},
-            crosshair: true
-        },
-        yAxis: {
-            min: 0,
-            title: {
-                text: '(pcs)'
+            subtitle: {
+                text: " "
+            },
+
+            // yAxis: {
+            //     title: {
+            //         text: "Profit (Rp)"
+            //     }
+            // },
+            yAxis: {
+                title: {
+                    text: " "
+                },
+                gridLineWidth: 0,
+                gridLineColor: 'transparent',
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#437ede'
+                }]
+            },
+
+            xAxis: {
+                // categories: {!! json_encode($tanggal1) !!},
+                // crosshair: true
+                
+            },
+            series: [{
+                name: "Shopee",
+                data: {!! json_encode($shopee) !!},
+                color: {!! json_encode($color2) !!},
+            }],
+            responsive: {
+                rules: [{
+                    condition: {
+                        maxWidth: 500
+                    },
+                    chartOptions: {
+                        legend: {
+                            // layout: 'horizontal',
+                            // align: 'center',
+                            // verticalAlign: 'bottom'
+                            enabled: false
+                        }
+                        // backgroundColor:  "#f8f7f2"
+                    }
+                }]
             }
-        },
-        tooltip: {
-            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-            pointFormat: '<tr><td style="color:{series.color};padding:0;">{xAxis.categories}: </td>' +
-                '<td style="padding:0"><b>{point.y} pcs</b></td></tr>',
-            footerFormat: '</table>',
-            shared: true,
-            useHTML: true
-        },
-        plotOptions: {
-            column: {
-                pointPadding: 0.1,
-                borderWidth: 0
-            }
-        },
-        series: [{
-            name: "Total Sold",
-            data: {!!json_encode($jumlahproduk)!!}
-        }]
-    });
-</script> --}}
+
+        });
+    </script>
 
 
 
