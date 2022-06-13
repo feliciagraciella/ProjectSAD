@@ -185,11 +185,11 @@
                 }]
             },
 
-            // xAxis: {
-            //     lineColor: 'transparent'
-            //     // categories: {!! json_encode($tanggal1) !!},
-            //     // crosshair: true
-            // },
+            xAxis: {
+                visible: false
+                // categories: {!! json_encode($tanggal1) !!},
+                // crosshair: true
+            },
             series: [{
                 name: "Tokopedia",
                 data: {!! json_encode($tokped) !!},
@@ -249,7 +249,7 @@
             xAxis: {
                 // categories: {!! json_encode($tanggal1) !!},
                 // crosshair: true
-                
+                visible: false
             },
             series: [{
                 name: "Shopee",
