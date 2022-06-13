@@ -1,24 +1,30 @@
+
 function myFunction() {
     var x = document.getElementById("inputtrans").value;
     var y = document.getElementById("inputfee").value;
     xx = parseInt(x);
     yy = parseInt(y);
 
-    if (xx == null && yy != null)
+
+    // document.getElementById("total").innerHTML = "Rp." + xx + " " + yy;
+
+    if (isNull(x) && !isNull(y))
     {
-        total = -yy;
-        document.getElementById("total").innerHTML = "Rp." + total;
-        
+        // total = -yy;
+        document.getElementById("total").innerHTML = "Rp. " + xx;
     }
-    if (xx != null && yy == null)
+    else if (!isNull(x) && isNull(y))
     {
-        total = xx;
-        document.getElementById("total").innerHTML = "Rp." + total;
+        // total = xx;
+
+        document.getElementById("total").innerHTML = "Rp. " + yy;
     }
-    else
+    else if (xx != NaN && yy != NaN)
     {
         total = xx-yy;
-        document.getElementById("total").innerHTML = "Rp." + total;
+        document.getElementById("total").innerHTML = "Rp. " + total;
     }
+
+    // document.getElementById("total").innerHTML = "Rp. " + total;
 
   }

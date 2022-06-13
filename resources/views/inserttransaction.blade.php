@@ -113,7 +113,7 @@
 
             <div class="totalakhir">
                 <h4 class="totalfee" style="width: 150px;">Total</h4>
-                <h4 id="total" class="totalakhirr" style="width: 150px;"></h4>
+                <h4 id="total" class="totalakhirr" style="width: 150px;">Rp. 0</h4>
             </div>
 
             <script type="text/javascript" src="js/inserttrans.js"></script>
