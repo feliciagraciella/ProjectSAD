@@ -162,16 +162,9 @@
             title: {
                 text: " "
             },
-
             subtitle: {
                 text: " "
             },
-
-            // yAxis: {
-            //     title: {
-            //         text: "Profit (Rp)"
-            //     }
-            // },
             yAxis: {
                 title: {
                     text: " "
@@ -184,7 +177,6 @@
                     color: '#437ede'
                 }]
             },
-
             xAxis: {
                 visible: false
                 // categories: {!! json_encode($tanggal1) !!},

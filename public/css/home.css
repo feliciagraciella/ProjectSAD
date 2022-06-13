@@ -268,3 +268,7 @@
     position: relative;
     top: -5px;
 }
+
+.highcharts-background {
+    color:#f8f7f2 ;
+}

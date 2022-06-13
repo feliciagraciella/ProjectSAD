@@ -16,8 +16,8 @@ class ReportController extends Controller
     {
         $data = DB::select("select * from product_all_all");
         $totalsold = DB::table('product_all_all')->select(DB::raw('SUM(TOTAL_SOLD) as `SUM`'))->get();
-        $income = DB::select("select fNetProfit() as `NetProfit`");
-        $admin = DB::select("select fAdminFee() as `AdminFee`");
+        $income = DB::select("select FORMAT(sum(NET_PRICE),2) as `NetProfit` from TRANSACTION where DATE_TRANSACTION >= (NOW()-INTERVAL 7 DAY)");
+        $admin = DB::select("select FORMAT(sum(TOTAL_FEE),2) as `AdminFee` from TRANSACTION where DATE_TRANSACTION >= (NOW()-INTERVAL 7 DAY)");
 
         foreach($data as $d){
             $namaproduk[] = (string)$d->PRODUCT_NAME;

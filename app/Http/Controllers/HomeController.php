@@ -20,8 +20,8 @@ class HomeController extends Controller
     {
         $product = DB::select("select * from `product_all_all` order by SKU asc limit 5");
         $data = ReportModel::all();
-        $income = DB::select("select fNetProfit() as `NetProfit`");
-        $admin = DB::select("select fAdminFee() as `AdminFee`");
+        $income = DB::select("select FORMAT(sum(NET_PRICE),2) as `NetProfit` from TRANSACTION where DATE_TRANSACTION >= (NOW()-INTERVAL 7 DAY)");
+        $admin = DB::select("select FORMAT(sum(TOTAL_FEE),2) as `AdminFee` from TRANSACTION where DATE_TRANSACTION >= (NOW()-INTERVAL 7 DAY)");
         $stock = DB::select("select SKU, P_NAME, STOCK from PRODUCT where STOCK <= 10 order by STOCK asc");
 
         $shopee = DB::select("select * from finance_shopee_thirty");
