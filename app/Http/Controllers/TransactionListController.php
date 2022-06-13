@@ -106,14 +106,15 @@ class TransactionListController extends Controller
 
     public function insertTrans(Request $req)
     {
-        $validatedData = $req->validate([
-            'p' => ['required', 'numeric'],
-            'insertfee' => ['required', 'numeric'],
-        ]);
+        // $req->validate([
+        //     'p' => ['required', 'numeric'],
+        //     'insertfee' => ['required', 'numeric'],
+        // ]);
 
         $trans = DB::table('CART')->select('ID_TRANSACTION', 'DATE', 'PLATFORM')->groupBy('ID_TRANSACTION', 'DATE', 'PLATFORM')->limit(1)->get();
 
         $totalqty = DB::table('CART')->select(DB::raw('SUM(QTY_PRODUCT) as `SUM`'))->get();
+
         $totalprice = $req->input("p");
         $totalfee = $req->input("insertfee");
 
@@ -155,7 +156,7 @@ class TransactionListController extends Controller
         //     ]);
         //   }
 
-        DB::table('CART')->delete();
+        DB::table('CART')->where('ID_ADMIN', session('login'))->delete();
 
         return redirect('inserttransaction');
     }
