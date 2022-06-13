@@ -28,12 +28,21 @@
 
 
 <body style="background-color: #e5e5e5">
-    {{-- @if (session()->has('LoginError'))
+    {{-- @if (Session::has('success'))
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            {{ session('LoginError') }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close">
 
             </button>
+            <strong>{{Session::get('success')}}</strong>
+        </div>
+    @endif --}}
+    {{-- @if (Session::has('error'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{-- {{ session('LoginError') }} --}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close">
+
+            </button>
+            <strong>{{Session::get('error')}}</strong>
         </div>
     @endif --}}
     <div class="rectangle">
