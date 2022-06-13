@@ -31,9 +31,9 @@
                 aria-haspopup="true" aria-expanded="false" required>
                 {{-- <div class="dropdown-menu" aria-labelledby="dropdownMenuLink"> --}}
                 <option value="" disabled selected hidden>Select Report</option>
-                <option class="dropdown-item" type="submit" value="Product Sales">Product
+                <option class="dropdown-item" type="submit" value="Product Sales" style="font-size:12px; text-align:left">Product
                     Sales</option>
-                <option class="dropdown-item" type="submit" value="Finance">Finance</option>
+                <option class="dropdown-item" type="submit" value="Finance" style="font-size:12px; text-align:left">Finance</option>
                 {{-- </div> --}}
             </select>
         </div>
@@ -45,9 +45,9 @@
                 aria-haspopup="true" aria-expanded="false" required>
                 {{-- <div class="dropdown-menu" aria-labelledby="dropdownMenuLink"> --}}
                 <option value="" disabled selected hidden>Select Platform</option>
-                <option class="dropdown-item" type="submit" value="All">All</option>
-                <option class="dropdown-item" type="submit" value="Shopee">Shopee</option>
-                <option class="dropdown-item" type="submit" value="Tokopedia">Tokopedia
+                <option class="dropdown-item" type="submit" value="All" style="font-size:12px">All</option>
+                <option class="dropdown-item" type="submit" value="Shopee" style="font-size:12px">Shopee</option>
+                <option class="dropdown-item" type="submit" value="Tokopedia" style="font-size:12px">Tokopedia
                 </option>
                 {{-- </div> --}}
             </select>
@@ -59,9 +59,9 @@
                 aria-haspopup="true" aria-expanded="false" required>
                 {{-- <div class="dropdown-menu" aria-labelledby="dropdownMenuLink"> --}}
                 <option value="" disabled selected hidden>Select Period</option>
-                <option class="dropdown-item" type="submit" value="All">All</option>
-                <option class="dropdown-item" type="submit" value="Last 7 Days">Last 7 Days</option>
-                <option class="dropdown-item" type="submit" value="Last 30 Days">Last 30 Days</option>
+                <option class="dropdown-item" type="submit" value="All" style="font-size:12px">All</option>
+                <option class="dropdown-item" type="submit" value="Last 7 Days" style="font-size:12px">Last 7 Days</option>
+                <option class="dropdown-item" type="submit" value="Last 30 Days" style="font-size:12px">Last 30 Days</option>
                 {{-- </div> --}}
             </select>
         </div>
@@ -92,7 +92,7 @@
     {{-- <div class="subtitle-report">
         {{$reportname}}
     </div> --}}
-    <table class="table table-hover" style="width: 70%; position: absolute; left: 320px; top: 624px;">
+    <table class="table" style="width: 70%; position: absolute; left: 320px; top: 624px;">
         <thead>
             <tr>
                 <th scope="col" style="font-weight: 600; text-align:left;">Platform</th>

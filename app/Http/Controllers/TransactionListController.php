@@ -106,59 +106,55 @@ class TransactionListController extends Controller
 
     public function insertTrans(Request $req)
     {
-        // $req->validate([
-        //     'p' => ['required', 'numeric'],
-        //     'insertfee' => ['required', 'numeric'],
-        // ]);
 
-        $trans = DB::table('CART')->select('ID_TRANSACTION', 'DATE', 'PLATFORM')->groupBy('ID_TRANSACTION', 'DATE', 'PLATFORM')->limit(1)->get();
 
-        $totalqty = DB::table('CART')->select(DB::raw('SUM(QTY_PRODUCT) as `SUM`'))->get();
+        $trans = DB::table('CART')->select('ID_TRANSACTION', 'DATE', 'PLATFORM')->where('ID_ADMIN', session('login'))->groupBy('ID_TRANSACTION', 'DATE', 'PLATFORM')->limit(1)->get();
+
+        $totalqty = DB::table('CART')->select(DB::raw('SUM(QTY_PRODUCT) as `SUM`'))->where('ID_ADMIN', session('login'))->get();
 
         $totalprice = $req->input("p");
         $totalfee = $req->input("insertfee");
 
 
-        // dd($totalprice);
+        // if($totalprice != null && $totalfee != null && is_numeric($totalprice) && is_numeric($totalfee))
+        // {
+            dd($totalprice, $totalfee);
+            $transdet = DB::table('CART')->where('ID_ADMIN', session('login'))->get();
 
-        $transdet = DB::table('CART')->get();
-
-        // dd($transdet[0]->SKU);
-        TransactionListModel::insert([
-            'DATE_TRANSACTION' => $trans[0]->DATE,
-            'ID_ADMIN' => session('login'),
-            'ID_TRANSACTION' => $trans[0]->ID_TRANSACTION,
-            'NET_PRICE' => $totalprice - $totalfee,
-            'PLATFORM' => $trans[0]->PLATFORM,
-            'STATUS_DELETE' => '0',
-            'TOTAL_FEE' => $totalfee,
-            'TOTAL_PRICE' => $totalprice,
-            'TOTAL_QTY' => $totalqty[0]->SUM
-        ]);
-
-
-        foreach ($transdet as $td)
-        {
-            TransactionDetailModel::insert([
-                'SKU' => $td->SKU,
-                'ID_TRANSACTION' => $td->ID_TRANSACTION,
-                'QTY_PRODUCT' => $td->QTY_PRODUCT,
-                'STATUS_DELETE' => '0'
+            // dd($transdet[0]->SKU);
+            TransactionListModel::insert([
+                'DATE_TRANSACTION' => $trans[0]->DATE,
+                'ID_ADMIN' => session('login'),
+                'ID_TRANSACTION' => $trans[0]->ID_TRANSACTION,
+                'NET_PRICE' => $totalprice - $totalfee,
+                'PLATFORM' => $trans[0]->PLATFORM,
+                'STATUS_DELETE' => '0',
+                'TOTAL_FEE' => $totalfee,
+                'TOTAL_PRICE' => $totalprice,
+                'TOTAL_QTY' => $totalqty[0]->SUM
             ]);
-        }
 
-        // for ($x = 0; $x < count($transdet); $x++) {
-        //     TransactionDetailModel::insert([
-        //         'SKU' => $transdet[$x]->SKU,
-        //         'ID_TRANSACTION' => $transdet[$x]->ID_TRANSACTION,
-        //         'QTY_PRODUCT' => $transdet[$x]->QTY_PRODUCT,
-        //         'STATUS_DELETE' => '0'
-        //     ]);
-        //   }
 
-        DB::table('CART')->where('ID_ADMIN', session('login'))->delete();
+            foreach ($transdet as $td)
+            {
+                TransactionDetailModel::insert([
+                    'SKU' => $td->SKU,
+                    'ID_TRANSACTION' => $td->ID_TRANSACTION,
+                    'QTY_PRODUCT' => $td->QTY_PRODUCT,
+                    'STATUS_DELETE' => '0'
+                ]);
+            }
 
-        return redirect('inserttransaction');
+            DB::table('CART')->where('ID_ADMIN', session('login'))->delete();
+
+            return redirect('inserttransaction')->with("success", "Added to cart!");
+        // }
+        // else
+        // {
+        //     return redirect('inserttransaction')->with("error", "Value not valid!");
+        // }
+
+
     }
 
     public function deleteAll()
@@ -167,7 +163,7 @@ class TransactionListController extends Controller
         // dd($cartt);
         DB::table('CART')->where('ID_ADMIN', session('login'))->delete();
 
-        return redirect('inserttransaction');
+        return redirect('inserttransaction')->with("success", "deleted");
     }
 
     public function dropdownproduct()
