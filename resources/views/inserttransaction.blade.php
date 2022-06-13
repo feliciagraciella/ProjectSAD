@@ -20,11 +20,11 @@
         @csrf
             <div class="baris1" style="z-index: 1000">
                 <h4 class="datetitle">Date</h4>
-                <input class="btn btn-sm calendar" value="{{$date}}" name="date" style="text-transform:unset !important; width: 200px;" type="date">
+                <input class="btn btn-sm calendar {{$disable}}" value="{{$date}}" name="date" style="text-transform:unset !important; width: 200px;" type="date">
 
                 <h4 class="platformtitle" >Platform</h4>
                 <div class="dropdown-show2" >
-                    <select class="dropdowncat" id="cat" name="selectplatform"
+                    <select {{$disable}} class="dropdowncat" id="cat" name="selectplatform"
                         style="text-transform:unset !important; width: 200px; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <option value="{{$platform}}" disabled selected hidden>{{$platform}}</option>
@@ -57,7 +57,7 @@
 
             <div class="baris3">
                 <div class="buttonadd">
-                    <button type="submit" name="buttonadd" class="btn btn-secondary btn-sm" style="text-transform: unset !important; width: 150px; ">Add</button>
+                    <button onclick="return confirm('Are you sure?')" type="submit" name="buttonadd" class="btn btn-secondary btn-sm" style="text-transform: unset !important; width: 150px; ">Add</button>
                 </div>
             </div>
     </form>
@@ -120,17 +120,18 @@
 
             <div class="buttonbutton">
                 <div class="buttoninsert">
-                    <button type="submit" name="insertprice" class="btn btn-secondary btn-sm" style="text-transform: unset !important; width: 120px; ">Insert</button>
+                    <button onclick="return confirm('Are you sure?')" type="submit" name="insertprice" class="btn btn-secondary btn-sm" style="text-transform: unset !important; width: 120px; ">Insert</button>
                 </div>
+    </form>
                 <div class="buttondelete">
-                    <form method="POST" onclick="return confirm('Are you sure?')" action="/deleteall">
+                    <form method="POST"  action="/deleteall">
                     {{-- <form method="POST" action="/deleteall"> --}}
                         @csrf
-                        <button type="submit" name="insertfee" class="btn btn-outline-secondary btn-sm" style="text-transform: unset !important; width: 120px; ">Delete All</button>
+                        <button onclick="return confirm('Are you sure?')" type="submit" name="insertfee" class="btn btn-outline-secondary btn-sm" style="text-transform: unset !important; width: 120px; ">Delete All</button>
                     </form>
                 </div>
             </div>
-    </form>
+
 </body>
 
 </html>

@@ -15,10 +15,12 @@ class CartModel
             ['PLATFORM', '=', $dd1],
             ['ID_ADMIN', session('login')]
             ])->get();
+
         $check = false;
         foreach ($data as $d) {
             if ($d -> SKU == $dd2) {
-                $d -> QTY_PRODUCT = $d -> QTY_PRODUCT + $jumlah;
+                $jumlahbaru = $d -> QTY_PRODUCT + $jumlah;
+
                 $check = true;
             }
         }
@@ -49,7 +51,7 @@ class CartModel
                 ['PLATFORM', '=', $dd1],
                 ['ID_ADMIN', session('login')]
                 ])
-            ->update(['QTY_PRODUCT' => $d -> QTY_PRODUCT]);
+            ->update(['QTY_PRODUCT' => $jumlahbaru]);
 
         }
     }

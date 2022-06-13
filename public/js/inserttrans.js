@@ -8,6 +8,7 @@ function myFunction() {
     {
         total = -yy;
         document.getElementById("total").innerHTML = "Rp." + total;
+        
     }
     if (xx != null && yy == null)
     {
