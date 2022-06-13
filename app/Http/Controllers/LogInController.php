@@ -34,7 +34,7 @@ class LogInController extends Controller
     public function index()
     {
         return view('login', [
-            "title" => "Log In"
+
         ]);
     }
 
@@ -112,7 +112,7 @@ class LogInController extends Controller
             //2.a. Jika KETEMU, maka session LOGIN dibuat
             Session::put('login', $idadmin);
             Session::put('pass', $password);
-            Session::flash('success', 'Log In SUccesful!');
+            Session::flash('success', 'Log In Succesful!');
             $req->session()->flash('authentication');
 
 
@@ -120,16 +120,19 @@ class LogInController extends Controller
 
         } else {
             //2.b. Jika TIDKA KETEMU, maka kembali ke LOGIN dan tampilkan PESAN
-            Session::flash('error', 'Log In Failed!');
+
             return redirect('/');
+            Session::flash('error', 'Log In Failed!');
         }
 
     }
 
     public function logout(Request $request){
-        Auth::logout();
-        request()->session()->invalidate();
-        request()->session()->regenerateToken();
+        // Auth::logout();
+        // request()->session()->invalidate();
+        // request()->session()->regenerateToken();
+        // return redirect('/');
+        Session::flush();
         return redirect('/');
     }
 }

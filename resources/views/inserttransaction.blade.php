@@ -14,18 +14,20 @@
 </head>
 
 <body>
+
     <h5 class=title>Insert Transaction</h5>
+
 
     <form method="POST" action="/inserttrans">
         @csrf
             <div class="baris1" style="z-index: 1000">
                 <h4 class="datetitle">Date</h4>
-                <input class="btn btn-sm calendar {{$disable}}" value="{{$date}}" name="date" style="text-transform:unset !important; width: 200px;" type="date">
+                <input class="btn btn-sm calendar {{$disable}}" value="{{$date}}" name="date" style="text-transform:unset !important; width: 250px;" type="date">
 
                 <h4 class="platformtitle" >Platform</h4>
                 <div class="dropdown-show2" >
                     <select {{$disable}} class="dropdowncat" id="cat" name="selectplatform"
-                        style="text-transform:unset !important; width: 200px; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
+                        style="text-transform:unset !important; width: 250px; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <option value="{{$platform}}" disabled selected hidden>{{$platform}}</option>
                         <option value="Tokopedia">Tokopedia</option>
@@ -38,7 +40,7 @@
                 <h4 class="datetitle">Product</h4>
                 <div class="dropdown-show3">
                     <select class="dropdowncat" id="cat" name="product"
-                        style="text-transform:unset !important; width: 200px; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
+                        style="text-transform:unset !important; width: 250px; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <option value="" disabled selected hidden>Select Product</option>
 
@@ -51,15 +53,25 @@
 
                 <h4 class="platformtitle">Quantity</h4>
                 <div class="numericupdown">
-                    <input class="form-control btn btn-sm d-inline text-center me-3 txtJumlah" name="inputQuantity" min=1 value="0" type="number" style="width: 200px;">
+                    <input class="form-control btn btn-sm d-inline text-center me-3 txtJumlah" name="inputQuantity" min=1 value="0" type="number" style="width: 250px;">
                 </div>
             </div>
 
             <div class="baris3">
+                @if (session("success"))
+                    <div class="alert alert-success alert-dismissible fade show" style="z-index: 1001; width: 75%; transform: translateY(-50%);" role="alert">
+                        {{ session("success")}}
+                        <button type="button" class="btn-close" style="padding:17px" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
+
                 <div class="buttonadd">
-                    <button onclick="return confirm('Are you sure?')" type="submit" name="buttonadd" class="btn btn-secondary btn-sm" style="text-transform: unset !important; width: 150px; ">Add</button>
+                    <button onclick="return confirm('Are you sure?')" type="submit" name="buttonadd" class="btn btn-secondary btn-sm" style="text-transform: unset !important; width: 150px;">Add</button>
                 </div>
+
             </div>
+
+
     </form>
 
     <form method="POST" action="/deletecart">
@@ -130,6 +142,7 @@
                         <button onclick="return confirm('Are you sure?')" type="submit" name="insertfee" class="btn btn-outline-secondary btn-sm" style="text-transform: unset !important; width: 120px; ">Delete All</button>
                     </form>
                 </div>
+
             </div>
 
 </body>

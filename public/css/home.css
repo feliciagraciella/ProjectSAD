@@ -239,16 +239,32 @@
     margin-top: -21%;
 }
 
+.stockk :hover{
+    opacity: 0.7;
+}
+
 #chart1 {
-    width: 740px;
+    /* width: 740px;
     position: relative;
     left: 303px;
-    top: 184px;
+    top: 184px; */
+    color: #f8f7f2;
+    width: 80%;
+    height: 120px;
+    margin-left: 11%;
+    position: relative;
+    top: -5px;
 }
 
 #chart2 {
-    width: 740px;
+    /* width: 740px;
     position: relative;
     left: 303px;
-    top: 184px;
+    top: 184px; */
+    color: #f8f7f2;
+    width: 80%;
+    height: 120px;
+    margin-left: 11%;
+    position: relative;
+    top: -5px;
 }
