@@ -156,8 +156,7 @@
     </div>
 
 
-    <script src="https://code.highcharts.com/highcharts.js">
-    </script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
     <script>
         Highcharts.chart('chart1', {
             title: {
@@ -168,21 +167,33 @@
                 text: " "
             },
 
+            // yAxis: {
+            //     title: {
+            //         text: "Profit (Rp)"
+            //     }
+            // },
             yAxis: {
                 title: {
-                    text: "Profit (Rp)"
-                }
+                    text: " "
+                },
+                gridLineWidth: 0,
+                gridLineColor: 'transparent',
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#437ede'
+                }]
             },
 
             // xAxis: {
-            //     categories: {!!json_encode($tanggal1)!!},
-            //     crosshair: true
+            //     lineColor: 'transparent'
+            //     // categories: {!! json_encode($tanggal1) !!},
+            //     // crosshair: true
             // },
-            series: [
-            {
-                    name: "Tokopedia",
-                    data: {!!json_encode($tokped)!!},
-                    color: {!!json_encode($color1)!!},
+            series: [{
+                name: "Tokopedia",
+                data: {!! json_encode($tokped) !!},
+                color: {!! json_encode($color1) !!},
 
             }],
             responsive: {
@@ -192,9 +203,10 @@
                     },
                     chartOptions: {
                         legend: {
-                            layout: 'horizontal',
-                            align: 'center',
-                            verticalAlign: 'bottom'
+                            // layout: 'horizontal',
+                            // align: 'center',
+                            // verticalAlign: 'bottom'
+                            enabled: false
                         }
                     }
                 }]
@@ -216,22 +228,33 @@
                 text: " "
             },
 
+            // yAxis: {
+            //     title: {
+            //         text: "Profit (Rp)"
+            //     }
+            // },
             yAxis: {
                 title: {
-                    text: "Profit (Rp)"
-                }
+                    text: " "
+                },
+                gridLineWidth: 0,
+                gridLineColor: 'transparent',
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#437ede'
+                }]
             },
 
-            // xAxis: {
-            //     categories: {!!json_encode($tanggal1)!!},
-            //     crosshair: true
-            // },
-            series: [
-            {
-                    name: "Shopee",
-                    data: {!!json_encode($shopee)!!},
-                    color: {!!json_encode($color2)!!},
-
+            xAxis: {
+                // categories: {!! json_encode($tanggal1) !!},
+                // crosshair: true
+                
+            },
+            series: [{
+                name: "Shopee",
+                data: {!! json_encode($shopee) !!},
+                color: {!! json_encode($color2) !!},
             }],
             responsive: {
                 rules: [{
@@ -240,9 +263,10 @@
                     },
                     chartOptions: {
                         legend: {
-                            layout: 'horizontal',
-                            align: 'center',
-                            verticalAlign: 'bottom'
+                            // layout: 'horizontal',
+                            // align: 'center',
+                            // verticalAlign: 'bottom'
+                            enabled: false
                         }
                         // backgroundColor:  "#f8f7f2"
                     }
