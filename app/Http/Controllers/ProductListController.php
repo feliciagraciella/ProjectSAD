@@ -30,8 +30,10 @@ class ProductListController extends Controller
         $product = ProductDetailModel::select('SKU', 'ID_CATEGORY', 'P_NAME', 'SIZE', 'PRICE', 'STOCK', 'DESCRIPTION', 'IMAGE')->where('SKU', $sku)->get();
         $category = CategoryModel::select('C_NAME')->get();
         $size = ProductListModel::select('SIZE')->groupBy('SIZE')->get();
+        $idcat = ProductDetailModel::select('ID_CATEGORY')->where('SKU', $sku)->get();
+        $namecat = CategoryModel::select('C_NAME')->where('ID_CATEGORY', $idcat);
 
-        return view('productdetail', [
+        return view('productdetail', compact('category', 'namecat'), [
             'product' => $product[0],
             "cat" => $category,
             'size' => $size

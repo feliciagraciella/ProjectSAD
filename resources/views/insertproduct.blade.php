@@ -45,10 +45,6 @@
                 @foreach ($cat as $c)
                     <option value="{{ $c->cat }}">{{ $c->cat }} </option>
                 @endforeach
-                {{-- <option value="A">Cleaner</option>
-                <option value="B">Protector</option>
-                <option value="C">Coating Factory</option>
-                <option value="D">Tools</option> --}}
             </select>
         </div>
 

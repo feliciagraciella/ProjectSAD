@@ -43,10 +43,11 @@
                 style="text-transform:unset !important; width: 310px; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled="true">
                 @foreach ($cat as $c)
-                    <option value="{{ $c->C_NAME }}">{{ $c->C_NAME }}</option>
+                    <option value="{{ $c->C_NAME }}" {{$namecat == $c->C_NAME  ? 'selected' : ''}}>{{ $c->C_NAME }}</option>
                 @endforeach
             </select>
         </div>
+        @dd($namecat)
 
         <div class="baris4-1">Price</div>
         <div class="boxprice">
