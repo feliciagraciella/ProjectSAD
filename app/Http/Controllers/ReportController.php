@@ -16,15 +16,15 @@ class ReportController extends Controller
     {
         $data = DB::select("select * from product_all_all");
         $totalsold = DB::table('product_all_all')->select(DB::raw('SUM(TOTAL_SOLD) as `SUM`'))->get();
-        $income = DB::select("select FORMAT(sum(NET_PRICE),2) as `NetProfit` from TRANSACTION where DATE_TRANSACTION >= (NOW()-INTERVAL 7 DAY)");
-        $admin = DB::select("select FORMAT(sum(TOTAL_FEE),2) as `AdminFee` from TRANSACTION where DATE_TRANSACTION >= (NOW()-INTERVAL 7 DAY)");
+        $income = DB::select("select fNetProfit('All', 'All') as `NetProfit`");
+        $admin = DB::select("select fAdminFee('All', 'All') as `AdminFee`");
 
         foreach($data as $d){
             $namaproduk[] = (string)$d->PRODUCT_NAME;
             $jumlahproduk[] = (int)$d->TOTAL_SOLD;
         }
 
-        // dd($namaproduk,$jumlahproduk);
+        // dd($income,$admin);
         return view("report", [
             "data" => $data,
             "income" => $income[0]->NetProfit,
@@ -47,79 +47,61 @@ class ReportController extends Controller
         $period = $req->get("select_period");
         $reportname = $report." Report";
         $reportsub = $period." Period on ".$platform." Platform";
+        $income = DB::select("select fNetProfit('".$platform."','".$period."') as `NetProfit`");
+        $admin = DB::select("select fAdminFee('".$platform."','".$period."') as `AdminFee`");
         // dd($reportsub);
         if($report == "Product Sales"){
             if($platform == "All" && $period == "All"){
                 $data = DB::select("select * from product_all_all");
                 $totalsold = DB::table('product_all_all')->select(DB::raw('SUM(TOTAL_SOLD) as `SUM`'))->get();
-                $income = DB::select("select fNetProfit() as `NetProfit`");
                 $color = "#4B5D67";
-                $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
             elseif($platform == "All" && $period == "Last 7 Days"){
                 $data = DB::select("select * from product_all_seven");
                 $totalsold = DB::table('product_all_seven')->select(DB::raw('SUM(TOTAL_SOLD) as `SUM`'))->get();
-                $income = DB::select("select fNetProfit() as `NetProfit`");
                 $color = "#4B5D67";
-                $admin = DB::select("select fAdminFee() as `AdminFee`");
-                // dd($data);
             }
             elseif($platform == "All" && $period == "Last 30 Days"){
                 $data = DB::select("select * from product_all_thirty");
                 $totalsold = DB::table('product_all_thirty')->select(DB::raw('SUM(TOTAL_SOLD) as `SUM`'))->get();
-                $income = DB::select("select fNetProfit() as `NetProfit`");
                 $color = "#4B5D67";
-                $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
             elseif($platform == "Shopee" && $period == "All"){
                 $data = DB::select("select * from product_shopee_all");
                 $totalsold = DB::table('product_shopee_all')->select(DB::raw('SUM(TOTAL_SOLD) as `SUM`'))->get();
-                $income = DB::select("select fNetProfit() as `NetProfit`");
                 $color = "#F15412";
-                $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
             elseif($platform == "Shopee" && $period == "Last 7 Days"){
                 $data = DB::select("select * from product_shopee_seven");
                 $totalsold = DB::table('product_shopee_seven')->select(DB::raw('SUM(TOTAL_SOLD) as `SUM`'))->get();
-                $income = DB::select("select fNetProfit() as `NetProfit`");
                 $color = "#F15412";
-                $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
             elseif($platform == "Shopee" && $period == "Last 30 Days"){
                 $data = DB::select("select * from product_shopee_thirty");
                 $totalsold = DB::table('product_shopee_thirty')->select(DB::raw('SUM(TOTAL_SOLD) as `SUM`'))->get();
-                $income = DB::select("select fNetProfit() as `NetProfit`");
                 $color = "#F15412";
-                $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
             elseif($platform == "Tokopedia" && $period == "All"){
                 $data = DB::select("select * from product_tokopedia_all");
                 $totalsold = DB::table('product_tokopedia_all')->select(DB::raw('SUM(TOTAL_SOLD) as `SUM`'))->get();
-                $income = DB::select("select fNetProfit() as `NetProfit`");
                 $color = "#5FD068";
-                $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
             elseif($platform == "Tokopedia" && $period == "Last 7 Days"){
                 $data = DB::select("select * from product_tokopedia_seven");
                 $totalsold = DB::table('product_tokopedia_seven')->select(DB::raw('SUM(TOTAL_SOLD) as `SUM`'))->get();
-                $income = DB::select("select fNetProfit() as `NetProfit`");
                 $color = "#5FD068";
-                $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
             elseif($platform == "Tokopedia" && $period == "Last 30 Days"){
                 $data = DB::select("select * from product_tokopedia_thirty");
                 $totalsold = DB::table('product_tokopedia_thirty')->select(DB::raw('SUM(TOTAL_SOLD) as `SUM`'))->get();
-                $income = DB::select("select fNetProfit() as `NetProfit`");
                 $color = "#5FD068";
-                $admin = DB::select("select fAdminFee() as `AdminFee`");
             }
-            // dd($report);
 
             foreach($data as $d){
                 $namaproduk[] = $d->PRODUCT_NAME;
                 $jumlahproduk[] = (int)$d->TOTAL_SOLD;
             }
-            // dd($namaproduk);
+
             return view("report", [
                 "data" => $data,
                 "income" => $income[0]->NetProfit,
