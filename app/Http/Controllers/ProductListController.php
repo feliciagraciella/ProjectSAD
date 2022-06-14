@@ -55,14 +55,15 @@ class ProductListController extends Controller
         $qty = $request->input('qty');
         $size = $request->input('size');
         $desc = $request->input('desc');
+        $cat2 = Str::substr($cat, 0, 1);
 
         //SKU GENERATE
-        $skuu = $cat.$size;
+        $skuu = $cat2.$size;
         $carisku = DB::table('PRODUCT')->where('SKU','LIKE','%'.$skuu.'%')->get();
         $hitung = $carisku->count();
         $lpad = str_pad($hitung+1,3,'0',STR_PAD_LEFT);
         $skugen = $skuu.$lpad;
-        
+
         $skuimage = $skugen.'.jpg';
 
         switch ($request->input('action')) {
@@ -73,7 +74,7 @@ class ProductListController extends Controller
                     $file->move(public_path('images/best'), $filename);
                 }
 
-                $data = array('SKU' => $skugen, "P_NAME" => $name, "ID_CATEGORY" => $cat, "PRICE" => $price, "STOCK" => $qty, "SIZE" => $size, "DESCRIPTION" => $desc, "IMAGE" => $skuimage, "STATUS_DELETE" => '0');
+                $data = array('SKU' => $skugen, "P_NAME" => $name, "ID_CATEGORY" => $cat2, "PRICE" => $price, "STOCK" => $qty, "SIZE" => $size, "DESCRIPTION" => $desc, "IMAGE" => $skuimage, "STATUS_DELETE" => '0');
                 DB::table('PRODUCT')->insert($data);
                 return redirect('product')->with('success', "Insert successfully");
                 break;
@@ -111,14 +112,16 @@ class ProductListController extends Controller
 
                 if ($request->file('image')) {
                     if ($request->oldImage) {
-                        $filename = $request->oldImage;
-                        if (File::exists(public_path('images/best'), $filename)) {
-                            File::delete(public_path('images/best'), $filename);
+                        $old = $request->oldImage;
+                        $filename = (public_path('images/best/').$old);
+                        if (File::exists($filename)) {
+                            File::delete($filename);
                         }
                     }
 
+                    $skuimage = $request->input('sku').'.jpg';
                     $file = $request->file('image');
-                    $filename = $file->getClientOriginalName();
+                    $filename = $file->storeAs('', $skuimage);
                     $file->move(public_path('images/best'), $filename);
 
                     $data = array("P_NAME" => $name, "STOCK" => $qty, "PRICE" => $price2, "DESCRIPTION" => $desc);

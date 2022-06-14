@@ -42,10 +42,13 @@
             <select class="dropdowncat" id="cat" name="cat" required
                 style="text-transform:unset !important; width: 310px; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <option value="A">Cleaner</option>
+                @foreach ($cat as $c)
+                    <option value="{{ $c->cat }}">{{ $c->cat }} </option>
+                @endforeach
+                {{-- <option value="A">Cleaner</option>
                 <option value="B">Protector</option>
                 <option value="C">Coating Factory</option>
-                <option value="D">Tools</option>
+                <option value="D">Tools</option> --}}
             </select>
         </div>
 

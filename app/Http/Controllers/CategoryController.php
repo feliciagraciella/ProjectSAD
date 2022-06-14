@@ -53,7 +53,7 @@ class CategoryController extends Controller
 
     public function insproduct()
     {
-        $category = CategoryModel::select('C_NAME')->get();
+        $category = CategoryModel::select("*", DB::raw("CONCAT(ID_CATEGORY,' - ', C_NAME) as cat"))->get();
         $size = ProductListModel::select('SIZE')->groupBy('SIZE')->get();
         return view('insertproduct', [
             "cat" => $category,
