@@ -50,13 +50,13 @@
 
         <div class="baris4-1">Price</div>
         <div class="boxprice">
-            <input type="text" id="price" name="price" class="form-control btn btn-sm" required
+            <input type="number" id="price" name="price" class="form-control btn btn-sm" required min=0 step="1000"
                 style="text-transform:unset !important; width: 150px; text-align: center;">
         </div>
 
         <div class="baris4-2">Qty</div>
         <div class="boxqty">
-            <input type="number" id="qty" name="qty" class="form-control btn btn-sm" required
+            <input type="number" id="qty" name="qty" class="form-control btn btn-sm" required min=0
                 style="text-transform:unset !important; width: 70px; text-align: center;">
         </div>
 

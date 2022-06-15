@@ -200,3 +200,11 @@ body{
     transform: translateX(100%);
     border: 1px solid #DEE1E6;
 }
+
+.alert{
+    left: 50%;
+    position: absolute;
+    top: 77px;
+    z-index: 10;
+    width: 350px;
+}

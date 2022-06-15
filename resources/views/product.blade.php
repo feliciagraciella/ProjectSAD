@@ -24,26 +24,49 @@
     <h5 class=title>Products List</h5>
     <form action="/sortby" method="GET">
         @csrf
-    <div class="butinsertproduct">
-        <a href="/insertproduct"><button type="button" class="btn btn-outline-secondary btn-sm"
-                style="text-transform: unset !important; ">Insert Product <span class="iconify"
-                    data-icon="akar-icons:circle-plus-fill"></span></button></a>
-    </div>
-    <div class="baris1">
-        <p class="datetitle" style="margin-top: -12px;">Sort By</p>
-        <select class="dropdown-show2" id="sortby" name="sortby"
-            style="text-transform:unset !important; width: 150px; transform: translateY(-43px); margin-left: 10%; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <option value="Price">Price</option>
-            <option value="Qty">Qty</option>
-            <option value="Size">Size</option>
-        </select>
-        <a class="viewcat" href="/category">View Category</a>
-    </div>
-    <div class="button-apply">
-        <button type="submit" class="btn btn-dark btn-sm" name="action" value="apply" style="text-transform: unset !important;">Apply</button>
-    </div>
+        <div class="butinsertproduct">
+            <a href="/insertproduct"><button type="button" class="btn btn-outline-secondary btn-sm"
+                    style="text-transform: unset !important; ">Insert Product <span class="iconify"
+                        data-icon="akar-icons:circle-plus-fill"></span></button></a>
+        </div>
+        <div class="baris1">
+            <p class="datetitle" style="margin-top: -12px;">Sort By</p>
+            <select class="dropdown-show2" id="sortby" name="sortby"
+                style="text-transform:unset !important; width: 150px; transform: translateY(-43px); margin-left: 10%; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <option value="Price">Price</option>
+                <option value="Qty">Qty</option>
+                <option value="Size">Size</option>
+            </select>
+            <a class="viewcat" href="/category">View Category</a>
+        </div>
+        <div class="button-apply">
+            <button type="submit" class="btn btn-dark btn-sm" name="action" value="apply"
+                style="text-transform: unset !important;">Apply</button>
+        </div>
     </form>
+
+    <div>
+        @if (session()->has('success'))
+        <div class="alert alert-success">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ session()->get('success') }}
+        </div>
+
+        @elseif(session()->has('delete'))
+        <div class="alert alert-success">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ session()->get('delete') }}
+        </div>
+
+        @elseif(session()->has('update'))
+        <div class="alert alert-success">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ session()->get('update') }}
+        </div>
+
+        @endif
+    </div>
 
     <div class=table>
         <table class="table table-hover" style="width: 70%; position: absolute; left: 320px; top: 250px;">
