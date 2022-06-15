@@ -41,40 +41,42 @@
         <div class="baris2">Name</div>
         <div class="boxname">
             <input type="text" id="name" name="name" value="{{ $product->P_NAME }}" class="form-control btn btn-sm"
-                placeholder="Name" style="text-transform:unset !important; width: 310px; text-align: center;">
+                placeholder="Input name..." style="text-transform:unset !important; width: 310px; text-align: center;"
+                required>
         </div>
 
         <div class="baris3">Category</div>
         <div class="boxcat">
-            <input type="text" id="cat" name="cat" value="{{ $cat2->ID_CATEGORY }} - {{ $cat2->C_NAME }}" class="form-control btn btn-sm"
-                placeholder="Name" style="text-transform:unset !important; width: 310px; text-align: center;" readonly>
+            <input type="text" id="cat" name="cat" value="{{ $cat2->ID_CATEGORY }} - {{ $cat2->C_NAME }}"
+                class="form-control btn btn-sm"
+                style="text-transform:unset !important; width: 310px; text-align: center;" readonly>
         </div>
 
         <div class="baris4-1">Price</div>
         <div class="boxprice">
             <input type="text" id="price" name="price" value="Rp {{ $product->PRICE }}"
-                class="form-control btn btn-sm" placeholder="Price"
+                class="form-control btn btn-sm" placeholder="Input price..." required
                 style="text-transform:unset !important; width: 150px; text-align: center;">
         </div>
 
         <div class="baris4-2">Qty</div>
         <div class="boxqty">
             <input type="number" id="qty" name="qty" value="{{ $product->STOCK }}" class="form-control btn btn-sm"
-                placeholder="Qty" style="text-transform:unset !important; width: 70px; text-align: center;">
+                placeholder="qty" style="text-transform:unset !important; width: 70px; text-align: center;"
+                required>
         </div>
 
         <div class="baris5">Size</div>
         <div class="boxsize">
             <input type="text" id="size" name="size" value="{{ $product->SIZE }} ml" class="form-control btn btn-sm"
-            placeholder="Size" style="text-transform:unset !important; width: 310px; text-align: center;" readonly>
+                placeholder="Size" style="text-transform:unset !important; width: 310px; text-align: center;" readonly>
         </div>
 
         <div class="baris6">Description</div>
         <div class="boxdesc">
-            <textarea name="desc" id="desc" cols="30" rows="3"
-                style="text-transform:unset !important; width: 310px; height: 70px; text-align: left; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;">
-                {{ $product->DESCRIPTION }}
-            </textarea>
+            <textarea name="desc" id="desc" rows="3" required="required" placeholder="Describe the product..."
+                style="resize:none; width: 310px; height: 70px; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;">
+                {{ $product->DESCRIPTION }}</textarea>
         </div>
 
         <button onclick="return confirm('Are you sure?')" type="submit" class="buttondel" name="action"
