@@ -122,8 +122,6 @@ class ReportController extends Controller
                 $data1 = DB::select("select * from finance_all_all");
                 $data2 = DB::select("select * from finance_shopee_all");
                 $data3 = DB::select("select * from finance_tokopedia_all");
-                $income = DB::select("select fNetProfit() as `NetProfit`");
-                $admin = DB::select("select fAdminFee() as `AdminFee`");
                 $color1 = "#F15412";
                 $color2 = "#5FD068";
                 $platform1 = "Shopee";
@@ -133,8 +131,6 @@ class ReportController extends Controller
                 $data1 = DB::select("select * from finance_all_seven");
                 $data2 = DB::select("select * from finance_shopee_seven");
                 $data3 = DB::select("select * from finance_tokopedia_seven");
-                $income = DB::select("select fNetProfit() as `NetProfit`");
-                $admin = DB::select("select fAdminFee() as `AdminFee`");
                 $color1 = "#F15412";
                 $color2 = "#5FD068";
                 $platform1 = "Shopee";
@@ -144,8 +140,6 @@ class ReportController extends Controller
                 $data1 = DB::select("select * from finance_all_thirty");
                 $data2 = DB::select("select * from finance_shopee_thirty");
                 $data3 = DB::select("select * from finance_tokopedia_thirty");
-                $income = DB::select("select fNetProfit() as `NetProfit`");
-                $admin = DB::select("select fAdminFee() as `AdminFee`");
                 $color1 = "#F15412";
                 $color2 = "#5FD068";
                 $platform1 = "Shopee";
@@ -155,8 +149,6 @@ class ReportController extends Controller
                 $data1 = DB::select("select * from finance_shopee_all");
                 $data2 = $data1;
                 $data3 = $data1;
-                $income = DB::select("select fNetProfit() as `NetProfit`");
-                $admin = DB::select("select fAdminFee() as `AdminFee`");
                 $color1 = "#F15412";
                 $color2 = "#FFFFFF";
                 $platform1 = "Shopee";
@@ -166,8 +158,6 @@ class ReportController extends Controller
                 $data1 = DB::select("select * from finance_shopee_seven");
                 $data2 = $data1;
                 $data3 = $data1;
-                $income = DB::select("select fNetProfit() as `NetProfit`");
-                $admin = DB::select("select fAdminFee() as `AdminFee`");
                 $color1 = "#F15412";
                 $color2 = "#FFFFFF";
                 $platform1 = "Shopee";
@@ -177,8 +167,6 @@ class ReportController extends Controller
                 $data1 = DB::select("select * from finance_shopee_thirty");
                 $data2 = $data1;
                 $data3 = $data1;
-                $income = DB::select("select fNetProfit() as `NetProfit`");
-                $admin = DB::select("select fAdminFee() as `AdminFee`");
                 $color1 = "#F15412";
                 $color2 = "#FFFFFF";
                 $platform1 = "Shopee";
@@ -188,8 +176,6 @@ class ReportController extends Controller
                 $data1 = DB::select("select * from finance_tokopedia_all");
                 $data2 = $data1;
                 $data3 = $data1;
-                $income = DB::select("select fNetProfit() as `NetProfit`");
-                $admin = DB::select("select fAdminFee() as `AdminFee`");
                 $color1 = "#5FD068";
                 $color2 = "#FFFFFF";
                 $platform1 = "Tokopedia";
@@ -199,8 +185,6 @@ class ReportController extends Controller
                 $data1 = DB::select("select * from finance_tokopedia_seven");
                 $data2 = $data1;
                 $data3 = $data1;
-                $income = DB::select("select fNetProfit() as `NetProfit`");
-                $admin = DB::select("select fAdminFee() as `AdminFee`");
                 $color1 = "#5FD068";
                 $color2 = "#FFFFFF";
                 $platform1 = "Tokopedia";
@@ -210,8 +194,6 @@ class ReportController extends Controller
                 $data1 = DB::select("select * from finance_tokopedia_thirty");
                 $data2 = $data1;
                 $data3 = $data1;
-                $income = DB::select("select fNetProfit() as `NetProfit`");
-                $admin = DB::select("select fAdminFee() as `AdminFee`");
                 $color1 = "#5FD068";
                 $color2 = "#FFFFFF";
                 $platform1 = "Tokopedia";
