@@ -13,6 +13,19 @@
 </head>
 
 <body>
+    @if (session("success"))
+        <div class="alert alert-success alert-dismissible fade show" style="z-index: 999; margin-left: 250px; margin-top: 55px; position: absolute; width: -webkit-fill-available;" role="alert">
+            {{ session("success")}}
+            <button type="button" class="btn-close" style="padding:17px" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
+    @if (session("error"))
+        <div class="alert alert-danger alert-dismissible fade show" style="z-index: 999; margin-left: 250px; margin-top: 55px; position: absolute; width: -webkit-fill-available;" role="alert">
+            {{ session("error")}}
+            <button type="button" class="btn-close" style="padding:17px" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
     <h5 class=title>Transaction Detail</h5>
 
     <h6 style="margin-top: 50px" class=title>Transaction ID : {{$id}}</h6>

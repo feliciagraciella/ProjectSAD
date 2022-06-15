@@ -75,16 +75,33 @@ class TransactionListController extends Controller
 
         $stok = DB::table('PRODUCT')->select('STOCK')->where('SKU', $dd2)->get();
 
+        if ($date == null)
+        {
+            return redirect('inserttransaction')->with("error", "Select date!");
+        }
+        else if ($platformname == null)
+        {
+            return redirect('inserttransaction')->with("error", "Select platform");
+        }
+        else if ($date == null && $platformname == null)
+        {
+            return redirect('inserttransaction')->with("error", "Select date and platform");
+        }
+
+        if($dd2 == null)
+        {
+            return redirect('inserttransaction')->with("error", "Select product!");
+        }
 
         if ($qty == 0){
-            return redirect('inserttransaction')->back()->with("error", "Quantity must be more than 0");
+            return redirect('inserttransaction')->with("error", "Quantity must be more than 0");
         }
-        else if($qty > $stok[0]->STOCK){
-            return redirect('inserttransaction')->back()->with("error", "Quantity cannot exceed the stock quantity");
+        else if(count($stok) != 0 && $qty > $stok[0]->STOCK){
+            return redirect('inserttransaction')->with("error", "Quantity cannot exceed the stock quantity");
         }
         else if($qty > 0){
             CartModel::updateCart($dd2, $dd1, $date, $id, $p, $qty);
-            return redirect()->back()->with("success", "Succefully added to cart");
+            return redirect('inserttransaction')->with("success", "Succefully added to cart");
         }
 
 
@@ -98,7 +115,7 @@ class TransactionListController extends Controller
         //     'STATUS_DELETE' => '0'
         // ]);
 
-        return redirect('inserttransaction');
+        // return redirect('inserttransaction');
         // return view("inserttransaction", [
         //     "dd1" => $dd1
         // ]);
@@ -106,19 +123,28 @@ class TransactionListController extends Controller
 
     public function insertTrans(Request $req)
     {
-
-
         $trans = DB::table('CART')->select('ID_TRANSACTION', 'DATE', 'PLATFORM')->where('ID_ADMIN', session('login'))->groupBy('ID_TRANSACTION', 'DATE', 'PLATFORM')->limit(1)->get();
+
+
 
         $totalqty = DB::table('CART')->select(DB::raw('SUM(QTY_PRODUCT) as `SUM`'))->where('ID_ADMIN', session('login'))->get();
 
         $totalprice = $req->input("p");
         $totalfee = $req->input("insertfee");
 
+        // dd($trans[0]->ID_);
 
-        // if($totalprice != null && $totalfee != null && is_numeric($totalprice) && is_numeric($totalfee))
-        // {
-            dd($totalprice, $totalfee);
+        $transada = TransactionListModel::select('ID_TRANSACTION')->where('ID_TRANSACTION', $trans[0]->ID_TRANSACTION)->get();
+
+        if(count($transada)!=0)
+        {
+            DB::table('CART')->where('ID_ADMIN', session('login'))->delete();
+            return redirect('inserttransaction')->with("error", "Transaction in this date already exist!");
+        }
+
+        if($totalprice != null && $totalfee != null && is_numeric($totalprice) && is_numeric($totalfee) && count($trans)!=0)
+        {
+            // dd($totalprice, $totalfee);
             $transdet = DB::table('CART')->where('ID_ADMIN', session('login'))->get();
 
             // dd($transdet[0]->SKU);
@@ -147,12 +173,12 @@ class TransactionListController extends Controller
 
             DB::table('CART')->where('ID_ADMIN', session('login'))->delete();
 
-            return redirect('inserttransaction')->with("success", "Added to cart!");
-        // }
-        // else
-        // {
-        //     return redirect('inserttransaction')->with("error", "Value not valid!");
-        // }
+            return redirect('inserttransaction')->with("success", "Transaction is successfull!");
+        }
+        else
+        {
+            return redirect('inserttransaction')->with("error", "Transaction is not successfull!");
+        }
 
 
     }
@@ -163,7 +189,7 @@ class TransactionListController extends Controller
         // dd($cartt);
         DB::table('CART')->where('ID_ADMIN', session('login'))->delete();
 
-        return redirect('inserttransaction')->with("success", "deleted");
+        return redirect('inserttransaction')->with("success", "Successfully deleted!");
     }
 
     public function dropdownproduct()
@@ -173,10 +199,11 @@ class TransactionListController extends Controller
         ->select('CART.ID_TRANSACTION', 'CART.DATE', 'CART.PLATFORM', 'CART.QTY_PRODUCT', 'CART.SKU', DB::raw("CONCAT(P_NAME, ' ', SIZE, 'mL') AS NAME"))->where('ID_ADMIN', session('login'))->get();
         // $platform = DB::table('CART')->select('PLATFORM')->limit(1)->get();
 
+        // dd($cart);
         if(count($cart)!=0){
-            $platform = DB::table('CART')->select('PLATFORM')->limit(1)->get();
+            $platform = DB::table('CART')->select('PLATFORM')->where('ID_ADMIN', session('login'))->limit(1)->get();
             $platformname = $platform[0]->PLATFORM;
-            $date = DB::table('CART')->select('DATE')->limit(1)->get();
+            $date = DB::table('CART')->select('DATE')->where('ID_ADMIN', session('login'))->limit(1)->get();
             $datee = $date[0]->DATE;
             $disable = "disabled";
         }
@@ -203,15 +230,15 @@ class TransactionListController extends Controller
 
         DB::table('CART')->where('SKU', $id)->where('ID_ADMIN', session('login'))->delete();
 
-        return redirect('inserttransaction');
+        return redirect('inserttransaction')->with("success", "Successfully deleted " . $id);
     }
 
     public function deletetrans(Request $request)
     {
-        dd(session('idtransdet'));
-        DB::table('TRANSACTION')->where('ID_TRANSACTION', )->delete();
-        DB::table('DETAIL_TRANSACTION')->where('ID_TRANSACTION', )->delete();
+        // dd(session('idtransdet'));
+        DB::table('TRANSACTION')->where('ID_TRANSACTION', session('idtransdet'))->delete();
+        DB::table('DETAIL_TRANSACTION')->where('ID_TRANSACTION', session('idtransdet'))->delete();
 
-        return redirect('inserttransaction');
+        return redirect('transactionlist')->with("success", "Transaction successfully deleted!");
     }
 }

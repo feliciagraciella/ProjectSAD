@@ -14,7 +14,19 @@
 </head>
 
 <body>
+    @if (session("success"))
+        <div class="alert alert-success alert-dismissible fade show" style="z-index: 999; margin-left: 250px; margin-top: 55px; position: absolute; width: -webkit-fill-available;" role="alert">
+            {{ session("success")}}
+            <button type="button" class="btn-close" style="padding:17px" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
 
+    @if (session("error"))
+        <div class="alert alert-danger alert-dismissible fade show" style="z-index: 999; margin-left: 250px; margin-top: 55px; position: absolute; width: -webkit-fill-available;" role="alert">
+            {{ session("error")}}
+            <button type="button" class="btn-close" style="padding:17px" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
     <h5 class=title>Insert Transaction</h5>
 
 
@@ -58,12 +70,12 @@
             </div>
 
             <div class="baris3">
-                @if (session("success"))
+                {{-- @if (session("success"))
                     <div class="alert alert-success alert-dismissible fade show" style="z-index: 1001; width: 75%; transform: translateY(-50%);" role="alert">
                         {{ session("success")}}
                         <button type="button" class="btn-close" style="padding:17px" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
-                @endif
+                @endif --}}
 
                 <div class="buttonadd">
                     <button onclick="return confirm('Are you sure?')" type="submit" name="buttonadd" class="btn btn-secondary btn-sm" style="text-transform: unset !important; width: 150px;">Add</button>
