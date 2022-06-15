@@ -39,15 +39,9 @@
 
         <div class="baris3">Category</div>
         <div class="boxcat">
-            <select class="dropdowncat" id="cat" name="cat" value="{{ $product->ID_CATEGORY }}"
-                style="text-transform:unset !important; width: 310px; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled="true">
-                @foreach ($cat as $c)
-                    <option value="{{ $c->C_NAME }}" {{$namecat == $c->C_NAME  ? 'selected' : ''}}>{{ $c->C_NAME }}</option>
-                @endforeach
-            </select>
+            <input type="text" id="cat" name="cat" value="{{ $cat2->ID_CATEGORY }} - {{ $cat2->C_NAME }}" class="form-control btn btn-sm"
+                placeholder="Name" style="text-transform:unset !important; width: 310px; text-align: center;" readonly>
         </div>
-        @dd($namecat)
 
         <div class="baris4-1">Price</div>
         <div class="boxprice">
@@ -64,13 +58,8 @@
 
         <div class="baris5">Size</div>
         <div class="boxsize">
-            <select class="dropdownsize" id="size" name="size" value="{{ $product->SIZE }}"
-                style="text-transform:unset !important; width: 310px; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" disabled="true">
-                @foreach ($size as $s)
-                    <option value="{{ $s->SIZE }}">{{ $s->SIZE }} ml</option>
-                @endforeach
-            </select>
+            <input type="text" id="size" name="size" value="{{ $product->SIZE }} ml" class="form-control btn btn-sm"
+            placeholder="Size" style="text-transform:unset !important; width: 310px; text-align: center;" readonly>
         </div>
 
         <div class="baris6">Description</div>
@@ -81,21 +70,21 @@
             </textarea>
         </div>
 
-        <button onclick="return confirm('Are you sure?')" type="submit" class="buttondel" name="action" value="delete"
-            style="background-color: #f7f7f7">Delete</button>
-        <button onclick="return confirm('Are you sure?')" type="submit" class="buttonins" name="action" value="edit"
-            style="background-color: #dee1e6">Edit</button>
+        <button onclick="return confirm('Are you sure?')" type="submit" class="buttondel" name="action"
+            value="delete" style="background-color: #f7f7f7">Delete</button>
+        <button onclick="return confirm('Are you sure?')" type="submit" class="buttonins" name="action"
+            value="edit" style="background-color: #dee1e6">Edit</button>
 
-            <input type="hidden" name="oldImage" value="{{ $product->IMAGE }}">
-            @if($product->IMAGE)
-        <div class="productphoto">
-            <img id="frame" class="photo" src="../images/best/{{ $product->SKU }}.jpg" value="{{ $product->IMAGE }}" name="image1">
-        </div>
-
+        <input type="hidden" name="oldImage" value="{{ $product->IMAGE }}">
+        @if ($product->IMAGE)
+            <div class="productphoto">
+                <img id="frame" class="photo" src="../images/best/{{ $product->SKU }}.jpg"
+                    value="{{ $product->IMAGE }}" name="image1">
+            </div>
         @else
-        <div class="productphoto">
-            <img id="frame" src="" class="img-responsive">
-        </div>
+            <div class="productphoto">
+                <img id="frame" src="" class="img-responsive">
+            </div>
         @endif
 
         <input class="buttonimg" type="file" id="formFile" name="image" onchange="preview()">

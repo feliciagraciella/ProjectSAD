@@ -30,13 +30,14 @@ class ProductListController extends Controller
         $product = ProductDetailModel::select('SKU', 'ID_CATEGORY', 'P_NAME', 'SIZE', 'PRICE', 'STOCK', 'DESCRIPTION', 'IMAGE')->where('SKU', $sku)->get();
         $category = CategoryModel::select('C_NAME')->get();
         $size = ProductListModel::select('SIZE')->groupBy('SIZE')->get();
-        $idcat = ProductDetailModel::select('ID_CATEGORY')->where('SKU', $sku)->get();
-        $namecat = CategoryModel::select('C_NAME')->where('ID_CATEGORY', $idcat);
+        $cat2 = ProductListModel::join('CATEGORY', 'CATEGORY.ID_CATEGORY', '=', 'PRODUCT.ID_CATEGORY')
+            ->select('CATEGORY.ID_CATEGORY', 'CATEGORY.C_NAME')->where('PRODUCT.SKU', $sku)->get();
 
-        return view('productdetail', compact('category', 'namecat'), [
+        return view('productdetail', [
             'product' => $product[0],
             "cat" => $category,
-            'size' => $size
+            'size' => $size,
+            'cat2' => $cat2[0]
         ]);
     }
 
@@ -60,13 +61,13 @@ class ProductListController extends Controller
         $cat2 = Str::substr($cat, 0, 1);
 
         //SKU GENERATE
-        $skuu = $cat2.$size;
-        $carisku = DB::table('PRODUCT')->where('SKU','LIKE','%'.$skuu.'%')->get();
-        $hitung = $carisku->count();
-        $lpad = str_pad($hitung+1,3,'0',STR_PAD_LEFT);
-        $skugen = $skuu.$lpad;
-
-        $skuimage = $skugen.'.jpg';
+        $skuu = $cat2 . $size;
+        $carisku = DB::table('PRODUCT')->select('SKU')->where('SKU', 'LIKE', '%' . $skuu . '%')
+            ->orderBy('SKU', 'DESC')->limit(1)->get();
+        $hitung = Str::substr($carisku, 13, 3);
+        $lpad = str_pad((int)$hitung + 1, 3, '0', STR_PAD_LEFT);
+        $skugen = $skuu . $lpad;
+        $skuimage = $skugen . '.jpg';
 
         switch ($request->input('action')) {
             case 'insert':
@@ -78,7 +79,7 @@ class ProductListController extends Controller
 
                 $data = array('SKU' => $skugen, "P_NAME" => $name, "ID_CATEGORY" => $cat2, "PRICE" => $price, "STOCK" => $qty, "SIZE" => $size, "DESCRIPTION" => $desc, "IMAGE" => $skuimage, "STATUS_DELETE" => '0');
                 DB::table('PRODUCT')->insert($data);
-                return redirect('product')->with('success', "Insert successfully");
+                return redirect('product')->with('success', "Product '$skugen' added successfully");
                 break;
 
             case 'delete':
@@ -99,14 +100,14 @@ class ProductListController extends Controller
         switch ($request->input('action')) {
             case 'delete':
 
-                $filename = $request->input('sku').'.jpg';
-                $image_path = (public_path('images/best/').$filename);
+                $filename = $request->input('sku') . '.jpg';
+                $image_path = (public_path('images/best/') . $filename);
                 if (File::exists($image_path)) {
                     File::delete($image_path);
 
                     $sku = $request->input('sku');
                     DB::table('PRODUCT')->where([['SKU', '=', $sku]])->delete();
-                    return redirect('product')->with('success', "Delete successfully");
+                    return redirect('product')->with('delete', "Product '$sku' has been deleted");
                 }
                 break;
 
@@ -115,20 +116,20 @@ class ProductListController extends Controller
                 if ($request->file('image')) {
                     if ($request->oldImage) {
                         $old = $request->oldImage;
-                        $filename = (public_path('images/best/').$old);
+                        $filename = (public_path('images/best/') . $old);
                         if (File::exists($filename)) {
                             File::delete($filename);
                         }
                     }
 
-                    $skuimage = $request->input('sku').'.jpg';
+                    $skuimage = $request->input('sku') . '.jpg';
                     $file = $request->file('image');
                     $filename = $file->storeAs('', $skuimage);
                     $file->move(public_path('images/best'), $filename);
 
                     $data = array("P_NAME" => $name, "STOCK" => $qty, "PRICE" => $price2, "DESCRIPTION" => $desc);
                     DB::table('PRODUCT')->where('SKU', $sku)->update($data);
-                    return redirect('product')->with('success', "Update successfully");
+                    return redirect('product')->with('update', "Update product '$sku' successfully");
                 }
                 break;
         }

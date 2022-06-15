@@ -56,3 +56,18 @@ body{
 a:link, a:visited {
     color: black;
   }
+
+.alert{
+    left: 50%;
+    position: absolute;
+    top: 77px;
+    z-index: 10;
+    width: 350px;
+    color: black;
+    background-color: #e5e5e5;
+}
+
+.alert-success {
+    color: black;
+    background-color: #e5e5e5;
+}
