@@ -150,9 +150,7 @@
 
             {{-- @endforeach --}}
 
-
         </div>
-
     </div>
 
 
@@ -174,7 +172,7 @@
                 plotLines: [{
                     value: 0,
                     width: 1,
-                    color: '#437ede'
+                    color: '#FFFF'
                 }]
             },
             xAxis: {
@@ -234,7 +232,7 @@
                 plotLines: [{
                     value: 0,
                     width: 1,
-                    color: '#437ede'
+                    color: '#FFFF'
                 }]
             },
 

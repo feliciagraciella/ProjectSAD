@@ -73,7 +73,7 @@
 
     <div class="finance-report">
         <h3>Finance</h3>
-        <h4>&nbsp(Last 7 Days)</h4>
+        {{-- <h4>&nbsp(Last 7 Days)</h4> --}}
         <div class="netprofit" style="left: 80%; position: absolute; top: 225px;">
             <p class="finance1">
                 <span class="iconify" data-icon="dashicons:money-alt" style="color: black; "></span>
