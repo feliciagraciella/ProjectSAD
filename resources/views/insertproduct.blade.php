@@ -87,9 +87,6 @@
             <img id="frame" src="" class="img-responsive">
         </div>
     </form>
-    <div class="alert alert-success">
-        <strong>Success!</strong> This alert box could indicate a successful or positive action.
-      </div>
 
     <script>
         function preview() {

@@ -23,6 +23,13 @@
 <body>
     <h5 class=title>Product Detail</h5>
 
+    @if (session()->has('message'))
+        <div class="alert alert-warning alert-dismissible fade show">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ session()->get('message') }}
+        </div>
+    @endif
+
     <form action="/deleteprod" method="POST" enctype="multipart/form-data" class="form">
         @csrf
         <div class="baris1">SKU</div>

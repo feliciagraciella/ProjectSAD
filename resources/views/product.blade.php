@@ -49,19 +49,19 @@
     <div>
         @if (session()->has('success'))
         <div class="alert alert-success">
-            <button type="button" class="close" data-dismiss="alert">x</button>
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
             {{ session()->get('success') }}
         </div>
 
         @elseif(session()->has('delete'))
         <div class="alert alert-success">
-            <button type="button" class="close" data-dismiss="alert">x</button>
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
             {{ session()->get('delete') }}
         </div>
 
         @elseif(session()->has('update'))
         <div class="alert alert-success">
-            <button type="button" class="close" data-dismiss="alert">x</button>
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
             {{ session()->get('update') }}
         </div>
 
