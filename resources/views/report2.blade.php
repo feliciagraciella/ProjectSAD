@@ -31,9 +31,9 @@
                 aria-haspopup="true" aria-expanded="false" required>
                 {{-- <div class="dropdown-menu" aria-labelledby="dropdownMenuLink"> --}}
                 <option value="" disabled selected hidden>Select Report</option>
-                <option class="dropdown-item" type="submit" value="Product Sales" style="font-size:12px; text-align:left">Product
+                <option class="dropdown-item" type="submit" value="Product Sales" style="font-size:12px;">Product
                     Sales</option>
-                <option class="dropdown-item" type="submit" value="Finance" style="font-size:12px; text-align:left">Finance</option>
+                <option class="dropdown-item" type="submit" value="Finance" style="font-size:12px;">Finance</option>
                 {{-- </div> --}}
             </select>
         </div>
