@@ -4,6 +4,7 @@
 
 <head>
     <link rel="stylesheet" href={{ asset('css/category.css') }} type="text/css" />
+    <link rel="stylesheet" href={{ asset('css/product.css') }} type="text/css" />
     <link rel="stylesheet" href={{ asset('css/inserttransaction.css') }} type="text/css" />
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -22,6 +23,12 @@
 </head>
 
 <body>
+    @if (session()->has('status'))
+        <div class="alert alert-warning alert-dismissible fade show">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ session()->get('status') }}
+        </div>
+    @endif
     <h5 class=title>Add Category</h5>
     <div class="baris1" style="z-index: 1000">
         <h4 class="name">Category Name</h4>
@@ -32,15 +39,10 @@
                     style="text-transform:unset !important; width: 310px; text-align: left;">
             </div>
             <div class="buttonadd2">
-                {{-- <button type="submit" class="buttondel" name="action" value="delete"
-                    style="width: 150p">Add</button> --}}
                 <button type="submit" name="action" value="insert" class="btn btn-secondary btn-sm"
                     style="text-transform: unset !important; width: 150px ;">Add</button>
             </div>
         </form>
-        {{-- <div class="buttonadd2">
-            <button type="button" class="btn btn-secondary btn-sm" style="text-transform: unset !important; width: 150px ; ">Add</button>
-        </div> --}}
     </div>
 
 

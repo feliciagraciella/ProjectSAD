@@ -23,7 +23,7 @@ class CategoryController extends Controller
             'STATUS_DELETE' => '0'
         ]);
 
-        return redirect('category')->with('status',"Insert successfully");
+        return redirect('category')->with('status',"Insert Successful");
     }
 
     public function category2()

@@ -13,12 +13,12 @@ use Illuminate\Support\Facades\Session;
 class LogInController extends Controller
 {
 
-    public function index()
-    {
-        return view('login', [
+    // public function index()
+    // {
+    //     return view('login', [
 
-        ]);
-    }
+    //     ]);
+    // }
 
     public function authentication(Request $req)
     {
