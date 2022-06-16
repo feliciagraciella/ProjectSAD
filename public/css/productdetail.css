@@ -59,7 +59,7 @@ body{
     right: 0;
     margin: 0;
     top: 340px;
-    left:305px;
+    left:280px;
     margin-left: 27.4%;
     z-index: 10;
 }
@@ -125,7 +125,7 @@ body{
     position: absolute;
     top: 330px;
     padding: 13px 0px 0px 22px;
-    left:305px;
+    left:280px;
     margin-left: 24%;
     transform: translateX(-70%);
 }
@@ -196,7 +196,7 @@ body{
     border-radius: 8px;
     width: 15%;
     left:0px;
-    margin-left: 55%;
+    margin-left: 52%;
     transform: translateX(100%);
     border: 1px solid #DEE1E6;
 }
