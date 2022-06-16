@@ -37,6 +37,57 @@ body{
 }
 
 /* styling income */
+.finance h3 {
+    font-weight: bold;
+    font-size: larger;
+    font-family: "Poppins";
+    color: black;
+    left: 80%;
+    top: 90px;
+    position: absolute;
+}
+
+.finance1 {
+    font-size: 30px;
+}
+
+.netprofit-text {
+    font-size: smaller;
+    font-family: "Poppins";
+    color: black;
+    left: 40px;
+    top: 0;
+    position: absolute;
+}
+
+.netprofit-amt {
+    font-weight: bold;
+    font-size: medium;
+    font-family: "Poppins";
+    color: black;
+    left: 40px;
+    top: 20px;
+    position: absolute;
+}
+
+.fee-text {
+    font-size: smaller;
+    font-family: "Poppins";
+    color: black;
+    left: 40px;
+    top: 0;
+    position: absolute;
+}
+
+.fee-amt {
+    font-weight: bold;
+    font-size: medium;
+    font-family: "Poppins";
+    color: black;
+    left: 40px;
+    top: 20px;
+    position: absolute;
+}
 .income{
     position: absolute;
     top: 249px;
