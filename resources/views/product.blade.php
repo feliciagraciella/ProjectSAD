@@ -34,6 +34,7 @@
             <select class="dropdown-show2" id="sortby" name="sortby"
                 style="text-transform:unset !important; width: 150px; transform: translateY(-43px); margin-left: 10%; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px;"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <option value="" disabled selected hidden>Select</option>
                 <option value="Price">Price</option>
                 <option value="Qty">Qty</option>
                 <option value="Size">Size</option>
