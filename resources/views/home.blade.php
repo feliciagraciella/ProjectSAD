@@ -33,7 +33,7 @@
 <body>
     <div class="all" style="margin-left: 3%">
         <div class="report">
-            <h3>Monthly Report</h3>
+            <h3>Monthly Profit</h3>
             <a href="/report">View All</a>
             <div class="column-report">
                 <div class="rect-tokped">
@@ -163,6 +163,7 @@
                 }]
             },
             xAxis: {
+                categories: {!!json_encode($tanggal1)!!},
                 visible: false
             },
             series: [{
@@ -212,6 +213,7 @@
             },
 
             xAxis: {
+                categories: {!!json_encode($tanggal2)!!},
                 visible: false
             },
             series: [{
@@ -235,7 +237,7 @@
 
         });
     </script>
-    
+
 </body>
 
 </html>
