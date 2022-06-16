@@ -75,6 +75,7 @@ class TransactionListController extends Controller
 
         $stok = DB::table('PRODUCT')->select('STOCK')->where('SKU', $dd2)->get();
 
+
         if ($date == null)
         {
             return redirect('inserttransaction')->with("error", "Select date!");
@@ -96,6 +97,7 @@ class TransactionListController extends Controller
         if ($qty == 0){
             return redirect('inserttransaction')->with("error", "Quantity must be more than 0");
         }
+
         else if(count($stok) != 0 && $qty > $stok[0]->STOCK){
             return redirect('inserttransaction')->with("error", "Quantity cannot exceed the stock quantity");
         }
@@ -114,13 +116,13 @@ class TransactionListController extends Controller
         $totalprice = $req->input("p");
         $totalfee = $req->input("insertfee");
 
-
         $transada = TransactionListModel::select('ID_TRANSACTION')->where('ID_TRANSACTION', $trans[0]->ID_TRANSACTION)->get();
 
         if(count($transada)!=0)
         {
             DB::table('CART')->where('ID_ADMIN', session('login'))->delete();
             return redirect('inserttransaction')->with("error", "Transaction in this date already exist!");
+
         }
 
         if($totalprice != null && $totalfee != null && is_numeric($totalprice) && is_numeric($totalfee) && count($trans)!=0)
