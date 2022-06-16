@@ -70,11 +70,4 @@ class LogInModel extends Model
         return null;
     }
 
-    // public function get_acc($admin_login){
-    //     $cmd = "SELECT * from `ADMIN` a WHERE ID_ADMIN=:'admin'";
-    //     $data1 = ['admin'=> $admin_login];
-    //     $ad = DB::select($cmd,$data1);
-    //     return $ad[0];
-    // }
-
 }
