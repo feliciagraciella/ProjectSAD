@@ -35,22 +35,6 @@ class CategoryController extends Controller
         ]);
     }
 
-    // public function category(Request $request)
-    // {
-    //     $idcat = CategoryModel::select('`fID_Cat`()');
-    //     $name = $request->input('name');
-    //     $totalqty = 0;
-    //     $del = 0;
-
-    //     switch ($request->input('action')) {
-    //         case 'insert':
-    //             $data = array('ID_CATEGORY' => $idcat, "C_NAME" => $name, "TOTAL_PRODUCT" => $totalqty, "STATUS_DELETE" => $del);
-    //             DB::table('CATEGORY')->insert($data);
-    //             return redirect('category')->with('success', "Insert successfully");
-    //             break;
-    //     }
-    // }
-
     public function insproduct()
     {
         $category = CategoryModel::select("*", DB::raw("CONCAT(ID_CATEGORY,' - ', C_NAME) as cat"))->get();

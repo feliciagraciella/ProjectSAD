@@ -28,23 +28,12 @@
 
 
 <body style="background-color: #e5e5e5">
-    {{-- @if (Session::has('success'))
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close">
-
-            </button>
-            <strong>{{Session::get('success')}}</strong>
+    @if (session()->has('error'))
+        <div class="alert alert-warning alert-dismissible fade show">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            {{ session()->get('error') }}
         </div>
-    @endif --}}
-    {{-- @if (Session::has('error'))
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close">
-
-            </button>
-            <strong>{{Session::get('error')}}</strong>
-        </div>
-    @endif --}}
+    @endif
     <div class="rectangle">
         <div class="column">
             <div class="text-signin">

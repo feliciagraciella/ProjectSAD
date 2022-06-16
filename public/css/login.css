@@ -118,3 +118,11 @@ input {
     left: 100%; */
     /* top: 350px; */
 }
+
+.alert{
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+}
