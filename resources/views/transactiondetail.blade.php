@@ -46,7 +46,7 @@
                 <tr>
                     <td style="text-align:left;"><img src="../images/best/{{$td->SKU}}.jpg" alt="" height=70></td>
                     <td style="font-weight: 600;text-align:left;">{{$td -> SKU}}</td>
-                    <td style="font-weight: 600; text-align:left;">{{$td -> P_NAME}}</td>
+                    <td style="font-weight: 600; text-align:left;">{{$td -> NAME}}</td>
                     <td style="font-weight: 600;text-align:left;">{{$td -> QTY_PRODUCT}}</td>
                 </tr>
                 @endforeach

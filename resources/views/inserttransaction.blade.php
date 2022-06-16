@@ -34,7 +34,11 @@
         @csrf
             <div class="baris1" style="z-index: 1000">
                 <h4 class="datetitle">Date</h4>
-                <input class="btn btn-sm calendar {{$disable}}" value="{{$date}}" name="date" style="text-transform:unset !important; width: 250px;" type="date">
+                <input class="btn btn-sm calendar {{$disable}}" value="{{$date}}" id="dateee" name="date" style="text-transform:unset !important; width: 250px;" type="date">
+
+                <script>
+                    dateee.max = new Date().toISOString().split("T")[0];
+                </script>
 
                 <h4 class="platformtitle" >Platform</h4>
                 <div class="dropdown-show2" >
@@ -65,7 +69,7 @@
 
                 <h4 class="platformtitle">Quantity</h4>
                 <div class="numericupdown">
-                    <input class="form-control btn btn-sm d-inline text-center me-3 txtJumlah" name="inputQuantity" min=1 value="0" type="number" style="width: 250px;">
+                    <input class="form-control btn btn-sm d-inline text-center me-3 txtJumlah" name="inputQuantity" min=1 value="1" type="number" style="width: 250px;">
                 </div>
             </div>
 
