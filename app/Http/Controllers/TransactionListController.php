@@ -103,36 +103,17 @@ class TransactionListController extends Controller
             CartModel::updateCart($dd2, $dd1, $date, $id, $p, $qty);
             return redirect('inserttransaction')->with("success", "Succefully added to cart");
         }
-
-
-
-        // DB::table('CART')->insert([
-        //     'ID_TRANSACTION' => $id,
-        //     'DATE' => $date,
-        //     'PLATFORM' => $dd1,
-        //     'SKU' => $dd2,
-        //     'QTY_PRODUCT' => $qty,
-        //     'STATUS_DELETE' => '0'
-        // ]);
-
-        // return redirect('inserttransaction');
-        // return view("inserttransaction", [
-        //     "dd1" => $dd1
-        // ]);
     }
 
     public function insertTrans(Request $req)
     {
         $trans = DB::table('CART')->select('ID_TRANSACTION', 'DATE', 'PLATFORM')->where('ID_ADMIN', session('login'))->groupBy('ID_TRANSACTION', 'DATE', 'PLATFORM')->limit(1)->get();
 
-
-
         $totalqty = DB::table('CART')->select(DB::raw('SUM(QTY_PRODUCT) as `SUM`'))->where('ID_ADMIN', session('login'))->get();
 
         $totalprice = $req->input("p");
         $totalfee = $req->input("insertfee");
 
-        // dd($trans[0]->ID_);
 
         $transada = TransactionListModel::select('ID_TRANSACTION')->where('ID_TRANSACTION', $trans[0]->ID_TRANSACTION)->get();
 
@@ -144,10 +125,8 @@ class TransactionListController extends Controller
 
         if($totalprice != null && $totalfee != null && is_numeric($totalprice) && is_numeric($totalfee) && count($trans)!=0)
         {
-            // dd($totalprice, $totalfee);
             $transdet = DB::table('CART')->where('ID_ADMIN', session('login'))->get();
 
-            // dd($transdet[0]->SKU);
             TransactionListModel::insert([
                 'DATE_TRANSACTION' => $trans[0]->DATE,
                 'ID_ADMIN' => session('login'),
