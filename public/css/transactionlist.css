@@ -12,10 +12,23 @@ body{
     font-weight: 700;
 }
 
+.baris1 {
+    background-color: #f7f7f7;
+
+    height: 50px;
+    position: absolute;
+    top: 150px;
+    padding: 30px;
+    width: 70%;
+    left:305px;
+    margin-left: 50%;
+    transform: translateX(-70%);
+}
+
 .button {
     position: absolute;
     top: 95px;
-    right: 7.5%;
+    right: 9%;
 }
 
 /* styling table */
@@ -27,10 +40,21 @@ a:link, a:visited {
     color: black;
   }
 
-/* button:hover {
-    background-color: #8B8B8B;
-    border-color: #BABCBE;
-    color:  #FFFFFF;
-} */
+.button-apply{
+    position: absolute;
+    left: 350px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 99;
+}
 
+.datetitle{
+    font-family: Poppins;
+    font-size:smaller;
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10%;
+}
 

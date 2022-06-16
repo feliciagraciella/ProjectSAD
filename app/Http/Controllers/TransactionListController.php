@@ -24,6 +24,35 @@ class TransactionListController extends Controller
         ]);
     }
 
+
+    public function transactionlist(Request $req)
+    {
+        $sortby = $req->get("sortby");
+
+        if ($sortby == "all") {
+            $trans = TransactionListModel::orderBy('DATE_TRANSACTION', 'desc')->get();
+        } elseif ($sortby == "shopee") {
+            $trans = TransactionListModel::where('PLATFORM', 'Shopee')->orderBy('DATE_TRANSACTION', 'desc')->get();
+        } elseif ($sortby == "tokopedia") {
+            $trans = TransactionListModel::where('PLATFORM', 'Tokopedia')->orderBy('DATE_TRANSACTION', 'desc')->get();
+        }
+
+        return view("transactionlist", [
+            "trans" => $trans
+        ]);
+    }
+
+    // public function transactionlist()
+    // {
+    //     $all = TransactionListModel::orderBy('DATE_TRANSACTION', 'desc')->get();
+    //     $shopee = TransactionListModel::where('PLATFORM', 'Shopee')->orderBy('DATE_TRANSACTION', 'desc')->get();
+    //     $shopee = TransactionListModel::where('PLATFORM', 'Shopee')->orderBy('DATE_TRANSACTION', 'desc')->get();
+
+    //     return view("transactionlist", [
+    //         "trans" => $trans
+    //     ]);
+    // }
+
     public function details($id)
     {
         // $transdet = TransactionDetailModel::join('PRODUCT', 'DETAIL_TRANSACTION.SKU', '=', 'PRODUCT.SKU')
