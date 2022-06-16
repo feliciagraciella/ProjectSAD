@@ -17,9 +17,27 @@
         <a href="/inserttransaction"><button type="button" class="btn btn-outline-secondary btn-sm" style="text-transform: unset !important; ">Insert Transaction <span class="iconify" data-icon="akar-icons:circle-plus-fill"></span></button></a>
     </div>
 
+    <form action="/selectplatform" method="GET">
+        @csrf
+        <div class="baris1" style="z-index: 1000">
+            <h4 class="datetitle">Filter</h4>
+            <select class="dropdown-show2" id="sortby" name="sortby"
+                style="text-transform:unset !important; width: 150px; margin-left: 10%; height:30.97px; text-align: center; border:none; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; border-radius: 5px; position: absolute; top: 50%; transform: translateY(-50%);"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <option value="all">All</option>
+                <option value="tokopedia">Tokopedia</option>
+                <option value="shopee">Shopee</option>
+            </select>
+
+            <div class="button-apply">
+                <button type="submit" class="btn btn-dark btn-sm" name="action" value="apply"
+                    style="text-transform: unset !important;">Apply</button>
+            </div>
+        </div>
+    </form>
 
     <div class=table>
-        <table class="table table-hover" style="width: 70%; position: absolute; left: 320px; top: 140px;">
+        <table class="table table-hover" style="width: 70%; position: absolute; left: 320px; top: 250px;">
             <thead>
               <tr>
                 <th scope="col" style="font-weight: 700; text-align:left;">Transaction ID</th>

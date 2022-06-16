@@ -106,6 +106,7 @@ Route::get("/productdetail/{sku}", [ProductListController::class, "productdetail
 Route::get('/transactionlist', [TransactionListController::class, 'translist']);
 
 Route::get('/inserttransaction', [TransactionListController::class, 'dropdownproduct']);
+Route::get('selectplatform', [TransactionListController::class, 'transactionlist']);
 Route::post('inserttrans', [TransactionListController::class, 'addCart']);
 Route::post('insertt', [TransactionListController::class, 'insertTrans']);
 Route::post('deleteall', [TransactionListController::class, 'deleteAll']);
