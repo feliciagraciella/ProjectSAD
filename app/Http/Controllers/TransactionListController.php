@@ -26,8 +26,11 @@ class TransactionListController extends Controller
 
     public function details($id)
     {
+        // $transdet = TransactionDetailModel::join('PRODUCT', 'DETAIL_TRANSACTION.SKU', '=', 'PRODUCT.SKU')
+        // ->select('DETAIL_TRANSACTION.SKU', 'P_NAME','IMAGE', 'QTY_PRODUCT')->where('ID_TRANSACTION', $id)->get();
+
         $transdet = TransactionDetailModel::join('PRODUCT', 'DETAIL_TRANSACTION.SKU', '=', 'PRODUCT.SKU')
-        ->select('DETAIL_TRANSACTION.SKU', 'P_NAME','IMAGE', 'QTY_PRODUCT')->where('ID_TRANSACTION', $id)->get();
+        ->select('DETAIL_TRANSACTION.SKU', DB::raw("CONCAT(P_NAME, ' ', SIZE, 'mL') AS NAME"),'IMAGE', 'QTY_PRODUCT')->where('ID_TRANSACTION', $id)->get();
 
         $trans = TransactionListModel::where('ID_TRANSACTION', $id)->get();
 
