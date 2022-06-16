@@ -178,7 +178,7 @@ body{
     width: 270px;
     height: 270px;
     position: absolute;
-    top: 190px;
+    top: 240px;
     left:0px;
     margin-left: 48%;
     transform: translateX(100%);
@@ -190,7 +190,7 @@ body{
 
 .buttonimg{
     position: absolute;
-    top: 487px;
+    top: 520px;
     left: 0px;
     margin-left: 68%;
 }

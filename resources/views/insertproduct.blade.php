@@ -25,11 +25,11 @@
 
     <form action="/create" method="POST" enctype="multipart/form-data" class="form">
         @csrf
-        <div class="baris1">SKU</div>
+        {{-- <div class="baris1">SKU</div>
         <div class="boxsku">
             <input type="text" id="sku" name="sku" class="form-control btn btn-sm"
                 style="text-transform:unset !important; width: 310px; text-align: center;" readonly>
-        </div>
+        </div> --}}
 
         <div class="baris2">Name</div>
         <div class="boxname">
