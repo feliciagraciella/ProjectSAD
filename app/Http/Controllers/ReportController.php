@@ -24,7 +24,6 @@ class ReportController extends Controller
             $jumlahproduk[] = (int)$d->TOTAL_SOLD;
         }
 
-        // dd($income,$admin);
         return view("report", [
             "data" => $data,
             "income" => $income[0]->NetProfit,
@@ -37,7 +36,6 @@ class ReportController extends Controller
             "platform" => "All",
             "color" => "#4B5D67"
         ]);
-
     }
 
     public function report2(Request $req)
@@ -49,7 +47,7 @@ class ReportController extends Controller
         $reportsub = $period." Period on ".$platform." Platform";
         $income = DB::select("select fNetProfit('".$platform."','".$period."') as `NetProfit`");
         $admin = DB::select("select fAdminFee('".$platform."','".$period."') as `AdminFee`");
-        // dd($reportsub);
+
         if($report == "Product Sales"){
             if($platform == "All" && $period == "All"){
                 $data = DB::select("select * from product_all_all");
@@ -219,7 +217,7 @@ class ReportController extends Controller
                     $intprofit2[] = "";
                 }
             }
-            // dd($tanggal1);
+
             return view("report2", [
                 "data1" => $data1,
                 "data2" => $data2,
