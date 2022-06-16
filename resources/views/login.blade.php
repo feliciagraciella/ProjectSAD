@@ -29,8 +29,8 @@
 
 <body style="background-color: #e5e5e5">
     @if (session()->has('error'))
-        <div class="alert alert-warning alert-dismissible fade show">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <div class="alert alert-warning alert-dismissible fade show" style="text-align: center">
+            {{-- <button type="button" class="close" data-dismiss="alert">&times;</button> --}}
             {{ session()->get('error') }}
         </div>
     @endif
