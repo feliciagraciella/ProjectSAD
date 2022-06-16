@@ -38,14 +38,14 @@
             <div class="column-report">
                 <div class="rect-tokped">
                     <img src={{ asset('images/icon/tokped.png') }}
-                        style="background: #f8f7f2; width: 31px; height:31px; margin-left: 10px; margin-top: 10px;" />
+                        style="background: #f8f7f2; width: 40px; height:40px; margin-left: 20px; margin-top: 20px;" />
                     <div id="chart1"></div>
                 </div>
             </div>
             <div class="column-report">
                 <div class="rect-shopee">
                     <img src={{ asset('images/icon/shopee.png') }}
-                        style="background: #f8f7f2; width: 35px; height:35px; margin-left: 10px; margin-top: 10px;" />
+                        style="background: #f8f7f2; width: 45px; height:45px; margin-left: 20px; margin-top: 20px;" />
                     <div id="chart2"></div>
                 </div>
             </div>
@@ -121,14 +121,6 @@
 
         <div class="restock">
             <h3>Restock Soon</h3>
-            {{-- <div class="restock1" style="left: 80%; position: absolute; top: 300px;">
-                <p class="warning1">
-                    <span class="iconify" data-icon="ep:warning-filled" style="color: black;"></span>
-                </p>
-                <h5 class="stock-text">Product&nbspName</h5>
-                <h5 class="stock-qty">Stock:&nbsp3</h5>
-            </div> --}}
-            {{-- @foreach ($stock as $s) --}}
             <div class="restock1" style="left: 80%; position: absolute; top: 300px;">
                 @foreach ($stock as $s)
                     <a href="{{ 'productdetail/' . $s->SKU }}">
@@ -141,15 +133,10 @@
                                 <h5 class="stock-text" style="width: 200px">{{ $s->P_NAME }}</h5>
                                 <h5 class="stock-qty">Stock:&nbsp{{ $s->STOCK }}</h5>
                             </div>
-                            {{-- <h5 class="stock-text" style="width: 200px">{{ $s->P_NAME }}</h5>
-                        <h5 class="stock-qty">Stock:&nbsp{{ $s->STOCK }}</h5> --}}
                         </div>
                     </a>
                 @endforeach
             </div>
-
-            {{-- @endforeach --}}
-
         </div>
     </div>
 
@@ -172,18 +159,17 @@
                 plotLines: [{
                     value: 0,
                     width: 1,
-                    color: '#FFFF'
+                    color: '#f8f7f2'
                 }]
             },
             xAxis: {
                 visible: false
-                // categories: {!! json_encode($tanggal1) !!},
-                // crosshair: true
             },
             series: [{
                 name: "Tokopedia",
                 data: {!! json_encode($tokped) !!},
                 color: {!! json_encode($color1) !!},
+                lineWidth: 8.5,
 
             }],
             responsive: {
@@ -193,10 +179,8 @@
                     },
                     chartOptions: {
                         legend: {
-                            // layout: 'horizontal',
-                            // align: 'center',
-                            // verticalAlign: 'bottom'
                             enabled: false
+
                         }
                     }
                 }]
@@ -206,10 +190,6 @@
     </script>
     <script>
         Highcharts.chart('chart2', {
-            // chart:{
-            //     backgroundColor:  "#FFFFFF",
-            //     type: 'line'
-            // }
             title: {
                 text: " "
             },
@@ -218,11 +198,6 @@
                 text: " "
             },
 
-            // yAxis: {
-            //     title: {
-            //         text: "Profit (Rp)"
-            //     }
-            // },
             yAxis: {
                 title: {
                     text: " "
@@ -232,19 +207,18 @@
                 plotLines: [{
                     value: 0,
                     width: 1,
-                    color: '#FFFF'
+                    color: '#f8f7f2'
                 }]
             },
 
             xAxis: {
-                // categories: {!! json_encode($tanggal1) !!},
-                // crosshair: true
                 visible: false
             },
             series: [{
                 name: "Shopee",
                 data: {!! json_encode($shopee) !!},
                 color: {!! json_encode($color2) !!},
+                lineWidth: 8.5,
             }],
             responsive: {
                 rules: [{
@@ -253,21 +227,15 @@
                     },
                     chartOptions: {
                         legend: {
-                            // layout: 'horizontal',
-                            // align: 'center',
-                            // verticalAlign: 'bottom'
                             enabled: false
                         }
-                        // backgroundColor:  "#f8f7f2"
                     }
                 }]
             }
 
         });
     </script>
-
-
-
+    
 </body>
 
 </html>
