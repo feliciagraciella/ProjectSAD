@@ -42,7 +42,7 @@ a:link, a:visited {
 
 .button-apply{
     position: absolute;
-    left: 350px;
+    left: 300px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 99;
