@@ -151,7 +151,7 @@ class TransactionListController extends Controller
 
         $transada = TransactionListModel::select('ID_TRANSACTION')->where('ID_TRANSACTION', $trans[0]->ID_TRANSACTION)->get();
 
-        dd($transada);
+        // dd($transada);
 
         if(count($transada)>0)
         {
