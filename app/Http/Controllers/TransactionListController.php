@@ -78,7 +78,7 @@ class TransactionListController extends Controller
 
         $cart = DB::table('CART')->where('ID_ADMIN', session('login'))->get();
         if(count($cart)!=0){
-            $platform = DB::table('CART')->select('PLATFORM')->limit(1)->get();
+            $platform = DB::table('CART')->select('PLATFORM')->where('ID_ADMIN', session('login'))->limit(1)->get();
             $platformname = $platform[0]->PLATFORM;
         }
         else{
