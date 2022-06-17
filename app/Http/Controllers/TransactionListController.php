@@ -76,7 +76,7 @@ class TransactionListController extends Controller
     {
         $date = $req->input("date");
 
-        $cart = DB::table('CART')->get();
+        $cart = DB::table('CART')->where('ID_ADMIN', session('login'))->get();
         if(count($cart)!=0){
             $platform = DB::table('CART')->select('PLATFORM')->limit(1)->get();
             $platformname = $platform[0]->PLATFORM;
@@ -89,20 +89,21 @@ class TransactionListController extends Controller
         if($platformname == "Tokopedia"){
             $dd1 = "Tokopedia";
         }
-        else{
+        else if($platformname =="Shopee"){
             $dd1 = "Shopee";
         }
 
         if ($dd1 == "Tokopedia" || $platformname == "Tokopedia"){
             $id = "T" . date('Ymd', strtotime($date));
         }
-        else {
+        else if($dd1 == "Shopee" || $platformname == "Shopee"){
             $id = "S" . date('Ymd', strtotime($date));
         }
 
         $dd2 = $req->input("product");
         $qty = $req->get("inputQuantity");
 
+        // dd($platformname);
         $p = DB::table('PRODUCT')->where('SKU', $dd2);
 
         $stok = DB::table('PRODUCT')->select('STOCK')->where('SKU', $dd2)->get();
@@ -150,7 +151,9 @@ class TransactionListController extends Controller
 
         $transada = TransactionListModel::select('ID_TRANSACTION')->where('ID_TRANSACTION', $trans[0]->ID_TRANSACTION)->get();
 
-        if(count($transada)!=0)
+        dd($transada);
+
+        if(count($transada)>0)
         {
             DB::table('CART')->where('ID_ADMIN', session('login'))->delete();
             return redirect('inserttransaction')->with("error", "Transaction in this date already exist!");
