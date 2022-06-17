@@ -19,7 +19,7 @@ body{
     top: 150px;
     padding: 13px 0px 0px 27px;
     width: 35%;
-    left:305px;
+    left:313px;
     margin-left: 25%;
     transform: translateX(-70%);
 }
@@ -153,10 +153,10 @@ body{
 
 .buttondel{
     position: absolute;
-    top: 560px;
+    top: 580px;
     border-radius: 8px;
     width: 15%;
-    left:70px;
+    left:65px;
     margin-left: 4%;
     transform: translateX(100%);
     border: 1px solid #DEE1E6;
@@ -164,10 +164,10 @@ body{
 
 .buttonins{
     position: absolute;
-    top: 560px;
+    top: 580px;
     border-radius: 8px;
     width: 15%;
-    left:300px;
+    left:305px;
     margin-left: 4%;
     transform: translateX(100%);
     border: 1px solid #DEE1E6;
